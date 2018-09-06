@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" Content="text/html; charset=utf-8" />
+<title>javascript4-1</title>
+<style type="text/css">
+	body{font-size:12px;}
+	#txt{
+	    height:400px;
+	    width:600px;
+		border:#333 solid 1px;
+		padding:5px;
+		font-size: 14px;
+		}
+	p{
+		line-height:18px;
+		text-indent:2em;
+		}
+	/*按钮样式*/
+	.style{
+		margin-top: 20px;
+		margin-left: 15px;
+		width: 100px;
+		height: 30px;
+		border: 0;
+		background-color: #ccc;
+		color: slategrey;
+		cursor: pointer;
+		font-size: 16px;
+		font-family: "微软雅黑";
+		border-radius: 20px;
+	}
+	/*鼠标悬停时的样式*/
+	.style:hover{
+		color: black;
+	}
+	/*鼠标与释放之间的样式*/
+	.style:active{
+		color: red;
+	}
+</style>
+</head>
+<body>
+  <h2 id="con">JavaScript课程</H2>
+  <div id="txt"> 
+     <h5>JavaScript为网页添加动态效果并实现与用户交互的功能。</h5>
+        <p>1. JavaScript入门篇，让不懂JS的你，快速了解JS。</p>
+        <p>2. JavaScript进阶篇，让你掌握JS的基础语法、函数、数组、事件、内置对象、BOM浏览器、DOM操作。</p>
+        <p>3. 学完以上两门基础课后，在深入学习JavaScript的变量作用域、事件、对象、运动、cookie、正则表达式、ajax等课程。</p>
+  </div>
+  <form>
+  <!--当点击相应按钮，执行相应操作，为按钮添加相应事件-->
+    <input class="style" type="button" value="改变颜色" onclick="color()">  
+    <input class="style" type="button" value="改变宽高" onclick="width()">
+    <input class="style" type="button" value="隐藏内容" onclick="none()">
+    <input class="style" type="button" value="显示内容" onclick="block()">
+    <input class="style" type="button" value="取消设置" onclick="esc()">
+  </form>
+  <script type="text/javascript">
+    var txt = document.getElementById("txt");
+    //定义"改变颜色"的函数
+    function color(){  	
+        txt.style.color = "red";
+        txt.style.backgroundColor = "black";
+    }
+    
+    //定义"改变宽高"的函数
+    function width(){
+        txt.style.width = "300px";
+        txt.style.heigth = "300px";
+    }
+    
+    //定义"隐藏内容"的函数
+    function none(){
+        txt.style.display = "none";
+    }
+    
+    //定义"显示内容"的函数
+    function block(){
+        txt.style.display = "block";
+    }
+    
+    //定义"取消设置"的函数
+    function esc(){
+    	// 提示框
+        var mychose = confirm("确定要重置吗？");
+        if (mychose == true)
+        {
+        	// 删除指定属性
+            txt.removeAttribute('style');
+        }
+    }
+  </script>
+</body>
+</html>
