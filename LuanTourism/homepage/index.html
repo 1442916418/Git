@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>旅游自由行攻略</title>
+		<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		
+		<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.6.2.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.nivo.slider.pack.js"></script>
+		<script type="text/javascript" src="../js/index.js"></script>	
+	</head>
+	
+	<body>
+		<!--
+        	作者：yuu1473@163.com
+        	时间：2018-09-12
+        	描述：头部导航
+        -->
+		<div id="header">
+			<div id="nav">
+				<div id="nav_logo">
+					<img src="../image/logowu.png" />
+				</div>
+				<div id="nav_content">
+					<ul>
+						<li>
+							<a href="/" target="_blank" class="on">首页</a>
+						</li>
+						<li>
+							<a href="#" target="_blank">玩法攻略</a>
+						</li>
+						<li>
+							<a href="#" target="_blank">目的地</a>
+						</li>
+						<li>
+							<a href="#" target="_blank">当地玩乐</a>
+						</li>
+						<li>
+							<a href="#" target="_blank">问答</a>
+						</li>
+						<li>
+							<a href="#" target="_blank">天气</a>
+						</li>
+					</ul>
+				</div>
+				<div id="nav_search">
+					<form action method style class="focusblurmenu">
+						<input name type="submit" value id="searchbtn" class="searchbtn" />
+						<input name type="text" value placeholder="请输入关键字" id="searchkey" class="searchkey" style="width:190px"/>
+					</form>
+				</div>
+				<div id="nav_Member">
+					<div class="separator">
+						<b></b>
+						<a href="#" class="users">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--
+        	作者：yuu1473@163.com
+        	时间：2018-09-12
+        	描述：百叶窗图片切换
+        -->
+        <div id="slider_wrap">
+        	<div id="slider" class="nivoSlider">
+        		<a href="#" class="nivo-imageLink">
+        			<img src="../image/01.jpg" alt="" title="a" width="1536" height="550"/>
+        		</a>
+        		<a href="#" class="nivo-imageLink">
+        			<img src="../image/02.jpg" alt="" title="b" width="1536" height="550"/>
+        		</a>
+        		<a href="#" class="nivo-imageLink">
+        			<img src="../image/03.jpg" alt="" title="c" width="1536" height="550"/>
+        		</a>
+        		<a href="#" class="nivo-imageLink">
+        			<img src="../image/04.jpg" alt="" title="d" width="1536" height="550"/>
+        		</a>
+        		<a href="#" class="nivo-imageLink">
+        			<img src="../image/05.jpg" alt="" title="e" width="1536" height="550"/>
+        		</a>
+        	</div>
+        </div>
+        
+       	<!--
+           	作者：yuu1473@163.com
+           	时间：2018-09-12
+           	描述：主体内容
+           -->
+        <div class="mains">
+        	<div class="place_box clearfix">
+        		<div class="m_mdd">
+        			<h2>目的地推荐</h2>
+        		</div>
+        		<div class="m_boxactive">
+        			<ul class="top_destination">
+        				<li>
+        					<a class="mddimg mboxs" target="_blank" href="#">
+        						<img class="scale-up-box" alt="西安" src="http://image.chufa123.com/561b2d0779a18bfbbbbd53376a33d7dd.jpeg?imageView2/1/w/335/h/245/interlace/1/q/100" />
+        						<span>西安</span>
+        					</a>
+        				</li>
+        				<li>
+                            <a class="mddimg mboxs" target="_blank" href="#">
+                                <img class="scale-up-box" alt="南京" src="http://image.chufa123.com/storage/mdd/5aa7db587d86c30605aa66ee/cd48b1f9d0ba74e46258338c981875a1.jpeg?imageView2/1/w/335/h/245/interlace/1/q/100">
+                                <span>南京</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mddimg mboxs" target="_blank" href="#">
+                                <img class="scale-up-box" alt="三亚" src="http://image.chufa123.com/storage/mdd/5aa7db557d86c30605aa66a9/305d86c54daaf2949a655cfff210bbf7.jpeg?imageView2/1/w/335/h/245/interlace/1/q/100">
+                                <span>三亚</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mddimg mboxs" target="_blank" href="#">
+                                <img class="scale-up-box" alt="清迈" src="http://image.chufa123.com/c81e0689ace09d126e37812503c9781a.jpeg?imageView2/1/w/335/h/245/interlace/1/q/100">
+                                <span>清迈</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mddimg mboxs" target="_blank" href="#">
+                                <img class="scale-up-box" alt="台北" src="http://image.chufa123.com/storage/mdd/5aa7db5a7d86c30605aa6713/d14ecfb5950405de7c6320621e51e17c.jpeg?imageView2/1/w/335/h/245/interlace/1/q/100">
+                                <span>台北</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mddimg mboxs" target="_blank" href="#">
+                                <img class="scale-up-box" alt="昆明" src="http://image.chufa123.com/storage/mdd/5aa7db5a7d86c30605aa6710/2f38e7e2366637fc8029bdf5dbc26db8.png?imageView2/1/w/335/h/245/interlace/1/q/100">
+                                <span>昆明</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mddimg mboxs" target="_blank" href="#">
+                                <img class="scale-up-box" alt="苏州" src="http://image.chufa123.com/storage/mdd/5aa7db567d86c30605aa66c6/91991185f9cf62ae67b91ac92841006d.jpeg?imageView2/1/w/335/h/245/interlace/1/q/100">
+                                <span>苏州</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mddimg mboxs" target="_blank" href="#">
+                                <img class="scale-up-box" alt="上海" src="http://image.chufa123.com/storage/mdd/5aa7db567d86c30605aa66b6/c753eab5709942b777097968bc256d1b.jpeg?imageView2/1/w/335/h/245/interlace/1/q/100">
+                                <span>上海</span>
+                            </a>
+                        </li>
+        			</ul>
+        		</div>
+        	</div>
+        </div>
+	</body>
+</html>
