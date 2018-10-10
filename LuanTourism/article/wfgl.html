@@ -2,9 +2,157 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>玩法攻略</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" media="screen and (max-device-width: 400px)" href="tinyScreen.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 400px) and (max-device-width: 600px)" href="smallScreen.css" />
+		<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		
+		<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.6.2.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.nivo.slider.pack.js"></script>
+		<script type="text/javascript" src="../js/index.js"></script>	
     </head>
     <body>
-    
+         <!--
+        	作者：yuu1473@163.co
+        	时间：2018-09-12
+        	描述：头部导航
+        -->
+		<div id="header">
+                <div id="nav">
+                    <div id="nav_logo">
+                        <img src="../image/logowu.png" />
+                    </div>
+                    <div id="nav_content">
+                        <ul id="navid">
+                            <li id="on">
+                                <a href="/" target="_blank">首页</a>
+                            </li>
+                            <li id="on">
+                                <a href="#" target="_blank">玩法攻略</a>
+                            </li>
+                            <li id="on">
+                                <a href="#" target="_blank">目的地</a>
+                            </li>
+                            <li id="on">
+                                <a href="#" target="_blank">当地玩乐</a>
+                            </li>
+                            <li id="on">
+                                <a href="#" target="_blank">问答</a>
+                            </li>
+                        </ul>
+                        <div id="buoy"></div>
+                    </div>
+                    <div id="nav_search">
+                        <form action method style class="focusblurmenu">
+                            <input name type="submit" value id="searchbtn" class="searchbtn" />
+                            <input name type="text" value placeholder="请输入关键字" id="searchkey" class="searchkey" style="width:190px"/>
+                        </form>
+                    </div>
+                    <div id="nav_Member">
+                        <div class="separator">
+                            <b></b>
+                            <a href="#" class="users">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <!--
+        	作者：yuu1473@163.co
+        	时间：2018-10-10
+        	描述：目的地推荐
+            -->
+            <div id="wrap">
+                <div id="mdd">
+                    <div class="hot">
+                        <div class="mod-hd">
+                            <h2>目的地推荐</h2>
+                        </div>
+                        <div class="hot-list">
+                            <div class="in">
+                                <ul class="clearfix">
+                                    <li>
+                                        <a target="_blank" href="#" class="shadow">
+                                            <img src="http://image.chufa123.com/aee0877fc3280e1cb38d1a42cf4c407f.jpeg?imageView2/1/w/190/h/300/interlace/1/q/100" width="290px">
+                                            <em>
+                                                <span class="ccc">重庆</span>
+                                                <span>97个玩法</span>
+                                            </em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="#" class="shadow">
+                                            <img src="http://image.chufa123.com/cf285a552d2b35f7817508705174a2e0.jpeg?imageView2/1/w/190/h/300/interlace/1/q/100" width="290px">                                                                           
+                                            <em>
+                                                <span class="ccc">北京</span>
+                                                <span>978个玩法</span>
+                                            </em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="#" class="shadow">
+                                            <img src="http://image.chufa123.com/storage/mdd/5aa7db577d86c30605aa66d9/6e7fe0c66832f98bc7555f6aaf1bb150.jpeg?imageView2/1/w/190/h/300/interlace/1/q/100" width="290px">
+                                            <em>
+                                                <span class="ccc">青岛</span>
+                                                <span>402玩法</span>
+                                            </em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="#" class="shadow">
+                                            <img src="http://image.chufa123.com/4fc2ca6dbf155ca6474dd3df8ca860e3.jpeg?imageView2/1/w/190/h/300/interlace/1/q/100" width="290px">
+                                            <em>
+                                                <span class="ccc">哈尔滨</span>
+                                                <span>587个玩法</span>
+                                            </em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="#" class="shadow">
+                                            <img src="http://image.chufa123.com/storage/mdd/5aa7db5a7d86c30605aa6710/2f38e7e2366637fc8029bdf5dbc26db8.png?imageView2/1/w/190/h/300/interlace/1/q/100" width="290px">
+                                            <em>
+                                                <span class="ccc">昆明</span>
+                                                <span>937个玩法</span>
+                                            </em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="#" class="shadow">
+                                            <img src="http://image.chufa123.com/storage/mdd/5aa7db567d86c30605aa66c2/91461f4bf6e263ae995535d0f8d7b98f.jpeg?imageView2/1/w/190/h/300/interlace/1/q/100" width="290px">
+                                            <em>
+                                                <span class="ccc">香港</span>
+                                                <span>1308个玩法</span>
+                                            </em>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-s" id="bott">
+                <div class="wrapper wiki-wrapper clearfix">
+                    <div class="pot-left">
+                        <div class="pot-l-list">
+                            <!--默认10条-->
+                            <ul>
+                                <li class="item clearfix"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <script type="text/javascript">
+                $.nicenav(300);
+            </script>
     </body>    
 </html>

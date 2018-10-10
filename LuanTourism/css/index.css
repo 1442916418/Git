@@ -12,18 +12,17 @@ body {
 	vertical-align: baseline;
 }
 
-
 /*头部导航*/
 #header {
 	margin: 0 auto;
 	padding: 0;
-	height: 50px;
+	height: 48px;
 	min-height: 100%;
 	position: relative;
 	top: 0px;
 	z-index: 9999;
 	left: 0;
-	/* border-bottom: 2px solid #eee; */
+	border-bottom: 2px solid #eee;
 	background: #fff;
 	_position: absolute;
 	/* _top: expression(documentElement.scrollTop + "px"); */
@@ -632,6 +631,7 @@ p {
 	position: relative;
 	top: 8px;
 }
+/*阴影*/
 .hotpoi-list .before{
 	width: 290px;
 	height: 400px;
@@ -1092,4 +1092,162 @@ a{
 }
 .right_index img:hover {
 	transform: scale(1.2, 1.2);
+}
+
+/*目的地推荐页面*/
+#wrap{
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	color: #333333;
+}
+#wrap{
+	width: 100%;
+	background: #fff;
+}
+.hot{
+	width: 1200px;
+	height: auto;
+	margin: 0 auto;
+}
+.mod-hd{
+	height: 30px;
+	margin-bottom: 15px;
+	padding: 10px 0;
+	line-height: 30px;
+	margin-top: 30px;
+}
+.mod-hd h2{
+	float: left;
+	width: 170px;
+	font-size: 24px;
+	font-weight: normal;
+	color: #666;
+	margin: 0px;
+	padding: 0px;
+}
+.hot-list{
+	margin: 20px auto 0px;
+	padding: 0px;
+}
+.hot-list .in{
+	position: relative;
+	height: 300px;
+	overflow: hidden;
+}
+.hot-list ul{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	margin: 0px;
+	padding: 0px;
+}
+.hot-list ul li{
+	float: left;
+	width: 190px;
+	margin: 0 5px;
+	position: relative;
+}
+.hot-list li a{
+	width: 200px;
+	overflow: hidden;
+	position: relative;
+	display: block;
+}
+.hot-list li a img{
+	width: 190px;
+	height: 300px;
+	border-radius: 5px;
+	margin: 0px;
+	padding: 0px;
+}
+.hot-list li a em{
+	display: block;
+	width: 190px;
+	height: 300px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+	color: #fff;
+	overflow: hidden;
+	z-index: 2;
+}
+.hot-list li a em .ccc{
+	padding-top: 120px;
+	font-size: 20px;
+}
+.hot-list li a em span{
+	padding-top: 10px;
+	display: block;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 24px;
+}
+/*阴影*/
+.hot-list .shadow{
+	width: 190px;
+	height: 300px;
+	z-index: 999;
+	background: #282f44;
+	opacity: 0.7;
+}
+.hot-list .shadow:hover{
+	background: #282F44;
+	opacity: 1;
+	transition: opacity 2s;
+	border-radius: 5px;
+}
+#bott{
+	margin-top: 40px;
+}
+.guide-s{
+	width: 1200px;
+	height: auto;
+	margin: 0px auto;
+}
+.warpper{
+	width: 1200px;
+	margin: 0 auto;
+}
+.wiki-wrapper{
+	margin-top: 10px;
+}
+.guide-s .clearfix:after{
+	content: '';
+	clear: both;
+	height: 0;
+	display: block;
+	overflow: hidden;
+}
+.pot-left{
+	float: left;
+	width: 910px;
+	margin: 0;
+	padding: 0;
+}
+.pot-l-list{
+	padding: 0px 0;
+	margin: 0;
+}
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+.pot-l-list .item{
+	padding: 26px 20px 30px 30px;
+	position: relative;
+	background-color: #fff;
+	margin-bottom: 10px;
+}
+.pot-l-list ul li{
+	border: 1px solid #f5f8fd;
+	box-shadow: 1.5px 1px 1px #d5e2f7;
 }
