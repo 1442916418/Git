@@ -22,3 +22,22 @@ $(window).load(function() {
     pauseTime: 3000 });
   });
 });
+
+/*导航栏*/
+; (function ($) {
+  $.extend({
+      'nicenav': function (con) {
+          con = typeof con === 'number' ? con : 400;
+          var $lis = $('#navid>li'), $h = $('#buoy')
+          $lis.hover(function () {
+              $h.stop().animate({
+                  'left': $(this).offsetParent().context.offsetLeft
+              }, con);
+          }, function () {
+              $h.stop().animate({
+                  'left': '0px'
+              }, con);
+          })
+      }
+  });
+}(jQuery));

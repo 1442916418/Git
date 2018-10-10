@@ -3,6 +3,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>旅游自由行攻略</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" media="screen and (max-device-width: 400px)" href="tinyScreen.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 400px) and (max-device-width: 600px)" href="smallScreen.css" />
 		<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="../css/index.css" />
 		
@@ -14,7 +17,7 @@
 	
 	<body>
 		<!--
-        	作者：yuu1473@163.com
+        	作者：yuu1473@163.co
         	时间：2018-09-12
         	描述：头部导航
         -->
@@ -24,26 +27,24 @@
 					<img src="../image/logowu.png" />
 				</div>
 				<div id="nav_content">
-					<ul>
-						<li>
-							<a href="/" target="_blank" class="on">首页</a>
+					<ul id="navid">
+						<li id="on">
+							<a href="/" target="_blank">首页</a>
 						</li>
-						<li>
+						<li id="on">
 							<a href="#" target="_blank">玩法攻略</a>
 						</li>
-						<li>
+						<li id="on">
 							<a href="#" target="_blank">目的地</a>
 						</li>
-						<li>
+						<li id="on">
 							<a href="#" target="_blank">当地玩乐</a>
 						</li>
-						<li>
+						<li id="on">
 							<a href="#" target="_blank">问答</a>
 						</li>
-						<li>
-							<a href="#" target="_blank">天气</a>
-						</li>
 					</ul>
+					<div id="buoy"></div>
 				</div>
 				<div id="nav_search">
 					<form action method style class="focusblurmenu">
@@ -237,19 +238,19 @@
         					<li class="r3">
         						<a class="foodboxs" href="#" target="_blank" title="杭州">
         							<img class="foodimg" src="../image/jd2.jpg" alt="杭州"/>
-        							<span>杭州</span>
+        							<span class="max">杭州</span>
         						</a>
         					</li>
         					<li class="r4">
         						<a class="foodboxs" href="#" target="_blank" title="成都">
         							<img class="foodimg" src="../image/jd3.jpg" alt="成都"/>
-        							<span>成都</span>
+        							<span class="min">成都</span>
         						</a>
         					</li>
         					<li class="r5">
         						<a class="foodboxs" href="#" target="_blank" title="三亚">
         							<img class="foodimg" src="../image/jd3.jpg" alt="三亚"/>
-        							<span>三亚</span>
+        							<span class="min">三亚</span>
         						</a>
         					</li>
         					<li class="r6">
@@ -261,13 +262,13 @@
         					<li class="r7">
         						<a class="foodboxs" href="#" target="_blank" title="重庆">
         							<img class="foodimg" src="../image/jd3.jpg" alt="重庆"/>
-        							<span>重庆</span>
+        							<span class="min">重庆</span>
         						</a>
         					</li>
         					<li class="r8">
         						<a class="foodboxs" href="#" target="_blank" title="苏州">
         							<img class="foodimg" src="../image/jd3.jpg" alt="苏州"/>
-        							<span>苏州</span>
+        							<span class="min">苏州</span>
         						</a>
         					</li>
         				</ol>
@@ -429,6 +430,11 @@
 	        	</div>
         	</div>
         	
-        </div>
+		</div>
+		
+
+		<script type="text/javascript">
+			$.nicenav(300);
+		</script>
 	</body>
 </html>
