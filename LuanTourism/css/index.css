@@ -1247,7 +1247,134 @@ ul, menu, dir {
 	background-color: #fff;
 	margin-bottom: 10px;
 }
+.pot-l-list ul{
+	margin: 0;
+	padding: 0;
+}
 .pot-l-list ul li{
 	border: 1px solid #f5f8fd;
 	box-shadow: 1.5px 1px 1px #d5e2f7;
+}
+.pot-l-list .item .img{
+	float: left;
+	width: 215px;
+	height: 135px;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.gl-liulan{
+	float: right;
+	text-align: center;
+	line-height: 24px;
+	font-size: 13px;
+}
+.gl-liulan em{
+	font-style: normal;
+	font-size: 14px;
+	color: #ff3e96;
+}
+.gl-title{
+	width: 500px;
+	height: 35px;
+	margin-left: 230px;
+}
+.gl-title h3 a{
+	color: #333;
+	font-size: 16px;
+}
+.rev-info{
+	line-height: 24px;
+	overflow: hidden;
+}
+.pot-l-list .rev-txt{
+	padding: 0 0 3px 15px;
+	position: relative;
+	height: 70px;
+	overflow: hidden;
+}
+.pot-l-list .rev-txt p{
+	color: #555555;
+	text-indent: 25px;
+	margin: 0px;
+}
+.pot-times{
+	margin-left: 230px;
+	overflow: hidden;
+	padding-top: 10px;
+}
+.pot-times span{
+	font-size: 13px;
+	color: #888;
+}
+/*四边阴影*/
+.pot-l-list .item:hover{
+	box-shadow: 0px 0px 1px 1px #d3d7d4;
+}
+.pot-right{
+	float: right;
+	width: 280px;
+}
+.guide-s .pot-right .pot-artic{
+	background: #fff;
+	border-radius: 2%;
+}
+.pot-artic{
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+.pot-artic .tit{
+	margin-bottom: 10px;
+	font-size: 18px;
+	color: #333;
+	font-weight: normal;
+	padding: 10px 10px 0 10px;
+}
+.pot-artic ul li{
+	padding: 6px 10px;
+	position: relative;
+}
+/*三角形*/
+.guide-s .pot-right .pot-artic ul li .triangle{
+	border-color: #f5f8fd #f5f8fd #f5f8fd #ff3e96;
+}
+.pot-artic ul{
+	padding: 0;
+}
+.pot-artic li .triangle{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 4px;
+	transform-origin: 25% center;
+}
+.pot-artic li a{
+	display: block;
+	overflow: hidden;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333;
+	padding-left: 10px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.pot-artic .kan{
+	padding-top: 3px;
+	display: inline-block;
+	color: #a4abb1;
+	font-size: 12px;
+	padding-left: 11px;
+}
+/*新页脚*/
+#new-footer{
+	margin-top: 30px;
+	background-color: #3b3b3b;
+	height: 100px;
+	width: 100%;
+	overflow: hidden;
+	padding: 0px;
+	text-align: center;
 }
