@@ -1424,3 +1424,156 @@ ul, menu, dir {
     position: relative;
     overflow: hidden;
 }
+
+/*问答页面*/
+#main{
+	padding: 0;
+	width: 1200px;
+	margin-top: 20px;
+	margin: 0 auto;
+	position: relative;
+}
+.col-main{
+	float: left;
+	width: 750px;
+}
+.list-qa{
+	margin: 20px 0 40px 0;
+}
+.list-qa .hd{
+	height: 34px;
+	border-bottom: 2px solid #e1e1e1;
+	line-height: 34px;
+}
+.list-qa .hd ul{
+	float: left;
+}
+.list-qa .hd li{
+	float: left;
+	display: inherit;
+	margin-right: 10px;
+	border-bottom: 2px solid #42b6ff;
+}
+.list-qa .hd li.on a{
+	color: #30a1f2;
+}
+.cate-tab{
+	margin: 0px;
+	padding: 0px;
+}
+.list-qa .answer-item{
+	padding: 10px 8px 10px 74px;
+	border-bottom:  1px solid #e1e1e1;
+	vertical-align: top;
+	margin: 15px 0;
+}
+.list-qa .answer-item .person{
+		margin-left: -65px;
+}
+.person{
+	float: left;
+	width: 50px;
+	line-height: 18px;
+	display: inline;
+	overflow: hidden;
+}
+.person .avatar{
+	margin-bottom: 8px;
+}
+.person .avatar a img{
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+.person .name{
+	overflow: hidden;
+	line-height: 20px;
+	text-align: center;
+}
+.list-qa .answer-item .person .name a{
+	font-size: 12px;
+}
+.list-qa .answer-item .title{
+	margin-bottom: 6px;
+	line-height: 20px;
+}
+.list-qa .answer-item .title .time{
+	float: right;
+	font-size: 12px;
+}
+.time{
+	color: #999;
+	font-family: verdana;
+	padding-left: 0px;
+}
+.list-qa .answer-item .title a{
+	margin: 0 6px 0 0;
+	font-size: 16px;
+	color: #444;
+	font-weight: 700;
+}
+.bd ul{
+	padding: 0px;
+	margin: 0px;
+}
+.list-qa .desc{
+	line-height: 25px;
+	font-size: 14px;
+	color: #333;
+}
+.list-qa .desc p{
+	margin: 0px;
+	padding: 0px;
+}
+.list-qa .info{
+	margin-top: 15px;
+	line-height: 20px;
+	color: #333;
+}
+.list-qa .info ul{
+	float: right;
+	font-size: 12px;
+}
+.list-qa .info li{
+	float: left;
+	margin-left: 15px;
+}
+.col-side{
+	float: right;
+	width: 400px;
+}
+.col-side .ttt{
+	margin: 25px 0 20px 0;
+}
+.col-side .hd{
+	margin-bottom: 15px;
+	font-size: 16px;
+	font-weight: normal;
+}
+.col-side .bd{
+	line-height: 21px;
+}
+.col-side ul{
+	margin: 0px;
+	padding: 0px;
+}
+.q-relate li {
+    margin: 10px 0;
+    padding: 0 0 10px 8px;
+    border-bottom: 1px dashed #dcdcdc;
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+    border-bottom-color: rgb(220, 220, 220);
+}
+.q-relate li a {
+	color: #444;
+}
+.q-relate li i {
+    float: left;
+    margin: 5px 0 0 -7px;
+    width: 1px;
+    height: 12px;
+    background-color: #6f584b;
+    overflow: hidden;
+}
