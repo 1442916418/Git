@@ -4,9 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var users = require("./routes/users");
+// var users = require("./routes/users");
 // 使用引入文件
-app.use('/users',users);
+// app.use('/users',users);
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
