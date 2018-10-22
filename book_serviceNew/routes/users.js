@@ -3,9 +3,9 @@ var express = require('express');
 var router = express.Router();
 var user =  require('../models/user');
 var crypto = require('crypto');
-var movie = require('../models/movie');
 var mail = require('../models/mail');
 var comment = require('../models/comment');
+var movie = require('../models/movie');
 const init_token = 'TKL02o';
 
 /*GET users listing. */
@@ -113,8 +113,6 @@ router.post('/support', function (req, res, next) {
   });
 });
 
-
-
 //用户找回密码
 router.post('/findPassword', function (req, res, next) {
   //需要输入用户的邮箱信息和手机信息，同时可以更新密码
@@ -187,12 +185,32 @@ router.post('/findPassword', function (req, res, next) {
           })
       }
   });
+
+// 用户下载只返回下载地址
+router.post('/dovnload', function(req, res, next){
+    // 验证完整性，这里使用简单的 if 方式，可以使用正则表达式对于输入的格式进行验证
+    if (!req.body.movie_id){
+        res.json({status: 1, message: '电影 id 传递失败'})
+    }
+    movie.findById(req.body.movie_id, function(err, supportMovie){
+        // 更新操作
+        movie.update({_id: req.body.movie_id}, {movieNumSuppose: supportMovie.movieNumDownload + 1},function(err){
+            if (err){
+                res.json({status:1,message: '点赞失败',data: err})
+            }
+            res.json({status:0, message: '下载成功',data: supportMovie.movieDownload})
+        })
+    })
+});
+
 // 用户发送站内信
 router.post('/sendEmail',function(req, res, next){
 });
+
 // 用户显示站内信，其中的 receive 参数值为 1 时是发送的内容，值为 2 时是收到的内容
 router.post('/showEmail',function(req, res, next){
 });
+
 
 //获取md5值
 function getMD5Password(id) {

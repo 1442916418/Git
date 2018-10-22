@@ -9,7 +9,7 @@ var movie = new mongoose.Schema({
     movieNumSuppose: Number,
     movieNumDownload: Number,
     movieMainPage: Boolean,
-})
+});
 //使用statics为对象添加方法
 // movie.statics.finds = function (conditions,callBack) {
 //     this.find(conditions,callBack);
@@ -21,4 +21,4 @@ movie.statics.findAll = function(callBack){
     this.find({},callBack);
 };
 var movieModel = mongoose.model('movie',movie);
-module.exports = movieModel;
+module.exports = movieModel
