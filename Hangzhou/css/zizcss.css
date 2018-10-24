@@ -1,0 +1,135 @@
+	
+			*{
+				padding: 0;
+				margin:  0 auto;
+				
+			}
+			#di1{
+				width: 900px;
+				height: 60px;
+				background-color: darkblue;
+			}
+			#di1 h2{				
+				color: white;
+				font-family: "楷体";
+				margin-left: 100px;
+				padding-top: 18px;
+			}
+			#di1 h3{
+				color: lawngreen;
+				font-family:  "微软雅黑";
+				margin-left: 195px;
+				margin-top: -23px;
+				
+			}
+			#di1 ul li{
+				list-style: none;
+				float: left;
+				
+				width: 70px;
+			
+				margin-left: 50px;
+				line-height: 60px;
+				margin-top: -47px;
+				text-align: center;
+			}
+			#di1 ul li a{
+				width: 70px;
+				display: block;			
+				font-size: 20px;
+				color: white;
+				font-family: "微软雅黑";
+				text-decoration: none;
+			}
+			#di1 ul li a:hover{
+				text-decoration: underline;
+				background-color: deepskyblue;
+				text-decoration: none;			
+				height: 60px;
+			}
+			#shouye{
+				margin-left: 370px;
+			}
+			#shouye ul li ul li{
+				float: none;
+				width: 70px;
+				margin: 0;
+			}
+			#shouye ul li ul li a{
+				background: none;
+				width: 70px;		
+					
+			}
+			#shouye ul li ul li a:hover{
+				background: #00BFFF;
+				color: #00008B;
+				
+			}
+			#shouye ul li ul{
+				display: none;
+			}
+			#shouye ul li:hover ul{
+				display: block; 
+				position: absolute; 
+			}	
+			#di2{
+				width: 900px;
+				height: 300px;
+				background: url(../img/u=1297040735,1585568661&fm=23&gp=0.jpg);
+			}
+			#di3{
+				width: 900px;
+				height: 180px;
+				background-color: dodgerblue;
+				}
+			#di3 h1{
+				color: white;
+				margin-left: 360px;
+				padding-top: 15px;
+			}
+			#di3 h3{
+				color: white;
+				padding-top: 5px;
+				padding-left: 10px;			
+			}
+			#di3 h3 a{
+				color: white;
+				text-decoration: none;
+				padding-left: 370px;
+				padding-top: 10px;
+			}
+			#di4{
+				width: 900px;
+				height: 330px;
+				background-color: #1E90FF;
+			}
+			#di4 img{
+				margin-left: 5px;
+				/* margin-right: 5px; */
+			}
+			#di4 h3 a{
+				float: left;
+				color: white;
+				text-decoration: none;
+			}
+			.xihu a{
+				padding-left: 100px;
+			}
+			.xin a{
+				padding-left: 220px;
+			}
+			.san a{
+				padding-left: 200px;
+			}
+			#di5{
+				width: 900px;
+				height: 60px;
+				background-color: #00008B;
+			}
+			#di5 span{
+				display: block;
+				text-align: center;
+				padding-top: 20px;
+				font-size: 20px;
+				color: white;
+			}
