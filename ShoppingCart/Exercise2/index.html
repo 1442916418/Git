@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>练习2</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="app" v-cloak>
+      <template v-if="list.length">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>商品名称</th>
+              <th>商品单价</th>
+              <th>购买数量</th>
+              <th>操作</th>
+              <th> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <template v-for="(item1, index) in list">
+              <tr>
+                <td>{{ clas(index) }}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                </td>
+              <tr v-for="(initem, inindex) in item1">
+                <td>{{ initem.id }}</td>
+                <td>{{ initem.name }}</td>
+                <td>{{ initem.price }}</td>
+                <td>
+                  <button @click="handleReduce(index, inindex)" :disable="initem.count === 1">-</button>
+                  {{ initem.count }}
+                  <button @click="handleAdd(index, inindex)">+</button>
+                </td>
+                <td>
+                  <button @click="handleRemove(index, inindex)">移除</button>
+                </td>
+                <td>
+                  <input type="checkbox" :value="initem.id" v-model="checkBoxModel" @click.stop="pickOne(index, inindex),checkPick()">
+                </td>
+              </tr>
+              </tr>
+            </template>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>全选</td>
+            <td>
+              <input type="checkbox" @click="allPick(),checkModel()" v-model="allp">
+            </td>
+            </tr>
+          </tbody>
+        </table>  
+        <div>{{ checkBoxModel }}</div> 
+        <div>总价：￥{{ totalPrice }}</div> 
+      </template>
+      <div v-else>购物车为空</div> 
+    </div> 
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script> 
+    <script src="index.js"></script>
+  </body>  
+</html>
