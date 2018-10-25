@@ -33,9 +33,23 @@
                         <td>
                             <button @click="handleRemove(index)">移除</button>
                         </td>
+                        <td>
+                            <input type="checkbox" :value="item.id" v-model="checkBoxModel" @click.stop="pickOne(index),checkPick()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>全选</td>
+                        <td>
+                            <input type="checkbox" @click="allPick(),checkModel()" v-model="allp">
+                        </td>
                     </tr>
                 </tbody>
             </table>
+            <div>{{ checkBoxModel }}</div>
             <div>总价：￥ {{ totalPrice }}</div>
         </template>
         <div v-else>购物车为空</div>

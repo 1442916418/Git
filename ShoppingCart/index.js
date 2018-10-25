@@ -1,50 +1,48 @@
 var app = new Vue({
-    el: "#app",
+    el: '#app',
     data: {
         list: [
             {
-                id : 1,
-                name : 'iPhone 8',
+                id: 1,
+                name: 'iPhone 7',
                 price: 6188,
                 count: 1
             },
             {
                 id: 2,
-                name : 'iPad Pro',
-                price: 8888,
+                name: 'iPad Pro',
+                price: 5888,
                 count: 1
             },
             {
                 id: 3,
-                name : 'MacBook Pro',
+                name: 'MacBook Pro',
                 price: 21488,
                 count: 1
             }
         ]
     },
     computed: {
-        totalPrice: function(){
+        totalPrice: function () {
             var total = 0;
-            for (var i = 0; i < this.list.length; i ++)
-            {
+            for (var i = 0; i < this.list.length; i++) {
                 var item = this.list[i];
                 total += item.price * item.count;
             }
-
+            
             return total.toString().replace(/\B(?=(\d{3})+$)/g,',');
         }
     },
     methods: {
-        handleReduce: function(index){
+        handleReduce: function (index) {
             if (this.list[index].count === 1) return;
             this.list[index].count--;
         },
-        handleAdd: function(index){
+        handleAdd: function (index) {
             this.list[index].count++;
         },
-        handleRemove: function(index){
+        handleRemove: function (index) {
             this.list.splice(index, 1);
         }
-
     }
 });
