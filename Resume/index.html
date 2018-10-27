@@ -6,33 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>简历</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+    <script type="text/javascript" src="js/language.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
+    <div class="header">
+        <div class="-header">
+            <div class="logo">
+                <a class="-logo" href="https://github.com/1442916418" target="_blank"></a>
+            </div>
+            <div class="language">
+                <button id="change">中英文切换</button>
+            </div>
+        </div>
+    </div>
+
     <section class="section-wrap">
 		<div class="section section-1">
-			<div class="title active">
-				<p class="tit">CSS3 纵向滚屏翻页，支持键盘，鼠标滚轮操作</p>
-			</div>
+            <div class="content1">
+                <div class="photo"></div>
+                <div class="des">
+                     <p class="quote">穷居闹市无人问，富在深山有远亲。</p>
+                     <div class="des-list">
+                        <p>我叫余水生</p>
+                        <p>暂时是一名前端小白</p>
+                        <P>1442916418@qq.com</P>
+                     </div>
+                </div>
+            </div>
 		</div>
 		<div class="section section-2">
-			<div class="title">
-				<p class="tit">随便写写意思下!</p>
-			</div>
+			
 		</div>
 		<div class="section section-3">
-			<div class="title">
-				<p class="tit">随便写写意思下</p>
-			</div>
+			
 		</div>
 		<div class="section section-4">
-			<div class="title">
-				<p class="tit">随便写写意思下</p>
-			</div>
+			
 		</div>
 		<div class="section section-5">
-			<div class="title">
-				<p class="tit">随便写写意思下</p>
-			</div>
+			
 		</div>
 	</section>
 	<ul class="section-btn">
@@ -47,4 +61,9 @@
     <script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
 </body>
+    <script type="text/javascript">
+        $("#change").click(function(){
+            translate();
+        })
+    </script>
 </html>
