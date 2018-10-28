@@ -2,9 +2,8 @@ $(function(){
     // do something 
   var script=document.createElement("script");  
   script.type="text/javascript";  
-  script.src="http://www.microsoftTranslator.com/ajax/v3/WidgetV3.ashx?siteData=ueOIGRSKkd965FeEGM5JtQ**";  
+  script.src="js/translate.js";  
   document.getElementsByTagName('head')[0].appendChild(script);  
-
 
   var value = sessionStorage.getItem("language");
   document.onreadystatechange = function () {

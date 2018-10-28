@@ -49,7 +49,7 @@ html,body {
 }
 
 .section-wrap .section-2 {
-	background-color: #5cb85c
+	background-color: #109085;
 }
 
 .section-wrap .section-3 {
@@ -104,7 +104,7 @@ html,body {
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
 	margin-bottom: 12px;
-	background: #BD362F;
+	background: rgb(207, 207, 207);
 	text-align: center;
 	color: #fff;
 	onsor: pointer;
@@ -261,4 +261,86 @@ a{
 }
 .section .content1 .des .des-list p{
     margin: 24px 0;
+}
+
+/*内容2*/
+.section-wrap .section-2 .content2{
+	width: 100%;
+	height: 100%;
+	padding: 40px 0px;
+}
+.content2 .title2{
+	line-height: 80px;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.9);
+	text-shadow: 0 0 6px rgba(0,0,0,.2);
+}
+h1{
+	font-size: 42px;
+}
+.content2 .introduce{
+	width: 100%;
+	max-width: 1300px;
+	height: 100%;
+	overflow: hidden;
+	-ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+	align-items: center;
+	text-align: center;
+	margin: 0 auto;
+}
+.content2 .introduce .introduce-a{
+	padding: 20px;
+	width: 80%;
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 0 5px 5px rgba(0,0,0,.1);
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	top: 40px;
+}
+.content2 .introduce .introduce-a p{
+	font-size: 15px;
+}
+.content2 .introduce .introduce-b{
+	padding: 20px;
+	width: 80%;
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 0 5px 5px rgba(0,0,0,.1);
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	top: 80px;
+}
+.content2 .introduce .introduce-b .infoRow{
+	margin: 30px 0 40px 0;
+	width: 100%;
+	display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: distribute;
+	justify-content: space-around;
+}
+.content2 .introduce .introduce-b .infoRow .infoItem{
+	width: 150px;
+	display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.content2 .introduce .introduce-b .infoRow .infoItem .placeholder{
+	width: 50px;
+}
+.content2 .introduce .introduce-b .infoRow .infoItem p{
+	font-size: 13px;
 }
