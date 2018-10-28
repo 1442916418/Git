@@ -213,6 +213,16 @@ a{
     -ms-flex-align: center;
     align-items: center;
 }
+.language .-language{
+	width: 40px;
+	height: 40px;
+	border: 0;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: black;
+	color: #fff;
+	font-size: 15px;
+}
 
 /*内容1*/
 .section .content1{
