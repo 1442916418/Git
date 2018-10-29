@@ -53,7 +53,12 @@ html,body {
 }
 
 .section-wrap .section-3 {
-	background-color: #5bc0de
+	background: #ff5f6d;
+	background: linear-gradient(270deg,#ff5f6d,#ffc371);
+	display: -ms-grid;
+	display: flex;
+	-ms-flex-direction: column;
+    flex-direction: column;
 }
 
 .section-wrap .section-4 {
@@ -343,4 +348,65 @@ h1{
 }
 .content2 .introduce .introduce-b .infoRow .infoItem p{
 	font-size: 13px;
+}
+
+/*内容三*/
+.section-wrap .section .title3{
+	line-height: 80px;
+	text-align: center;
+	color: #fff;
+	text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+	margin-top: 50px;
+}
+.section-wrap .section .content3{
+	display: flex;
+	width: 100%;
+	max-width: 1300px;
+	overflow: hidden;
+	-ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+	align-items: center;
+	margin: 0 auto;
+}
+.section-wrap .section .content3 .cardContiner{
+	width: 80%;
+	display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.content3 .cardContiner .card{
+	position: relative;
+	margin: 40px 20px;
+	width: 170px;
+	height: 170px;
+	background: linear-gradient(180deg,#fff,#f0f0f0);
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    border: 1px solid hsla(0,0%,100%,.3);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: all .2s ease;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.content3 .cardContiner .card img{
+	max-height: 80px;
 }
