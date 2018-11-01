@@ -415,3 +415,12 @@ h1{
 .content3 .cardContiner .card img{
 	max-height: 80px;
 }
+
+/**/
+.section-wrap .section4 .title4{
+	line-height: 80px;
+	text-align: center;
+	color: #fff;
+	text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+	margin-top: 50px;
+}
