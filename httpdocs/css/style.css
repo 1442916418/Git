@@ -62,7 +62,12 @@ html,body {
 }
 
 .section-wrap .section-4 {
-	background-color: #f0ad4e
+	background: #283048;
+    background: linear-gradient(270deg,#283048,#859398);
+}
+.currenPage{
+	opacity: 1;
+    transform: translateY(0) translateZ(0);
 }
 
 .section-wrap .section-5 {
