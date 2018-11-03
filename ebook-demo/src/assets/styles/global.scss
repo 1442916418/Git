@@ -29,6 +29,12 @@ $fontSize: 37.5;
 .slide-up-enter-active, .slide-up-leave-active{
     transition: all 0.3s linear;
 }
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+.fade-enter-to, .fade-leave {
+    opacity: 1;
+}
 .slide-up-enter, .slide-up-leave-to{
-    transform: translate3d(0, 100%, 0)
+    transform: translate3d(0, px2rem(108), 0)
 }
