@@ -159,18 +159,6 @@ export default {
                 this.$refs.MenuBar.hideSetting()
             }
         },
-        // prevPage() {
-        //     // 调用 Rendition.prev
-        //     if (this.rendition) {
-        //         this.rendition.prev()
-        //     }
-        // },
-        // nextPage() {
-        //     // 调用 Rendition.next
-        //     if (this.rendition) {
-        //         this.rendition.next()
-        //     }
-        // },
         // 电子书的解析和渲染
         showEpub () {
             // 生成Book对象
