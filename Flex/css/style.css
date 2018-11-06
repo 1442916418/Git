@@ -1,0 +1,187 @@
+body{
+    display: flex;
+    /*默认值，主轴为水平方向:起点在左端*/
+    flex-direction: row;
+}
+.box {
+    width: 6.25rem /* 100/16 */;
+    height: 6.25rem /* 120/16 */;
+    background: black;
+    margin: 20px;
+    display: flex;
+}
+.item{
+    width: 1.25rem /* 20/16 */;
+    height: 1.25rem /* 20/16 */;
+    background: white;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+/*ont.html*/
+.box1{
+    display: flex;
+}
+.box2{
+    display: flex;
+    /*主轴的对齐方式:居中*/
+    justify-content: center;
+}
+.box3{
+    display: flex;
+    /*主轴的对齐方式:右对齐*/
+    justify-content: flex-end;
+}
+.box4{
+    display: flex;
+    /*交叉轴上如何对齐:交叉轴的中点对齐*/
+    align-items: center;
+}
+.box5{
+    display: flex;
+    /*主轴的对齐方式:居中对齐*/
+    justify-content: center;
+    /*交叉轴上如何对齐:交叉轴的中点对齐*/
+    align-items: center;
+}
+.box6{
+    display: flex;
+    /*主轴的对齐方式:居中对齐*/
+    justify-content: center;
+    /*交叉轴上如何对齐:交叉轴的终点对齐*/
+    align-items: flex-end;
+}
+.box7{
+    display: flex;
+    /*主轴的对齐方式:右对齐*/
+    justify-content: flex-end;
+    /*交叉轴上如何对齐:交叉轴的终点对齐*/
+    align-items: flex-end;
+}
+
+/*double.html*/
+.double1{
+    display: flex;
+    /*主轴的对齐方式:两端对齐，项目之间的间隔都相等*/
+    justify-content: space-between;
+}
+.double2{
+    display: flex;
+    /*主轴的方向(排列方向):主轴为水平方向，起点在左端*/
+    flex-direction: column;
+    /*主轴的对齐方式:两端对齐，项目之间的间隔都相等*/
+    justify-content: space-between;
+}
+.double3{
+    display: flex;
+    /*主轴的方向(排列方向):主轴为水平方向，起点在左端*/
+    flex-direction: column;
+    /*主轴的对齐方式:两端对齐，项目之间的间隔都相等*/
+    justify-content: space-between;
+     /*交叉轴上如何对齐:交叉轴的终点对齐*/
+    align-items: center;
+}
+.double4{
+    display: flex;
+    /*主轴的方向(排列方向):主轴为水平方向，起点在左端*/
+    flex-direction: column;
+    /*主轴的对齐方式:两端对齐，项目之间的间隔都相等*/
+    justify-content: space-between;
+    /*交叉轴上如何对齐:交叉轴的终点对齐*/
+    align-items: flex-end;
+}
+.double5{
+    display: flex;
+}
+.double5 .item:nth-child(2){
+    /*flex子项单独在左侧轴(纵轴)方向是的对齐方式:元素位于容器的中心*/
+    align-self: center;
+}
+.double6{
+    display: flex;
+    /*主轴的对齐方式:两端对齐，项目之间的间隔都相等*/
+    justify-content: space-between;
+}
+.double6 .item:nth-child(2){
+    /*flex子项单独在左侧轴(纵轴)方向是的对齐方式:元素位于容器的结尾*/
+    align-self: flex-end;
+}
+
+/*three.html*/
+.three3{
+    display: flex;
+}
+.three3 .item:nth-child(2){
+    /*flex子项单独在左侧轴(纵轴)方向是的对齐方式:元素位于容器的中心*/
+    align-self: center;
+}
+.three3 .item:nth-child(3){
+    /*flex子项单独在左侧轴(纵轴)方向是的对齐方式:元素位于容器的结尾*/
+    align-self: flex-end;
+}
+
+.four1{
+    display: flex;
+    /*如果一条轴线排不下，如何换行:换行，第一行在上方*/
+    flex-wrap: wrap;
+    /*主轴上的对齐方式:右对齐*/
+    justify-content: flex-end;
+    /*多根轴线的对齐方式(如果只有一根轴线，该属性不起作用):与交叉轴两端对齐，轴线之间的间隔平均分布*/
+    align-content: space-between;
+}
+.four2{
+    display: flex;
+    /*如果一条轴线排不下，如何换行:换行，第一行在上方*/
+    flex-wrap: wrap;
+    /*多根轴线的对齐方式(如果只有一根轴线，该属性不起作用):与交叉轴两端对齐，轴线之间的间隔平均分布*/
+    align-content: space-between;
+}
+.four2 .column{
+    /*用于设置或检索弹性盒伸缩基准值*/
+    flex-basis: 100%;
+    display: flex;
+    /*主轴的对齐方式:两端对齐，项目之间的间隔都相等*/
+    justify-content: space-between;
+}
+
+/*six.html*/
+.six1{
+    display: flex;
+    /*如果一条轴线排不下，如何换行:换行，第一行在上方*/
+    flex-wrap: wrap;
+    /*多根轴线的对齐方式(如果只有一根轴线，该属性不起作用):与交叉轴两端对齐，轴线之间的间隔平均分布*/
+    align-content: space-between;
+}
+.six2{
+    display: flex;
+    /*主轴的方向(排列方向):主轴为垂直方向，起点在上沿*/
+    flex-direction: column;
+    /*如果一条轴线排不下，如何换行:换行，第一行在上方*/
+    flex-wrap: wrap;
+    /*多根轴线的对齐方式(如果只有一根轴线，该属性不起作用):与交叉轴两端对齐，轴线之间的间隔平均分布*/
+    align-content: space-between;
+}
+.six3{
+    display: flex;
+    /*如果一条轴线排不下，如何换行:换行，第一行在上方*/
+    flex-wrap: wrap;
+}
+.six3  .row{
+    /*用于设置或检索弹性盒伸缩基准值*/
+    flex-basis: 100%;
+    display: flex;
+}
+.six3 .row:nth-child(2){
+    /*主轴的对齐方式:居中*/
+    justify-content: center;
+}
+.six3 .row:nth-child(3){
+    /*主轴的对齐方式:两端对齐，项目之间的间隔都相等*/
+    justify-content: space-between;
+}
+
+.nine1{
+    display: flex;
+    /*如果一条轴线排不下，如何换行:换行，第一行在上方*/
+    flex-wrap: wrap;
+}
