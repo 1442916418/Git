@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js 条件判断</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.bootcss.com/vue/2.4.0/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-if="type == 'iphone'">iPhone</p>
+        <p v-else-if="type == 'huawei'">华为</p>
+        <p v-else-if="type == 'xiaomi'">小米</p>
+        <p v-else>没有相关数据</p>
+
+        <!--如果需要对一组元素进行判断，我们需要使用 <template> 元素，如下:-->
+        <template v-if="show">
+            <P>我是谁？</P>
+            <P>我在哪？</P>
+            <p>我需要干什么？</p>
+        </template>
+
+        <!--控制元素的显示与否，我们还可以使用 v-show 指令:-->
+        <p v-show="show">看我显示不显示</p>
+    </div>
+
+    <script>
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            type: 'huawei',
+            show: true
+        }
+    })
+    </script>
+</body>
+</html>

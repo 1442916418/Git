@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js 计算属性</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.bootcss.com/vue/2.4.0/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--如果在模板中使用一些复杂的表达式，会让模板显得过于繁重，且后期难以维护。对此，vue.js 提供了计算属性（computed），你可以把这些复杂的表达式写到里面。-->
+        <h2>
+            a={{ a }}, b={{ b }}
+        </h2>
+        <!--当数据源未发生变动时，获取的值将一直是缓存值。s-->
+        <h2>
+            c={{ c }}, d={{ d }}
+        </h2>
+
+        <!--下述实例中，在给message重新赋值时，vue.js会执行set方法，从而改变message的值，如果不使用set方法，message值为“my first lesson”。-->
+        <h2>{{ message }}</h2>
+
+    </div>
+
+    <script>
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            a: 1,
+            c: 1,
+            title: '计算属性 Getter 和 Setter 方法'
+        },
+        computed: {
+            b: function () {
+                return this.a + 1
+            },
+            d: function () {
+                return this.c + 1
+            },
+            message: {
+                // getter
+                get: function () {
+                    return this.title
+                },
+                // setter
+                set: function () {
+                    return this.title = newValue
+                }
+            }
+        },
+    })
+    vue.d = 8
+    vue.message = 'Setter 方法'
+    </script>
+</body>
+</html>

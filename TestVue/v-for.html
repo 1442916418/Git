@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js 列表渲染</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.bootcss.com/vue/2.4.0/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--标准的 v-for 使用格式，object是你要遍历的对象，value是遍历出来的值。-->
+        <ul>
+            <li v-for="value in object">{{ value }}</li>
+        </ul>
+
+        <!--value为对象的值，key为键，index为索引。-->
+        <ul>
+            <li v-for="(value, key, index) in object" :key="index">
+                这是第 {{ index+1 }} 个字母: {{ value }}，键为 {{ key }}
+            </li>
+        </ul>
+
+        <!--在遍历数组时，你也可以使用 of 代替 in，结果是一样的。-->
+        <ul>
+            <li v-for="(value, index) in items" :key="index">
+                这是第 {{ index+1 }} 个字母: {{ value.letter }}
+            </li>
+        </ul>
+
+        <template v-for="item in itemss">
+            <div>
+                <h2>{{item.title}}</h2>
+                <p>{{item.content}}</p>
+            </div>
+        </template>
+    </div>
+
+    <script>
+    var vue = new Vue({
+        el:　'#app',
+        data: {
+            object: {
+                first: 'A',
+                second: 'B',
+                third: 'C' 
+            },
+            items: [
+                {letter: 'A'},
+                {letter: 'B'},
+                {letter: 'C'}
+            ],
+            itemss: [
+                {title: 'Vue.js', content: '学习vue.js，我们需要掌握...'},
+                {title: 'HTML', content: 'HTML教程，要掌握...'}
+            ]
+        }
+    })
+    </script>
+</body>
+</html>

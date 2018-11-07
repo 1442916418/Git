@@ -1,0 +1,9 @@
+.current{
+    text-decoration: underline;
+}
+.is_nav{
+    background-color: red;
+}
+.color{
+    color: greenyellow;
+}

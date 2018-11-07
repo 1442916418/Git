@@ -1,0 +1,75 @@
+计算属性:
+计算属性与methods的区别
+计算属性能实现的功能，使用方法（methods）也能实现，但两者还是有本质的不同，区别如下：
+计算属性获取的是缓存值，而methods是直接调用函数进行计算所得。
+计算属性中的函数在dom加载后马上执行，并将结果显示在页面上。methods中的函数需要一定的触发条件，否则不会执行。
+
+计算属性 Getter 和 Setter 方法
+vue.js 计算属性有两个方法，分别为 getter 和 setter，当没有指明方法时，默认使用 getter。
+
+
+
+观察者(Watch):
+watch 属性用于监视 vue 实例上的数据变动，并相应的改变其他变量的值。
+Watch deep 选项
+类型是对象的变量，当键值发生变化时，为了监听到数据变化，需要设置deep选项为true
+
+计算属性
+计算属性的特点是从缓存里面获取值，对于一些依赖于被绑定的状态值变化来更新数据的变量，我们可以把它放到计算属性中。
+
+Vue.js 样式绑定:
+数组
+数组进行style绑定，有以下几种方法可选择。
+第一种方法是直接在元素中操作，如下：
+<h2 v-bind:style="[{color:'red'}, {fontSize: '14px'}]">明灯小站</h2>
+第二种方法是使用data属性进行赋值，推荐使用此种，如下：
+<div id="app">
+    <h2 v-bind:style="arrStyle">明灯小站</h2>
+</div>
+
+<script>
+new Vue({
+    el: '#app',
+    data: {
+        arrStyle: [
+            {color:'red'}, 
+            {fontSize: '14px'}
+        ]        
+    }
+})
+</script>
+第三种方法是以对象数组的形式绑定，如下：
+<div id="app">
+    <h2 v-bind:style="[colorObj, fontObj]">明灯小站</h2>
+</div>
+
+<script>
+new Vue({
+    el: '#app',
+    data: {
+        colorObj:{color: 'red'},
+        fontObj: {fontSize: '14px'}
+    }
+})
+</script>
+
+vue.js 条件判断:
+在视图中，控制元素的显示与否是常用的需求，vue.js 有多个指令来实现条件的判断。
+注意：v-if 可单独使用，v-else 和 v-else-if 前面必须有 v-if 指令。
+在 <template> 中使用 v-else 和 v-else-if 的方法跟普通元素的一样
+控制元素的显示与否，我们还可以使用 v-show 指令
+实现的功能类似，但是两者还是有本质的区别的，下面表格列出的是 v-show 和v-if 这两个指令的主要不同点。
+                  v-if                          v-show 
+渲染时间        第一次为真时                    刚开始就渲染 
+切换形式        动态生成，局部编译/卸载         控制display属性
+生成消耗        较小（只生成为真的部分）        较大（生成全部） 
+切换消耗        较大（切换时需要局部编译）      较小（因为生成时已经渲染完成）
+
+v-on 指令用于监听 dom 事件，对应的处理方法在 methods 属性中执行。
+用法
+<!-- 完整语法 -->
+<button v-on:click="showme"></button>
+
+<!-- 缩写 -->
+<button @click="showme"></button>
+vue.js 提供了 v-on 指令的简写形式 @，上述代码中，当点击 <button> 按钮时，将执行 methods 属性中的 showme 方法。 

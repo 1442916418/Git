@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js 样式绑定</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.bootcss.com/vue/2.4.0/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--使用 【v-bind】 指令进行样式绑定。-->
+        <span class="side" v-bind:class="{current:isCurrent}">当前导航</span><br />
+
+        <!--当表达式的返回结果为对象时，我们可以使用下面的方法进行样式绑定。-->
+        <span class="side" v-bind:class="objClass">对象</span><br />
+
+        <!--计算属性的特点是从缓存里面获取值，对于一些依赖于被绑定的状态值变化来更新数据的变量，我们可以把它放到计算属性中。-->
+        <span class="side" v-bind:class="conClass">计算属性</span><br />
+
+        <!--表达式返回数组，可以使用中括号 [] 进行绑定。-->
+        <span class="side" v-bind:class="[currentClass,colorClass]">返回的是数组</span><br />
+
+        <!--数组里面也可以使用对象来更新class列表-->
+        <span class="side" v-bind:class="[{current: isCurrent1},colorClass]">对象来更新</span><br />
+
+        <!--使用对象绑定style，推荐使用在data中赋值，如下:-->
+        <h2 v-bind:style="styleObj">对象赋值</h2>
+        <h2 v-bind:style="{color: 'red', fontSize: '14px'}">效果同上</h2><br />
+
+        <!--上述可以使用计算属性来进行绑定:-->
+        <h2 v-bind:style="comObj">对象绑定style可以用计算属性进行绑定</h2>
+    </div>
+
+    <script>
+    var vue = new Vue({
+        el: '#app',
+        data () {
+            return {
+                isCurrent: true,
+                objClass: {
+                    'current': true,
+                    'is_nav' : false,
+                    'color'  : true
+                },
+                isColor: false,
+                currentClass: 'current',
+                colorClass: 'color',
+                isCurrent1: false,
+                styleObj: {
+                    color: 'red',
+                    fontSize: '16px'
+                }
+            }
+        },
+        computed: {
+            conClass: function () {
+                return {
+                    'color' : this.isColor
+                }
+            },
+            comObj: function () {
+                return {
+                    color: this.color,
+                    fontSize: this.fontSize
+                }
+            }
+        }
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js 模板语法</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.bootcss.com/vue/2.4.0/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-once>{{ message }}</p>
+        <h2 v-html="message1"></h2>
+        <h2 v-bind:class="value">
+            在页面上动态的渲染html是一件很危险的事情，因为它很容易导致 XSS 攻击 (跨站脚本攻击)。
+            属性 要给 HTML 元素绑定属性，不能直接使用文本插值，vue 有特定的指令 【v-bind】进行属性的绑定。
+        </h2>
+        <h2 v-bind:id="vid" :class="vclass" :title="vtitle">vue 多属性绑定</h2>
+        <h2>{{ name.toLowerCase() }}</h2>
+        <h2>{{ name1 | myfilter }}</h2>
+        <h2>{{ name2 | touppercase1 | myfilter1 }}</h2>
+    </div>
+
+    <script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello World!',
+            message1: '<font color="red">这是标题</font>',
+            value: 'content',
+            vid: 'myid',
+            vclass: 'myclass',
+            vtitle: 'vue 多属性绑定',
+            name: '输出时把大写的 MYAPP 转换成了小写的 myapp',
+            name1: '对于一些要经过复杂计算才显示的插值，简单的表达式可能无法满足，这时可以使用vue的过滤器进行处理',
+            name2: '多个过滤器可以串联使用，下面实例是在一个插值中使用了两个过滤器tow先将插值转换成大写，然后再反转输出。'
+        },
+        filters: {
+            myfilter(value) {
+                return value.split('').reverse('').join('');
+            },
+            myfilter1(value) {
+                return value.split('').reverse('').join('');
+            },
+            touppercase1(value) {
+                return value.toUpperCase();
+            }
+        }
+    })
+    //app.message = '使用 v-once 指令，表示只执行一次插值，后面如果数据有改变，插值将不会更新。'
+    </script>
+</body>
+</html>

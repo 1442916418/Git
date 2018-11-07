@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js 观察者(watch)</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.bootcss.com/vue/2.4.0/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--
+            下述代码中，监视了firstName和lastName这两个变量，当用户输入新的数据改变其值时，
+            watch就会执行对应的函数，返回处理后的值并赋值给fullName变量。
+            注释：curVal 表示当前数据，oldVal 表示前一步数据（或默认数据），可参考实例2的代码。
+        -->
+        <input type="text" v-model="firstName"/>
+        <Input type="text" v-model="lastName">
+        <P>名字是: {{ fullName }}</P>
+
+        <!--
+            下述代码中，result 结果为当前输入数据和前一步数据之和。另外，oldVal 参数可缺省。
+            注意：当监视的数据是一个数组或者对象时，curVal 和 oldVal 是相等的，因为这两个形参指向的是同一个数据对象。
+        -->
+        <h2>
+            <input type="text" v-model="number"/>
+            <p>result: {{ result }}</p>
+        </h2>
+
+        <!--
+            类型是对象的变量，当键值发生变化时，为了监听到数据变化，需要设置deep选项为true
+        -->
+        <h2>
+            <input type="text" v-model="frulits.count"/>
+            <input type="text" v-model="frulits.name"/>
+            <P>frulits: {{ message }}</P>
+        </h2>
+    </div>
+
+    <script>
+    var vue = new Vue({
+        el: '#app',
+        data () {
+            return {
+                firstName: '中国',
+                lastName: '我的国',
+                fullName: '中国 我的国',
+                number: 1,
+                result: 1,
+                frulits: {
+                    name: '香蕉',
+                    count: 5
+                },
+                message: '5根香蕉'
+            }
+        },
+        watch: {
+            firstName: function (curVal, oldVal) {
+                this.fullName = curVal + ' ' +　this.lastName;
+            },
+            lastName: function (curVal, oldVal) {
+                this.fullName = this.firstName + ' ' + curVal;
+            },
+            number: function (curVal, oldVal) {
+                this.result =  curVal*1 + oldVal*1;
+            },
+            frulits: {
+                handler(obj){
+                    this.message = obj.count + '根' + obj.name;
+                },
+                deep: true
+            }
+        }
+    })
+    </script>
+</body>
+</html>
