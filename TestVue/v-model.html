@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js v-model指令</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.bootcss.com/vue/2.4.0/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--文本输入-->
+        <P>单行文本</P>
+        <input v-model="message1" placeholder="单行文本">
+        <p>当前输入: {{ message1 }}</p>
+
+        <P>多行文本</P>
+        <textarea v-model="message2" placeholder="多行文本"></textarea>
+        <p>当前输入: {{ message2 }}</p>
+
+        <!--复选框-->
+        <p>单个复选框:</p>
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">{{checked}}</label>
+
+        <p>多个复选框</p>
+        <input type="checkbox" id="iphone" value="iphone" v-model="checkedNames">
+        <label for="iphone">iPhone</label>
+        <input type="checkbox" id="iphone" value="xiaomi" v-model="checkedNames">
+        <label for="xiaomi">小米</label>
+        <input type="checkbox" id="iphone" value="huawei" v-model="checkedNames">
+        <label for="huawei">华为</label><br />
+        <span>选择的值:{{checkedNames}}</span><br>
+
+        <!--单选按钮-->
+        <input type="radio" id="mingtern" value="mingtern" v-model="choosed">
+        <label for="mingtern">mingtern</label><br>
+        <Input type="radio" id="biadu" value="baidu" v-model="choosed">
+        <label for="baidu">biadu</label><br>
+        <span>选中的值: {{ choosed}}</span><br>
+
+        <!--select 列表-->
+        <p>单选列表：</p>
+        <select v-model="single">
+            <option disabled value="">请选择</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <span>选择的值是: {{ single }}</span>
+        
+        <p>多选列表：</p>
+        <select v-model="multiple" style="width:50px" multiple>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <span>选择的值是: {{ multiple }}</span>    
+        
+        <p>动态列表：</p>
+        <select v-model="dynamic">
+            <option disabled value="">请选择</option>
+            <option v-for="item in items" v-bind:value="item.value">
+            {{ item.text }}
+            </option>
+        </select>
+        <span>选择的值是: {{ dynamic }}</span>    
+
+    </div>
+
+    <script>
+    var vue = new Vue({
+        el: '#app',
+        data:{
+            message1: '',
+            message2: '',
+            checked: false,
+            checkedNames: [],
+            choosed: 'mingtern',
+            single : '',
+            multiple: '',
+            dynamic: '',
+            items: [
+                {text: 'first', value: 'A' },
+                {text: 'second', value: 'B' },
+                {text: 'third', value: 'C' }
+            ]
+
+        }
+    })
+    </script>
+</body>
+</html>
