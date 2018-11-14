@@ -1,35 +1,108 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Maintenance</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" >
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="css/uxcore.css" rel="stylesheet">
-<link href="css/customer-comp.css" rel="stylesheet">
+  <head>
+  <title>余水生</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" >
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+  <meta name="renderer" content="webkit">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://cdn.bootcss.com/vue/2.4.0/vue.min.js"></script>
 
-<script type='text/javascript'>
-var fqdn = "SG2NWVPWEB040.shr.prod.sin2.secureserver.net";
-redirectToLogin = function() {
-	window.location.href = "https://" + fqdn + ":8443";
-}
-</script>	
-</head>
+  </head>
+  <body>
+    <section class="section-wrap" id="app">
+      <!--页面一-->
+      <div class="section section-1">
+        <div class="header-head">
+          <div class="header-a">
+              <div class="logo">
+                <a class="logo-g" href="https://github.com/1442916418" target="_blank"></a>
+              </div>
+              <div class="translate"></div>
+          </div>
+        </div>
+        <div class="default">
+          <div class="content">
+            <div class="photo"></div>
+            <div class="phrase">穷在闹市无人问，富在深山有远亲</div>
+            <div class="introduce">
+              <template v-for="pageOne in detailsOne">
+                  <P>{{ pageOne.name }}</P>
+                  <P>{{ pageOne.trainee }}</P>
+                  <P>{{ pageOne.email }}</P>
+              </template>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<body>
-<div id="error-img"><img src="images/404_background.jpg"></div>
-<div class="container text-center" id="error">
-  
+      <!--页面二-->
+      <div class="section section-2">
+        <div class="contentTwo">
+          <div class="contentTwo-t" v-for="pageTwo in detailsTwo">
+              <div class="header">{{ pageTwo.introduce }}</div>
+              <div class="selfIntroduction">
+                <p>{{ pageTwo.selfIntroduction }}</p>
+              </div>
+              <div class="selfIntroductions">
+                <div class="infoRow">
+                  <div class="infoItem">
+                    <img src="images/birthday.png" alt="生日" title="生日">
+                    {{ pageTwo.birthday }}
+                  </div>
+                  <div class="infoItem">
+                    <img src="images/Education.png" alt="教育经历" title="教育经历">
+                    {{ pageTwo.education }}
+                  </div>
+                  <div class="infoItem">
+                    <Img src="images/address.png" alt="居住地" title="居住地">
+                    {{ pageTwo.address }}
+                  </div>
+                </div>
+                <div class="infoRow">
+                  <div class="infoItem">
+                    <img src="images/Email.png" alt="邮箱" title="邮箱">
+                    {{ pageTwo.emailtwo }}
+                  </div>
+                  <div class="infoItem">
+                    <img src="images/phone.png" alt="移动电话" title="移动电话">
+                    {{ pageTwo.phone }}
+                  </div>
+                  <div class="infoItem">
+                    <img src="images/company.png" alt="公司地址" title="公司地址">
+                    {{pageTwo.company }}
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <div class="main-icon text-success"><span class="uxicon uxicon-clock-refresh"></span></div>
-      <h1>Future home of something quite cool.</h1>
-      <p class="lead">If you're the <strong>site owner</strong>, <a href="#" onclick='redirectToLogin();'>log in</a> to launch this site</p>
-      <p class="lead">If you are a <strong>visitor</strong>, check back soon.</p>
-    </div>
-  </div>
+      <div class="section section-3">
+        
+      </div>
 
-</div>
+      <div class="section section-4">
+        
+      </div>
 
-</body>
+      <div class="section section-5">
+        
+      </div>
+    </section>
+    
+    <ul class="section-btn">
+      <li class="on"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <div class="arrow">&laquo;</div>
+
+    <script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/MouseScrolling .js"></script>
+    <script src="js/vue.js"></script>
+
+  </body>
 </html>

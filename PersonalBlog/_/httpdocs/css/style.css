@@ -1,0 +1,200 @@
+body{color:#222;-webkit-text-size-adjust:none;}
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl, dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td,iframe{margin:0; padding:0;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+body,button,input,select,textarea {font-family:Tahoma,Arial,Roboto,”Droid Sans”,”Helvetica Neue”,”Droid Sans Fallback”,”Heiti SC”,sans-self;font-size:62.5%; line-height:1.5;}
+ol,ul{list-style:none;}
+
+html,body{ width:100%; height:100%; overflow:hidden;}
+.section-wrap{ width:100%;height:100%;overflow:visible;transition:-webkit-transform 1s cubic-bezier(0.86,0,0.03,1);transition:transform 1s cubic-bezier(0.86,0,0.03,1);transition:transform 1s cubic-bezier(0.86,0,0.03,1), -webkit-transform 1s cubic-bezier(0.86,0,0.03,1);-webkit-transition:-webkit-transform 1s cubic-bezier(0.86,0,0.03,1);}
+.section-wrap .section{ position:relative; width:100%; height:100%; background-position:center center; background-repeat:no-repeat;}
+.section-wrap .section-1{ background-color: rgba(76, 180, 231, 0.6)}
+.section-wrap .section-2{ background-color: rgba(255, 192, 159, 0.7)}
+.section-wrap .section-3{ background-color: rgba(255, 238, 147, 0.7)}
+.section-wrap .section-4{ background-color: rgba(226, 219, 190, 0.7)}
+.section-wrap .section-5{ background-color: rgba(163, 163, 128, 0.7)}
+.put-section-0{ transform:translateY(0);-webkit-transform:translateY(0);}
+.put-section-1{ transform:translateY(-100%);-webkit-transform:translateY(-100%);}
+.put-section-2{ transform:translateY(-200%);-webkit-transform:translateY(-200%);}
+.put-section-3{ transform:translateY(-300%);-webkit-transform:translateY(-300%);}
+.put-section-4{ transform:translateY(-400%);-webkit-transform:translateY(-400%);}
+.section-btn{ width:14px;position:fixed;right:4%;top:50%;}
+.section-btn li{ width:14px;height:14px;cursor:pointer;text-indent:-9999px;border-radius:50%;-webkit-border-radius:50%;margin-bottom:12px; background: rgba(207, 207, 207, 0.5);text-align:center; color:#fff; onsor:pointer;}
+.section-btn li.on{ background:#fff}
+.arrow{ opacity:1;animation:arrow 3s cubic-bezier(0.5,0,0.1,1) infinite;-webkit-animation:arrow 3s cubic-bezier(0.5,0,0.1,1) infinite;transform:rotate(-90deg);-webkit-transform:rotate(-90deg); position:absolute;bottom:10px;left:50%;margin-left:-30px;width:60px;height:60px;border-radius:100%;-webkit-border-radius:100%;line-height:60px;text-align:center;font-size:20px;color:#fff;border:1px solid #fff;cursor:pointer;overflow:hidden;}
+.arrow:hover{ animation-play-state:paused;-webkit-animation-play-state:paused;}
+
+/*页面一*/
+.section-wrap .section-1 .header-head{
+    width: 100%;
+    height: 60px;
+    background: rgba(255, 255, 255, 0);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.header-head .header-a{
+    width: 1800px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-head .header-a .logo{
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.header-head .header-a .logo .logo-g{
+    width: 40px;
+    height: 40px;
+    background-image: url('../images/github.jpg');
+    border-radius: 50%;
+    background-size: contain;
+}
+.header-head .header-a .translate{
+    width: 60px;
+    height: 60px;
+}
+.section-wrap .default{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0);
+}
+.default .content{
+    width: 1800px;
+    height: 500px;
+    margin-top: 140px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0);
+    position: relative;
+}
+.default .content .photo{
+    width: 150px;
+    height: 150px;
+    background-image: url('../images/logo.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.default .content .photo:hover{
+    box-shadow: 0 0 10px 3px rgba(0, 191, 255, 0.7);
+    transition: box-shadow 1.5s;
+}
+.default .content .phrase{
+    width: 100%;
+    height: 60px;
+    font-size: 22px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+}
+.default .content .phrase::after{
+    content: "";
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.default .content .introduce{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.default .content .introduce p{
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.default .content .introduce p:first-child{
+    margin-top: 40px;
+}
+
+/*页面二*/
+.section-wrap .section-2 .contentTwo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0);
+}
+.contentTwo .contentTwo-t{
+    width: 1800px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background: rgba(255, 255, 255, 0);
+}
+.contentTwo .contentTwo-t .header{
+    width: 70%;
+    height: 60px;
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contentTwo .contentTwo-t .selfIntroduction{
+    width: 70%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #fff;
+    margin-top: 40px;
+    border-radius: 4px;
+}
+.contentTwo .contentTwo-t .selfIntroduction p{
+    font-size: 14px;
+    color: #444;
+}
+.contentTwo .contentTwo-t .selfIntroductions {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #fff;
+    margin-top: 40px;
+    border-radius: 4px;
+}
+.contentTwo .contentTwo-t .selfIntroductions .infoRow{
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 40px;
+    background: rgba(255, 255, 255, 0.2);
+}
+.contentTwo .contentTwo-t .selfIntroductions .infoRow .infoItem{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
