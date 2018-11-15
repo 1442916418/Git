@@ -20,6 +20,11 @@ var vue = new Vue({
             phone:'+86 17354181586',
             company:'安徽·合肥'
         }
+      ],
+      datailsThree: [
+        {
+          skill:'技能'
+        }
       ]
     }
   })

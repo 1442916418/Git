@@ -78,8 +78,26 @@
         </div>
       </div>
 
+      <!--页面三-->
       <div class="section section-3">
-        
+        <div class="contentThree">
+          <div class="contentThree-t" v-for="(pageThree, index) in datailsThree" :key="index">
+            <h1>{{ pageThree.skill }}</h1>
+            <div class="threeBody">
+              <div class="infoList">
+                <div class="infoListItem"><img src="images/html.png"></div>
+                <div class="infoListItem"><img src="images/css.png"></div>
+                <div class="infoListItem" style="background: yellow;">
+                  <img src="images/js.png">
+                </div>
+                <div class="infoListItem" style="background: rgb(0, 29, 38);border: 5px solid rgb(0, 200, 255);">
+                  <img src="images/photoshop.png" class="ps">
+              </div>
+              </div>
+              <div class="infoList"></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="section section-4">

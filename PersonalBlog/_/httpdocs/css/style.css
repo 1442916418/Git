@@ -9,7 +9,7 @@ html,body{ width:100%; height:100%; overflow:hidden;}
 .section-wrap .section{ position:relative; width:100%; height:100%; background-position:center center; background-repeat:no-repeat;}
 .section-wrap .section-1{ background-color: rgba(76, 180, 231, 0.6)}
 .section-wrap .section-2{ background-color: rgba(255, 192, 159, 0.7)}
-.section-wrap .section-3{ background-color: rgba(255, 238, 147, 0.7)}
+.section-wrap .section-3{ background-color: rgba(255, 238, 147, 0.7); background: -webkit-gradient(linear,right top, left top,from(#ff9999),to(#FFF5C2)); background: linear-gradient(270deg,#ff9999,#FFF5C2)}
 .section-wrap .section-4{ background-color: rgba(226, 219, 190, 0.7)}
 .section-wrap .section-5{ background-color: rgba(163, 163, 128, 0.7)}
 .put-section-0{ transform:translateY(0);-webkit-transform:translateY(0);}
@@ -28,21 +28,37 @@ html,body{ width:100%; height:100%; overflow:hidden;}
     width: 100%;
     height: 60px;
     background: rgba(255, 255, 255, 0);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .header-head .header-a{
     width: 1800px;
     height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .header-head .header-a .logo{
     height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .header-head .header-a .logo .logo-g{
     width: 40px;
@@ -58,18 +74,29 @@ html,body{ width:100%; height:100%; overflow:hidden;}
 .section-wrap .default{
     width: 100%;
     height: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     background: rgba(255, 255, 255, 0);
 }
 .default .content{
     width: 1800px;
     height: 500px;
     margin-top: 140px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     background: rgba(255, 255, 255, 0);
     position: relative;
 }
@@ -83,17 +110,27 @@ html,body{ width:100%; height:100%; overflow:hidden;}
     margin: 0 auto;
 }
 .default .content .photo:hover{
-    box-shadow: 0 0 10px 3px rgba(0, 191, 255, 0.7);
+    -webkit-box-shadow: 0 0 10px 3px rgba(0, 191, 255, 0.7);
+            box-shadow: 0 0 10px 3px rgba(0, 191, 255, 0.7);
+    -webkit-transition: -webkit-box-shadow 1.5s;
+    transition: -webkit-box-shadow 1.5s;
     transition: box-shadow 1.5s;
+    transition: box-shadow 1.5s, -webkit-box-shadow 1.5s;
 }
 .default .content .phrase{
     width: 100%;
     height: 60px;
     font-size: 22px;
     color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-top: 20px;
     position: relative;
 }
@@ -109,19 +146,32 @@ html,body{ width:100%; height:100%; overflow:hidden;}
 .default .content .introduce{
     width: 100%;
     height: 150px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 .default .content .introduce p{
     width: 100%;
     height: 50px;
     font-size: 18px;
     color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .default .content .introduce p:first-child{
     margin-top: 40px;
@@ -131,18 +181,29 @@ html,body{ width:100%; height:100%; overflow:hidden;}
 .section-wrap .section-2 .contentTwo{
     width: 100%;
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     background: rgba(255, 255, 255, 0);
 }
 .contentTwo .contentTwo-t{
     width: 1800px;
     margin-top: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-content: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
     background: rgba(255, 255, 255, 0);
 }
 .contentTwo .contentTwo-t .header{
@@ -153,20 +214,35 @@ html,body{ width:100%; height:100%; overflow:hidden;}
     color: white;
     margin: 0;
     padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .contentTwo .contentTwo-t .selfIntroduction{
     width: 70%;
     height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     background: #fff;
     margin-top: 40px;
     border-radius: 4px;
+    -webkit-box-shadow: 0 5px 5px rgba(0,0,0,.1);
+            box-shadow: 0 5px 5px rgba(0,0,0,.1);
 }
 .contentTwo .contentTwo-t .selfIntroduction p{
     font-size: 14px;
@@ -174,27 +250,150 @@ html,body{ width:100%; height:100%; overflow:hidden;}
 }
 .contentTwo .contentTwo-t .selfIntroductions {
     width: 70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     background: #fff;
     margin-top: 40px;
     border-radius: 4px;
+    -webkit-box-shadow: 0 5px 5px rgba(0,0,0,.1);
+            box-shadow: 0 5px 5px rgba(0,0,0,.1);
 }
 .contentTwo .contentTwo-t .selfIntroductions .infoRow{
     width: 100%;
     height: 55px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     margin: 40px;
     background: rgba(255, 255, 255, 0.2);
 }
 .contentTwo .contentTwo-t .selfIntroductions .infoRow .infoItem{
     width: 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+/*页面三*/
+.section-wrap .section-3 .contentThree{
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+}
+.section-3 .contentThree .contentThree-t{
+    width: 1800px;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* background: rgba(255, 255, 255, 0.4); */
+}
+.contentThree .contentThree-t h1{
+    font-size: 42px;
+    margin: 40px 0;
+    height: 80px;
+    line-height: 80px;
+    color: white;
+    /* text-shadow: 0 0 6px rgba(0, 0, 0, 0.2); */
+}
+.contentThree .contentThree-t .threeBody{
+    width: 70%;
+    margin-top: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    /* background: rgba(0, 0, 0, 0.4); */
+}
+.contentThree .contentThree-t .threeBody .infoList{
+    width: 100%;
+    height: 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* background: rgba(0, 0, 0, 0.2); */
+}
+.contentThree .contentThree-t .threeBody .infoList .infoListItem{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: #fff;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.threeBody .infoList .infoListItem img{
+    width: 180px;
+    height: 120px;    
+}
+.threeBody .infoList .infoListItem .ps{
+    height: 90px;
+}
+.contentThree .contentThree-t .threeBody .infoList .infoListItem:hover{
+    -webkit-box-shadow: 0px 8px 25px -4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 8px 25px -4px rgba(0, 0, 0, 0.2);
 }
