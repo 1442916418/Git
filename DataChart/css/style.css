@@ -1,5 +1,254 @@
 body{
     font-family: 'Courier New', Courier, monospace;
     font-size: 14px;
+    margin: 0;
+    padding: 0;
     background-image: url('../images/bg.png');
 }
+.content{
+    width: 100%;
+    height: 100%;
+    display:  flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.content .header{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.content .header .h-left{
+    width: 400px;
+    height: 60px;
+    display:  flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.content .header .h-center{
+    width: 500px;
+    height: 60px;
+    display:  flex;
+    justify-content:  center;
+    align-items: center;
+}
+.content .header .h-right{
+    width: 400px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.content .header .h-left p{
+    font-size: 26px;
+    color: #44A2F9;
+    margin-left: 20px;
+    font-weight: 700;
+}
+.content .header .h-center p{
+    font-size: 26px;
+    color: white;
+    font-weight: 700;
+}
+.content .header .h-right .temperature{
+    width: 200px;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.content .header .h-right .humidity{
+    width: 200px;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 20px;
+}
+.content .header .h-right .temperature P,
+.content .header .h-right .humidity p{
+    color: #1296DB;
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+.content .header .time{
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content .header .time p{
+    width: 180px;
+    height: 25px;
+    font-size: 14px;
+    color: #677798;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .sectionItem{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.content .sectionItem .sectionLeft{
+    width: 25%;
+    height: 800px;
+    /* background: rgba(0, 0, 0, 0.1); */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-between;
+}
+.content .sectionItem .sectionCenter{
+    width: 45%;
+    height: 800px;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-between;
+}
+.content .sectionItem .sectionRight{
+    width: 25%;
+    height: 800px;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-between;
+}
+.content .sectionItem .sectionLeft .left{
+    width: 90%;
+    height: 250px;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+.content .sectionItem .sectionCenter .center{
+    width: 90%;
+    height: 280px;
+    background: rgba(0, 0, 0, 0.4);
+}
+.content .sectionItem .sectionCenter .center1{
+    width: 90%;
+    height: 170px;
+    background: rgba(0, 0, 0, 0.4);
+}
+.content .sectionItem .sectionRight .right1{
+    width: 90%;
+    height: 35%;
+    background: rgba(0, 0, 0, 0.4);
+}
+.content .sectionItem .sectionRight .right2{
+    width: 90%;
+    height: 60%;
+    background: rgba(0, 0, 0, 0.4);
+}
+.sectionItem .sectionLeft .left .leftHeader{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/*统一设置图表上方的标题*/
+.sectionItem .sectionLeft .left .leftHeader .title{
+    font-size: 16px;
+    font-weight: 600;
+    color: #3D82AE;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 5px;
+}
+.sectionItem .sectionLeft .left .leftHeader .englishTitle{
+    font-size: 14px;
+    color: #847e8b;
+    display:  flex;
+    align-items: center;
+    margin-left: 15px;
+}
+/*统一设置图表的四角*/
+.sectionItem .sectionLeft .left .fourAngles{
+    background: linear-gradient(to left, #3975A2, #3975A2) left top no-repeat, 
+                linear-gradient(to bottom, #3975A2, #3975A2) left top no-repeat, 
+                linear-gradient(to left, #3975A2, #3975A2) right top no-repeat,
+                linear-gradient(to bottom, #3975A2, #3975A2) right top no-repeat, 
+                linear-gradient(to left, #3975A2, #3975A2) left bottom no-repeat,
+                linear-gradient(to bottom, #3975A2, #3975A2) left bottom no-repeat,
+                linear-gradient(to left, #3975A2, #3975A2) right bottom no-repeat,
+                linear-gradient(to left, #3975A2, #3975A2) right bottom no-repeat;
+    background-size: 1px 5px, 5px 1px, 1px 5px, 5px 1px;  
+}
+/*统一设置图表的层叠边框*/
+.sectionItem .sectionLeft .left .leftBorder{
+    width: 100%;
+    height: 220px;
+    border: 1px solid #0D1D46;   
+    position: absolute;
+    top: 32px;
+    left: 6px;
+    z-index: 100;
+}
+
+/*图表*/
+.sectionItem .sectionLeft .left .data1{
+    width: 100%;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #0D1D46;
+    z-index: 999;
+    /* background: rgba(0, 0, 0, 0.2); */
+}
+.sectionItem .sectionLeft .left .data2{
+    width: 100%;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #0D1D46;
+    z-index: 999;
+    /* background: rgba(0, 0, 0, 0.2); */
+}
+.sectionItem .sectionLeft .left .data3{
+    width: 100%;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #0D1D46;
+    z-index: 999;
+    /* background: rgba(0, 0, 0, 0.2); */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    color: #a7a7a7;
+    font-size: 14px;
+}
+.sectionItem .sectionLeft .left .data3 p{
+    margin: 8px 0;
+}
+
+
+

@@ -9,6 +9,77 @@
     <script src="https://cdn.bootcss.com/echarts/4.2.0-rc.2/echarts-en.common.js"></script>
 </head>
 <body>
-    
+    <div class="content">
+        <div class="header">
+            <div class="h-left">
+                <p>logo图片</p>
+            </div>
+            <div class="h-center">
+                <p>某某工厂车间实况状况</p>
+            </div>
+            <div class="h-right">
+                <div class="temperature">
+                    <img src="images/温度计1.png">
+                    <p>车间温度:23℃</p>
+                </div>
+                <div class="humidity">
+                    <img src="images/水滴.png">
+                    <P>车间湿度:60%</P>
+                </div>
+            </div>
+            <div class="time">
+                <img src="images/time.png">
+                <p id="Clock"></p>
+            </div>
+        </div>
+
+        <div class="sectionItem">
+            <div class="sectionLeft">
+                <div class="left">
+                    <div class="leftHeader">
+                        <div class="title">设备运行状态</div>
+                        <div class="englishTitle">Equipment Running Status</div>
+                    </div>
+                    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+                    <div id="data1" class="data1 fourAngles"></div>
+                    <div class="leftBorder"></div>
+                </div>
+                <div class="left">
+                    <div class="leftHeader">
+                        <div class="title">人员绩效</div>
+                        <div class="englishTitle">Workers Performance</div>
+                    </div>
+                    <div id="data2" class="data2 fourAngles"></div>
+                    <div class="leftBorder"></div>
+                </div>
+                <div class="left">
+                    <div class="leftHeader">
+                        <div class="title">报警信息</div>
+                        <div class="englishTitle">Alarm Information</div>
+                    </div>
+                    <div id="data3" class="data3 fourAngles">
+                        <p>【H338-&gt:厂务冷却水入水温度[℃]】 34-&gt:14.13</p>
+                        <p>【H338-&gt:厂务冷却水入水温度[℃]】 34-&gt:14.13</p>
+                        <p>【H338-&gt:厂务冷却水入水温度[℃]】 34-&gt:14.13</p>
+                        <p>【H338-&gt:厂务冷却水入水温度[℃]】 34-&gt:14.13</p>
+                        <p>【H338-&gt:厂务冷却水入水温度[℃]】 34-&gt:14.13</p>
+                        <p>【H338-&gt:厂务冷却水入水温度[℃]】 34-&gt:14.13</p>
+                    </div>
+                    <div class="leftBorder"></div>
+                </div>
+            </div>
+            <div class="sectionCenter">
+                <div class="center1"></div>
+                <div class="center"></div>
+                <div class="center"></div>
+            </div>
+            <div class="sectionRight">
+                <div class="right1"></div>
+                <div class="right2"></div>  
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dataChart.js"></script>
 </body>
 </html>
