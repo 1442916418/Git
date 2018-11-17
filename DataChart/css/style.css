@@ -136,21 +136,25 @@ p{
 .content .sectionItem .sectionLeft .left{
     width: 90%;
     height: 250px;
-    background: rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     position: relative;
 }
 .content .sectionItem .sectionCenter .center{
-    width: 90%;
+    width: 100%;
     height: 280px;
-    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
 }
 .content .sectionItem .sectionCenter .center1{
-    width: 90%;
+    width: 100%;
     height: 170px;
-    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
 }
 .content .sectionItem .sectionRight .right1{
     width: 90%;
@@ -170,6 +174,7 @@ p{
 }
 
 /*统一设置图表上方的标题*/
+.sectionItem .sectionCenter .center .title,
 .sectionItem .sectionLeft .left .leftHeader .title{
     font-size: 16px;
     font-weight: 600;
@@ -179,6 +184,7 @@ p{
     align-items: center;
     margin-left: 5px;
 }
+.sectionItem .sectionCenter .center .englishTitle,
 .sectionItem .sectionLeft .left .leftHeader .englishTitle{
     font-size: 14px;
     color: #847e8b;
@@ -187,6 +193,8 @@ p{
     margin-left: 15px;
 }
 /*统一设置图表的四角*/
+.sectionItem .sectionCenter .center .lineChart1,
+.sectionItem .sectionCenter .center .lineChart2,
 .sectionItem .sectionLeft .left .fourAngles{
     background: linear-gradient(to left, #3975A2, #3975A2) left top no-repeat, 
                 linear-gradient(to bottom, #3975A2, #3975A2) left top no-repeat, 
@@ -209,7 +217,7 @@ p{
     z-index: 100;
 }
 
-/*图表*/
+/*左边图表*/
 .sectionItem .sectionLeft .left .data1{
     width: 100%;
     height: 220px;
@@ -250,5 +258,162 @@ p{
     margin: 8px 0;
 }
 
-
-
+/*中间图表*/
+.sectionCenter .center1 .node1{
+    width: 35%;
+    height: 170px;
+}
+.sectionCenter .center1 .node2{
+    width: 15%;
+    height: 170px;
+}
+.sectionCenter .center1 .node3{
+    width: 10%;
+    height: 170px;
+}
+.sectionCenter .center1 .node4{
+    width: 13.3%;
+    height: 170px;
+}
+.sectionCenter .center1 .node1 .nodeTop,
+.sectionCenter .center1 .node2 .nodeTop,
+.sectionCenter .center1 .node3 .nodeTop{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.sectionCenter .center1 .node1 .nodecontent,
+.sectionCenter .center1 .node2 .nodecontent,
+.sectionCenter .center1 .node3 .nodecontent{
+    width: 100%;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.sectionCenter .center1 .node1 .nodeTop p{
+    font-size: 24px;
+    color: #44A2F9;
+    font-weight: 700;
+    margin-left: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+.sectionCenter .center1 .node1 .nodecontent{
+    display: flex;
+    justify-content: space-around;
+}
+.sectionCenter .center1 .node1 .nodecontent p{
+    width: 35px;
+    height: 75px;
+    background: rgba(37, 54, 99, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sectionCenter .center1 .node1 .nodecontent p span{
+    font-size: 66px;
+    font-family: '黑体';
+    color: white;
+}
+.sectionCenter .center1 .node2 .nodecontent,
+.sectionCenter .center1 .node3 .nodecontent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sectionCenter .center1 .node2 .nodecontent .contentTitle,
+.sectionCenter .center1 .node3 .nodecontent .contentTitle{
+    width: 100%;
+    height: 35px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.sectionCenter .center1 .node2 .nodecontent .contentTitle p,
+.sectionCenter .center1 .node3 .nodecontent .contentTitle p{
+    color: #847e8b;
+    margin-left: 10px;
+    font-weight: 700;
+}
+.sectionCenter .center1 .node2 .nodecontent .contentNumber,
+.sectionCenter .center1 .node3 .nodecontent .contentNumber{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.sectionCenter .center1 .node2 .nodecontent .contentNumber p,
+.sectionCenter .center1 .node3 .nodecontent .contentNumber p{
+    color: #44A2F9;
+    margin-left: 5px;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: '黑体';
+    margin-left: 10px;
+}
+.sectionCenter .center1 .node3 .nodecontent .contentNumber p{
+    color: #C52952;
+}
+.sectionCenter .center1 .node4 .chartTitle{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sectionCenter .center1 .node4 .chartTitle p{
+    color: #847e8b;
+}
+.sectionCenter .center1 .node4 .chartTitle span{
+    font-size: 16px;
+}
+.sectionCenter .center1 .node4 .chartContent{
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sectionCenter .center1 .node4 .chartContent P{
+    color: white;
+    font-size: 22px;
+    font-family: '黑体';
+}
+.sectionCenter .center1 .node4 .chartContent #centerChart1{
+    width: 100%;
+    height: 140px;
+}
+.sectionCenter .center1 .node4 .chartContent #centerChart2{
+    width: 100%;
+    height: 140px;
+}
+.sectionCenter .center .lineChart1{
+    width: 100%;
+    height: 255px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #0D1D46;
+}
+.sectionCenter .center .centerBorder{
+    width: 100%;
+    height: 255px;
+    border: 1px solid #0D1D46;   
+    position: absolute;
+    top: 32px;
+    left: 6px;
+}
+.sectionCenter .center .lineChart2{
+    width: 100%;
+    height: 255px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #0D1D46;
+}
