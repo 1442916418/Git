@@ -1,0 +1,11 @@
+E:\Git\C#\datachart\bin\Debug\netcoreapp2.1\datachart.deps.json
+E:\Git\C#\datachart\bin\Debug\netcoreapp2.1\datachart.runtimeconfig.json
+E:\Git\C#\datachart\bin\Debug\netcoreapp2.1\datachart.runtimeconfig.dev.json
+E:\Git\C#\datachart\bin\Debug\netcoreapp2.1\datachart.dll
+E:\Git\C#\datachart\bin\Debug\netcoreapp2.1\datachart.pdb
+E:\Git\C#\datachart\obj\Debug\netcoreapp2.1\datachart.csprojAssemblyReference.cache
+E:\Git\C#\datachart\obj\Debug\netcoreapp2.1\datachart.csproj.CoreCompileInputs.cache
+E:\Git\C#\datachart\obj\Debug\netcoreapp2.1\datachart.AssemblyInfoInputs.cache
+E:\Git\C#\datachart\obj\Debug\netcoreapp2.1\datachart.AssemblyInfo.cs
+E:\Git\C#\datachart\obj\Debug\netcoreapp2.1\datachart.dll
+E:\Git\C#\datachart\obj\Debug\netcoreapp2.1\datachart.pdb
