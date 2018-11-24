@@ -1,11 +1,18 @@
 <template>
   <div id="app" class="page">
     <v-head></v-head>
+    <v-left></v-left>
+    <v-center></v-center>
+    <v-right></v-right>
   </div>
 </template>
 
 <script>
 import head from "./components/top";
+import left from './components/LeftTable';
+import center from './components/CenterTable';
+import right from './components/RightTable';
+
 export default {
   data () {
     return {
@@ -13,40 +20,14 @@ export default {
     }
   },
   components: {
-    'v-head': head
+    'v-head': head,
+    'v-left': left,
+    'v-center': center,
+    'v-right': right
   }
 }
 </script>
 
 <style>
-  html, body, div, span, applet, object, iframe,
-  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-  a, abbr, acronym, address, big, cite, code,
-  del, dfn, em, img, ins, kbd, q, s, samp,
-  small, strike, strong, sub, sup, tt, var,
-  b, u, i, center,
-  dl, dt, dd, ol, ul, li,
-  fieldset, form, label, legend,
-  table, caption, tbody, tfoot, thead, tr, th, td,
-  article, aside, canvas, details, embed, 
-  figure, figcaption, footer, header, hgroup, 
-  menu, nav, output, ruby, section, summary,
-  time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
-  body{
-    width: 1920px;
-    height: 1080px;
-    background: url('assets/bg.png');
-    display: flex;
-  }
-  .page{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-  }
-
+  @import 'styleApp.css';
 </style>

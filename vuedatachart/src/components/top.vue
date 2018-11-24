@@ -49,7 +49,7 @@
                 setInterval(this.nowTimes,1*1000);
             },
         },
-        created () {
+        mounted () {
             this.nowTimes();
         }
 
@@ -58,8 +58,8 @@
 
 <style>
 .head{
-    width: 100%;
-    height: 100%;
+    width: 1920px;
+    height: 90px;
     display:  -webkit-box;
     display:  -ms-flexbox;
     display:  flex;
@@ -74,7 +74,7 @@
             justify-content: center;
 }
 .head .header{
-    width: 100%;
+    width: 1920px;
     height: 90px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -182,7 +182,7 @@ p{
             align-items: center;
 }
 .head .header .time p{
-    width: 180px;
+    width: 200px;
     height: 25px;
     font-size: 14px;
     color: #677798;

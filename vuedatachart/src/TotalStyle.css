@@ -1,0 +1,585 @@
+.sectionItem{
+    width: 500px;
+    height: 950px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.sectionItemCenter{
+    width: 900px;
+    height: 950px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+.sectionItemRight{
+    width: 460px;
+    height: 950px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+.sectionItem .sectionLeft{
+    width: 500px;
+    height: 900px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
+}
+.sectionItemCenter .sectionCenter{
+    width: 980px;
+    height: 900px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
+}
+.sectionItemRight .sectionRight{
+    width: 460px;
+    height: 900px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
+}
+.sectionItem .sectionLeft .left{
+    width: 95%;
+    height: 250px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    position: relative;
+}
+.sectionItemCenter .sectionCenter .center{
+    width: 100%;
+    height: 280px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    position: relative;
+}
+.sectionItemCenter .sectionCenter .center1{
+    width: 100%;
+    height: 170px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.sectionItemRight .sectionRight .right1{
+    width: 95%;
+    height: 35%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    position: relative;
+    margin-top: 10px;
+}
+.sectionItemRight .sectionRight .right2{
+    width: 95%;
+    height: 60%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    position: relative;
+}
+.sectionLeft .left .leftHeader{
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+/*统一设置图表上方的标题*/
+.sectionItemRight .sectionRight .right1 .title,
+.sectionItemRight .sectionRight .right2 .title,
+.sectionItemCenter .sectionCenter .center .title,
+.sectionItem .sectionLeft .left .leftHeader .title{
+    font-size: 16px;
+    font-weight: 600;
+    color: #3D82AE;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 5px;
+}
+.sectionItemRight .sectionRight .right1 .englishTitle,
+.sectionItemRight .sectionRight .right2 .englishTitle,
+.sectionItemCenter .sectionCenter .center .englishTitle,
+.sectionItem .sectionLeft .left .leftHeader .englishTitle{
+    font-size: 14px;
+    color: #847e8b;
+    display:  -webkit-box;
+    display:  -ms-flexbox;
+    display:  flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 15px;
+}
+/*统一设置图表的四角*/
+.sectionItemRight .sectionRight .right1 .rightChart1,
+.sectionItemRight .sectionRight .right2 .rightChart2,
+.sectionItemCenter .sectionCenter .center .lineChart1,
+.sectionItemCenter .sectionCenter .center .lineChart2,
+.sectionItem .sectionLeft .left .fourAngles{
+    background: -webkit-gradient(linear, right top, left top, from(#3975A2), to(#3975A2)) left top no-repeat, 
+                -webkit-gradient(linear, left top, left bottom, from(#3975A2), to(#3975A2)) left top no-repeat, 
+                -webkit-gradient(linear, right top, left top, from(#3975A2), to(#3975A2)) right top no-repeat,
+                -webkit-gradient(linear, left top, left bottom, from(#3975A2), to(#3975A2)) right top no-repeat, 
+                -webkit-gradient(linear, right top, left top, from(#3975A2), to(#3975A2)) left bottom no-repeat,
+                -webkit-gradient(linear, left top, left bottom, from(#3975A2), to(#3975A2)) left bottom no-repeat,
+                -webkit-gradient(linear, right top, left top, from(#3975A2), to(#3975A2)) right bottom no-repeat,
+                -webkit-gradient(linear, right top, left top, from(#3975A2), to(#3975A2)) right bottom no-repeat;
+    background: linear-gradient(to left, #3975A2, #3975A2) left top no-repeat, 
+                linear-gradient(to bottom, #3975A2, #3975A2) left top no-repeat, 
+                linear-gradient(to left, #3975A2, #3975A2) right top no-repeat,
+                linear-gradient(to bottom, #3975A2, #3975A2) right top no-repeat, 
+                linear-gradient(to left, #3975A2, #3975A2) left bottom no-repeat,
+                linear-gradient(to bottom, #3975A2, #3975A2) left bottom no-repeat,
+                linear-gradient(to left, #3975A2, #3975A2) right bottom no-repeat,
+                linear-gradient(to left, #3975A2, #3975A2) right bottom no-repeat;
+    background-size: 1px 5px, 5px 1px, 1px 5px, 5px 1px;  
+}
+/*统一设置图表的层叠边框*/
+.sectionItem .sectionLeft .left .leftBorder{
+    width: 100%;
+    height: 220px;
+    border: 1px solid #0D1D46;   
+    position: absolute;
+    top: 32px;
+    left: 6px;
+    z-index: 100;
+}
+
+/*左边图表*/
+.sectionItem .sectionLeft .left .data1{
+    width: 100%;
+    height: 220px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 1px solid #0D1D46;
+    z-index: 999;
+    /* background: rgba(0, 0, 0, 0.2); */
+}
+.sectionItem .sectionLeft .left .data2{
+    width: 100%;
+    height: 220px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 1px solid #0D1D46;
+    z-index: 999;
+    /* background: rgba(0, 0, 0, 0.2); */
+}
+.sectionItem .sectionLeft .left .data3{
+    width: 100%;
+    height: 220px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 1px solid #0D1D46;
+    z-index: 999;
+    /* background: rgba(0, 0, 0, 0.2); */
+    display: flex;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    color: #a7a7a7;
+    font-size: 14px;
+}
+.sectionItem .sectionLeft .left .data3 p{
+    margin: 8px 0;
+}
+
+/*中间图表*/
+.sectionCenter .center1 .node1{
+    width: 35%;
+    height: 170px;
+}
+.sectionCenter .center1 .node2{
+    width: 15%;
+    height: 170px;
+}
+.sectionCenter .center1 .node3{
+    width: 10%;
+    height: 170px;
+}
+.sectionCenter .center1 .node4{
+    width: 13.3%;
+    height: 170px;
+}
+.sectionCenter .center1 .node1 .nodeTop,
+.sectionCenter .center1 .node2 .nodeTop,
+.sectionCenter .center1 .node3 .nodeTop{
+    width: 100%;
+    height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+}
+.sectionCenter .center1 .node1 .nodecontent,
+.sectionCenter .center1 .node2 .nodecontent,
+.sectionCenter .center1 .node3 .nodecontent{
+    width: 100%;
+    height: 110px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+.sectionCenter .center1 .node1 .nodeTop p{
+    font-size: 24px;
+    color: #44A2F9;
+    font-weight: 700;
+    margin-left: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+.sectionCenter .center1 .node1 .nodecontent{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+}
+.sectionCenter .center1 .node1 .nodecontent p{
+    width: 35px;
+    height: 75px;
+    background: rgba(37, 54, 99, 0.8);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.sectionCenter .center1 .node1 .nodecontent p span{
+    font-size: 66px;
+    font-family: '黑体';
+    color: white;
+}
+.sectionCenter .center1 .node2 .nodecontent,
+.sectionCenter .center1 .node3 .nodecontent{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.sectionCenter .center1 .node2 .nodecontent .contentTitle,
+.sectionCenter .center1 .node3 .nodecontent .contentTitle{
+    width: 100%;
+    height: 35px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.sectionCenter .center1 .node2 .nodecontent .contentTitle p,
+.sectionCenter .center1 .node3 .nodecontent .contentTitle p{
+    color: #847e8b;
+    margin-left: 10px;
+    font-weight: 700;
+}
+.sectionCenter .center1 .node2 .nodecontent .contentNumber,
+.sectionCenter .center1 .node3 .nodecontent .contentNumber{
+    width: 100%;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.sectionCenter .center1 .node2 .nodecontent .contentNumber p,
+.sectionCenter .center1 .node3 .nodecontent .contentNumber p{
+    color: #44A2F9;
+    margin-left: 5px;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: '黑体';
+    margin-left: 10px;
+}
+.sectionCenter .center1 .node3 .nodecontent .contentNumber p{
+    color: #C52952;
+}
+.sectionCenter .center1 .node4 .chartTitle{
+    width: 100%;
+    height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.sectionCenter .center1 .node4 .chartTitle p{
+    color: #847e8b;
+}
+.sectionCenter .center1 .node4 .chartTitle span{
+    font-size: 16px;
+}
+.sectionCenter .center1 .node4 .chartContent{
+    width: 100%;
+    height: 140px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.sectionCenter .center1 .node4 .chartContent P{
+    color: white;
+    font-size: 22px;
+    font-family: '黑体';
+}
+.sectionCenter .center1 .node4 .chartContent #centerChart1{
+    width: 100%;
+    height: 140px;
+}
+.sectionCenter .center1 .node4 .chartContent #centerChart2{
+    width: 100%;
+    height: 140px;
+}
+.sectionCenter .center .lineChart1{
+    width: 100%;
+    height: 255px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 1px solid #0D1D46;
+    z-index: 999;
+}
+.sectionCenter .center .centerBorder{
+    width: 100%;
+    height: 255px;
+    border: 1px solid #0D1D46;   
+    position: absolute;
+    top: 32px;
+    left: 6px;
+    z-index: 100;
+}
+.sectionCenter .center .lineChart2{
+    width: 100%;
+    height: 255px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 1px solid #0D1D46;
+    z-index: 999;
+}
+
+/*右边图表*/
+.sectionItemRight .sectionRight .right2 .rightChart2{
+    width: 100%;
+    height: 455px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 1px solid #0D1D46;
+    z-index: 999;
+}
+.sectionItemRight .sectionRight .right2 .centerBorder{
+    width: 100%;
+    height: 455px;
+    border: 1px solid #0D1D46;
+    position: absolute;
+    top: 32px;
+    left: 6px;
+    z-index: 100;
+}
+.sectionItemRight .sectionRight .right1 .rightChart1{
+    width: 100%;
+    height: 255px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 1px solid #0D1D46;
+    z-index: 999;
+}
+.sectionItemRight .sectionRight .right1 .centerBorder{
+    width: 100%;
+    height: 255px;
+    border: 1px solid #0D1D46;
+    position: absolute;
+    top: 32px;
+    left: 6px;
+    z-index: 100;
+}
