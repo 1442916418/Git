@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #app{
+        width: 100px;
+        height: 300px;
+        border: 1px solid #ccc;
+    }
+    .box{
+        background: red;
+    }
+    </style>
+    <script>
+    // className 是唯一一个特殊属性，使用JS设置class样式时，必须使用className,因为class是关键字。
+    function toRed(){
+        var a = document.getElementById('app');
+        a.className='box';
+    }
+    </script>
+</head>
+<body>
+    <input type="button" value="变红" onclick="toRed()">
+    <div id="app"></div>
+</body>
+</html>

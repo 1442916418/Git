@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #app{
+        width: 100px;
+        height: 100px;
+        background: blue;
+    }
+    </style>
+
+    <script>
+    function toyellow(){
+        var a = document.getElementById('app');
+        a.style.width='400px';
+        a.style.height='400px';
+        a.style.background='black';
+    }
+    function toblue(){
+        var a = document.getElementById('app');
+        a.style.width='100px';
+        a.style.height='100px';
+        a.style.background='blue';
+    }
+    </script>
+</head>
+<body>
+    <div id="app" onmousemove="toyellow()" onmouseout="toblue()"></div>
+</body>
+</html>

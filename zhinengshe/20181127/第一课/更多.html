@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #content{
+        width: 200px;
+        height: 400px;
+        background: blue;
+        display: none;
+    }
+    </style>
+    
+    <script>
+        function setDisplay(){
+            var a = document.getElementById('content');
+            if (a.style.display == 'none')
+            {
+                a.style.display="block";
+            }
+            else 
+            {
+                a.style.display="none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="更多" onclick="setDisplay()">
+    <div id="content"></div>
+</body>
+</html>
