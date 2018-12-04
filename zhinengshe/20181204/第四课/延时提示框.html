@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            margin: 20px;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: red;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload=function()
+        {
+            var oDiv1 = document.getElementById('div1');
+            var oDiv2 = document.getElementById('div2');
+            var timer = null;
+
+            oDiv2.onmouseover = oDiv1.onmouseover = function()
+            {
+                clearTimeout(timer);
+                oDiv2.style.display='block';
+            }
+            oDiv2.onmouseout = oDiv1.onmouseout = function()
+            {
+                timer=setTimeout(function(){
+                    oDiv2.style.display='none';
+                }, 500);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2">aaaaaaaaaaaaaaaaaaa</div>
+</body>
+</html>
