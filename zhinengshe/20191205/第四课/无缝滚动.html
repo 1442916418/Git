@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            float: left;
+        }
+        #div1{
+            width: 1840px;
+            height: 610px;
+            margin: 0 auto;
+            margin-top: 130px;
+            position: relative;
+            /*background: red;*/
+            overflow: hidden;
+            cursor: pointer;
+        }
+        #div1 ul{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #div1 ul li{
+            float: left;
+            width: 460px;
+            height: 610px;
+            list-style: none;
+        }
+        .point{
+            width: 30px;
+            height: 610px;
+            margin-top: 130px;
+            cursor: pointer;
+        }
+        .point img{
+            width: 30px;
+            margin-top: 265px;
+        }
+    </style>
+
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById('div1');
+            // 获取div里的ul
+            var oUl = oDiv.getElementsByTagName('ul')[0];
+            // 获取ul里的li
+            var aLi = oUl.getElementsByTagName('li');
+            // 速度变量
+            var speed = 2;
+
+            // ul+ul，然后赋在赋给ul，这时ul有八张图片
+            oUl.innerHTML += oUl.innerHTML;
+            // ul的宽度等于任何一个li的宽度，在乘上li的个数，因为所有的宽度都一样，所以使用乘法很方便
+            oUl.style.width = aLi[0].offsetWidth * aLi.length+'px';
+            
+            // 单独取一个函数放滚动动作的代码
+            function move ()
+            {
+                // 当ul向左滚动到一半时，left赋值为0 
+                if (oUl.offsetLeft < -oUl.offsetWidth/2)
+                {
+                    // ul重新回到0的位置
+                    oUl.style.left = '0';
+                }
+                // 当ul向右滚动大于0时，把负ul宽度的一半赋给ul的left
+                if (oUl.offsetLeft > 0)
+                {
+                    oUl.style.left = -oUl.offsetWidth/2+'px';
+                }
+                // 增加ul的left边距
+                oUl.style.left = oUl.offsetLeft+speed+'px';
+            }
+
+            // 把定时器存储到timer变量中，每30毫秒，执行一次move函数
+            var timer = setInterval(move, 30);
+
+            // 给最外层的div加鼠标移入事件
+            oDiv.onmousemove = function()
+            {
+                // 移入时关闭定时器
+                clearInterval(timer);
+            }
+
+            // 鼠标移出最外层的div时 加入鼠标移出事件
+            oDiv.onmouseout = function()
+            {
+                // 移出时开启定时器
+                timer = setInterval(move, 30);
+            }
+
+            // 获取point-left的id，设置speed为负2时，图片向左滚动
+            document.getElementById('point-left').onclick = function()
+            {
+                speed = -2;
+            }
+            // 获取point-right的id，设置speed为正2时，图片向右滚动
+            document.getElementById('point-right').onclick = function()
+            {
+                speed = 2;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="point" id="point-left">
+        <img src="images/zuo.png">
+    </div>
+    <div id="div1">
+        <ul>
+            <li><img src="images/1.jpg"></li>
+            <li><img src="images/2.jpg"></li>
+            <li><img src="images/3.jpg"></li>
+            <li><img src="images/4.jpg"></li>
+        </ul>
+    </div>
+    <div class="point" id="point-right">
+        <img src="images/you.png">
+    </div>
+</body>
+</html>
