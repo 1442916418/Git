@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 封装选取ClassName的函数,oParent:从那个父级下选取元素；sClass：要选取CLass的名称
+        function getByClass(oParent, sClass)
+        {
+            // 定义一个存储ClassName的数组
+            var aResult = [];
+            // 从OParent父级元素下选取元素，*通配符代表所有的标签，
+            var aEle = oParent.getElementsByTagName('*');
+
+            // 循环所有的元素
+            for (var i = 0; i <aEle.length; i++)
+            {
+                // 判断如果aEle[i]的元素类名称跟sClass的类名称是否相等
+                if (aEle[i].className === sClass)
+                {
+                    // 把相同的元素都放入aResult数组中
+                    aResult.push(aEle[i]);
+                }
+            }
+            // 返回
+            return aResult;
+        }
+
+        window.onload = function()
+        {
+            var oUl = document.getElementById('ul1');
+            var aBox = getByClass(oUl, 'box');
+
+            for (var i = 0; i <aBox.length; i ++)
+            {
+                aBox[i].style.background = 'red';
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="ul1">
+        <Li class="box"></Li>
+        <li class="box"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li class="box"></li>
+        <li></li>
+    </ul>
+</body>
+</html>
