@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function()
+        {
+            var oUl = document.getElementById('ul1');
+
+            // 低级浏览器
+            //oUl.firstChild.style.background = 'red';
+            
+            // 高级浏览器
+            //oUl.firstElementChild.style.background ='red';
+            
+            // 首尾子节点：firstChild   firstElementChild
+            //            lastChild    lastElementChild
+            // 解决兼容性问题：判断如果firstElementChild存在就执行第一行代码，如果不存在则执行第二行代码
+            if (oUl.firstElementChild)
+            { 
+                oUl.firstElementChild.style.background ='red';
+            }
+            else
+            {
+                oUl.firstChild.style.background = 'red';
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="ul1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+</html>

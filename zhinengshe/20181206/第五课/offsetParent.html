@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ccc;
+            position: relative;
+            margin: 100px; 
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 50;
+            top: 50;
+        }
+    </style>
+    <script>
+        window.onload=function()
+        {
+            var oDiv2 = document.getElementById('div2');
+
+            // 获取一个元素用来定位的那个父级 
+            alert(oDiv2.offsetParent);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+</body>
+</html>

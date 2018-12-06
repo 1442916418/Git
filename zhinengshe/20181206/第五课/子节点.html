@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function()
+        {
+            var oUl = document.getElementById('ul1');
+
+            for (var i = 0; i < oUl.childNodes.length; i++)
+            {
+                // nodeType==3  -> 文本节点
+                // nodeType==1  -> 元素节点
+                // oUl.childNodes[i].style.background='red';
+                if( oUl.childNodes[i].nodeType == 1)
+                {
+                    oUl.childNodes[i].style.background='red';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="ul1">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>
