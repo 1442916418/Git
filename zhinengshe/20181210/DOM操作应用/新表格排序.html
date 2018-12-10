@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function()
+        {
+            var oTab = document.getElementById('tab1');
+            var oBtn = document.getElementById('btn1');
+
+            oBtn.onclick = function()
+            {
+                var arr = [];
+
+                for (var i = 0; i < oTab.tBodies[0].rows.length; i ++)
+                {
+                    arr[i] = oTab.tBodies[0].rows[i];
+                }
+
+                arr.sort(function(tr1, tr2){
+                    var n1 = parseInt(tr1.cells[0].innerHTML);
+                    var n2 = parseInt(tr2.cells[0].innerHTML);
+
+                    return n1-n2;
+                });
+
+                for (var i = 0; i < arr.length; i ++)
+                {
+                    oTab.tBodies[0].appendChild(arr[i]);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input id="btn1" type="button" value="排序"></input>
+    <table id="tab1" border="1" width="500" style="border-collapse:collapse;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>name</th>
+                <th>age</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>5</td>
+                <td>Blue</td>
+                <td>11</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Tom</td>
+                <td>21</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Join</td>
+                <td>25</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>QQ</td>
+                <td>18s</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>QQ</td>
+                <td>18s</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>            
+</body>
+</html>

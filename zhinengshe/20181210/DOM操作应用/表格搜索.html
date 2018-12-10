@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function()
+        {
+            var oTab = document.getElementById('tab1');
+            var oTxt = document.getElementById('name');
+            var oBtn = document.getElementById('btn1');
+            
+            oBtn.onclick = function()
+            {
+                for (var i = 0; i < oTab.tBodies[0].rows.length; i++)
+                {
+                    var sTab = oTab.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase();
+                    var sTxt = oTxt.value.toLowerCase();
+                    var arr = sTxt.split(' ');
+
+                    // 高亮显示结果
+                    //oTab.tBodies[0].rows[i].style.background = '';
+                    // 筛选显示结果
+                    oTab.tBodies[0].rows[i].style.display = 'none';
+
+                    for (var j = 0; j < arr.length; j ++)
+                    {
+                        if (sTab.search(arr[j]) != -1)
+                        {
+                            // 高亮显示结果
+                            //oTab.tBodies[0].rows[i].style.background = 'blue';
+                            // 筛选显示结果
+                            oTab.tBodies[0].rows[i].style.display = 'block';
+                        }
+                    }
+                    // 忽略大小写：toLowerCase() 把字符串转换成小写
+                    // 模糊查找：.search() 找到并且返回字符串出现的位置，如果没找到返回-1
+                    // 多段查找：.split() 把一个字符串分割成字符串数组
+                    // if ( sTab.search(sTxt) != -1)
+                    // {
+                    //     高亮显示结果
+                    //     oTab.tBodies[0].rows[i].style.background = 'blue';
+                    // }
+                    // else
+                    // {
+                    //      oTab.tBodies[0].rows[i].style.background = '';
+                    // }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    姓名：<input id="name" type="text">
+    <input id="btn1" type="button" value="搜索">    
+    <table id="tab1" border="1" width="500" style="border-collapse:collapse;">
+        <thead>
+            <td>ID</td>
+            <td>name</td>
+            <td>age</td>
+            <td>Delete</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Blue</td>
+                <td>11</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Tom</td>
+                <td>21</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Join</td>
+                <td>25</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>QQ</td>
+                <td>18</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>张三</td>
+                <td>18</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>        
+</body>
+</html>

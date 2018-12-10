@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function()
+        {
+            var oBtn = document.getElementById('btn1');
+            var oUl = document.getElementById('ul1');
+            var oTxt = document.getElementById('txt1');
+            
+            oBtn.onclick =function()
+            {
+                // 创建元素 .createElement();
+                var oLi = document.createElement('li');
+                // 把ul里所有的li给选取出来
+                var aLi = oUl.getElementsByTagName('li');
+
+                oLi.innerHTML = oTxt.value;
+
+                // 父级 .appendChild(子节点)
+                //oUl.appendChild(oLi);
+                
+                // 往前面插入li
+                // 父级 .insertBefore(子节点，在谁之前)
+                //oUl.insertBefore(oLi, aLi[0]);
+            
+                if (aLi.length>0)
+                {
+                    oUl.insertBefore(oLi, aLi[0]);
+                }
+                else
+                {
+                    oUl.appendChild(oLi);
+                }
+            }
+        } 
+    </script>
+</head>
+<body>
+    <input id="txt1" type="text">
+    <input id="btn1" type="button" value="创建li">
+    <ul id="ul1"></ul>
+</body>
+</html>

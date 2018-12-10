@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function()
+        {
+            var oTab = document.getElementById('tab1');
+
+            var oBtn = document.getElementById('btn1');
+            var oName = document.getElementById('name');
+            var oAge = document.getElementById('age');
+            var id = oTab.tBodies[0].rows.length+1;
+
+            oBtn.onclick = function()
+            {
+                var oTr = document.createElement('tr');
+
+                // 在tr里添加td     ID
+                var oTd = document.createElement('td');
+                oTd.innerHTML = id++;
+                oTr.appendChild(oTd);
+                
+                // 在tr里添加td     name
+                var oTd = document.createElement('td');
+                oTd.innerHTML = oName.value;
+                oTr.appendChild(oTd);
+
+                // 在tr里添加td     age
+                var oTd = document.createElement('td');
+                oTd.innerHTML = oAge.value;
+                oTr.appendChild(oTd);
+
+                // 在tr里添加td     Delete
+                var oTd = document.createElement('td');
+                oTd.innerHTML = '<a href="javascript:;">删除</a>';
+                oTr.appendChild(oTd);
+
+                oTd.getElementsByTagName('a')[0].onclick = function()
+                {
+                    oTab.tBodies[0].removeChild(this.parentNode.parentNode);
+                }
+
+                oTab.tBodies[0].appendChild(oTr);
+
+            }
+        }
+    </script>
+</head>
+<body>
+    姓名：<input id="name" type="text">
+    年龄: <input id="age" type="text">
+    <input id="btn1" type="button" value="添加"></input>
+    <table id="tab1" border="1" width="500" style="border-collapse:collapse;">
+        <thead>
+            <td>ID</td>
+            <td>name</td>
+            <td>age</td>
+            <td>Delete</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Blue</td>
+                <td>11</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Tom</td>
+                <td>21</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Join</td>
+                <td>25</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>QQ</td>
+                <td>18s</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>        
+</body>
+</html>

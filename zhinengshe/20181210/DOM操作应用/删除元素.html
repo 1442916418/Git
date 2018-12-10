@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function()
+        {
+            var aA = document.getElementsByTagName('a');
+            var oUl = document.getElementById('ul1');
+
+            for (var i = 0; i < aA.length; i ++)
+            {
+                aA[i].onclick = function()
+                {
+                    oUl.removeChild(this.parentNode);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="ul1"> 
+        <li>adfab  阿萨大<a href="javascript:;">删除</a></li>
+        <li>adfac 啊视<a href="javascript:;">删除</a></li>
+        <li>adfad 发阿萨大<a href="javascript:;">删除</a></li>
+        <li>adfae <a href="javascript:;">删除</a></li>
+        <li>adfa打发撒旦 <a href="javascript:;">删除</a></li>
+        <li>adfa阿斯蒂芬<a href="javascript:;">删除</a></li>
+        <li>adfa 阿斯蒂芬<a href="javascript:;">删除</a></li>
+        <li>adfa最新资讯 <a href="javascript:;">删除</a></li>
+        <li>adfa 呃呃呃v啊<a href="javascript:;">删除</a></li>
+    </ul>
+</body>
+</html>

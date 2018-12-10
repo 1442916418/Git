@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function()
+        {
+            var oTab = document.getElementById('tab1');
+            var oldColor = '';
+
+            for (var i = 0;i < oTab.tBodies[0].rows.length; i++)
+            {
+                oTab.tBodies[0].rows[i].onmouseover = function()
+                {
+                    oldColor = this.style.background;
+                    this.style.background = 'green';
+                }
+                oTab.tBodies[0].rows[i].onmouseout = function()
+                {
+                    this.style.background = oldColor;
+                }
+                if ( i%2 )
+                {
+                    oTab.tBodies[0].rows[i].style.background = 'red';
+                }
+                else 
+                {
+                    oTab.tBodies[0].rows[i].style.background = '#ccc';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <table id="tab1" border="1" width="500" style="border-collapse:collapse;">
+        <thead>
+            <td>ID</td>
+            <td>name</td>
+            <td>age</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Blue</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Tom</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Join</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>QQ</td>
+                <td>18s</td>
+            </tr>
+        </tbody>
+    </table>    
+</body>
+</html>
