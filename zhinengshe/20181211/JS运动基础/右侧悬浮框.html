@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 150px;
+            background: blueviolet;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+
+    <script>
+        // 在元素滚动条在滚动时触发。
+        window.onscroll = function()
+        {
+            var oDiv = document.getElementById('div1');
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            
+            // oDiv.style.top = document.documentElement.clientHeight-oDiv.offsetHeight+scrollTop+'px';            
+            startMove(document.documentElement.clientHeight-oDiv.offsetHeight+scrollTop);
+        }
+
+        var timer = null;
+
+        // 运动框架
+        function startMove(iTarget){
+            var oDiv = document.getElementById('div1');
+
+            clearInterval(timer);
+            timer = setInterval(function(){
+                // 计算速度 除的数字：数字越大就慢，数字越小就越快
+                var speed = (iTarget-oDiv.offsetTop) / 4;
+                // 缓存运动务必取整
+                speed = speed>0 ?  Math.ceil(speed) : Math.floor(speed);
+                // 判断如果div的top等于目标点
+                if (oDiv.offsetTop == iTarget)
+                {
+                    // 如果等于就关闭定时器
+                    clearInterval(timer);
+                }
+                else
+                {
+                    // 否则就让oDiv的top等于oDiv.offsetTop+速度
+                    oDiv.style.top = oDiv.offsetTop+speed+'px';
+                }
+                
+            }, 30);
+        }
+    </script>
+</head>
+<body style="height: 2000px;">
+    <div id="div1"></div>
+</body>
+</html>

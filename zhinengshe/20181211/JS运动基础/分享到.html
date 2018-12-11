@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 150px;
+            height: 200px;
+            background: #ccc;
+            position: absolute;
+            left: -150px;
+        }
+        #div1 span{
+            position: absolute;
+            width: 20px;
+            height: 60px;
+            line-height: 20px;
+            background:rgb(53, 231, 255);
+            right: -20px;
+            top: 70px;
+        }
+    </style>
+    <script>
+        window.onload = function ()
+        {
+            var oDiv = document.getElementById('div1'); 
+
+            // 加入鼠标移入事件
+            oDiv.onmouseover = function()
+            {
+                startMove(0);
+            }
+            oDiv.onmouseout = function()
+            {
+                startMove(-150);
+            }
+            
+        }
+
+        var timer = null;
+
+        function startMove(iTarget)
+        {
+            var oDiv = document.getElementById('div1');
+
+            clearInterval(timer);
+            timer = setInterval(function(){
+                var speed = 0; 
+
+                // 根据当前位置和目标点判读速度是正或是负
+                if (oDiv.offsetLeft > iTarget)
+                {
+                    speed = -10;
+                }
+                else
+                {
+                    speed = 10;
+                }
+                
+                if (oDiv.offsetLeft == iTarget)
+                {
+                    clearInterval(timer);
+                }
+                else
+                {
+                    oDiv.style.left = oDiv.offsetLeft+speed +'px';
+                }
+            }, 30);
+        }
+    </script>
+
+</head>
+<body>
+    <div id="div1">
+        <span>分享到</span>
+    </div>
+</body>
+</html>

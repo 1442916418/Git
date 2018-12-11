@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: blueviolet;
+            position: absolute;
+            left: 600px;
+            top: 50px;
+        }
+        #div2{
+            width: 1px;
+            height: 300px;
+            position: absolute;
+            left: 300px;
+            top: 0;
+            background: black;
+        }
+        #div3{
+            width: 1px;
+            height: 300px;
+            position: absolute;
+            left: 100px;
+            top: 0;
+            background: black;
+        }
+    </style>
+    <script>
+        var timer = null;
+
+        function startMove(iTarget)
+        {
+            var oDiv = document.getElementById('div1');
+
+            clearInterval(timer);
+
+            setInterval(function(){
+                var speed = 0;
+
+                if (oDiv.offsetLeft < iTarget)
+                {
+                    speed = 7;
+                }
+                else
+                {
+                    speed = -7;
+                }
+                
+                // 测试
+                document.title = oDiv.offsetLeft+','+speed;
+
+                // 绝对值 目标和物体之间的距离只要小于等于7，就算物体到了
+                // 目标和物体之间的距离小于速度
+                if (Math.abs(iTarget-oDiv.offsetLeft) <=7)
+                {
+                    // 关闭定时器
+                    clearInterval(timer);
+                    // div的left等于目标点
+                    oDiv.style.left = iTarget+'px';
+                }
+                else
+                {
+                    oDiv.style.left = oDiv.offsetLeft + speed + 'px'; 
+                }
+
+            }, 30);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="到100" onclick="startMove(100)">
+    <input type="button" value="到300" onclick="startMove(300)">
+
+    <div id="div1"></div>
+    <div id="div2"></div>    
+    <div id="div3"> </div>
+</body>
+</html>

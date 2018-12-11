@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            height: 2000px;
+            background-color: rgb(255, 246, 234);
+        }
+        #left{
+            width: 100px;
+            height: 200px;
+            background: blueviolet;
+            position: absolute;
+            left: 0;
+            bottom: 40%;
+        }
+        #right{
+            width: 100px;
+            height: 200px;
+            background: blueviolet;
+            position: absolute;
+            right: 0;
+            bottom: 40%;
+        }
+    </style>
+
+    <script>
+        // 在元素滚动条滚动式触发
+        window.onscroll = function()
+        {
+            var oLeft = document.getElementById('left');
+            var oRight = document.getElementById('right');
+            // 获取滚动条的位置
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            
+            // 把可视区的高度 减去 div的高度除2 加上 滚动条纵坐标的位置
+            startMove(parseInt((document.documentElement.clientHeight-oLeft.offsetHeight) / 2 + scrollTop));
+            startMove(parseInt((document.documentElement.clientHeight-oRight.offsetHeight) / 2 + scrollTop));
+        }
+
+        var timer = null;
+
+        // 运动框架函数
+        function startMove(iTarget)
+        {
+            var oLeft = document.getElementById('left');
+            var oRight = document.getElementById('right');
+            
+            // 先关闭定时器，防止重复使用运动框架函数
+            clearInterval(timer);
+            timer = setInterval(function(){
+                // 计算速度，除的数字越大物体移动越慢，越小物体移动越快
+                var speedLeft = (iTarget-oLeft.offsetTop) / 4;
+                var speedRight = (iTarget-oRight.offsetTop) / 4;
+                
+                // 把速度取整，防止物体晃动...
+                speedLeft = speedLeft>0 ? Math.ceil(speedLeft) : Math.floor(speedLeft);
+                speedRight = speedRight>0 ? Math.ceil(speedRight) : Math.floor(speedRight);
+                
+                // 判断左、右div顶部的偏移量是否和目标的相等
+                if ( oLeft.offsetTop == iTarget && oRight.offsetTop == iTarget)
+                {
+                    // 如果相等关闭定时器
+                    clearInterval(timer);
+                }
+                else
+                {
+                    // 否则左、右div样式的上偏移量就 等于 左、右div顶部偏移量加速度
+                    oLeft.style.top = oLeft.offsetTop+speedLeft+'px';
+                    oRight.style.top = oRight.offsetTop+speedRight+'px';
+                }
+            }, 30);
+        }
+    </script>
+</head>
+<body>
+    <div id="couplet">
+        <div id="left"></div>
+        <div id="right"></div>
+    </div>
+</body>
+</html>
