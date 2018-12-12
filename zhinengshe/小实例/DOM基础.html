@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM 基础</title>
+    <script>
+        window.onload = function()
+        {
+            var oOl = document.getElementById('ol1');
+            // 获取元素首节点，使用if来完善兼容性
+            if (oOl.firstElementChild)
+            {
+                oOl.firstElementChild.style.background = 'red';
+            }
+            else
+            {
+                oOl.firstChild.style.background = 'yellow';
+            }
+            // 获取元素尾节点，使用if来完善兼容性
+            if (oOl.lastElementChild)
+            {
+                oOl.lastElementChild.style.background = 'blue';
+            }
+            else
+            {
+                oOl.lastChild.style.background = 'greed'
+            }
+            
+            // ---------------------------------------------------
+            // 通过封装函数，选取有classname的标签
+            var aClassName = getByClass(oOl, 'className');
+            
+            for (var i = 0; i < aClassName.length; i ++)
+            {
+                aClassName[i].style.background = 'black';
+            }
+
+            // ---------------------------------------------------
+            // 通过 offsetParent 来定位他的父级
+            // alert(oOl.offsetParent);
+            
+            // ---------------------------------------------------
+            // 三种操作元素属性的方法
+            var oTxt = document.getElementById('txt1');
+            var oBtn = document.getElementById('btn1');
+
+            oBtn.onclick=function()
+            {
+                // 第一种
+                //oTxt.value='asdfas';
+                
+                // 第二种
+                //oTxt['value'] = 'asdfasadf';
+
+                // 第三种
+                // 参数一：属性名字；参数二：值是多少
+                oTxt.setAttribute('value','asdffa');
+            }
+           
+            // ---------------------------------------------------
+            // 获取元素所有的子节点
+            for (var i = 0; i < oOl.childNodes.length; i++)
+            {
+                // nodeType==3  -> 文本节点
+                // nodeType==1  -> 元素节点
+                // oUl.childNodes[i].style.background='red';
+                if( oOl.childNodes[i].nodeType == 1)
+                {
+                    //oOl.childNodes[i].style.background='teal';
+                }
+            }
+
+            // ---------------------------------------------------
+            // 注意：只会获取第一层子节点，不会获取里面的子节点
+            // 验证有几个子节点： 3个
+            // alert(oOl.children.length);
+            // childre 只获取元素节点
+            // for (var i = 0;i < oUl.children.length;i++)
+            // {
+            //     oUl.children[i].style.background='red';
+            // }
+
+            // ---------------------------------------------------
+            // 获取元素父节点
+            // oOl.parentNode.style.background = '#fafad2';
+            var aA = document.getElementsByTagName('a');
+
+            for (var i = 0; i < aA.length; i ++)
+            {
+                aA[i].onclick = function()
+                {
+                    // 隐藏父节点
+                    this.parentNode.style.display = 'none';
+                }
+            }
+        }
+        // ---------------------------------------------------
+        // 获取元素下一个兄弟节点
+        function myFunction()
+        {
+            var x = document.getElementById("demo");  
+            var i = document.getElementById("item1");
+            if (i.nextElementSibLing)
+            {
+                x.innerHTML = i.nextElementSibling.id;
+            }
+            else
+            {
+                x.innerHTML = i.nextSibling.id;
+            }  
+        }
+
+        // ---------------------------------------------------
+        // 获取元素上一个兄弟节点
+        function myFunction2()
+        {
+            var item = document.getElementById('item22');
+            var x = document.getElementById('demo2');
+            if (item.previousElementSibling)
+            {
+                x.innerHTML = item.previousElementSibling.id;
+            }
+            else
+            {
+                x.innerHTML = item.previousSibling.id;
+            }
+        }
+        
+        // 封装选取ClassName的函数,oParent:从那个父级下选取元素；sClass：要选取CLass的名称
+        function getByClass(oParent, sClass)
+        {
+            // 定义一个存储ClassName的数组
+            var aResult = [];
+            // 从OParent父级元素下选取元素，*通配符代表所有的标签，
+            var aEle = oParent.getElementsByTagName('*');
+
+            // 循环所有的元素
+            for (var i = 0; i <aEle.length; i++)
+            {
+                // 判断如果aEle[i]的元素类名称跟sClass的类名称是否相等
+                if (aEle[i].className === sClass)
+                {
+                    // 把相同的元素都放入aResult数组中
+                    aResult.push(aEle[i]);
+                }
+            }
+            // 返回
+            return aResult;
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <ol id="ol1" type="I">
+          <li></li>  
+          <li></li>  
+          <li></li>  
+          <li class="className"></li>  
+          <li></li>  
+          <li></li>  
+          <li class="className"></li>  
+          <li></li>  
+          <li></li>  
+          <li></li>  
+          <li></li>  
+        </ol>
+    </div>
+
+    <input id="txt1" type="text">
+    <input id="btn1" type="button" value="按钮">
+
+    <ul id="ul1">
+        <li>adsfasd <a href="javascript:;">隐藏</a></li>
+        <li>adsfaasd <a href="javascript:;">隐藏</a></li>
+        <li>adsfaaasd <a href="javascript:;">隐藏</a></li>
+        <li>adsfaaasd <a href="javascript:;">隐藏</a></li>
+        <li>adsfaasd <a href="javascript:;">隐藏</a></li>
+        <li>adsfasd <a href="javascript:;">隐藏</a></li>
+    </ul>
+
+    <ul id="myList">
+        <li id="item1">Coffee</li><li id="item2">Tea</li>
+    </ul>
+    <p id="demo">点击按钮来获得首个项目的下一个同胞的 id。</p>
+    <button onclick="myFunction()">试一下</button>
+    <p><b>注释：</b>元素中的空格被视作文本，而文本被视作文本节点。</p>
+    <p>请尝试在两个 <li> 元素之间添加空格，结果将是 "undefined"。</p>
+
+    <ul id="myList2">
+        <li id="item11">Coffee</li><li id="item22">Tea</li>
+    </ul>
+    <p id="demo2">请点击按钮来获得第二个列表项的前一个同胞的 id。</p>
+    <button onclick="myFunction2()">试一下</button>
+    <p><b>注释：</b>元素中的空格被视作文本，而文本被视作文本节点。</p>
+    <p>请尝试在两个 <li> 元素之间添加空格，结果将是 "undefined"。</p>
+
+
+</body>
+</html>
