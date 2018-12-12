@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简易日历</title>
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .active{
+            background: #ccc;
+            color: black;
+            border: 1px solid black;
+        }
+        .calendar{
+            width: 400px;
+            height: 800px;
+            background: #f8e9e9;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        ul li{
+            list-style: none;
+            cursor: pointer;
+        }
+        .calendar ul{
+            width: 400px;
+            height: 600px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        ul li{
+            width: 90px;
+            height: 110px;
+            background: rgb(27, 36, 36);
+            border: 1px solid black;
+            color: white;
+            margin: 10px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        .calendar ul li h2,
+        .calendar ul li p{
+            width: 90px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+        }
+        .calendar ul li h2{
+            font-family: "黑体";
+            font-size: 40px;
+        }
+        .calendar .text{
+            width: 370px;
+            height: 170px;
+            background: rgb(255, 255, 255);
+            border: 1px solid #ccc;
+            margin: 15px 15px;
+            padding-left: 20px;
+        }
+    </style>
+
+    <script>
+        window.onload = function()
+        {
+            var arr=[
+                '快过年了，大家可以商量着去哪玩~',
+                '二月份轰动啊打发',
+                '三月份轰动啊打发',
+                '四月份轰动啊打发',
+                '五月份轰动啊打发',
+                '六月份轰动啊打发',
+                '七月份轰动啊打发',
+                '八月份轰动啊打发',
+                '九月份轰动啊打发',
+                '十月份轰动啊打发',
+                '十一月份轰动啊打发',
+                '十二月份轰动啊打发', 
+
+            ];
+            var oDiv = document.getElementById('tab');
+            var oLi = oDiv.getElementsByTagName('li');
+            var oTxt = oDiv.getElementsByTagName('div')[0];
+    
+            // 循环所有的li标签
+            for (var i=0; i < oLi.length; i ++)
+            {
+                oLi[i].index = i;
+                // 给所有的li标签加上鼠标移入事件
+                oLi[i].onmouseover=function()
+                {
+                    for(var i=0;i<oLi.length;i++)
+                    {
+                        // 去除所有li标签的class
+                        oLi[i].className='';
+                    }
+                    this.className='active';
+
+                    oTxt.innerHTML='<h2>'+(this.index+1)+'月活动</h2><P>'+arr[this.index]+'</p>';
+                }
+                
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="tab" class="calendar">
+        <ul>
+            <li class="active"><h2>1</h2><p>JAN</p></li>
+            <li><h2>2</h2><p>FER</p></li>
+            <li><h2>3</h2><p>MAR</p></li>
+            <li><h2>4</h2><p>APR</p></li>
+            <li><h2>5</h2><p>MAY</p></li>
+            <li><h2>6</h2><p>JUN</p></li>
+            <li><h2>7</h2><p>JUL</p></li>
+            <li><h2>8</h2><p>AUG</p></li>
+            <li><h2>9</h2><p>SEP</p></li>
+            <li><h2>10</h2><p>OCT</p></li>
+            <li><h2>11</h2><p>NOV</p></li>
+            <li><h2>12</h2><p>DEC</p></li>
+        </ul>
+
+        <div class="text">
+            <h2>1月活动</h2>
+            <p>快过年了，大家可以商量着去哪玩~</p>
+        </div>
+    </div>
+
+    
+</body>
+</html>

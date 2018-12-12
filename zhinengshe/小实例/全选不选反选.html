@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全选不选反选</title>
+    <style>
+        input{
+            width: 100px;
+            height: 40px;
+            border: 1px solid #ccc;
+            background: #ccc;
+            color: black;
+            border-radius: 4px;
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            border: 0;
+        }
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oBtn1 = document.getElementById('btn1');
+            var oBtn2 = document.getElementById('btn2');
+            var oBtn3 = document.getElementById('btn3');
+            var oDiv = document.getElementById('div1');
+            var oCh = oDiv.getElementsByTagName('input');
+
+            oBtn1.onclick = function()
+            {
+                for(var i = 0; i < oCh.length; i ++)
+                {
+                    oCh[i].checked = true;
+                }
+            }
+
+            oBtn2.onclick = function()
+            {
+                for(var i = 0; i < oCh.length; i ++)
+                {
+                    oCh[i].checked = false;
+                }
+            }
+
+            oBtn3.onclick = function()
+            {
+                for (var i = 0; i < oCh.length; i ++)
+                {
+                    if (oCh[i].checked==true)
+                    {
+                        oCh[i].checked = false;
+                    }
+                    else
+                    {
+                        oCh[i].checked = true;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    // checked 状态
+    <input type="button" value="全选" id="btn1">
+    <input type="button" value="不选" id="btn2">
+    <input type="button" value="反选" id="btn3">
+    <div id="div1">
+        <input type="checkbox" class="box"><br>
+        <input type="checkbox" class="box"><br>
+        <input type="checkbox" class="box"><br>
+        <input type="checkbox" class="box"><br>
+        <input type="checkbox" class="box"><br>
+        <input type="checkbox" class="box"><br>
+        <input type="checkbox" class="box"><br>
+        <input type="checkbox" class="box"><br>
+        <input type="checkbox" class="box"><br>
+        <input type="checkbox" class="box"><br>
+        <input type="checkbox" class="box"><br>
+        <input type="checkbox" class="box"><br>
+        <input type="checkbox" class="box"><br>
+        <input type="checkbox" class="box"><br>
+        <input type="checkbox" class="box"><br>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>隔行变色</title>
+    <script>
+        window.onload = function()
+        {
+            var aLi = document.getElementsByTagName('li');
+
+            for (var i = 0; i < aLi.length; i ++)
+            {
+                // 注意这句代码
+                if (i%2 == 0)
+                {
+                    aLi[i].style.background = 'red';
+                }
+                else
+                {
+                    aLi[i].style.background = 'yellow';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

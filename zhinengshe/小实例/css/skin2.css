@@ -1,0 +1,8 @@
+body{
+    background: linear-gradient(270deg,#f12222,rgb(236, 252, 90));
+}
+input{
+    border: 0;
+    background: rgb(12, 0, 0);
+    color: rgb(0, 174, 255);
+}

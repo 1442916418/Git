@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>分享到</title>
+    <style>
+        #share{
+            width: 150px;
+            height: 200px;
+            background: #ccc;
+            position: absolute;
+            left: -150px;
+            top: 50%;
+        }
+        #share span{
+            position: absolute;
+            width: 20px;
+            height: 60px;
+            line-height: 20px;
+            background: rgb(51, 139, 255);
+            right: -20px;
+            top: 70px;
+        }
+    </style>
+
+    <script>
+        window.onload = function ()
+        {
+            var oShare = document.getElementById('share');
+
+            // 鼠标移入事件
+            oShare.onmouseover = function()
+            {
+                startMove(0);
+            }
+            // 鼠标移出事件
+            oShare.onmouseout = function()
+            {
+                startMove(-150);
+            }
+       }
+
+        var timer = null;
+
+        function startMove(iTarget)
+        {
+            var oShare = document.getElementById('share');
+
+            clearInterval(timer);
+            timer = setInterval(function(){
+                var speed = 0;
+
+                if (oShare.offsetLeft > iTarget)
+                {
+                    speed = -10;
+                }
+                else
+                {
+                    speed = 10;
+                }
+
+                if (oShare.offsetLeft == iTarget)
+                {
+                    clearInterval(timer);
+                }
+                else
+                {
+                    oShare.style.left = oShare.offsetLeft + speed + 'px';
+                }
+            }, 30);
+        }
+    </script>
+</head>
+<body>
+    <div id="share">
+        <span>分享到</span>
+    </div>
+</body>
+</html>

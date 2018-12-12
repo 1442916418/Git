@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>淡入淡出</title>
+    <style>
+        #timg{
+            opacity: 0.3;
+        }
+    </style>
+
+    <script>
+        window.onload = function()
+        {
+            var oImg = document.getElementById('timg');
+
+            oImg.onmouseover = function ()
+            {
+                startMove(100);
+            }
+            oImg.onmouseout = function ()
+            {
+                startMove(30);
+            }
+        }
+
+        var alpha = 30;
+        var timer = null;
+
+        function startMove(iTarget)
+        {
+            var oImg = document.getElementById('timg');
+
+            clearInterval(timer);
+
+            timer = setInterval(function(){
+                var speed = 0;
+                if (alpha<iTarget)
+                {
+                    speed = 1;
+                }
+                else 
+                {
+                    speed = -1;
+                }
+
+                if (alpha == iTarget)
+                {
+                    clearInterval(timer);
+                }
+                else{
+                    alpha += speed;
+                    oImg.style.opacity = alpha/100;
+                }
+            }, 30)
+        }
+    </script>
+</head>
+<body>
+    <img id="timg" src="images/timg.jpg" class="loki">
+    <img id="timg" src="images/timg2.jpg" class="loki">
+</body>
+</html>

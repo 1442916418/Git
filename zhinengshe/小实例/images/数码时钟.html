@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background: rgb(0, 0, 0);
+            color: white;
+            font-size: 50px;
+        }
+        .title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1200px;
+        }
+        .title span{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "黑体";
+            font-size: 100px;
+            color: #BFBFBF;
+            margin-top: 100px;
+        }
+        #box1{
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        #box2{
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        #box3{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        #box3 span{
+            font-family: "黑体";
+            font-size: 120px;
+            color: #BFBFBF;
+        }
+    </style>
+    <script>
+        // 空位补零
+        function toDou(n)
+        {
+            if (n<10)
+            {
+                return '0'+n;
+            }
+            else
+            {
+                return ''+n;
+            }
+        }
+
+        window.onload = function()
+        {
+            var oBox1 = document.getElementById('box1');
+            var aImg1 = oBox1.getElementsByTagName('img');
+            var oBox2 = document.getElementById('box2');
+            var aImg2 = oBox2.getElementsByTagName('img');
+            var aImg3 = document.getElementById('day');
+
+            function time()
+            {
+                var oDate2 = new Date();
+                var str1 = toDou(oDate2.getFullYear()) + toDou(oDate2.getMonth()+1) + toDou(oDate2.getDate());
+                
+                for (var i = 0; i < aImg1.length; i++)
+                {
+                    aImg1[i].src = 'images/'+str1.charAt(i)+'.png';
+                }
+            }
+            
+
+            function tick()
+            {
+                var oDate1 = new Date();
+                var str2 = toDou(oDate1.getHours()) + toDou(oDate1.getMinutes()) + toDou(oDate1.getSeconds());
+
+                for (var i = 0; i < aImg2.length; i++)
+                {
+                    aImg2[i].src = 'images/'+str2.charAt(i)+'.png';
+                }
+            }
+
+            function setDay()
+            {
+                var oDate3 = new Date();
+                var str3 = oDate3.getDay();
+
+                aImg3.src = 'images/'+str3+'.png';
+            }
+      
+            time();
+            tick();
+            setDay();
+            setInterval(tick,1000);    
+            setInterval(time,(24*60*60)*1000);
+            setInterval(setDay,(24*60)*1000);
+        }
+    </script>
+</head>
+<body>
+    <div class="title">
+        <span>超酷时钟</span>
+    </div>
+    <div id="box1">
+        <img src="images/0.png">
+        <img src="images/0.png">
+        <img src="images/0.png">
+        <img src="images/0.png">
+        年
+        <img src="images/0.png">
+        <img src="images/0.png">
+        月
+        <img src="images/0.png">
+        <img src="images/0.png">
+        日
+    </div>
+    <div id="box2">
+        <img src="images/0.png">
+        <img src="images/0.png">
+        :
+        <img src="images/0.png">
+        <img src="images/0.png">
+        :
+        <img src="images/0.png">
+        <img src="images/0.png">
+    </div>
+    <div id="box3">
+        <span>星期</span>
+        <img id="day" src="images/0.png">
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鼠标提示框</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 50px;
+            background: blueviolet;
+            border: 2px solid blue;
+            color: black;
+        }
+        #app{
+            width: 160px;
+            height: 100px;
+            background: white;
+            border: 1px solid #ccc;
+            color: black;
+            display: none;
+        }
+    </style>
+    <script>
+        function toBlock()
+        {
+            var block =document.getElementById('app');
+            block.style.display = 'block';
+        }
+        function toNone()
+        {
+            var none = document.getElementById('app');
+            app.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    // 鼠标移入移出事件
+    <div id="div1" onmouseover="toBlock()" onmouseout="toNone()">鼠标提示框</div>
+    <div id="app">鼠标移入移出事件</div>
+</body>
+</html>
