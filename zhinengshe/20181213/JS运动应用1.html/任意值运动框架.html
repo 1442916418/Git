@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>变宽变高</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: yellowgreen;
+            float: left;
+            margin: 20px;
+            border: 10px solid black;
+            font-size: 14px;
+            opacity: 0.3;
+        }
+    </style>
+    <script>
+        //alert(0.07*100);
+        window.onload = function()
+        {
+            var oDiv1 = document.getElementById('div1');
+
+            oDiv1.onmouseover = function()
+            {
+                startMove(this, 'opacity', 100);
+            }
+            oDiv1.onmouseout= function()
+            {
+                startMove(this, 'opacity', 30);
+            }
+            
+
+        }
+
+        // 运动框架
+        function startMove(obj, attr, iTarget)
+        {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function(){
+                var cur = 0;
+
+                if (attr == 'opacity')
+                {
+                    cur =Math.round(parseFloat(getStyle(obj, attr))*100);
+                }
+                else
+                {
+                    cur = parseInt(getStyle(obj, attr));
+                }
+
+                var speed = (iTarget-cur) / 6;
+                speed = speed>0 ? Math.ceil(speed) : Math.floor(speed);
+
+                if (cur == iTarget)
+                {
+                    clearInterval(obj.timer);
+                }
+                else
+                {
+                    if (attr == 'opacity')
+                    {
+                        obj.style.opacity = (cur+speed) / 100;
+                        document.getElementById('txt1').value = obj.style.opacity;
+                    }
+                    else
+                    {
+                        obj.style[attr] = cur + speed + 'px';
+                    }
+                }
+            }, 30);
+        }
+
+        // 获取样式
+        function getStyle(obj, name)
+        {
+            if (obj.currentStyle)
+            {
+                return obj.currentStyle[name];
+            }
+            else
+            {
+                return getComputedStyle(obj, false)[name];
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <input type="text" id="txt1">
+</body>
+</html>

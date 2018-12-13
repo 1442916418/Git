@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多张图片淡入淡出</title>
+    <style>
+        #div1{
+            width: 1200px;
+            height: 300px;
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
+        }
+        .loki{
+            width: 200px;
+            height: 250px;
+            opacity: 0.3;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="div1">
+        <img class="loki" src="images/timg.jpg">
+        <img class="loki" src="images/timg2.jpg">
+        <img class="loki" src="images/timg3.jpg">
+        <img class="loki" src="images/timg4.jpg">
+        <img class="loki" src="images/timg5.jpg">
+    </div>
+
+    <script>
+        var oDiv = document.getElementById('div1');
+        var aLoki = getByClass(oDiv, 'loki');
+        
+        for (var i = 0; i < aLoki.length; i++)
+        {
+            // 自定义属性
+            aLoki[i].alpha = 30;
+            //aLoki[i].timer = null;
+            aLoki[i].onmouseover = function()
+            {
+                startMove(this, 100);
+            }
+            aLoki[i].onmouseout = function()
+            {
+                startMove(this, 30);
+            }
+        }
+
+        // 封装选取ClassName的函数,oParent:从那个父级下选取元素；sClass：要选取CLass的名称
+        function getByClass(oParent, sClass)
+        {
+            // 定义一个存储ClassName的数组
+            var aResult = [];
+            // 从OParent父级元素下选取元素，*通配符代表所有的标签，
+            var aEle = oParent.getElementsByTagName('*');
+
+            // 循环所有的元素
+            for (var i = 0; i <aEle.length; i++)
+            {
+                // 判断如果aEle[i]的元素类名称跟sClass的类名称是否相等
+                if (aEle[i].className === sClass)
+                {
+                    // 把相同的元素都放入aResult数组中
+                    aResult.push(aEle[i]);
+                }
+            }
+            // 返回
+            return aResult;
+        }
+
+        // var alpha = 30;
+        // var timer = null;
+
+        // obj:定时器加透明度，iTarget:目标点
+        function startMove(obj, iTarget)
+        {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function(){
+                    var speed = (iTarget-obj.alpha) / 6;
+                    speed = speed>0 ? Math.ceil(speed) : Math.floor(speed);
+
+                    if (obj.alpha == iTarget)
+                    {
+                        clearInterval(obj.timer);
+                    }
+                    else
+                    {
+                        // alpha加上速度
+                        obj.alpha += speed;
+                        obj.style.opacity = obj.alpha/100;                                                                   
+                    }
+            }, 30);
+        }
+    </script>
+</body>
+</html>

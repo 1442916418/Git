@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多个div变宽</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background: yellowgreen;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var aDiv = document.getElementsByTagName('div');
+
+            for (var i = 0; i < aDiv.length; i ++)
+            {
+                aDiv[i].timer = null;
+                aDiv[i].onmouseover = function()
+                {
+                    startMove(this, 500);
+                }
+                aDiv[i].onmouseout = function()
+                {
+                    startMove(this, 200);
+                }
+            }
+        }
+
+        // var timer = null;
+
+        function startMove(obj, iTarget)
+        {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function(){
+                // 速度 = (目标宽度 - 当前宽度) / 缩放系数
+                var speed = (iTarget-obj.offsetWidth) / 6;
+                speed = speed>0 ? Math.ceil(speed) : Math.floor(speed);
+                
+                // 判断当前宽度是否等于目标点
+                if (obj.offsetWidth == iTarget)
+                {
+                    clearInterval(obj.timer);
+                }
+                else
+                {
+                    obj.style.width = obj.offsetWidth + speed + 'px';
+                }
+            }, 30);
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
