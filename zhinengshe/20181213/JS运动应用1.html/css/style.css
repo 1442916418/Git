@@ -1,0 +1,106 @@
+body{
+    background: rgb(223, 223, 223);
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+}
+ul li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+.play{
+    width: 400px;
+    height: 430px;
+    margin: 100px auto 0;
+    background: rgb(236, 236, 236);
+}
+.big_pic{
+    width: 400px;
+    height: 320px;
+    overflow: hidden;
+    background: #222;
+    position: relative;
+}
+.big_pic li{
+    width: 400px;
+    height: 320px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+img{
+    border: 0;
+}
+.mark_left{
+    width: 200px;
+    height: 320px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: red;
+    opacity: 0;
+    z-index: 999;
+}
+.mark_right{
+    width: 200px;
+    height: 320px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: yellow;
+    opacity: 0;
+    z-index: 999;
+}
+.prev{
+    width: 60px;
+    height: 60px;
+    background: url('../images/65左双箭头.png') no-repeat;
+    position: absolute;
+    top: 130px;
+    left: 10px;
+    z-index: 1000;
+    opacity: 0;
+    cursor: pointer;
+}
+.next{
+    width: 60px;
+    height: 60px;
+    background: url('../images/64右双箭头.png') no-repeat;
+    position: absolute;
+    top: 130px;
+    right: 10px;
+    z-index: 1000;
+    opacity: 0;
+    cursor: pointer;
+}
+.small_pic{
+    width: 380px;
+    height: 95px;
+    position: relative;
+    overflow: hidden;
+    margin: 7px;
+}
+.small_pic ul{
+    height: 95px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.small_pic ul li{
+    width: 120px;
+    height: 95px;
+    float: left;
+    padding-right: 5px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+.small_pic ul li img{
+    width: 120px;
+    height: 95px;
+}

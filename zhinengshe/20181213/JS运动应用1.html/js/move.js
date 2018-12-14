@@ -26,7 +26,6 @@ function startMove(obj, attr, iTarget)
             if (attr == 'opacity')
             {
                 obj.style.opacity = (cur+speed) / 100;
-                document.getElementById('txt1').value = obj.style.opacity;
             }
             else
             {

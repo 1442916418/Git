@@ -8,10 +8,158 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/move.js"></script>
     <script>
-    
+        window.onload = function()
+        {
+            var oDiv=document.getElementById('playimages');
+            var oBtnPrev=getByClass(oDiv, 'prev')[0];
+            var oBtnNext=getByClass(oDiv, 'next')[0];
+            var oMarkLeft=getByClass(oDiv, 'mark_left')[0];
+            var oMarkRight=getByClass(oDiv, 'mark_right')[0];    
+
+            var oDivSmall=getByClass(oDiv, 'small_pic')[0];
+            var oUlSmall=oDivSmall.getElementsByTagName('ul')[0];
+            var aLiSmall=oDivSmall.getElementsByTagName('li');
+
+            var oUlBig=getByClass(oDiv, 'big_pic')[0];
+            var aLiBig=oUlBig.getElementsByTagName('li');
+
+            var nowZIndex=2;
+
+            var now=0;
+
+            oUlSmall.style.width=aLiSmall.length*aLiSmall[0].offsetWidth+'px';
+
+            //大图左右按钮
+            oBtnPrev.onmouseover=oMarkLeft.onmouseover=function() //prev按钮和左边遮罩层鼠标移入就改变透明度另其显示
+            {
+                startMove(oBtnPrev,'opacity',100);
+            };
+            oBtnPrev.onmouseout=oMarkLeft.onmouseout=function()  //prev按钮和左边遮罩层鼠标移出就改变透明度另其隐藏
+            {
+                startMove(oBtnPrev,'opacity',0);
+            };
+
+            oBtnNext.onmouseover=oMarkRight.onmouseover=function()  //next按钮和右边遮罩层鼠标移入就改变透明度另其显示
+            {
+                startMove(oBtnNext,'opacity',100);
+            };
+            oBtnNext.onmouseout=oMarkRight.onmouseout=function()  //next按钮和右边遮罩层鼠标移出就改变透明度另其隐藏
+            {
+                startMove(oBtnNext,'opacity',0);
+            };
+
+            //缩略图切换
+            for(var i=0;i<aLiSmall.length;i++)  //循环历遍所有缩略图的LI
+            {
+                aLiSmall[i].index=i;  //给LI添加自定义属性index
+                aLiSmall[i].onclick=function()  //每个LI添加点击事件
+                {
+                    if(this.index==now) return;  //如果当前图片的index等于now 就证明当前图片是第0张，就不执行后面的代码
+                    now=this.index;  //如果当前图片的index不等于now，就把index的值赋给now。例如现在的index为1，就把1赋给now，再次执行if语句，如果当前图片是第一张就不执行后面代码，防止重复点击。
+                    tab();
+                };
+                
+                //缩略图透明度
+                aLiSmall[i].onmouseover=function()
+                {
+                    startMove(this, 'opacity', 100);    
+                };
+                aLiSmall[i].onmouseout=function()
+                {
+                    if(this.index!=now)  //如果不是当前缩略图，鼠标移出缩略图才变为半透明，是当前缩略图就不变为半透明
+                    {
+                        startMove(this, 'opacity', 60);    
+                    }
+                };
+            };
+
+            function tab()
+            {
+                aLiBig[now].style.zIndex=nowZIndex++;  //[this.index]可以看作是i,这样缩略图LI和大图LI就能对得上了。当点击缩略图时抓取到相应的大图并把该大图的zIndex提升一层以显示出来
+                    
+                for(var i=0;i<aLiSmall.length;i++)
+                {
+                    startMove(aLiSmall[i],'opacity',60);  //把所有缩略图设置为半透明
+                };
+                startMove(aLiSmall[now],'opacity',100);  //当前缩略图设置为不透明
+                
+                aLiBig[now].style.height=0;  //把当前大图的高度设置为0
+                startMove(aLiBig[now],'height',320);  //再通过运动框架把大图的高度设置为图片高度以产生从上往下拉的效果
+                
+                if(now==0)
+                {
+                    startMove(oUlSmall, 'left', 0);
+                }
+                else if(now==aLiSmall.length-1)
+                {
+                    startMove(oUlSmall, 'left', -(now-2)*aLiSmall[0].offsetWidth);
+                }
+                else
+                {
+                    startMove(oUlSmall, 'left', -(now-1)*aLiSmall[0].offsetWidth);
+                }    
+            };
+
+            oBtnPrev.onclick=function()
+            {
+                now--;
+                if(now==-1)
+                {
+                    now=aLiSmall.length-1;
+                }
+                tab();
+            };
+
+            oBtnNext.onclick=function()
+            {
+                now++;
+                if(now==aLiSmall.length)
+                {
+                    now=0;
+                }
+                tab();
+            };
+
+            var timer=setInterval(oBtnNext.onclick, 2000);
+
+            oDiv.onmouseover=function ()
+            {
+                clearInterval(timer);
+            };
+            oDiv.onmouseout=function ()
+            {
+                timer=setInterval(oBtnNext.onclick, 2000);
+            };
+        }
     </script>
 </head>
 <body>
-    
+    <div id="playImages" class="play">
+        <ul class="big_pic">
+            <div class="prev"></div>
+            <div class="next"></div>
+
+            <a class="mark_left" href="javascript:;"></a>
+            <a class="mark_right" href="javascript:;"></a>
+            
+            <li><img src="images/timg.jpg"></li>
+            <li><img src="images/timg2.jpg"></li>
+            <li><img src="images/timg3.jpg"></li>
+            <li><img src="images/timg4.jpg"></li>
+            <li><img src="images/timg5.jpg"></li>
+            <li><img src="images/6.jpg"></li>
+        </ul>
+
+        <div class="small_pic">
+            <ul>
+                <li><img src="images/timg.jpg"></li>
+                <li><img src="images/timg2.jpg"></li>
+                <li><img src="images/timg3.jpg"></li>
+                <li><img src="images/timg4.jpg"></li>
+                <li><img src="images/timg5.jpg"></li>
+                <li><img src="images/6.jpg"></li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
