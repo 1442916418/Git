@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>完美运动框架</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: yellow;
+        }
+    </style>
+    <script src="move2.js"></script>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById('div1');
+            var oBut = document.getElementById('but');
+
+            oBut.onclick = function()
+            {
+                startMove(oDiv, {width: 300, height: 300});
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="but">开始运动</button>
+    <div id="div1"></div>
+</body>
+</html>

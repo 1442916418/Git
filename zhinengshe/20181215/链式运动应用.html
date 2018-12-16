@@ -6,22 +6,80 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>模仿土豆网</title>
     <style>
+        body{
+            width: 1000px;
+            height: 500px;
+            background: black;
+            position: relative;
+            overflow: hidden;
+        }
         #tudou{
+            width: 50px;
+            height: 50px;
+            background: blue;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 400;
+        }
+        #leftBox{
+            width: 200px;
+            height: 50px;
+            background: blueviolet;
+            position: absolute;
+            right: -200px;
+            bottom: 0;
+            z-index: 300;
+        }
+        #topBox{
+            width: 250px;
+            height: 300px;
+            background: yellowgreen;
+            position: absolute;
+            bottom: -300px;
+            right: 0;
+            display: none;
+            z-index: 250;
+        }
+        #exit{
             width: 30px;
             height: 30px;
-            background: blue;
-            border-radius: 4px;
-            position: absolute;
-            right: 0;
-            bottom: 0;
+            float: right;
+            cursor: pointer;
         }
-
     </style>
     <script src="move.js"></script>
+    <script>
+        window.onload = function()
+        {
+            var oButTudou = document.getElementById('tudou');
+            var oLeft = document.getElementById('leftBox');
+            var oTop = document.getElementById('topBox');
+            var oExit = document.getElementById('exit');
+
+            oButTudou.onclick = function()
+            {
+                startMove(oLeft, 'right', 50, function(){
+                    oTop.style.display = 'block';
+                    startMove(oTop, 'bottom', 50);
+                });
+            }
+            oExit.onclick = function()
+            {
+                startMove(oTop, 'bottom', -300, function(){
+                    oTop.style.display = 'none';
+                    startMove(oLeft, 'right', -200);
+                });
+            }
+
+        }
+    </script>
 </head>
 <body>
-    <div id="tudou">
-        <div id="leftBox"></div>
+    <div id="tudou"></div>
+    <div id="leftBox"></div>
+    <div id="topBox">
+        <span id="exit">X</span>
     </div>
 </body>
 </html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>幻灯片--左右运动</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .play{
+            width: 500px;
+            height: 300px;
+            background: red;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .play ul{
+            width: 2500px;
+            height: 300px;
+            float: left;
+            position: absolute;
+        }
+        .play ul li{
+            float: left;
+            width: 500px;
+            height: 300px;
+            list-style: none;
+        }
+        .play ol{
+            z-index: 100;
+            position: absolute;
+            bottom: 0;
+            left: 30%;
+            font-family: cursive;
+            font-size: 16px;
+            color: #ccc;
+            text-align: center;
+            list-style: none;
+            z-index: 9999;
+        }
+        .play ol li{
+            width: 20px;
+            height: 20px;
+            background: rgb(252, 253, 237);
+            border-radius: 50%;
+            float: left;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .active{
+            background: #ccc;
+            color: rgb(83, 83, 83);
+        }
+        .mark_left{
+            width: 250px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: 999;
+        }
+        .mark_right{
+            width: 250px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            opacity: 0;
+            z-index: 999;
+        }
+        .prev{
+            width: 40px;
+            height: 40px;
+            background: url('images/shuangzuojiantou-.png') no-repeat;
+            position: absolute;
+            top: 45%;
+            left: 0;
+            z-index: 1000;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .next{
+            width: 40px;
+            height: 40px;
+            background: url('images/shuangyoujiantou-.png') no-repeat;
+            position: absolute;
+            top: 45%;
+            right: 0;
+            z-index: 1000;
+            opacity: 0;
+            cursor: pointer;
+        }
+    </style>
+    <script src="move2.js"></script>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById('play');
+            var aBtn = document.getElementsByTagName('ol')[0].getElementsByTagName('li');
+            var oUl = document.getElementsByTagName('ul')[0];
+
+            var oBtnPrev = getByClass(oDiv, 'prev')[0];
+            var oBtnNext = getByClass(oDiv, 'next')[0];
+            var oMarkLeft = getByClass(oDiv, 'mark_left')[0];
+            var oMarkRight = getByClass(oDiv, 'mark_right')[0];
+
+            var now = 0;
+
+            // 循环ol下的li
+            for (var i = 0; i < aBtn.length; i ++)
+            {
+                aBtn[i].index = i;
+                aBtn[i].onclick = function()
+                {
+                    now = this.index;
+                    
+                    // 调用tab()函数
+                    tab();
+                }
+            }
+
+            // 运动函数，循环ol下的li，先给每一个class赋值为空，在使用时为每一个添加active样式
+            // startMove:运动ul标签，每运动一次left等于-500*now(px)，now就是ol下li的index
+            function tab()
+            {
+                for (var i = 0; i < aBtn.length; i ++)
+                {
+                    aBtn[i].className = '';
+                }
+                aBtn[now].className = 'active';
+                startMove(oUl, {left: -500*now});
+            }
+
+            // 执行函数
+            function next()
+            {
+                now++;
+                // 判断当now等于ul下li的长度时，就说明运动到头了，这时把now赋值为0，重新开始
+                if (now == aBtn.length)
+                {
+                    now = 0;
+                }
+                tab();
+            }
+
+            // 图片按钮
+            //prev按钮和左边遮罩层鼠标移入就改变透明度另其显示
+            oBtnPrev.onmouseover = oMarkLeft.onmouseover = function()
+            {
+                startMove(oBtnPrev, {opacity: 100});
+            }
+            //prev按钮和左边遮罩层鼠标移出就改变透明度另其隐藏
+            oBtnPrev.onmouseout = oMarkLeft.onmouseout =function(){
+                startMove(oBtnPrev, {opacity: 0});
+            }
+
+            //next按钮和右边遮罩层鼠标移入就改变透明度另其显示
+            oBtnNext.onmouseover = oMarkRight.onmouseover = function()
+            {
+                startMove(oBtnNext, {opacity: 100});
+            }
+            //next按钮和右边遮罩层鼠标移出就改变透明度另其隐藏
+            oBtnNext.onmouseout = oMarkRight.onmouseout = function()
+            {
+                startMove(oBtnNext, {opacity: 0});
+            }
+
+            // 左边按钮
+            oBtnPrev.onclick = function()
+            {
+                now--;
+                if (now == -1)
+                {
+                    now = aBtn.length-1;
+                }
+                tab();
+            }
+
+            // 右边按钮
+            oBtnNext.onclick = function()
+            {
+                now++;
+                if (now == aBtn.length)
+                {
+                    now = 0;
+                }
+                tab();
+            }
+
+            // 定义一个定时器，每两秒执行一次执行运动函数
+            var timer = setInterval(next, 2000);
+
+            oDiv.onmouseover = function()
+            {
+                // 当鼠标移入时结束定时器
+                clearInterval(timer);
+            }
+            oDiv.onmouseout = function()
+            {
+                // 当鼠标移入时开启定时器
+                timer = setInterval(next, 2000);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="play" class="play">
+        <div class="prev"></div>
+        <div class="next"></div>
+
+        <a class="mark_left" href="javascript:;"></a>
+        <a class="mark_right" href="javascript:;"></a>
+        <ul>
+            <li><a href="javascript:;"><img src="images/北盘江大桥.jpg"></a></li>
+            <li><a href="javascript:;"><img src="images/北盘江大桥1.png"></a></li>
+            <li><a href="javascript:;"><img src="images/北盘江大桥2.jpg"></a></li>
+            <li><a href="javascript:;"><img src="images/恩施大峡谷.jpg"></a></li>
+            <li><a href="javascript:;"><img src="images/山.jpg"></a></li>
+        </ul>
+
+        <ol>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div2{
+            width: 400px;
+            height: 400px;
+            background: #ccc;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload =function(ev)
+        {
+            var oBtn = document.getElementById('div1');
+            var oDiv = document.getElementById('div2');
+
+            oBtn.onclick = function()
+            {
+                var oEvent = event || ev;
+                oDiv.style.display = 'block';
+
+                // 事件冒泡
+                oEvent.cancelBubble = true;
+            }
+
+            document.onclick = function()
+            {
+                oDiv.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="div1">下拉</button>
+    <div id="div2"></div>
+</body>
+</html>

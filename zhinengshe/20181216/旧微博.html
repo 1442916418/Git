@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>仿新浪微博留言效果旧</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #ul1{
+            width: 400px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #ul1 li {
+            border: 1px dashed #999;
+            padding: 4px;
+            list-style: none;
+            overflow: hidden;
+            opacity: 0;
+        }
+    </style>
+    <script src="move2.js"></script>
+    <script>
+    window.onload = function()
+    {
+        var oBtn = document.getElementById('but');
+        var oUl = document.getElementById('ul1');
+        var oTxt = document.getElementById('txt1');
+        
+        oBtn.onclick = function()
+        {
+            var oLi = document.createElement('li');
+            
+            oLi.innerHTML = oTxt.value;
+            oTxt.value = '';
+
+            // 如果子节点长度大于0，可以直接插入，否则就在节点后添加最后一个子节点
+            if (oUl.children.length>0)
+            {
+                // 在ul前插入li
+                oUl.insertBefore(oLi, oUl.children[0]);
+            }
+            else
+            {
+                // 向节点添加最后一个子节点
+                oUl.appendChild(oLi);
+            }
+
+            // 运动
+            // 获取li的高度
+            var iHeight = oLi.offsetHeight;
+            // alert(iHeight);
+
+            oLi.style.height = '0';
+
+            startMove(oLi, {height: iHeight}, function(){
+                startMove(oLi, {opacity: 100});
+            });
+        }
+    }
+    </script>
+</head>
+<body>
+    <textarea id="txt1" rows="4" cols="40"></textarea>
+    <input type="button" id="but" value="发布">
+    <ul id="ul1">
+    </ul>
+</body>
+</html>
