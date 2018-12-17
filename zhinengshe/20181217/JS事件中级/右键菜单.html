@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ccc;
+            border: 1px solid #9999;
+            display: none;
+        }
+    </style>
+    <script>
+        document.oncontextmenu = function(ev)
+        {
+            var oEvent = ev || event;
+            var oDiv = document.getElementById('div1');
+
+            oDiv.style.display = 'block';
+            oDiv.style.left = oEvent.clientX+'px';
+            oDiv.style.top = oEvent.clientY+'px';
+
+            return false;
+        }
+
+        document.onclick = function()
+        {
+            var oDiv = document.getElementById('div1');
+
+            oDiv.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <ul>
+            <li>123</li>
+            <li>123</li>
+            <li>123</li>
+            <li>123</li>
+            <li>123</li>
+        </ul>
+    </div>
+</body>
+</html>

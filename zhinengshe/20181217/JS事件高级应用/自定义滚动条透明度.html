@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 600px;
+            height: 20px;
+            background: rgb(228, 228, 228);
+            position: relative;
+            margin: 10px auto;
+        }
+        #div1{
+            width: 20px;
+            height: 20px;
+            background: #999;
+            position: relative;
+        }
+        #div2{
+            width: 300px;
+            height: 300px;
+            background: blue;
+            opacity: 0;
+        }
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById('div1');
+            var oDiv2 = document.getElementById('div2');
+            var oBox = document.getElementById('box');
+
+            // 求鼠标离物体的距离，通过xy轴求出鼠标的位置
+            // 横向距离
+            var disX = 0;
+
+            // 鼠标按键被按下时发生
+            oDiv.onmousedown = function(ev)
+            {
+                var oEvent = ev || event;
+
+                // 鼠标的位置减去div的位置
+                disX = oEvent.clientX-oDiv.offsetLeft;
+
+                // 鼠标指针移动到元素上时触发
+                document.onmousemove = function(ev)
+                {
+                    var oEvent = ev || event;
+
+                    var leftX = oEvent.clientX-disX;
+
+                    if (leftX<0)
+                    {
+                        leftX = 0;
+                    }
+                                // 父级div的宽度减去自身div的宽度
+                    else if (leftX>oBox.offsetWidth-oDiv.offsetWidth)
+                    {
+                        leftX = oBox.offsetWidth-oDiv.offsetWidth;
+                    }
+
+                    oDiv.style.left = leftX +'px';
+
+                    var scale = leftX/(oBox.offsetWidth-oDiv.offsetWidth);
+                    document.title = scale;
+
+                    oDiv2.style.opacity = scale;
+                    
+                }
+
+                // 鼠标抬起 
+                document.onmouseup =function()
+                {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="div1"></div>
+    </div>
+    <div id="div2"></div>
+</body>
+</html>

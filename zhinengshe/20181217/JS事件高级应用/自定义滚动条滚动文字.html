@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 600px;
+            height: 20px;
+            background: rgb(228, 228, 228);
+            position: relative;
+            margin: 10px auto;
+        }
+        #div1{
+            width: 20px;
+            height: 20px;
+            background: #999;
+            position: relative;
+        }
+        #div2{
+            width: 400px;
+            height: 300px;
+            position: relative;
+            border: 1px solid black;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        #div3{
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 5px;
+            font-size: 16p;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+            color: black;
+        }
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById('div1');
+            var oDiv2 = document.getElementById('div2');
+            var oDiv3 = document.getElementById('div3');
+            var oBox = document.getElementById('box');
+
+            // 求鼠标离物体的距离，通过xy轴求出鼠标的位置
+            // 横向距离
+            var disX = 0;
+
+            // 鼠标按键被按下时发生
+            oDiv.onmousedown = function(ev)
+            {
+                var oEvent = ev || event;
+
+                // 鼠标的位置减去div的位置
+                disX = oEvent.clientX-oDiv.offsetLeft;
+
+                // 鼠标指针移动到元素上时触发
+                document.onmousemove = function(ev)
+                {
+                    var oEvent = ev || event;
+
+                    var leftX = oEvent.clientX-disX;
+
+                    if (leftX<0)
+                    {
+                        leftX = 0;
+                    }
+                                // 父级div的宽度减去自身div的宽度
+                    else if (leftX>oBox.offsetWidth-oDiv.offsetWidth)
+                    {
+                        leftX = oBox.offsetWidth-oDiv.offsetWidth;
+                    }
+
+                    oDiv.style.left = leftX +'px';
+
+                    var scale = leftX/(oBox.offsetWidth-oDiv.offsetWidth);
+                    document.title = scale;
+
+                    oDiv3.style.top = -scale*(oDiv3.offsetHeight-oDiv2.offsetHeight)+'px';
+                    
+                }
+
+                // 鼠标抬起 
+                document.onmouseup =function()
+                {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="div1"></div>
+    </div>
+    <div id="div2">
+        <div id="div3">
+            杭州乌龟洞遗址古人类化石的发现证实五万年前就有古人类在杭州这片土地上生活， [13]  萧山跨湖桥遗址的发掘证实了早在8000年前就有现代人类在此繁衍生息，距今5000年前的余杭良渚文化被誉为“文明的曙光”。杭州夏商周属“扬州之域”。传说在夏禹治水
+
+            钱江新城 
+            时，全国分为九州，长江以南的广阔地域均泛称扬州。公元前21世纪，夏禹南巡，大会诸侯于会稽（今绍兴），曾乘舟航行经过这里，并舍其杭（“杭”是方舟）于此，故名“余杭”。一说，禹至此造舟以渡，越人称此地为“禹杭”，其后，口语相传，讹“禹”为“余”，乃名“余杭”。春秋时，吴囯、越囯两国争霸，杭州先属越囯，后属吴囯，越灭吴后，复属越。战国时，楚囯灭越国，杭州又归入楚。 [14]  
+            秦统一六国后，在灵隐山麓设县治，称钱唐，属会稽郡。《史记·秦始皇本纪》中记载：“三十七年十月癸丑，始皇出游……过丹阳，至钱唐，临浙江，水波恶……”这是史籍最早记载“钱唐”之名。当时还是随江潮出没的海滩，西湖尚未形成。 [14]  
+            西汉承秦制，杭州仍称钱唐。新莽时一度改钱唐为泉亭县；到了东汉，复置钱唐县，属吴郡。这时杭州农田水利兴修初具规模，并从宝石山至万松岭修筑了第一条海塘，西湖开始与海隔断，成为内湖。 [14]  汉书地理志记载:钱唐,西部都尉治。武林山，武林水所出，东入海，行八百三十里，莽曰泉亭。... [15]  
+            三国、两晋、杭州属吴郡，归古扬州。东晋咸和元年（326年），印度佛教徒慧理在飞来峰下建了灵隐寺，是西湖最古的丛林建筑。梁太清三年（549年），侯景升钱唐县为临江郡。陈祯明元年（587年），又置钱唐郡，辖钱唐、于潜、富阳、新城、桐庐，属吴州。 [16]  
+                
+            隋王朝建立后，于开皇九年（589年）废郡为州，“杭州”之名第一次出现。并桐庐入钱唐县，下辖钱唐、余杭、富阳、盐官、于潜、武康六县。州治初在余杭，次年迁钱唐。开皇十一年，在凤凰山依山筑城，“周三十六里九十步”，这是最早的杭州城。大业三年（607年），改置为余杭郡。六年，杨素凿通江南运河，从江苏镇江起，经苏州、嘉兴等地而达杭州，全长400多公里，自此，拱宸桥成为大运河的起讫点。杭州一跃而“咽喉吴越，势雄江海”，确立起了它在整个钱塘江下游地区的交通枢纽地位。“水牵卉服，陆控山夷”。 [17]  这一重要的地理位置，促进了杭州经济文化的迅速发展。这时的余杭郡有户15380，杭州户口统计由此开始。 [14]  
+                
+            钱江新城 
+            唐代，置杭州郡，旋改余杭郡，治所在钱唐。因避国号讳，于武德四年（621年）改“钱唐”为“钱塘”。太宗时属江南道，天宝元年（742年）复名余杭郡，属江南东道。乾元元年（758年）又改为杭州，归浙江西道节度，州治一度在钱塘，辖钱塘、盐官、富阳、新城、余杭、临安、于潜、唐山八县。 [14]  到了唐代后期，杭州已是一副“骈樯二十里，开肆三万室”的兴旺景象。每年朝廷从杭州所收商税高达50万缗，几乎占全国财政收入的4%。在元和八年（812年）中央政府任命卢元辅为杭州刺史的制文中已经出现了“江南列郡，余杭为大”的赞誉。 [18]  
+            五代十国时期，吴越国偏安东南，建都于杭州。当时的杭州，治在钱塘，辖钱塘、钱江、盐官、余杭、富春、桐庐、于潜、新登、横山、武康十县。。在吴越三代、五帝共85年的统治下，经过劳动人民的辛勤开拓建设，杭州发展成为全国经济繁荣和文化荟萃之地。欧阳修在《有美堂记》里有这样的描述：“钱塘自五代时，不烦干戈，其人民幸福富庶安乐。十余万家，环以湖山，左右映带，而闽海商贾，风帆浪泊，出入于烟涛杳霭之间，可谓盛矣！”吴越王钱镠在杭州凤凰山筑了“子城”，内建宫殿，作为国治，又在外围筑了“罗城”，周围70里，作为防御。据《吴越备史》记载，这个都城，西起秦望山，沿钱塘江至江干，濒钱塘湖（西湖）到宝石山，东北面到艮山门。以形似腰鼓，故又有“腰鼓城”之称。 [14]  
+            吴越王重视兴修水利，引西湖水输入城内运河；
+            
+            杭州美景(14张) 
+            
+            
+                在钱塘江沿岸，采用“石囤木桩法”修筑百余里的护岸海塘；还在钱塘江沿岸兴建龙山、浙江二闸，阻止咸水倒灌，减轻潮患，扩大平陆。动用民工凿平江中的石滩，使航道畅通，促进了与沿海各地的水上交通。 [14]  
+        </div>
+    </div>
+</body>
+</html>

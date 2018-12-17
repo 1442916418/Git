@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function()
+        {
+            var oTxt = document.getElementById('txt1');
+
+            oTxt.onkeydown = function(ev)
+            {
+                var oEvent = ev || event;
+
+                //alert(oEvent.keyCode);
+                // 0- 48
+                // 9- 57
+                // 退格- 8
+                // 左键- 37
+                // 右键- 39
+                // 小键盘0- 96
+                // 小键盘9- 105
+
+                if ((oEvent.keyCode<48 || oEvent.keyCode>57) && oEvent.keyCode!= 8 &&
+                    oEvent.keyCode!=37 && oEvent.keyCode!=39 && (oEvent.keyCode<96 || oEvent.keyCode > 105))
+                {
+                     return false;
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txt1">
+</body>
+</html>

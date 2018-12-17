@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ccc;
+            position: absolute;
+        }
+        .box{
+            border: 1px dashed black;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById('div1');
+
+            // 求鼠标离物体的距离，通过xy轴求出鼠标的位置
+            // 横向距离
+            var disX = 0;
+            // 纵向距离
+            var disY = 0;
+
+            // 鼠标按键被按下时发生
+            oDiv.onmousedown = function(ev)
+            {
+                var oEvent = ev || event;
+
+                // 鼠标的位置减去div的位置
+                disX = oEvent.clientX-oDiv.offsetLeft;
+                disY = oEvent.clientY-oDiv.offsetTop;
+
+                var oBox = document.createElement('div');
+                oBox.className = 'box';
+                oBox.style.width = oDiv.offsetWidth-2+'px';
+                oBox.style.height = oDiv.offsetHeight-2+'px';
+
+                oBox.style.left = oDiv.offsetLeft+'px';
+                oBox.style.top = oDiv.offsetTop+'px';
+
+                document.body.appendChild(oBox);
+
+                // 鼠标指针移动到元素上时触发
+                document.onmousemove = function(ev)
+                {
+                    var oEvent = ev || event;
+
+                    var leftX = oEvent.clientX-disX;
+                    var topY = oEvent.clientY-disY;
+
+                    oBox.style.left = leftX +'px';
+                    oBox.style.top = topY +'px';
+                }
+
+                // 鼠标抬起
+                document.onmouseup =function()
+                {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+
+                    oDiv.style.left = oBox.offsetLeft+'px';
+                    oDiv.style.top = oBox.offsetTop+'px';
+
+                    document.body.removeChild(oBox);
+                }
+
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

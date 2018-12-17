@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+        }
+        #div2{
+            width: 500px;
+            height: 400px;
+            background: #ccc;
+            position: relative;
+        }
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById('div1');
+            var oDiv2 = document.getElementById('div2');
+
+            // 求鼠标离物体的距离，通过xy轴求出鼠标的位置
+            // 横向距离
+            var disX = 0;
+            // 纵向距离
+            var disY = 0;
+
+            // 鼠标按键被按下时发生
+            oDiv.onmousedown = function(ev)
+            {
+                var oEvent = ev || event;
+
+                // 鼠标的位置减去div的位置
+                disX = oEvent.clientX-oDiv.offsetLeft;
+                disY = oEvent.clientY-oDiv.offsetTop;
+
+                if (oDiv.setCapture)
+                {
+                    // IE
+                    // 鼠标指针移动到元素上时触发
+                    oDiv.onmousemove = mouseMove;
+
+                    // 鼠标抬起
+                    oDiv.onmouseup = mouseUp;
+                    oDiv.setCapture();
+                }
+                else
+                {
+                    // 谷歌、火狐
+                    // 鼠标指针移动到元素上时触发
+                    document.onmousemove = mouseMove;
+
+                    // 鼠标抬起
+                    document.onmouseup =mouseUp;
+                }
+
+                function mouseMove(ev)
+                {
+                    var oEvent = ev || event;
+
+                    var leftX = oEvent.clientX-disX;
+                    var topY = oEvent.clientY-disY;
+
+                    oDiv.style.left = leftX +'px';
+                    oDiv.style.top = topY +'px';
+                }
+
+                function mouseUp()
+                {
+                    this.onmousemove = null;
+                    this.onmouseup = null;
+
+                    if (oDiv.releasePointerCapture)
+                    {
+                        oDiv.releasePointerCapture();
+                    }
+                }
+
+                return false;
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    asdfasddddddddddddddddd
+    asdaaaaaaaaaaaaaaaaaaaaaa
+    <div id="div1">
+        5555555555
+        asddddd
+    </div>
+</body>
+</html>     
