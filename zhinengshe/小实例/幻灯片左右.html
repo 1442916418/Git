@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>幻灯片--左右切换</title>
+    <style>
+        *{ margin: 0; padding: 0; list-style: none;}
+        .play{ width: 1180px; height: 664px; background: red; position: relative; top: 100px; left: 350px; overflow: hidden;}
+        .play ul{ width: 5900px; height: 664px; float: left; position: absolute;}
+        .play ul li{ width: 1180px; height: 664px; float: left;}
+        .play ol{ position: absolute; bottom: 0; left: 42%; text-align: center; font-size: 10px; color: #ccc;z-index: 10000}
+        .play ol li{ width: 15px; height: 15px; background: rgba(220, 220, 220, 0.5); float: left; border-radius: 50%; margin: 10px; cursor: pointer; }
+        .active { background: rgba(77, 21, 226, 1); color: cornflowerblue;}
+        .mark_box{ width: 1180px; height: 664px; background: #ccc; position: absolute; top: 0; left: 0; z-index: 999; opacity: 0;}
+        .prev{ width: 50px; height: 50px; background: url('images/65左双箭头.png') no-repeat; background-size: 100% 100%; position: absolute; top: 45%; left: 0; z-index: 1000; opacity: 0; cursor: pointer;}
+        .next{ width: 50px; height: 50px; background: url('images/64右双箭头.png') no-repeat; background-size: 100% 100%; position: absolute; top: 45%; right: 0; z-index: 1000; opacity: 0; cursor: pointer;}
+    </style>
+    <script src="js/move2.js"></script>
+    <script>
+        window.onload = function()
+        {
+            var oPlay = document.getElementById('play');
+            var aLi = document.getElementsByTagName('ol')[0].getElementsByTagName('li');
+            var oUl = document.getElementsByTagName('ul')[0];
+
+            var oBtnPrev = getByClass(oPlay, 'prev')[0];
+            var oBtnNext = getByClass(oPlay, 'next')[0];
+            var oMarkBox = getByClass(oPlay, 'mark_box')[0]
+
+            var now = 0;
+
+            // 循环ol下的li
+            for (var i = 0; i < aLi.length; i ++)
+            {
+                aLi[i].index = i;
+                aLi[i].onclick = function()
+                {
+                    now = this.index;
+
+                    tab();
+                }
+            }
+
+            // 运动函数，循环ol下的li，先给每一个class赋值为空，在使用时为每一个添加active样式
+            // startMove:运动ul标签，每运动一次left等于-1180*now(px)，now就是ol下li的index
+            function tab()
+            {
+                for (var i = 0; i < aLi.length; i++)
+                {
+                    aLi[i].className = '';
+                }
+                aLi[now].className = 'active';
+                startMove(oUl, {left: -1180*now});
+            }
+
+            // 执行函数
+            function next()
+            {
+                now++;
+                // 判断当now等于ul下li的长度时，就说明运动到头了，这时把now赋值为0，重新开始
+                if (now == aLi.length)
+                {
+                    now = 0;
+                }
+                tab();
+            }
+
+            // 当鼠标移入oMarkBox上时，左右按钮透明度为1，显示出来
+            // 当鼠标移入左、有按钮时，左右按钮的透明度为1，全部显示出来
+            oBtnNext.onmouseover = oBtnPrev.onmouseover = oMarkBox.onmouseover = function()
+            {
+                startMove(oBtnPrev, {opacity: 100});
+                startMove(oBtnNext, {opacity: 100});
+            }
+            // 当鼠标移入oMarkBox上时，左右按钮透明度变为0，隐藏起来
+            // 当鼠标移入左、有按钮时，左右按钮的透明度为0，全部隐藏起来
+            oBtnNext.onmouseout = oBtnPrev.onmouseout = oMarkBox.onmouseout = function()
+            {
+                startMove(oBtnPrev, {opacity: 0});
+                startMove(oBtnNext, {opacity: 0});
+            }
+
+            // 左边按钮
+            oBtnPrev.onclick = function()
+            {
+                now--;
+                if (now == -1)
+                {
+                    now = aLi.length-1;
+                }
+                tab();
+            }
+
+            // 右边按钮
+            oBtnNext.onclick = function()
+            {
+                now++;
+                if (now == aLi.length)
+                {
+                    now = 0;
+                }
+                tab();
+            }
+
+            // 定义一个定时器，每两秒执行一次执行运动函数
+            var timer = setInterval(next, 2000);
+
+            oPlay.onmouseover = function()
+            {
+                // 当鼠标移入时结束定时器
+                clearInterval(timer);
+            }
+            oPlay.onmouseout = function()
+            {
+                // 当鼠标移入时开启定时器
+                timer = setInterval(next, 2000);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div id="play" class="play">
+        <div class="prev"></div>
+        <div class="next"></div>
+
+        <a class="mark_box" href="javascript:;"></a>
+        <ul>
+            <li><a href="javascript:;"><img src="images/hdp/1.jpg"></a></li>
+            <li><a href="javascript:;"><img src="images/hdp/2.jpg"></a></li>
+            <li><a href="javascript:;"><img src="images/hdp/3.jpg"></a></li>
+            <li><a href="javascript:;"><img src="images/hdp/4.jpg"></a></li>
+            <li><a href="javascript:;"><img src="images/hdp/5.jpg"></a></li>
+        </ul>
+
+        <ol>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+    </div>
+</body>
+</html>

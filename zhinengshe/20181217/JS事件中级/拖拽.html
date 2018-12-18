@@ -18,28 +18,33 @@
         {
             var oDiv = document.getElementById('div1');
 
-            // 求鼠标离物体的距离，通过xy轴求出鼠标的位置
+            // 求鼠标离物体的距离，通过xy轴求出鼠标在物体里的位置
             // 横向距离
             var disX = 0;
             // 纵向距离
             var disY = 0;
-
-            // 鼠标按键被按下时发生
+ 
+            // 鼠标按键被按下时发生 
             oDiv.onmousedown = function(ev)
             {
                 var oEvent = ev || event;
 
-                // 鼠标的位置减去div的位置
+                // 鼠标在div里x、y轴的位置
                 disX = oEvent.clientX-oDiv.offsetLeft;
                 disY = oEvent.clientY-oDiv.offsetTop;
+
+                // document.title = disY;
 
                 // 鼠标指针移动到元素上时触发
                 document.onmousemove = function(ev)
                 {
                     var oEvent = ev || event;
 
+                    // div在可视区里x、y轴的位置
                     var leftX = oEvent.clientX-disX;
                     var topY = oEvent.clientY-disY;
+
+                    document.title = topY;
 
                     // leftX小于0，说明从左边越界了
                     if ( leftX<0 )
@@ -60,7 +65,7 @@
                         // 这时把topY赋值为0，就不会越界
                         topY = 0;
                     }
-                    // 如果topY大于(可视区高度减去div的高度),说明从小边越界了
+                    // 如果topY大于(可视区高度减去div的高度),说明从下边越界了
                     else if ( topY > document.documentElement.clientHeight-oDiv.offsetHeight)
                     {
                         // 这时把topY赋值为(可视区高度减去div的高度)最大值，就不会越界了

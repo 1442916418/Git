@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1、打印一个星号并换行
+        document.writeln("*<br/>");    
+        // 2、打印一行6个星号
+        for(var i = 0; i < 6; i ++)
+        {
+            document.writeln("*");
+        }
+        // 3、打印六列星号
+        for (var i = 0; i < 6; i ++)
+        {
+            document.writeln("*<br/>");
+        }
+        // 4、打印六行六列
+        for (var i = 0; i < 6; i ++)
+        {
+            for (var j = 0; j < 6; j ++)
+            {
+                document.writeln("*");
+            }
+            document.writeln("<br/>");
+        }
+        // 5、则让内层循环 j<=i，就可以实现。i控制行数，j控制列数。比如：当i=0时，内层循环1次，j=0,j<=i,当j++时，就跳出内层循环；当i=1时，内存循环2次，j=0和j=1的情况，当j=1,j++, 则j=2,j<=i则不成立，跳出内存循环。以此类推。
+        for (var i = 0; i < 6; i ++)
+        {
+            for (var j = 0; j < i; j ++)
+            {
+                document.writeln("*");
+            }
+            document.writeln("<br/>");
+        }
+        // 6、当j<i，那么每行少一个星号，则第一行会被抹掉，如下图所示：
+        for (var i = 0; i < 6; i ++)
+        {
+            for (var j = 0; j < i; j ++)
+            {
+                document.writeln("*");
+            }
+            document.writeln("<br/>");
+        }
+        // 7、空格和星号相结合的情况，完整金字塔就是被空格顶过去的。
+        // 打印6个空格，后跟星号
+        for (var i = 0; i < 6; i ++)
+        {
+            document.writeln("&nbsp;");
+        }
+        document.writeln("*<br/>");
+        // 每行5个空格，后跟一个星号
+        for (var i = 0; i < 6; i ++)
+        {
+            for (var k = 0; k < 5; k ++)
+            {
+                document.writeln("&nbsp;");
+            }
+            document.writeln("*<br/>");
+        }
+        // 8、根据下图所示，我们已经可以打印出左边的图形，然后通过控制空格，把它转成右边的图形。
+        // 观察后发现如下规律，右边图形相对于左边的图形。
+        // 行数仍然是6行，即i=6，先不考虑空格的问题，每一行星星的个数，如下所示：
+        // 可以得出：j<=(2*i-1)+1。当i=0时，j=0，打印一个星号，必须j<=，参考上面的讲解；当i=1时，j=2，因为是j<=i，j取值0，1，2，循环三次，打印3个星号。以此类推。
+        for (var i = 0; i < 6; i ++)
+        {
+            for (var j = 0; j <= (2*i-1)+1; j ++)
+            {
+                document.writeln("*");
+            }
+            document.writeln("<br/>");
+        }
+        // 在（8）的基础上，插入空格。对比发现，如下规律：
+        // 再加一层内循环，在星号内循环的前面，先打印空格，然后再打印相应的星号。
+        // 可以得出：k<6-i-1;当i=0时，k<5,k取值0，1，2，3，4，循环5次，打印5个空格。依次类推。
+        for (var i = 0; i < 6; i ++)
+        {
+            for (var k = 0; k < 6-i-1; k ++)
+            {
+                document.writeln("&nbsp;");
+            }
+            for (var j = 0; k <= (2*i-1)+1; j ++)
+            {
+                document.writeln("*");
+            }
+            document.writeln("<br/>");
+        }
+  </script>
+</body>
+</html>

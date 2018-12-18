@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>捕获拖拽</title>
+    <style>
+        #div1{ width: 200px; height: 200px; background: blue; position: absolute;}
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById('div1');
+
+            var disX = 0;
+            var disY = 0;
+
+            oDiv.onmousedown = function(ev)
+            {
+                var oEvent = ev || event;
+
+                disX = oEvent.clientX - oDiv.offsetLeft;
+                disY = oEvent.clientY - oDiv.offsetTop;
+
+                if (oDiv.setCapture)
+                {
+                    // IE
+                    oDiv.onmousemove = mouseMove;
+
+                    oDiv.onmouseup = mouseUp;
+                    oDiv.setCapture();
+                }
+                else 
+                {
+                    // 谷歌火狐
+                    document.onmousemove = mouseMove;
+
+                    document.onmouseup = mouseUp;
+                }
+
+                function mouseMove(ev)
+                {
+                    oEvent = ev || event;
+
+                    var leftX = oEvent.clientX - disX;
+                    var topY = oEvent.clientY - disY;
+
+                    oDiv.style.left = leftX + 'px';
+                    oDiv.style.top = topY + 'px';
+                }
+
+                function mouseUp()
+                {
+                    this.onmousemove = null;
+                    this.onmouseup = null;
+
+                    if (oDiv.releasePointerCapture)
+                    {
+                        oDiv.releasePointerCapture();
+                    }
+                }
+
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    33333333333333<br>
+    aaaaaaaaaaa
+    <div id="div1">
+        adsfdsfadfadfasdfas 
+    </div>
+</body>
+</html>

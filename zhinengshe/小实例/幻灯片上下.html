@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>幻灯片--上下运动</title>
+    <style>
+        .play{
+            width: 500px;
+            height: 300px;
+            background: red;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+            margin-top: 100px;
+        }
+        .play ul li, .play ol li {
+            list-style: none;
+        }
+        .play ul,.play ol {
+            margin: 0;
+            padding: 0;
+        }
+        .active{
+            background: #ccc;
+            color: rgb(83, 83, 83);
+        }
+        .play ul {
+            position: absolute;
+            top: 0;
+        }
+        .play ul li {
+            width: 500px;
+            height: 300px;
+        }
+        .play ol {
+            z-index: 100;
+            position: absolute;
+            bottom: 0;
+            left: 30%;
+            font-family: cursive;
+            font-size: 16px;
+            color: #ccc;
+            text-align: center;
+        }
+        .play ol li{
+            width: 20px;
+            height: 20px;
+            background: rgb(252, 253, 237);
+            border-radius: 50%;
+            float: left;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="move2.js"></script>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById('play');
+            var aBtn = oDiv.getElementsByTagName('ol')[0].getElementsByTagName('li');
+            var oUl = oDiv.getElementsByTagName('ul')[0];
+
+            var now = 0;
+
+            for (var i = 0; i < aBtn.length; i ++)
+            {
+                aBtn[i].index = i;
+                aBtn[i].onclick = function()
+                {
+                    now = this.index;
+                    
+                    tab();
+                }
+            }
+
+            function tab()
+            {
+                for (var i = 0; i < aBtn.length; i ++)
+                {
+                    aBtn[i].className = '';
+                }
+                aBtn[now].className = 'active';
+                //oUl.style.top = -300*this.index+'px';
+                startMove(oUl, {top: -300*now});
+            }
+
+            function next()
+            {
+                now++;
+                if (now == aBtn.length)
+                {
+                    now = 0;
+                }
+
+                tab();
+            }
+
+            var timer = setInterval(next, 2000);
+
+            oDiv.onmouseover = function()
+            {
+                clearInterval(timer);
+            }
+            oDiv.onmouseout = function()
+            {
+                timer = setInterval(next, 2000);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="play" class="play">
+        <ul>
+            <li><a href="javascript:;"><img src="images/北盘江大桥.jpg"></a></li>
+            <li><a href="javascript:;"><img src="images/北盘江大桥1.png"></a></li>
+            <li><a href="javascript:;"><img src="images/北盘江大桥2.jpg"></a></li>
+            <li><a href="javascript:;"><img src="images/恩施大峡谷.jpg"></a></li>
+            <li><a href="javascript:;"><img src="images/山.jpg"></a></li>
+        </ul>
+
+        <ol>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+    </div>
+</body>
+</html>

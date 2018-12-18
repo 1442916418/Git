@@ -1,24 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>右键菜单</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        #div1{
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: #ccc;
-            border: 1px solid #9999;
-            display: none;
-        }
+        *{ margin: 0; padding: 0; list-style: none;}
+        #div1{ position: absolute; width: 200px; height: 300px; background: rgb(241, 241, 241);border: 1px solid rgb(230, 230, 230); display: none; }
+        #div1 ul li{ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 16px; border-bottom: 1px dashed rgb(167, 167, 167); padding: 10px; }
     </style>
     <script>
         document.oncontextmenu = function(ev)
@@ -30,9 +18,9 @@
             oDiv.style.left = oEvent.clientX+'px';
             oDiv.style.top = oEvent.clientY+'px';
 
+            // 取消默认事件
             return false;
-        }
-
+        }   
         document.onclick = function()
         {
             var oDiv = document.getElementById('div1');
@@ -44,11 +32,12 @@
 <body>
     <div id="div1">
         <ul>
-            <li>123</li>
-            <li>123</li>
-            <li>123</li>
-            <li>123</li>
-            <li>123</li>
+            <Li>11111111</Li>
+            <Li>22222222</Li>
+            <Li>33333333</Li>
+            <Li>44444444</Li>
+            <Li>55555555</Li>
+            <Li>66666666</Li>
         </ul>
     </div>
 </body>

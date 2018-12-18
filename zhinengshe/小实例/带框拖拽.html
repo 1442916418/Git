@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>普通拖拽</title>
+    <style>
+        #div1{ width: 200px; height: 200px; background: rgb(202, 202, 255); position: absolute;}
+        .box{ border: 1px dashed black; position: absolute;}
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById('div1');
+
+            // 求鼠标在div里x、y轴上的位置
+            var disX = 0;
+            var disY = 0;
+
+            // 鼠标按下触发
+            oDiv.onmousedown = function(ev)
+            {
+                var oEvent = ev || event;
+
+                disX = oEvent.clientX - oDiv.offsetLeft;
+                disY = oEvent.clientY - oDiv.offsetTop;
+                //document.title = disX;
+
+                // 创建div
+                var oBox = document.createElement('div');
+                // 把样式box赋给oBox
+                oBox.className = 'box';
+                // 把物体(oDiv)的宽度和高度赋给oBox的宽度和高度，减2是因为oBox有边框
+                oBox.style.width = oDiv.offsetWidth-2+'px';
+                oBox.style.height = oDiv.offsetHeight-2+'px';
+                // oBox的初始位置和oDiv的一样
+                oBox.style.left = oDiv.offsetLeft+'px';
+                oBox.style.top = oDiv.offsetTop+'px';
+
+                // 在哪里创建oBox呢！答：在body下添加子节点oBox
+                document.body.appendChild(oBox);
+
+                // 鼠标移动到元素上触发
+                document.onmousemove = function(ev)
+                {
+                    var oEvent = ev || event;
+
+                    // div在可视区里x、y轴的位置
+                    var leftX = oEvent.clientX - disX;
+                    var topY = oEvent.clientY - disY;
+                    // document.title = leftX;
+                    
+                    // ！！！
+                    oBox.style.left = leftX + 'px';
+                    oBox.style.top = topY + 'px';
+                }
+
+                // 鼠标离开时触发
+                document.onmouseup = function()
+                {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                    
+                    // 当oBox拖动完成时，把位置赋给oDiv，这样物体(div)就会在oBox里面了
+                    oDiv.style.left = oBox.offsetLeft+'px';
+                    oDiv.style.top = oBox.offsetTop+'px';
+
+                    // 当鼠标移出时清除oBox
+                    document.body.removeChild(oBox);
+                }
+
+                // 阻止默认事件
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

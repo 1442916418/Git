@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 
+        function myAddEvent(obj, ev, fn)
+        {
+            if (obj.attachEvent)
+            {
+                obj.attachEvent('on'+ev, fn);
+            }
+            else
+            {
+                obj.addEventListener(ev, fn, false);
+            }
+        }
+        
+        window.onload = function()
+        {
+            var oBtn = document.getElementById('but1');
+
+            myAddEvent(oBtn, 'click', function(){
+                alert('aaaa');
+            });
+            myAddEvent(oBtn, 'click', function(){
+                alert('bbbb');
+            });
+        }
+    </script>
+</head>
+<body>
+    <input type="button" id="but1" value="绑定">
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>滚动--div变大加透明度</title>
+    <style>
+        *{ margin: 0; padding: 0;}
+        #div1{ width: 20px; height: 500px; background: rgb(233, 233, 233); border: 1px solid #ccc; position: relative;}
+        #div2{ width: 20px; height: 20px; background: #ccc; position: relative;}
+        #div3{ width: 0px; height: 0px; background: blue; position: absolute; top: 0; right: 0; opacity: 0;}
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv1 = document.getElementById('div1');
+            var oDiv2 = document.getElementById('div2');
+            var oDiv3 = document.getElementById('div3');
+
+            var disY = 0;
+
+            oDiv2.onmousedown = function(ev)
+            {
+                var oEvent = ev || event;
+
+                disY = oEvent.clientY - oDiv1.offsetTop;
+                //document.title = disY;
+
+                document.onmousemove = function(ev)
+                {
+                    var oEvent = ev || event;
+                    
+                    var topY = oEvent.clientY - disY;
+                    //document.title = topY;
+
+                    if ( topY<0 )
+                    {
+                        topY = 0;
+                    }
+                    else if ( topY>oDiv1.offsetHeight-oDiv2.offsetHeight)
+                    {
+                        topY = oDiv1.offsetHeight-oDiv2.offsetHeight;
+                    }
+
+                    oDiv2.style.top = topY + 'px';
+
+                    var scale = topY / (oDiv1.offsetHeight-oDiv2.offsetHeight);
+                    // document.title = scale;
+
+                    oDiv3.style.width = 500*scale+'px';
+                    oDiv3.style.height = 500*scale+'px';
+                    oDiv3.style.opacity = scale;
+                }
+
+                document.onmouseup = function()
+                {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+
+    <div id="div3"></div>
+</body>
+</html>

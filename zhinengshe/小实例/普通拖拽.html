@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>普通拖拽</title>
+    <style>
+        #div1{ width: 200px; height: 200px; background: blue; position: absolute;}
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById('div1');
+
+            // 求鼠标在div里x、y轴上的位置
+            var disX = 0;
+            var disY = 0;
+
+            oDiv.onmousedown = function(ev)
+            {
+                var oEvent = ev || event;
+
+                disX = oEvent.clientX - oDiv.offsetLeft;
+                disY = oEvent.clientY - oDiv.offsetTop;
+
+                //document.title = disX;
+
+                document.onmousemove = function(ev)
+                {
+                    var oEvent = ev || event;
+
+                    // div在可视区里x、y轴的位置
+                    var leftX = oEvent.clientX - disX;
+                    var topY = oEvent.clientY - disY;
+
+                    // document.title = leftX;
+
+                    // 判断如果leftX小于0，说明物体(div)越过左边边界了
+                    // 磁性吸附：当leftX小于50时，物体离左边边距小于50，就会自动吸附到左边，并把leftX赋值为0
+                    if ( leftX<50 )
+                    {   
+                        // 把leftX赋值为0，就不会从左边出界
+                        leftX = 0;
+                    }
+                    // 判断如果leftX大于(可视区宽度减去div宽度)，说明物体越过右边边界了
+                    // 减50，自动吸附到右边
+                    else if ( leftX>document.documentElement.clientWidth-oDiv.offsetWidth-50)
+                    {
+                        // 这时把(可视区宽度减去div宽度)的最大值赋给leftX，就不会从右边越界了
+                        leftX = document.documentElement.clientWidth-oDiv.offsetWidth;
+                    }
+
+                    // 判断如果topY小于0，说明物体越过上边边界了
+                    // 磁性吸附：当topY小于50时，物体离上边边距小于50，就会自动吸附到上边，并把topY赋值为0
+                    if ( topY<50 )
+                    {
+                        // 把topY赋值为0，就不会从上边出界
+                        topY = 0;
+                    }
+                    // 判断如果topY大于(可视区高度减去div高度)，说明物体越过下边边界了
+                    // 减50自动吸附到下边
+                    else if ( topY>document.documentElement.clientHeight-oDiv.offsetHeight-50)
+                    {   
+                        // 这时把(可视区高度减去div高度)的最大值赋给topY，就不会从下边越界
+                        topY = document.documentElement.clientHeight-oDiv.offsetHeight;
+                    }
+
+                    oDiv.style.left = leftX + 'px';
+                    oDiv.style.top = topY + 'px';
+                }
+
+                document.onmouseup = function()
+                {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+
+                // 阻止默认事件
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>
