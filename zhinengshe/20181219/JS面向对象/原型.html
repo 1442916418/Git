@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var arr1 = new Array(22,2233,444,1);
+        var arr2 = new Array(2,23,3);
+
+        // class        一次给一组元素加样式        原型
+        // 行间样式      一次给一个元素加样式        给对象加东西
+
+        // 原型是往类上加方法
+        // 类    原型    方法
+        Array.prototype.sum = function()    // class
+        //arr1.sum = function()   // 行间样式
+        {
+            var result = 0;
+            for (var i = 0; i < this.length; i ++)
+            {
+                result += this[i];
+            }
+            return result;
+        }
+
+        alert(arr1.sum());
+        alert(arr2.sum());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

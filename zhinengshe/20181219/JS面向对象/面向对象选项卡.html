@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <style>
+        .content{
+            width: 1200px;
+            height: 300px;
+        }
+        .content input{
+            width: 230px;
+            height: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            border: 0;
+            margin: 0;
+            padding: 0;
+        }
+        .active{
+            background: black;
+            color: #ccc;
+            border: 0;
+        }
+        .content div{
+            width: 1167px;
+            height: 250px;
+            border: 1px solid #ccc;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            display: none;
+            text-indent: 35px;
+            line-height: 40px;
+        }
+    </style>
+
+    <script>
+        window.onload = function()
+        {
+            new TabSwitch('content');
+        }
+
+        function TabSwitch(id)
+        {
+            var _this = this;
+            var oDiv = document.getElementById(id);
+            this.aBtn = oDiv.getElementsByTagName('input');
+            this.aDiv = oDiv.getElementsByTagName('div');
+
+            for (var i = 0; i < this.aBtn.length; i ++)
+            {
+                this.aBtn[i].index = i;
+                this.aBtn[i].onclick = function()
+                {
+                    _this.fnClick(this);
+                }
+            }
+        }
+
+        TabSwitch.prototype.fnClick = function(oBtn)
+        {
+            for (var i = 0; i < this.aBtn.length; i++)
+            {
+                this.aBtn[i].className = '';
+                this.aDiv[i].style.display = 'none';
+            }
+            oBtn.className = 'active';
+            this.aDiv[oBtn.index].style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="content" id="content">
+        <input type="button" value="杭州" class="active">
+        <input type="button" value="南京">
+        <input type="button" value="合肥">
+        <input type="button" value="郑州">
+        <input type="button" value="北京">
+        <div style="display:block;">
+            杭州，简称“杭”，浙江省省会、副省级市、长江三角洲城市群中心城市、环杭州湾大湾区核心城市、杭州都市圈核心城市 [1]  、沪嘉杭G60科创走廊中心城市 [2]  、国际重要的电子商务中心 [3]  ，位于中国东南沿海、浙江省北部、钱塘江下游、京杭大运河南端，是浙江省的政治、经济、文化、教育、交通和金融中心。截至2017年，杭州下辖10个区、2个县、代管1个县级市，总面积16853.57平方千米（包含钱塘江水域面积，钱塘江河海分界线采用海盐澉浦—余姚西三闸连线）
+        </div>
+        <div>
+            南京，简称“宁”，古称金陵、建康，是江苏省会、副省级市、南京都市圈核心城市，国务院批复确定的中国东部地区重要的中心城市、全国重要的科研教育基地和综合交通枢纽 [1]  。全市下辖11个区，总面积6587km²，2017年建成区面积1398.69km²，常住人口833.5万人，城镇人口685.89万人，城镇化率82.3%，是长三角及华东唯一的特大城市。 [2-4] 
+        </div>
+        <div>
+            合肥，简称庐或合，古称庐州、庐阳，是安徽省省会，长三角城市群副中心 [1]  ，综合性国家科学中心，“一带一路”和长江经济带战略双节点城市 [2]  ，具有国际影响力的创新之都，国家重要的科研教育基地，现代制造业基地和综合交通枢纽 [1]  ，合肥都市圈中心城市 [3]  ，皖江城市带核心城市 [4]  ，G60科创走廊中心城市。
+        </div>
+        <div>
+            郑州，简称郑，古称商都，是河南省省会 [1]  、中国中部地区重要的中心城市 [2]  、国家重要的综合交通枢纽 [3]  、商贸物流中心 [4]  、特大城市 [5]  、中原城市群中心城市 [6]  ，位居河南省中部偏北，东接开封，西依洛阳，北临黄河与新乡、焦作相望，南部与许昌、平顶山接壤，地理坐标为东经112°42′-114°14′、北纬34°16′-34°58′。 [7]  
+        </div>
+        <div>
+            北京，简称“京”，是中华人民共和国的首都、直辖市、国家中心城市、超大城市、国际大都市，全国政治中心、文化中心、国际交往中心、科技创新中心和综合交通枢纽，是中国共产党中央委员会、中华人民共和国中央人民政府、全国人民代表大会、中国人民政治协商会议全国委员会、中华人民共和国中央军事委员会所在地，也是中部战区司令部驻地。 [1]  
+        </div>
+    </div>
+</body>
+</html>

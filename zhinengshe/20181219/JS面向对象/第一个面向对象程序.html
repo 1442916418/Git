@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 创建
+        var obj = new Object();
+
+        // 属性
+        obj.name = 'bue';
+        obj.qq = '22222222';
+
+        // 方法
+        obj.showName = function()
+        {
+            alert('我的名字叫：'+this.name);
+        }
+        obj.showQQ = function()
+        {
+            alert('我的qq号是：'+this.qq);
+        }
+
+        // 调用
+        obj.showName();
+        obj.showQQ();
+    </script>
+</head>
+<body>
+</body>
+</html>

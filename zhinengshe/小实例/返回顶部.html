@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>返回顶部</title>
+    <style>
+        #box{ height: 2000px;}
+        #back-up{ border: 1px solid red; width:40px; height: 40px; position: fixed; right: 30px; bottom: 30px; background: blue}
+    </style>
+    <script>
+           var currentPosition,timer;
+            function GoTop(){
+                timer=setInterval("runToTop()",1);
+            }
+            function runToTop(){
+                currentPosition=document.documentElement.scrollTop || document.body.scrollTop;
+                currentPosition-=10;    /*调整滚动的值,值大小会影响速度*/
+                if(currentPosition>0){
+                    window.scrollTo(0,currentPosition);
+                }else{
+                    window.scrollTo(0,0);
+                    clearInterval(timer);
+                }
+            }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+    <div id="back-up" onclick="GoTop()"></div>   
+</body>
+    <script>
+        window.scrollTo(0,document.body.scrollHeight);//页面刷新定位在底部
+    </script>
+</html>

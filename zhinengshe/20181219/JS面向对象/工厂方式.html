@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数 
+        function createPerson(name, qq)
+        {
+            // 原料
+            var obj = new Object();
+
+            // 加工
+            obj.name = name;
+            obj.qq = qq;
+
+            obj.showName = function()
+            {
+                alert("我的名字叫："+this.name);
+            }
+            obj.showQQ = function()
+            {
+                alert("我的QQ号："+this.qq);
+            }
+
+            // 出厂
+            return obj;
+        }    
+
+        var obj = createPerson('blue', 'asdfadfa');
+        var obj2 = createPerson('blue22', 'as222dfadfa');
+
+        // 等于false，函数重复
+        alert(obj.showName == obj2.showName);
+
+    </script>
+</body>
+</html>

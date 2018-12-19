@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数 
+        function createPerson(name, qq)
+        {
+            // 系统会偷偷替我们做: 偷偷的替我们建一个空白对象，并返回出去
+            // var this = new Object();
+
+            // 加工
+            this.name = name;
+            this.qq = qq;
+
+            this.showName = function()
+            {
+                alert("我的名字叫："+this.name);
+            }
+            this.showQQ = function()
+            {
+                alert("我的QQ号："+this.qq);
+            }
+
+            // 也会偷偷的返回出去
+           // return this;
+        }    
+
+        var obj = new createPerson('blue', 'asdfadfa');
+        var obj2 = new createPerson('blue22', 'as222dfadfa');
+
+        // alert(obj.showName == obj2.showName);
+    
+        obj.showName();
+        obj.showQQ();
+    </script>
+</body>
+</html>

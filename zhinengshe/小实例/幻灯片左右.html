@@ -11,8 +11,8 @@
         .play ul{ width: 5900px; height: 664px; float: left; position: absolute;}
         .play ul li{ width: 1180px; height: 664px; float: left;}
         .play ol{ position: absolute; bottom: 0; left: 42%; text-align: center; font-size: 10px; color: #ccc;z-index: 10000}
-        .play ol li{ width: 15px; height: 15px; background: rgba(220, 220, 220, 0.5); float: left; border-radius: 50%; margin: 10px; cursor: pointer; }
-        .active { background: rgba(77, 21, 226, 1); color: cornflowerblue;}
+        .play ol li{ width: 15px; height: 15px; background: #aaa; float: left; border-radius: 50%; margin: 10px; cursor: pointer; }
+        /* .active { background: rgba(77, 21, 226, 1); color: cornflowerblue;} */
         .mark_box{ width: 1180px; height: 664px; background: #ccc; position: absolute; top: 0; left: 0; z-index: 999; opacity: 0;}
         .prev{ width: 50px; height: 50px; background: url('images/65左双箭头.png') no-repeat; background-size: 100% 100%; position: absolute; top: 45%; left: 0; z-index: 1000; opacity: 0; cursor: pointer;}
         .next{ width: 50px; height: 50px; background: url('images/64右双箭头.png') no-repeat; background-size: 100% 100%; position: absolute; top: 45%; right: 0; z-index: 1000; opacity: 0; cursor: pointer;}
@@ -30,6 +30,8 @@
             var oMarkBox = getByClass(oPlay, 'mark_box')[0]
 
             var now = 0;
+
+            aLi[0].style.background = "blue";
 
             // 循环ol下的li
             for (var i = 0; i < aLi.length; i ++)
@@ -49,9 +51,9 @@
             {
                 for (var i = 0; i < aLi.length; i++)
                 {
-                    aLi[i].className = '';
+                    aLi[i].style.background = '#aaa';
                 }
-                aLi[now].className = 'active';
+                aLi[now].style.background = 'blue';
                 startMove(oUl, {left: -1180*now});
             }
 
@@ -136,11 +138,11 @@
         </ul>
 
         <ol>
-            <li class="active">1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
         </ol>
     </div>
 </body>

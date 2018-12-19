@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 构造函数： 构建一个对象，所以叫构造函数
+        function createPerson(name, qq)
+        {
+            var obj = new Object();
+
+             // 属性
+            obj.name = name;
+            obj.qq = qq;
+
+            // 方法
+            obj.showName = function()
+            {
+                alert('我的名字叫：'+this.name);
+            }
+            obj.showQQ = function()
+            {
+                alert('我的qq号是：'+this.qq);
+            }
+
+            return obj;
+        }
+
+        var obj = createPerson('blue', 'asdfadfa');
+
+        obj.showName();
+        obj.showQQ();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

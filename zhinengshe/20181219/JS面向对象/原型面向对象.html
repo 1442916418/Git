@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数 ：加属性
+        // 不一样的东西放在构造函数里
+        // 在构造函数里添加属性
+        function CreatePerson(name, qq)
+        {
+            // 系统会偷偷替我们做: 偷偷的替我们建一个空白对象，并返回出去
+            // var this = new Object();
+
+            // 加工
+            this.name = name;
+            this.qq = qq;
+
+            // 也会偷偷的返回出去
+           // return this;
+        }    
+
+        // 原型 ：加方法
+        // 一样的东西放在原型里
+        // 在原型里添加方法
+        CreatePerson.prototype.showName = function()
+        {
+            alert("我的名字叫："+this.name);
+        }
+        CreatePerson.prototype.showQQ = function()
+        {
+            alert("我的QQ号："+this.qq);
+        }
+
+        var obj = new CreatePerson('blue', 'asdfadfa');
+        var obj2 = new CreatePerson('blue22', 'as222dfadfa');
+
+        // 这样一改写，两个对象都有一个showName方法，并是同一个，因为他们都是来自于原型上的
+        alert(obj.showName == obj2.showName);
+    
+        obj.showName();
+        obj.showQQ();
+    </script>
+</body>
+</html>
