@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function()
+        {
+            var oTxt = document.getElementById('txt1');
+            var oBut = document.getElementById('but1');
+
+            oBut.onclick = function()
+            {
+                // 邮箱格式
+                // 144291asd@qq.com
+                // 一串英文、数字、下划线   @   一串英文、数字  .    一串英文
+                // \w+                    @   [a-z0-9]+      \.   [a-z]+
+                var re = /^\w+@[a-z0-9]+\.[a-z]+$/i;
+
+                if (re.test(oTxt.value))
+                {
+                    alert('合法的邮箱');
+                }
+                else
+                {
+                    alert('你丫的写错了');
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txt1">
+    <input type="button" id="but1" value="校验">
+</body>
+</html>

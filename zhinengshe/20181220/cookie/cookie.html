@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 设置cookie
+        function setCookie(name, value, iDay)
+        {
+            var oDate = new Date();
+            oDate.setDate(oDate.getDate()+iDay);
+
+            document.cookie = name+'='+value+';expires='+oDate;
+        }
+
+        // 获取cookie
+        function getCookie(name)
+        {
+            var arr = document.cookie.split('; ');
+
+            for (var i = 0; i < arr.length; i ++)
+            {
+                var arr2 = arr[i].split('=');
+
+                if (arr2[0] == name)
+                {
+                    return arr2[i];
+                }
+            }
+
+            return '';
+        }
+
+        // 删除cookie
+        function removeCookie(name)
+        {
+            setCookie(name, 1, -1);
+        }
+
+        // setCookie('aaa', '12222', 222);
+        // setCookie('bbb', '22222', 22);
+
+        // alert(getCookie('userName'));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

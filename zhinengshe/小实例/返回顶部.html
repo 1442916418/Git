@@ -15,9 +15,11 @@
                 timer=setInterval("runToTop()",1);
             }
             function runToTop(){
+                // 兼容IE、火狐、谷歌
                 currentPosition=document.documentElement.scrollTop || document.body.scrollTop;
                 currentPosition-=10;    /*调整滚动的值,值大小会影响速度*/
                 if(currentPosition>0){
+                    // scrollTo() 方法可把内容滚动到指定的坐标
                     window.scrollTo(0,currentPosition);
                 }else{
                     window.scrollTo(0,0);

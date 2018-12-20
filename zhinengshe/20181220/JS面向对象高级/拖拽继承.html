@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽 - 继承</title>
+    <style>
+        #div1{ width: 200px; height: 200px; background: blue; position: absolute; cursor: pointer;}
+        #div2{ width: 200px; height: 200px; background: yellow; position: absolute; cursor: pointer; left: 200px;}
+    </style>
+    <script src="Drag.js"></script>
+    <script src="LimitDrag.js"></script>
+    <script>
+        window.onload = function()
+        {
+            new Drag('div1');
+            new LimitDrag('div2');
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">普通拖拽</div>
+    <div id="div2">限制范围拖拽</div>
+</body>
+</html>

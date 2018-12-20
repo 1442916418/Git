@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function()
+        {
+            var oTxt = document.getElementById('txt1');
+            var oBut = document.getElementById('but');
+
+            oBut.onclick = function()
+            {
+                var oNewWin = window.open('about:blank','_blank');
+
+                oNewWin.document.write(oTxt.value);
+            }
+        }
+    </script>
+</head>
+<body>
+    <textarea id="txt1" rows="10" cols="40"></textarea><br>
+    <input id="but" type="button" value="运行">
+</body>
+</html>
