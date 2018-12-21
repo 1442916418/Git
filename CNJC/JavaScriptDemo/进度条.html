@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简单进度条</title>
+    <style>
+        #box{ width: 100%; height: 30px; border: 1px solid #ccc;}
+        #bar{ width: 1%; height: 30px; background: blue;}
+    </style>
+    <script>
+        function test()
+        {
+            var oBox = document.getElementById("bar");
+            var width = 1;
+            var timer = setInterval(t, 10);
+
+            function t()
+            {
+                if ( width>=100 )
+                {
+                    clearInterval(timer);
+                }
+                else
+                {
+                    width++;
+                    oBox.style.width = width + "%";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="点我" onclick="test()">
+
+    <div id="box">
+        <div id="bar"></div>
+    </div>
+</body>
+</html>

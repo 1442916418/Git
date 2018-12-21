@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var zero = 0;
+        var timer = 0;
+        var t;
+        function toTimer()
+        {
+            if (!timer)
+            {
+                timer=1;
+                timedCount();
+            }
+        }
+        function timedCount()
+        {
+            document.getElementById('txt1').value = zero;
+            zero += 1;
+            t=setTimeout("timedCount()", 1000);
+        }
+        function stopTimer()
+        {
+            clearTimeout(t);
+            timer = 0;
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="开始计时" onclick="toTimer()">
+    <input type="text" id="txt1">
+    <input type="button" value="停止计时" onclick="stopTimer()">
+    <p>
+        单击开始计数按钮，按下时开始计数，输入框将从0开始一直计数。单击停止计数按钮，按下时停止计数，再次点击开始计数按钮，又再次开始计数。
+    </p>
+   
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>搜索框自动提示</title>
+    <style>
+        #txt1{ background-image: url('https://static.runoob.com/images/mix/searchicon.png');background-position: 10px 12px;background-repeat: no-repeat;width: 100%;font-size: 16px;padding: 12px 20px 12px 40px;border: 1px solid #ddd;margin-bottom: 12px;}
+        #myUL{ list-style-type: none;padding: 0;margin: 0;}
+        #myUL li a{ border: 1px solid #ddd;margin-top: -1px;background: #f6f6f6;padding: 12px;text-decoration: none;font-size: 18px;color: black;display: block;}
+        #myUL li a.header{ background: #e2e2e2;cursor: default;}
+        #myUL li a:hover:not(.header){background-color: #eee;}
+    </style>
+</head>
+<body>
+    <input type="text" id="txt1" placeholder="搜索..." onkeyup="myFunction()">
+
+    <ul id="myUL">
+        <li><a href="#" class="header">A</a></li>
+        <li><a href="#">Adele</a></li>
+        <li><a href="#">Agnes</a></li>
+        
+        <li><a href="#" class="header">B</a></li>
+        <li><a href="#">Billy</a></li>
+        <li><a href="#">Bob</a></li>
+        
+        <li><a href="#" class="header">C</a></li>
+        <li><a href="#">Calvin</a></li>
+        <li><a href="#">Christina</a></li>
+        <li><a href="#">Cindy</a></li>
+    </ul>
+
+    <script>
+        function myFunction()
+        {
+            var input = document.getElementById('txt1');
+            var filter = input.value.toUpperCase();
+            var ul = document.getElementById('myUL');
+            var li = ul.getElementsByTagName("li");
+
+            var a,i;
+
+            for (i = 0; i < li.length; i++)
+            {
+                a = li[i].getElementsByTagName('a')[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1)
+                {
+                    li[i].style.display = "";
+                }
+                else
+                {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

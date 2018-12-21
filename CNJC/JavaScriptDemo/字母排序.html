@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>字母排序</title>
+    
+</head>
+<body>
+    <button onclick="sortList()">排序</button>
+    <ul id="id01">
+        <li>zafda</li>
+        <li>ggefda</li>
+        <li>pvre</li>
+        <li>bfh</li>
+        <li>yut</li>
+        <li>iop</li>
+        <li>sdw</li>
+    </ul>
+
+    <script>
+    function sortList() {
+        var list, i, switching, b, shouldSwitch;
+        list = document.getElementById("id01");
+        switching = true;
+        /*创建一个循环，该循环将继续，直到没有进行切换:*/
+        while (switching) {
+          //首先说：没有进行切换： 
+          switching = false;
+          b = list.getElementsByTagName("li");
+          //遍历所有列表项 :
+          for (i = 0; i < (b.length - 1); i++) {
+            //首先说不应该切换： 
+            shouldSwitch = false;
+            /*检查下一项是否应该
+            用当前项目切换位置 :*/
+            if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+              /*如果下一项按字母顺序低于当前项，
+                标记为开关并断开循环： */
+              shouldSwitch= true;
+              break;
+            }
+          }
+          if (shouldSwitch) {
+            /*如果已标记了开关，则进行开关 
+              将开关标记为已完成 :*/
+            b[i].parentNode.insertBefore(b[i + 1], b[i]);
+            switching = true;
+          }
+        }
+      }
+    </script>
+</body>
+</html>

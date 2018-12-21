@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表格搜索</title>
+    <style>
+        #myInput{  background-image: url('https://static.runoob.com/images/mix/searchicon.png');background-position: 10px 12px;background-repeat: no-repeat;width: 100%;font-size: 16px;padding: 12px 20px 12px 40px;border: 1px solid #ddd;margin-bottom: 12px;}
+        #myTable{ border-collapse: collapse;width: 100%;border: 1px solid #ddd;font-size: 18px;}
+        #myTable th,#myTable td{text-align: left;padding: 12px;}
+        #myTable tr{ border: 1px solid #ddd;}
+        #myTable tr.header, #myTable tr:hover{
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <input id="myInput" type="text" placeholder="搜索..." onkeydown="myFunction()">
+
+    <table id="myTable">
+        <thead>
+            <tr class="header">
+                <th style="width:60%;">名称</th>
+                <th style="width:40%;">城市</th>
+            </tr>
+        </thead>
+       
+        <tr>
+            <th>Tom</th>
+            <th>北京</th>
+        </tr>
+        <tr>
+            <th>波波</th>
+            <th>上海</th>
+        </tr>
+        <tr>
+            <th>德恩</th>
+            <th>杭州</th>
+        </tr>
+        <tr>
+            <th>张李</th>
+            <th>德清</th>
+        </tr>
+        <tr>
+            <th>杰瑞</th>
+            <th>舟山</th>
+        </tr>
+    </table>
+
+    <script>
+        function myFunction()
+        {
+            var oInput = document.getElementById("myInput");
+            var oFilter = oInput.value.toUpperCase();
+            var oTable = document.getElementById("myTable");
+            var oTr = oTable.getElementsByTagName("tr");
+
+            var td;
+
+            for (var i = 0; i < oTr.length; i++)
+            {
+                td = oTr[i].getElementsByTagName("th")[0];
+                if (td)
+                {
+                    if (td.innerHTML.toUpperCase().indexOf(oFilter) > -1)
+                    {
+                        oTr[i].style.display = "";
+                    }
+                    else
+                    {
+                        oTr[i].style.display = 'none';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

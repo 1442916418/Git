@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 设置cookie
+        function setCookie(cname, cvalue, cday)
+        {
+            var oDate = new Date();
+            oDate.setDate(oDate.getDate()+cday);
+
+            document.cookie = cname+'='+cvalue+';expires='+oDate;
+        }
+
+        // 获取cookie
+        function getCookie(cname)
+        {
+            var name = cname + '=';
+            var ca = document.cookie.split(';');
+
+            for (var i = 0; i < ca.length; i ++)
+            {
+                var c = ca[i].trim();
+                if (c.indexOf(name) == 0)
+                {
+                    return c.substring(name.length,c.length);
+                }
+            }
+
+            return "";
+        }
+
+        // 删除cookie
+        function removeCookie(cname)
+        {   
+            setCookie(cname, 1, -1);
+        }
+
+        function checkCookie()
+        {
+            var user = getCookie("username");
+            if ( user != "" )
+            {
+                alert("欢迎"+user+"再次访问");
+            }
+            else
+            {
+                user = prompt("请输入你的名字：","");
+                if ( user!="" && user!=null )
+                {
+                    setCookie("username", user, 14);
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="checkCookie()">
+    
+</body>
+</html>

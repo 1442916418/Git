@@ -7,15 +7,14 @@
     <title>Document</title>
 </head>
 <body>
+    <button onclick="time()">点我</button>
+
     <script>
-        for(var i=0;i<6;i++){  
-            for(var k=0;k<6-i-1;k++){  
-                document.writeln("&nbsp;");  
-            }  
-            for(var j=0;j<=(2*i-1)+1;j++){  
-                document.writeln("*");  
-            }  
-            document.writeln("<br/>");  
+        function time(){
+            setTimeout(function()
+            {
+                alert("Hello 鲍勃");
+            }, 3000);
         }
     </script>
 </body>

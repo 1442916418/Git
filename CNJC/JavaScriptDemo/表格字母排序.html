@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表格字母排序</title>
+
+</head>
+<body>
+    <button onclick="sortTable()">排序</button>
+    <table border="1" id="myTable">
+        <tr>
+            <th>Name</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>Berglunds snabbkop</td>
+            <td>Sweden</td>
+        </tr>
+        <tr>
+            <td>North/South</td>
+            <td>UK</td>
+        </tr>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Germany</td>
+        </tr>
+        <tr>
+            <td>Koniglich Essen</td>
+            <td>Germany</td>
+        </tr>
+        <tr>
+            <td>Magazzini Alimentari Riuniti</td>
+            <td>Italy</td>
+        </tr>
+        <tr>
+            <td>Paris specialites</td>
+            <td>France</td>
+        </tr>
+        <tr>
+            <td>Island Trading</td>
+            <td>UK</td>
+        </tr>
+        <tr>
+            <td>Laughing Bacchus Winecellars</td>
+            <td>Canada</td>
+        </tr>
+    </table>
+
+    <script>
+        function sortTable() {
+            var table, rows, switching, i, x, y, shouldSwitch;
+            table = document.getElementById("myTable");
+            switching = true;
+            /*创建一个循环，该循环将继续，直到没有进行切换 :*/
+            while (switching) {
+                //首先说：没有进行切换：
+                switching = false;
+                rows = table.getElementsByTagName("TR");
+                /*循环遍历所有表行除了表头 :*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                //首先说不应该切换： 
+                shouldSwitch = false;
+                /*获取要比较的两个元素，一个来自当前行，另一个来自下一行： */
+                x = rows[i].getElementsByTagName("TD")[0];
+                y = rows[i + 1].getElementsByTagName("TD")[0];
+                //检查两行是否应该切换位置： 
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    //如果是，标记为开关并断开循环： 
+                    shouldSwitch= true;
+                    break;
+                }
+                }
+                if (shouldSwitch) {
+                /*如果已标记了开关，则进行开关并标记开关已经完成：*/
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

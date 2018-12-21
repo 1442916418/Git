@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="文本时间" onclick="timeText()">
+    <input type="text" id="txt1">
+    <p>点击上面的按钮，输出的文本将告诉你2秒，4秒，6秒已经过去了。</p>
+    <script>
+        function timeText()
+        {
+            var t = document.getElementById("txt1");
+
+            var t1 = setTimeout(function()
+            {
+                t.value = '2秒';
+            }, 2000);
+
+            var t2 = setTimeout(function(){
+                t.value = '4秒';
+            }, 4000);
+
+            var t3 = setTimeout(function(){
+                t.value = '6秒';
+            }, 6000);
+        }
+    </script>
+</body>
+</html>

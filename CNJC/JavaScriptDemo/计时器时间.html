@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    function startTime()
+    {
+        var t = new Date();
+        var y = t.getFullYear();
+        var min = t.getMonth()+1;
+        var d = t.getDate();
+        var h = t.getHours();
+        var m = t.getMinutes();
+        var s = t.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        d = checkTime(d);
+        document.getElementById('txt').innerHTML = y+"."+min+"."+d+"  "+h+":"+m+":"+s;
+        t = setTimeout(function(){
+            startTime();
+        }, 500);
+    }
+
+    function checkTime(i)
+    {
+        if ( i<10 )
+        {
+            i = "0" + i;
+        }
+        return i;
+    }
+    </script>
+</head>
+<body onload="startTime()">
+    <div id="txt"></div>
+</body>
+</html>
