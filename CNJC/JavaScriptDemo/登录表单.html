@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录表单</title>
+    <style>
+        button{ background: #4cAf50;color: white; padding: 14px 20px;margin: 8px 0; border: 0;cursor: pointer;width: 100%;}
+        button:hover{ opacity: 0.8;}
+        .cancelbtn{ width: auto; padding: 10px 18px; background: #f44336;}
+        .imgcontainer{ text-align: center;margin: 24px 0 12px 0;position: relative;}
+        img.avatar{ width: 40%;border-radius: 50%;}
+        .container{ padding: 16px;}
+        span.psw{ float: right;padding-top: 16px;}
+        .modal{ display: none;position: fixed;left: 0;top: 0;z-index: 1;width: 100%;height: 100%;overflow: auto;background: rgba(0, 0, 0, 0.4);padding-top: 60px;}
+        .modal-content{ background: #fefefe;margin: 5% auto 10% auto;border: 1px solid #888;width: 60%;}
+        .close{ position: absolute;right: 25px;top: 0;color: #000;font-size: 35px;font-weight: bold;z-index: 100;}
+        .close:hover,.close:focus{ color: red;cursor: pointer;}
+        input[type=text],input[type=password]{ width: 100%;padding: 12px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;box-sizing: border-box;}
+        .animate{ animation: animatezoom 0.6s;}
+        @-webkit-keyframes animatezoom {
+            from {-webkit-transform: scale(0)} 
+            to {-webkit-transform: scale(1)}
+        }
+        @keyframes animatezoom {
+            from {transform: scale(0)} 
+            to {transform: scale(1)}
+        }
+        /*更改span样式并取消额外小屏幕上的按钮 */
+        @media screen and (max-width: 300px) {
+            span.psw {
+            display: block;
+            float: none;
+            }
+            .cancelbtn {
+            width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>登录表单</h2>
+    <button style="width:auto;" onclick="login()">登录</button>
+
+    <div id="box" class="modal">
+        <form class="modal-content animate">
+            <div class="imgcontainer">
+                <span class="close" title="Close Modal" onclick="exit()">&times;</span>
+                <img src="https://static.runoob.com/images/mix/img_avatar.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit">登陆</button>
+                <input type="checkbox" checked>记住我
+
+                <div class="container" style="background:#f1f1f1;">
+                    <button type="button" class="cancelbtn" onclick="cancel()">Cancel</button>
+                    <span class="psw">Forgot<a href="javascript:;">password</a></span>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function login()
+        {
+            document.getElementById("box").style.display = "block";
+        }
+        function exit() 
+        {
+            document.getElementById("box").style.display = "none";
+        }
+        function cancel()
+        {
+            document.getElementById("box").style.display = "none";
+        }
+        var modal = document.getElementById("box");
+        window.onclick = function(ev)
+        {
+            if (event.target == modal)
+            {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

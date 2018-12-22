@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML CSS JavaScrip计算器</title>
+    <style>
+        *{ border: 0;font-family: "Open Sans", sans-serif;margin: 0;padding: 0;}
+        #center{ background: #fff;border-radius: 50%;height: 600px;width: 600px;margin: 0 auto;}
+        h1{ font-size: 30px;margin-top: 20px;padding-top: 50px;color: #495678;display: block;text-align: center;text-decoration: none;}
+        form { background: #495678;box-shadow: 4px 4px #3d4a65; padding: 40px 0 30px 40px; width: 280px; margin: 40px auto;}
+        .btn{ outline: none;cursor: pointer;font-size: 20px;height: 45px;margin: 5px 0 5px 10px;width: 45px;}
+        .btn:first-child{ margin: 5px 0 5px 10px;}
+        .btn, #display, form{ border-radius: 25px;}
+        #display{ outline: none;background: #98d1dc;box-shadow: inset 6px 6px 0px #3facc0;color: black;font-size: 20px;height: 47px;text-align: right;width: 165px;padding-right: 10px;margin-left: 10px;}
+        .number{ background: #72778b;box-shadow: 0 5px #5f6680;color: #dededc;}
+        .number:active{ box-shadow: 0 2px #5f6680;transform: translateY(2px);}
+        .operator{ background: #dededc;box-shadow: 0 5px #bebebe;color: #72778b;}
+        .operator:active{ box-shadow: 0 2px #bebebe;transform: translateY(2px);}
+        .other{ background: #e3844c;box-shadow: 0 5px #e76a3d;color: #dededc;}
+        .other:active{ box-shadow: 0 2px #e76a3d;transform: translateY(2px);}
+    </style>
+</head>
+<body>
+    <div id="center">
+        <h1>HTML CSS JavaScrip计算器</h1>
+        <form name="calculator">
+            <input type="button" id="clear" class="btn other" value="C">
+            <input type="text" id="display">
+            <br>
+            <input type="button" class="btn number" value="7" onclick="get(this.value)">
+            <input type="button" class="btn number" value="8" onclick="get(this.value)">
+            <input type="button" class="btn number" value="9" onclick="get(this.value)">
+            <input type="button" class="btn operator" value="+" onclick="get(this.value)">
+            <br>
+            <input type="button" class="btn number" value="4" onclick="get(this.value)">
+            <input type="button" class="btn number" value="5" onclick="get(this.value)">
+            <input type="button" class="btn number" value="6" onclick="get(this.value)">
+            <input type="button" class="btn operator" value="*" onclick="get(this.value)">
+            <br>
+            <input type="button" class="btn number" value="1" onclick="get(this.value)">
+            <input type="button" class="btn number" value="2" onclick="get(this.value)">
+            <input type="button" class="btn number" value="3" onclick="get(this.value)">
+            <input type="button" class="btn operator" value="-" onclick="get(this.value)">
+            <br>
+            <input type="button" class="btn number" value="0" onclick="get(this.value)">
+            <input type="button" class="btn operator" value="." onclick="get(this.value)">
+            <input type="button" class="btn operator" value="/" onclick="get(this.value)">
+            <input type="button" class="btn other" value="=" onclick="calculates()">
+        </form>
+    </div>
+
+    <script>
+        // 显示器
+        document.getElementById("clear").addEventListener('click',function(){
+            document.getElementById("display").value = "";
+        });
+        // 接收值
+        function get(value)
+        {
+            document.getElementById("display").value += value;
+        }
+        // 计算结果
+        function calculates()
+        {
+            var result = 0;
+            result = document.getElementById("display").value;
+            document.getElementById("display").value = "";
+            document.getElementById("display").value = eval(result);
+        }
+    </script>
+</body>
+</html>

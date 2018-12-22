@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册表单</title>
+    <style>
+        input[type=text],input[type=password]{ width: 100%;padding: 12px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;box-sizing: border-box;}
+        button{ background: #4caf50;color: white;padding: 14px 20px;margin: 8px 0;border: none;cursor: pointer;width: 100%;}
+        .cancelbtn2{ padding: 14px 20px;background: #f44336;}
+        .cancelbtn2, .signupbtn2{ float: left;width: 50%;}
+        .container2{ padding: 16px;}
+        .modal2{ display: none;position: fixed;z-index: 1;left: 0;top: 0;width: 100%;height: 100%;overflow: auto;background: rgba(0, 0, 0, 0.4);padding-top: 60px;}
+        .modal-content2{ background: #fefefe;margin: 5% auto 10% auto;border: 1px solid #888;width: 60%;}
+        .close2{ position: absolute;right: 35px; top: 15px;color: #000;font-size: 30px;font-weight: bold;}
+        .close2:hover,.close2:focus{ color: red;cursor: pointer;}
+        .clearfix2::after{ content: " ";clear: both;display: table;}
+        @media screen and (max-width: 300px){
+            .cancelbtn2 .signupbtn2{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>注册表单</h2>
+    <button style="width:auto;" onclick="login2()">注册</button>
+
+    <div id="id2" class="modal2">
+        <span class="close2" title="Close Modal" onclick="exit2()">X</span>
+        <form class="modal-content2 animate">
+            <div class="container2">
+                <label><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+                <label><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="pwd" required>
+
+                <label><b>Repat Password</b></label>
+                <input type="password" placeholder="Enter Password" name="pwd-repat" required>
+
+                <input type="checkbox" checked>Remember me
+
+                <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+                <div class="clearfix2">
+                    <button type="button" class="cancelbtn2" onclick="cancel2()">Cancel</button>
+                    <button type="submit" class="signupbtn2">Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function login2()
+        {
+            document.getElementById("id2").style.display = 'block';
+        }
+        function cancel2()
+        {
+            document.getElementById("id2").style.display = 'none';
+        }
+        function exit2()
+        {
+            document.getElementById("id2").style.display = 'none';
+        }
+        var modal2 = document.getElementById("id2");
+        window.onclick = function(ev)
+        {
+            if (ev.target == modal2)
+            {
+                modal2.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
