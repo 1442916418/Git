@@ -15,10 +15,10 @@ var vue = new Vue({
             selfIntroduction:'本人初学前端，有不足之处，请多多包涵!',
             birthday:'1997.6.21',
             education:'安徽新华电脑学院',
-            address:'安徽·合肥',
+            address:'浙江·杭州',
             emailtwo:'1442916418@qq.com',
-            phone:'+86 17354181586',
-            company:'安徽·合肥'
+            phone:'+86 19884189676',
+            company:'浙江·杭州'
         }
       ],
       datailsThree: [
