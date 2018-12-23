@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>倒计时</title>
+</head>
+<body>
+    <div id="div1" style="font-size:60px;text-align:center;"></div>
+
+    <script>
+        // 设置倒计时的日期
+        var contentDownDate = new Date("Dec 25, 2018 12:12:12").getTime();
+    
+        var x = setInterval(function(){
+            var now = new Date().getTime();
+
+            // 找出现在到倒计时日期之间的距离 
+            var distance = contentDownDate - now;
+
+            // 对天、小时、分钟和秒的时间计算 
+            var days = Math.floor(distance / (1000*60*60*24));
+            var hours = Math.floor(distance % (1000*60*60*24) / (1000*60*60));
+            var minutes = Math.floor(distance % (1000*60*60) / (1000*60));
+            var seconds = Math.floor(distance % (1000*60) / 1000);
+
+            document.getElementById("div1").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds +"s";
+
+            if ( distance < 0 )
+            {
+                clearInterval(x);
+                document.getElementById("div1").innerHTML = "圣诞节快乐！"
+            } 
+
+        }, 1000);
+    </script>
+</body>
+</html>

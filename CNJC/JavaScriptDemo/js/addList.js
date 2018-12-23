@@ -18,7 +18,7 @@ for (var i = 0; i < close.length; i ++)
         div.style.display = 'none';
     }
 }
-// 单击列表项时添加“选中”符号 
+// 单击列表项时添加“选中”符号   
 var list = document.querySelector('ul');
 list.addEventListener('click', function(ev){
     ev.target.classList.toggle('checked');

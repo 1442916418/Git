@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手风琴动画效果</title>
+    <style>
+        button.accordion{ background: #eee;color: #444;cursor: pointer;padding: 18px;width: 100%;border: none;text-align: left;outline: none;font-size: 14px;transition: 0.4s;}
+        button.accordion.active, button.accordion:hover{ background: #ddd;}
+        div.panel{ padding: 0 18px;background: white;max-height: 0;overflow: hidden;transition: max-height 0.2s ease-out;}
+        button.accordion::after{ content: "\002b";color: #777;font-weight: bold;float: right;margin-left: 5px;}
+        button.accordion.active::after{content: "\2212";}
+    </style>
+</head>
+<body>
+    <h2>手风琴</h2>
+    <button class="accordion">选项 一</button>
+    <div class="panel">
+        <P>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </P>
+    </div>
+    <button class="accordion">选项 二</button>
+    <div class="panel">
+        <P>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </P>
+    </div>
+    <button class="accordion">选项 三</button>
+    <div class="panel">
+        <P>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </P>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i ++)
+        {
+            acc[i].onclick =function()
+            {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight)
+                {
+                    panel.style.maxHeight = null;
+                }
+                else
+                {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
