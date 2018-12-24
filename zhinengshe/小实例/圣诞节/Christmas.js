@@ -1,3 +1,4 @@
+/*创建圣诞树*/
 var oBoxSmall = document.getElementById("box-0");
 var oSec = document.getElementsByClassName("section1");
 
@@ -24,14 +25,12 @@ oSec[0].appendChild(oSmallNode1);
 oSec[0].appendChild(oSmallMain1);
 oSec[0].appendChild(oSmallFooter1);
 
-
-for (var i = 1; i < 5; i ++)
+for (var i = 1; i <= 8; i ++)
 {
     // 克隆节点
     var oCloneNode =  oBoxSmall.cloneNode(true);
     // 修改一下id的值，避免id重复
     oCloneNode.setAttribute("id", "box-" + i);
-    
     // 在父节点插入克隆的节点
     oBoxSmall.parentNode.appendChild(oCloneNode);
 }
