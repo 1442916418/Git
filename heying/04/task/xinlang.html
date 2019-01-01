@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新浪邮箱</title>
+    <style>
+        *{ margin: 0;padding: 0;}
+        .head{ margin-top: 80px;}
+        #logo{ margin-left: 400px;}
+        #list{ position: relative;top: -25px;left: 550px;}
+        #content{ position: relative;width: 410px;height: 415px;background: white;border-radius: 5px;position: absolute;top: 260px;left: 1100px;z-index: 100px;}
+        #content-login{ display: inline-block;width: 203px;height: 65px;border: 0;border-radius: 5px; text-align: center;line-height: 65px;}
+        #content-login img{ width: 22px;height: 14px;}
+        #content-viplogin{ display: inline-block;width: 202px;height: 65px;border: 0;border-radius: 5px; text-align: center;line-height: 65px;background: #F8F8F8;}
+        #content-viplogin img{ width: 22px;height: 14px;}
+        #content-form{ text-align: center;}
+        #content-form-email{ margin: 20px 0; padding: 12px 160px 12px 0px;}
+        #content-form-pwd{ padding: 12px 160px 12px 0px;}
+        #content-form-select{ display: inline-block;float: left;margin-left: 40px;margin-top: 10px;}
+        #content-form-forgetPwd{ padding-left: 90px;text-decoration: none;color: #53AAD8;}
+        #content-form-button{ float: left;margin-left: 40px;margin-top: 25px;}
+        #content-form-button-login{ width: 150px;height: 50px;}
+        #content-form-button-reg{ width: 150px;height: 50px;margin-left: 28px;}
+        #content-otherAccounts-weibo{ display: inline-block;margin-left: 40px;color: #53AAD8;}
+        #content-otherAccounts-weibo img{ width: 25px;height: 20px;margin-top: 10px;}
+        #content-otherAccounts-fastLogin{ display: inline-block;margin-left: 115px;color: #53AAD8;}
+        #content-otherAccounts-fastLogin img{ width: 20px;height: 24px;margin-top: 10px;}
+        #content-dividingLine{ margin: 10px 0 10px 40px;}
+        #content-footer-download{ position: relative;left: 40px;top: 10px;}
+        #content-footer-QRcode{ width: 70px;height: 65px;position: absolute;right: 0;bottom: 0px;}
+        #content-prompt{ position: absolute;width: 160px;height: 40px; right: 65px;}
+        #content-promptText{ position: absolute;z-index: 999;right: 80px;bottom: 25px;}
+        #footer{ margin-left: 400px;margin-top: 20px;}
+    </style>
+</head>
+<body>
+    <p class="head">
+        <img src="images/logoRetina.png" alt="新浪邮箱" id="logo">
+        <font size="4" color="#B4B4B4" id="list">VIP邮箱&nbsp;&nbsp;|&nbsp;&nbsp;企业邮箱&nbsp;&nbsp;|&nbsp;&nbsp;<img src="images/作业2_03.png">手机邮箱</font>
+    </p>
+    <img src="images/newyear2019.jpg" alt="2019" style="z-index:1;">
+    <div id="content">
+        <p id="content-login"><img src="images/icon_e.gif" alt="免费邮箱登陆">&nbsp;&nbsp;<font size="4" color="#53AAD8"><b>免费邮箱登陆</b></font></p>
+        <p id="content-viplogin"><img src="images/icon_vip.gif" alt="VIP登陆">&nbsp;&nbsp;<font size="4" color="black"><b>VIP登陆</b></font></p>
+        <form id="content-form">
+            <input id="content-form-email" type="text" name="email" placeholder="输入邮箱名/手机">
+            <input id="content-form-pwd" type="text" name="pwd" placeholder="输入密码"><br>
+            <p id="content-form-select">
+                <input type="checkbox">自动登陆
+                <input type="checkbox" checked>全程加密
+                <a href="#" id="content-form-forgetPwd">忘记密码？</a>
+            </p><br>
+            <p id="content-form-button">
+                <input id="content-form-button-login" type="image" name="login" src="images/icon_log.gif">
+                <input id="content-form-button-reg" type="image" name="reg" src="images/icon_reg.gif">
+            </p>
+        </form>
+        <p id="content-otherAccounts-weibo"><img src="images/icon_sina.gif" alt="微博账号登陆">微博账号登陆</p>
+        <p id="content-otherAccounts-fastLogin"><img src="images/icon_fast.gif" alt="快速登陆">快速登陆</p>
+        <hr width="330px" color="#EDF1F0" id="content-dividingLine"/>
+        <font id="content-footer-download" size="3" color="#53AAD8">手机客户端下载</font>
+        <img id="content-footer-QRcode" src="images/code_bg_r2.png" alt="二维码登陆">
+        <img id="content-prompt" src="images/tip_bg_retina.png" alt="扫码登陆更安全">
+        <font id="content-promptText" size="3" color="#F2A620">扫码登陆更安全</font>
+    </div>
+    <p id="footer">
+        <font size="3" color="#ACACAC">新浪公司&nbsp;&nbsp;&nbsp;&nbsp;版权所有</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font size="2" color="#ACACAC">Copyright&nbsp;&nbsp;&#64;&nbsp;&nbsp;1996-2018&nbsp;&nbsp;SINA&nbsp;&nbsp;Corporation,&nbsp;&nbsp;All&nbsp;&nbsp;Rights&nbsp;&nbsp;Reserved</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font size="3" color="#696969">新浪首页&nbsp;&nbsp;|&nbsp;&nbsp;官方微博&nbsp;&nbsp;|&nbsp;&nbsp;在线客服&nbsp;&nbsp;|&nbsp;&nbsp;不良信息举报&nbsp;&nbsp;|&nbsp;&nbsp;帮助</font>
+    </p>
+</body>
+</html>
