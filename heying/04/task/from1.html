@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>作业一</title>
+        <style>
+            *{ margin: 0;padding: 0;font-family: 'Courier New', Courier, monospace;font-size: 16px;}
+            #form-head{ width: 700px;background: #2D1E09;color: #CEBF80;}
+            #form-content{ position: relative;width: 700px;height: 570px;background: #443317;color: #CEBF80;}
+            P{ display: inline-block;}
+            input{ height: 28px;}
+            #form-content-date{ margin-left: 43px;}
+            #form-content-name{ margin-right: 15px;}
+            #form-content-ms{ position: relative;top: -60px;padding-right: 50px;}
+            .list{ position: relative;top: 8px;}
+            .list4{ margin-left: 99px;}
+            #form-content-checkedList{ position: relative;top: 15px;}
+            #form-content-reset{ width: 60px;position: relative;left: 180px;top: 20px;}
+            #form-content-submit{ width: 60px;position: relative;left: 380px;top: 20px;}
+        </style>
+    </head>
+    <body>
+        <p id="form-head">表单</p>
+        <form id="form-content">
+            <p>电话：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0551-1234567</p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <p>申请人：&nbsp;&nbsp;&nbsp;admin</p><br><br>
+            <p>编号：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;200804170006</p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            电子邮箱<font color="red">&#42;</font>:&nbsp;<input type="email" name="email" value="请输入邮箱..." required><br><br>
+            审批人<font color="red">&#42;</font>:&nbsp;&nbsp;&nbsp;&nbsp;<input id="form-content-name" type="text" name="name" value="请输入姓名..." required>
+            申请数量<font color="red">&#42;</font>:&nbsp;<input type="number" name="number" required><br><br>
+            日期<font color="red">&#42;</font>:&nbsp;<input id="form-content-date" type="date" name="date"></input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            时间<font color="red">&#42;</font>:&nbsp;&nbsp;&nbsp;&nbsp;<input type="time" name="time"><br><br>
+            个人头像<font color="red">&#42;</font>:&nbsp;&nbsp;<input type="file" name="file"><br><br>
+            <font id="form-content-ms">描述<font color="red">&#42;</font>:</font><textarea name="textarea" cols="45" rows="7"></textarea><br>
+            <font id="form-content-checkedList">复选框列表:</font>
+            <input class="list" type="checkbox" name="checkedList1" value="1">可选项1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="list" type="checkbox" name="checkedList2" value="2">可选项2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="list" type="checkbox" name="checkedList3" value="3">可选项3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <input class="list list4" type="checkbox" name="checkedList4" value="4">可选项4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="list" type="checkbox" name="checkedList5" value="5">可选项5<br>
+            <font id="form-content-checkedList">单选框列表:</font>
+            <input class="list" type="radio" name="radio" value="1"><font color="black">可选项1</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="list" type="radio" name="radio" value="2"><font color="black">可选项2</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="list" type="radio" name="radio" value="3"><font color="black">可选项3</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <input class="list list4" type="radio" name="radio" value="4"><font color="black">可选项4</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="list" type="radio" name="radio" value="5"><font color="black">可选项5</font><br>
+            <input id="form-content-reset" type="reset" name="reset">
+            <input id="form-content-submit" type="submit" name="submit">
+        </form>
+    </body>
+</html>
