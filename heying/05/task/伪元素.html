@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css3中的伪类选择器</title>
+    <style>
+        /* 选择每个 <li> 元素的首行，并为其设置样式： */
+        ul li::first-line{ color: lightblue;}
+        /* 选择每个 <li> 元素的首字母，并为其设置样式： */
+        ul li::first-letter{ color: red;}
+        /* 在每个 <li> 元素的内容之前插入新内容： */
+        ul li::before{ content: "前";}
+        /* 在每个 <li> 元素的内容之后插入新内容： */
+        ul li::after{ content: "后";}
+        /* 使被选中的文本成为绿色： */
+        ul li::selection{ color: green;}
+        /* 选择属于其父元素的首个子元素的每个 <li> 元素，并为其设置样式： */
+        ul li:first-child{ font-weight: 800;color: indigo;}
+        /* 指定属于其父元素的最后一个子元素的 <li> 元素，并为其设置样式： */
+        ul li:last-child{ color: lightsalmon;}
+        /* 规定属于其父元素的第二个子元素的每个 <li> 元素，从最后一个子元素开始计数： */
+        ul li:nth-last-child(2){ color: maroon;}
+        /* 规定属于其父元素的第二个 <li> 元素的每个 <li>： */
+        ul li:nth-of-type(2){ color: mediumorchid;background: mediumorchid;}
+        /* 指定父元素的首个 <li> 元素的背景色： */
+        ul li:first-of-type{ background: rgb(230, 255, 245);}
+        /* 指定父元素的最后一个 <li> 元素的背景色： */
+        ul li:last-of-type{ background: mistyrose;}
+        /* 规定属于其父元素的唯一子元素的每个 <li> 元素： */
+        ul li:only-child{ background: skyblue;}
+        /* 指定属于父元素的特定类型的唯一子元素的每个 <li> 元素：!!! */
+        ul li:only-of-type{ background: rgb(192, 146, 192);}
+        /* 指定空的 <li> 元素的背景色： */
+        ul li:empty{ background: rgb(197, 159, 159);}
+        /* :nth-child()选择某个元素的一个或多个特定的子元素：可以定义他的值（值可以是整数，也可以是表达式）*/
+        ol li:nth-child(2){ color: red;}
+        /* :nth-child(length);参数是具体数字 */
+        ol li:nth-child(8){ color: blue;}
+        /* :nth-child(n);参数是n,n从0开始计算 */
+        ol li:nth-child(3n){ background: rgb(255, 242, 226);}
+        /* :nth-child(n*length)n的倍数选择，n从0开始算 !!! */
+        ol li:nth-child(2*4){ font-weight: 900;color: rgb(255, 68, 0);}
+        /* :nth-child(n+length);选择大于length后面的元素,选择从第3个元素后面的li，并设置属性 */
+        ol li:nth-child(n+3){ color: rgb(122, 76, 85);}
+        /* :nth-child(-n+length)选择小于length前面的元素,选择从第3个元素前面的li，并设置属性 */
+        ol li:nth-child(-n+3){ background: cyan;}
+        /* :nth-child(n*length+1);表示隔几选一,这种方法是实现隔几选一的效果 */
+        ol li:nth-child(2n+1){ color: rgb(255, 0, 136);}
+        /* :nth-child(odd)表示匹配作为父元素的奇数(第1、3、5、7……个)子元素的元素； */
+        ol li:nth-child(odd){ font-weight: 900;color: rgb(68, 206, 151);}
+        /* :nth-child(even)表示匹配作为父元素的偶数(第2、4、6、8……个)子元素的元素； */
+        ol li:nth-child(even){ font-weight: 100; color: rgb(3, 66, 41);}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            11111
+            <ul>
+                <li>11111111111111</li>
+                <li>22222222222222</li>
+                <li>33333333333333</li>
+            </ul>
+        </li>
+        <li>22222</li>
+        <li>33333</li>
+        <li>44444</li>
+        <li>55555</li>
+    </ul>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+        <li>44
+            <ul>
+                <li>11111111111111</li>
+                <li>22222222222222</li>
+                <li>33333333333333</li>
+            </ul>
+        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <ol>
+        <li>22</li>
+        <li>2233</li>
+        <li>2442</li>
+        <li>2552</li>
+        <li>2662</li>
+        <li>2772</li>
+        <li>2432</li>
+        <li>24232</li>
+        <li>2erw2</li>
+        <li>2fgsdfg2</li>
+        <li>2gsdf2</li>
+        <li>234442</li>
+    </ol>
+</body>
+</html>
