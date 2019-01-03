@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>白光划过效果</title>
+    <style>
+        .highlight-box{
+            width: 500px;
+            height: 375px;
+            overflow: hidden;
+            position: relative;
+        }
+        .highlight-box img{
+            width: 100%;
+            height: 100%;
+        }
+        /*
+        制作白光，使用::before选择器
+        使用渐变（linear-gradient）来实现白光效果，同时为了斜向划过，
+        使用 transform:	rotate(45deg) 将其旋转45度。
+        */
+        .highlight-box::before{
+            display: block;
+            /*注意这里top和left，让白光移动到图片左上角，后续的划过动画也是依靠这两个属性*/
+            top: -200%;
+            left: -100%;
+            /*定义白光的宽高*/
+            width: 50%;
+            height: 300%;
+            /*旋转角度，你也可以调整*/
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            /*使用渐变来实现白光*/
+            background:	-webkit-linear-gradient(left,	rgba(255,	255,	255,	.05 )	20%,
+            			rgba(255,	255,	255,	.6)	65%,	
+                        rgba(255,	255,	255,	.05) 100%);	
+            background:	linear-gradient(left,	rgba(255,	255,	255,	.05)	20%,
+            			rgba(255,	255,	255,	.6)	65%,
+                        rgba(255,	255,	255,	.05)	100%);
+            content: "";
+            z-index: 2;;
+            position: absolute;
+        }
+        /*让白光动起来*/
+        .highlight-box:hover::before{
+            animation: crossed 0.5s linear;
+        }
+        /* 通过 @keyframes 规则，您能够创建动画。
+        创建动画的原理是，将一套 CSS 样式逐渐变化为另一套样式。
+        在动画过程中，您能够多次改变这套 CSS 样式。
+        以百分比来规定改变发生的时间，或者通过关键词 "from" 和 "to"，等价于 0% 和 100%。
+        0% 是动画的开始时间，100% 动画的结束时间。
+        为了获得最佳的浏览器支持，您应该始终定义 0% 和 100% 选择器。 */
+        @keyframes crossed{
+            0%{
+                top: -200%;
+                left: -100%
+            }
+            100%{
+                top: -30px;
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="highlight-box">
+        <img src="Yang.jpg" alt="杨幂">
+    </div>
+</body>
+</html>
