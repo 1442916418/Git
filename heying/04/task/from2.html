@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作业二</title>
+    <style>
+        *{ margin: 0;padding: 0;font-size: 16px;font-weight: 700;}
+        #user{ font-size: 20px;padding-left: 50px;}
+        .right{ text-align: right;}
+        .txt{ width: 300px;height: 28px;}
+        .address{ width: 1055px;height: 28px;}
+        #reset{ width: 100px;height: 30px;float: right;cursor: pointer;}
+        #submit{ width: 100px;height: 30px;background: red;margin-left: 10px;border-color: red;cursor: pointer;}
+        table{ border: 1px solid black;}
+        table tr td{ border: 0;}
+    </style>
+</head>
+<body>
+    <form>
+        <table width="1500px" height="500px" cellspacing="0">
+            <tr>
+                <td colspan="6" id="user">用户注册</td>
+            </tr>
+            <tr>
+                <td width="120px" class="right">用户名：</td>
+                <td width="300px"><input class="txt" type="text" name="text" required></td>
+                <td colspan="4"><font color="red">&#42;</font><a href="#">检测是否有相同的用户名</a></td>
+            </tr>
+            <tr>
+                <td width="120px" class="right">密码：</td>
+                <td width="300px"><input class="txt" type="password" name="pwd" required></td>
+                <td width="300px"><font color="red">&#42;</font><font color="#ccc">(至少6位)</font></td>
+                <td width="120px" class="right">真实姓名：</td>
+                <td width="300px"><input class="txt" type="text" name="name" required></td>
+                <td width="300px"><font color="red">&#42;</font></td>
+            </tr>
+            <tr>
+                <td width="120px" class="right">确认密码：</td>
+                <td width="300px"><input class="txt" type="password" name="pwd" required></td>
+                <td width="300px"><font color="red">&#42;</font></td>
+                <td width="120px" class="right">性别：</td>
+                <td width="300px">
+                    <select style="width:300px;height:28px;" required>
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select>
+                </td>
+                <td width="300px"><font color="red">&#42;</font></td>
+            </tr>
+            <tr>
+                <td width="120px" class="right">证件类型：</td>
+                <td width="300px">
+                    <select style="width:300px;height:28px;" required>
+                        <option value="身份证">身份证</option>
+                        <option value="护照">护照</option>
+                    </select>
+                </td>
+                <td width="300px"><font color="red">&#42;</font></td>
+                <td width="120px" class="right">出生日期：</td>
+                <td width="300px"><input class="txt" type="text" name="time" required></td>
+                <td width="300px"><font color="red">&#42;</font><font color="black">(格式为2019-1-2)</font></td>
+            </tr>
+            <tr>
+                <td width="120px" class="right">证件号码：</td>
+                <td width="300px"><input class="txt" type="identificationNumber" name="identificationNumber" required></td>
+                <td width="300px"><font color="red">&#42;</font></td>
+                <td width="120px" class="right">国家：</td>
+                <td width="300px"><input class="txt" type="text" name="country"></td>
+                <td width="300px"></td>
+            </tr>
+            <tr>
+                <td width="120px" class="right">联系号码：</td>
+                <td width="300px"><input class="txt" type="contactNumber" name="contactNumber" required></td>
+                <td width="300px"><font color="red">&#42;</font></td>
+                <td width="120px" class="right">城市：</td>
+                <td width="300px"><input class="txt" type="text" name="city"></td>
+                <td width="300px"></td>
+            </tr>
+            <tr>
+                <td width="120px" class="right">手机号码：</td>
+                <td width="300px"><input class="txt" type="text" name="phoneNumber" required></td>
+                <td colspan="4"><font color="red">&#42;</font><font color="black">(建议填写,一边进行短信通知)</font></td>
+            </tr>
+            <tr>
+                <td width="120px" class="right">e-mail：</td>
+                <td width="300px"><input class="txt" type="email" name="email"></td>
+                <td width="300px"></td>
+                <td width="120px" class="right">邮编：</td>
+                <td width="300px"><input class="txt" type="text" name="zipCode"></td>
+                <td width="300px"></td>
+            </tr>
+            <tr>
+                <td width="120px" class="right">联系地址：</td>
+                <td colspan="4"><input class="address" type="text" name="address"></td>
+                <td width="300px"><font color="red">&#42;</font></td>
+            </tr>
+            <tr>
+                <td colspan="3"><input id="reset" type="reset" name="reset"></td>
+                <td colspan="3"><input id="submit" type="submit" name="submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
