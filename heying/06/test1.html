@@ -16,16 +16,12 @@
         .content-title{ font-size: 40px;text-align: center;margin: 40px 0;}
         .content-c{ margin: 40px;}
         .content-c a:first-child{ color: red;}
-        .content-IBM{ margin-left: 40px;}
-        .content-IBM li{ list-style: none;}
-        .content-IBM li:first-child{ font-size: 30px;margin-bottom: 20px;}
-        .content-IBM li:nth-child(n+2){ margin-left: 20px;}
-        .content-hw{ margin-left: 40px;margin-top: 20px;}
-        .content-hw p:first-child{ font-size: 30px;margin-bottom: 20px;}
-        .content-hw li:nth-child(n+1){ margin-left: 40px;}
-        .content-pp{ margin-left: 40px;margin-top: 20px;}
-        .content-pp p:first-child{ font-size: 30px;margin-bottom: 20px;}
-        .content-pp li:nth-child(n+1){ margin-left: 40px;}
+        .content-IBM li:nth-child(-n+4){ list-style: none;}
+        /*共用*/
+        .content{ margin-left: 40px;margin-top: 20px;}
+        .content li:first-child{ font-size: 30px;margin-bottom: 20px;}
+        .content p:first-child{ font-size: 30px;margin-bottom: 20px;}
+        .content li:nth-child(n+2){ margin-left: 40px;}
         #marquee2{ margin-left: 40px;}
         .footer{ margin: 20px 40px;}
         .footer li{ float: left;list-style: none;}
@@ -56,20 +52,20 @@
         网站于2005年9月12日上线发布，2006年2月13日宣布正式运营。<br>
     </P>
     <hr height="1px" color="#ccc" style="margin: 20px 40% 20px 20px;"/>
-    <ul class="content-IBM">
+    <ul class="content content-IBM">
         <li>IBM笔记本</li>
         <li>CPU i10</li>
         <li>1000固态硬盘</li>
         <li>市场价：19999元</li>
     </ul>
-    <ol class="content-hw">
+    <ol class="content">
         <p>户外运动系列</p>
         <li>足球豪门，经典队服一网打尽</li>        
         <li>足球豪门，经典队服一网打尽</li>        
         <li>足球豪门，经典队服一网打尽</li>        
         <li>足球豪门，经典队服一网打尽</li>        
     </ol>
-    <ul class="content-pp" type="circle">
+    <ul class="content" type="circle">
         <p>关于拍拍</p>
         <li>拍拍简介</li>
         <li>拍拍简介</li>
