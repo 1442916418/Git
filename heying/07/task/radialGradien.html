@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>径向渐变</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .test{
+            width: 250px;
+            height: 125px;
+            float: left;
+            margin: 50px 50px;
+        }
+        .test1{
+            background: radial-gradient(aqua, blue);
+            background: -moz-radial-gradient(aqua, blue);
+            background: -o-radial-gradient(aqua, blue);
+            background: -ms-radial-gradient(aqua, blue);
+            background: -webkit-radial-gradient(aqua, blue);
+        }
+        .test2{
+            background: radial-gradient(20px, aqua, blue);
+            background: -moz-radial-gradient(20px, aqua, blue);
+            background: -o-radial-gradient(20px, aqua, blue);
+            background: -ms-radial-gradient(20px, aqua, blue);
+            background: -webkit-radial-gradient(20px, aqua, blue);
+        }
+        .test3{
+            background: radial-gradient(30% 70%, aqua, blue);
+            background: -moz-radial-gradient(30% 70%, aqua, blue);
+            background: -o-radial-gradient(30% 70%, aqua, blue);
+            background: -ms-radial-gradient(30% 70%, aqua, blue);
+            background: -webkit-radial-gradient(30% 70%, aqua, blue);
+        }
+        .test4{
+            background: radial-gradient(top, aqua, blue);
+            background: -moz-radial-gradient(top, aqua, blue);
+            background: -o-radial-gradient(top, aqua, blue);
+            background: -ms-radial-gradient(top, aqua, blue);
+            background: -webkit-radial-gradient(top, aqua, blue);
+        }
+    </style>
+</head>
+<body>
+    <div class="test test1"></div>
+    <div class="test test2"></div>
+    <div class="test test3"></div>
+    <div class="test test4"></div>
+</body>
+</html>

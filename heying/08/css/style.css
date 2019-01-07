@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+}
+.content{
+    position: relative;
+}
+.box{
+    width: 230px;
+    height: 358px;
+    border: 1px dashed blue;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+.box-title{
+    background: rgb(0, 119, 255);
+    margin-right: 20px;
+}
+.box-title span{
+    color: white;
+    margin-left: 20px;
+}
+.box p:last-child,
+.box2 p:last-child,
+.box3 p:last-child,
+.box4 p:last-child{
+    padding: 20px;
+}
+.box2{
+    border: 1px dashed blue;
+    padding-bottom: 260px;
+    position: absolute;
+    top: 20px;
+    left: 300px;
+}
+.box2-title{
+    background: rgb(0, 119, 255);
+    padding-right: 60px;
+    margin-right: 20px;
+}
+.box2-title span{
+    margin-left: 20px;
+    color: white;
+}
+.box3{
+    position: absolute;
+    top: 20px;
+    left: 600px;
+    border: 1px dashed blue;
+    padding-bottom: 260px;
+}
+.box3-title{
+    background: rgb(0, 119, 255);
+    color: white;
+    padding-right: 100px;
+    margin-right: 20px;
+}
+.box3-title span{
+    margin-left: 20px;
+}
+.box4{
+    position: absolute;
+    top: 20px;
+    left: 900px;
+    border: 1px dashed blue;
+    padding-bottom: 260px;
+}
+.box4-title{
+    background: rgb(0, 119, 255);
+    color: white;
+    padding-right: 100px;
+    margin-right: 20px;
+}
+.box4-title span{
+    margin-left: 20px;
+}
