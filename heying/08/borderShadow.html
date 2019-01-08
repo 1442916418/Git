@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>边框阴影</title>
+    <style>
+        *{ margin: 0;padding: 0; }
+        p{ width: 200px;height: 200px;background: rgb(73, 173, 255);margin: 40px;float: left;border: 2px solid blue; }
+        button{ width: 200px;height: 200px;color: black;font-size: 20px;margin: 40px;}
+        /* X Y 模糊的颜色 */
+        #p1{ box-shadow: 5px 3px black; }
+        /* X Y 模糊半径 颜色 */
+        #p2{ box-shadow: 5px 3px 3px burlywood; }
+        /* X Y 模糊半径 传播半径 颜色 */
+        #p3{ box-shadow: 0 0 3px 3px blueviolet; }
+        /* inset：表示内阴影 */
+        #p4{ box-shadow: inset 5px 5px 5px red; }
+        /* 内外阴影 */
+        #p5{ box-shadow: inset 5px 5px 5px silver, 5px 5px 5px slategrey; }
+        #p6{ 
+            border-radius: 50%;
+            border: 0;
+            text-align: center;
+            color: aqua;
+            /* 0:X  0:Y  10px:模糊半径  3px:传播半径  颜色 */
+            box-shadow: 0 0 10px 3px rgba(21, 255, 99, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <p id="p1">普通边框阴影</p>
+    <p id="p2">模糊边框阴影</p>
+    <p id="p3">整体边框阴影</p>
+    <button id="p4">边框内部阴影</button>
+    <p id="p5">边框内外阴影</p>
+    <p id="p6">圆整体阴影</p>
+</body>
+</html>

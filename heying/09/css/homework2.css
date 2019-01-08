@@ -1,0 +1,114 @@
+@font-face{
+    font-family: 'stxingka';
+    src: url('../font/STXINGKA.TTF');
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.backgroundPicture{
+    width: 100%;
+    height: 960px;
+    background-image: url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 100% 100%;
+    text-align: center;
+}
+.title{
+    display: inline-block;
+    font-family: 'stxingka';
+    font-size: 80px;
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+}
+.login{
+    width: 520px;
+    height: 320px;
+    margin-top: 10%;
+    margin-left: 50%;
+    border-radius: 20px;
+    background: linear-gradient(top, #7FB2DC, #C1DAFD);
+    background: -moz-linear-gradient(top, #7FB2DC, #C1DAFD);
+    background: -o-linear-gradient(top, #7FB2DC, #C1DAFD);
+    background: -ms-linear-gradient(top, #7FB2DC, #C1DAFD);
+    background: -webkit-linear-gradient(top, #7FB2DC, #C1DAFD);
+}
+.information{
+    display: inline-block;
+    width:60%;
+    height: 50%;
+    margin-top: 50px;
+    position: relative;
+    color: #cccccc;
+}
+.information input{
+    width: 230px;
+    height: 35px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 10px 0;
+    padding-left: 50px;
+    color: #cccccc;
+}
+.username{
+    width: 25px;
+    height: 23px;
+    background-image: url(../images/name.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 17px;
+    left: 25px;
+}
+.username::after{
+   content: url(../images/竖线.png);
+   position: absolute;
+   left: 16px;
+   top: -4px;
+}
+.userpwd{
+    width: 25px;
+    height: 23px;
+    background-image: url(../images/pwd.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 75px;
+    left: 25px;
+}
+.userpwd::after{
+    content: url(../images/竖线.png);
+    position: absolute;
+    left: 16px;
+    top: -4px;
+ }
+ .btn a{
+     font-size: 16px;
+     color: blue;
+     text-decoration: none;
+     margin-top: 12px;
+ }
+ .btn a:first-child{
+    float: left;
+    padding-left: 15px;
+}
+.btn a:last-child{
+    float: right;
+    padding-right: 15px;
+}
+.btn-login{
+    width: 330px;
+    height: 45px;
+    background: #4793CF;
+    letter-spacing: 20px;
+    border: 0;
+    border-radius: 4px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+    text-shadow: 1px 1px 2px #dddddd;
+}

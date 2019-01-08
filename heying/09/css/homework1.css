@@ -1,0 +1,282 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+/*头部*/
+.header{
+    width: 100%;
+    height: 70px;
+    position: relative;
+}
+.header-content{
+    width: 1500px;
+    height: 70px;
+    margin: auto;
+}
+.header-left{
+    width: 110px;
+    height: 50px;
+    background: url(../images/logo.jpg) no-repeat;
+    margin: 10px 100px;
+    float: left;
+    cursor: pointer;
+}
+.header-center{
+    width: 400px;
+    height: 70px;
+    float: left;
+}
+.header-center p{
+    font-size: 18px;
+    color: #B0B0B0;
+    padding: 5px 0;
+}
+.header-center-select{
+    display: inline-block;
+    color: #B0B0B0;
+}
+.header-center-btn{
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+    background-color: #EDEDED;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.header-center-btn div{
+    text-align: center;
+    color: #B0B0B0;
+}
+.header-right{
+    display: inline-block;
+    width: 600px;
+    height: 70px;
+    float: right;
+}
+.header-right ul{
+    width: 100%;
+    height: 70px;
+}
+.header-right ul li{
+    list-style: none;
+    float: left;
+    line-height: 70px;
+    margin: 0 60px;
+}
+.header-right ul li a{
+    color: #B0B0B0;
+}
+.header-center-select select option,
+.header-center-select select{
+    color: #B0B0B0;
+}
+/*菜单*/
+.content-menu{
+    width: 100%;
+    height: 60px;
+    background-color: #757575;
+    line-height: 60px;
+}
+.content-menuList{
+    width: 100%;
+    height: 50px;
+    background-color: #363636;
+    position: relative;
+    top: 5px;
+    text-align: center;
+}
+.content-menuList ul{
+    width: 1200px;
+    height: 50px;
+    margin: auto;
+}
+.content-menuList ul li{
+    list-style: none;
+    float: left;
+    line-height: 50px;
+    padding: 0 50px;
+}
+.content-menuList ul li a{
+    text-decoration: none;
+    color: #B0B0B0;
+}
+/*核心内容*/
+.core-content{
+    width: 100%;
+    background-color: white;
+    position: relative;
+}
+.content{
+    width: 1500px;
+    /* height: 800px; */
+    margin: auto;
+    position: relative;
+}
+.content-leftPicture{
+    width: 1000px;
+    height: 600px;
+    background-image: url(../images/fashion.jpg);
+    background-repeat: no-repeat;
+    background-color: aqua;
+    background-size: 100%;
+    float: left;
+}
+.content-commodityDisplay{
+    display: inline-block;
+    width: 1000px;
+    height: 200px;
+}
+.content-commodityDisplay-detail{
+    width: 280px;
+    height: 160px;
+    margin: 20px 25px;
+    float: left;
+}
+.detailPicture1{
+    display: inline-block;
+    width: 100px;
+    height: 140px;
+    background-image: url(../images/shirt.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 10px 10px 10px 20px;
+}
+.detailPicture2{
+    display: inline-block;
+    width: 100px;
+    height: 140px;
+    background-image: url(../images/trouse.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 10px 10px 10px 20px;
+}
+.detailPicture3{
+    display: inline-block;
+    width: 100px;
+    height: 140px;
+    background-image: url(../images/watch.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 10px 10px 10px 20px;
+}
+.pictureInformation{
+    display: inline-block;
+    width: 130px;
+    height: 160px;
+    float: right;
+    margin-right: 18px;
+}
+.pictureInformation p{
+    font-size: 18px;
+    font-weight: 500;
+}
+.pictureInformation p:first-child{
+    font-weight: 700;
+}
+.pictureInformation a{
+    font-size: 22px;
+    color: red;
+    position: relative;
+    top: 20px;
+    left: 10px;
+}
+.content-rightPictur{
+    width: 500px;
+    height: 800px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.content-rightPictur-modern{
+    width: 500px;
+    height: 270px;
+    background: url(../images/modern.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+.content-rightPictur-search{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(left,white,white,#CDCDCD);
+    background: -moz-linear-gradient(left,white,white,#CDCDCD);
+    background: -o-linear-gradient(left,white,white,#CDCDCD);
+    background: -ms-linear-gradient(left,white,white,#CDCDCD);
+    background: -webkit-linear-gradient(left,white,white,#CDCDCD);
+}
+.content-rightPictur-search div:first-child{
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    color: #B0B0B0;
+    margin: 15px 30px;
+}
+.content-rightPictur-search input{
+    height: 30px;
+    color: #B0B0B0;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+}
+.content-rightPictur-search-btn{
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    top: 53px;
+    left: 210px;
+    cursor: pointer;
+    background: url(../images/btn.png) no-repeat;
+    background-size: 100% 100%;
+}
+.content-rightPictur-glamour{
+    width: 100%;
+    height: 120px;
+    background: url(../images/glamour.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+.content-rightPictur-introduced{
+    width: 100%;
+    height: 240px;
+}
+.content-rightPictur-introduced div{
+    font-weight: 500;
+    color: #B0B0B0;
+    line-height: 28px;
+    margin-left: 20px;
+}
+.content-rightPictur-introduced div a{
+    color: rgb(255, 0, 149);
+    font-weight: 500;
+}
+.content-rightPictur-introduced div a::after{
+    content: url(../images/向右箭头.png);
+    position: relative;
+    top: 3px;
+}
+.content-rightPictur-introduced div:first-child{
+    font-size: 28px;
+    color: rgb(161, 161, 161);
+    padding: 15px 0 15px 0;
+}
+.content-rightPictur-bottom{
+    width: 100%;
+    height: 74px;
+    background: #C3C3C3;
+}
+/*底部*/
+.footer{
+    width: 100%;
+    height: 80px;
+    background: #757575;
+}
+.footer-menu{
+    width: 1500px;
+    height: 80px;
+    line-height: 80px;
+    margin: auto;
+}
+.footer-menu div:first-child{
+    text-align: center;
+}
