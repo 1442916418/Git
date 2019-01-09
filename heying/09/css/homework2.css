@@ -9,7 +9,9 @@
 }
 .backgroundPicture{
     width: 100%;
+    min-width: 1200px ;
     height: 960px;
+    min-height: 700px;
     background-image: url(../images/background.jpg);
     background-repeat: no-repeat;
     background-position: top left;
@@ -21,7 +23,7 @@
     font-family: 'stxingka';
     font-size: 80px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 60px;
     color: white;
 }
 .login{

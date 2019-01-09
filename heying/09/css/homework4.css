@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.box{
+    width: 100%;
+    border: 1px solid aqua;
+}
+.box div{
+    width: 300px;
+    height: 400px;
+    border: 1px dashed blue;
+    float: left;
+    margin: 20px;
+}
+.box1 p:first-child{
+    font-size: 22px;
+    padding-left: 20px;
+    margin-right: 20px;
+    background: blue;
+}
+.box1 p:last-child{
+    margin: 20px 40px;
+}
