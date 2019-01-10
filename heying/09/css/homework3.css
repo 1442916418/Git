@@ -22,20 +22,26 @@
     height: 31px;
 }
 .content-menu ul{
-    width: 100%;
-    display: inline-block;
+    list-style: none;
 }
 .content-menu ul li{
+    display: inline;
+}
+.content-menu ul li a{
+    display: block;
+    text-decoration: none;    
+    color: black;
     float: left;
+    letter-spacing: 3px;
     font-weight: 600;
-    letter-spacing: 5px;
-    list-style: none;
     padding: 5px 40px;
     margin-left: 4px;
     background-color: #9A8243;
+    opacity: 0.9;
 }
-.content-menu ul li:nth-child(4){
-    letter-spacing: 0;
+.content-menu ul li a:hover{
+    opacity: 1;
+    color: rgb(255, 255, 255);
 }
 .content-box{
     width: 100%;
@@ -99,4 +105,23 @@
     list-style: none;
     float: left;
     padding: 10px 5px;
+}
+.footer-content ul li a{
+    text-decoration: none;
+    color: black;
+}
+/* 设置对象被选择时的样式。  */
+::selection {
+	background: #009a61;
+	color: #fff;
+}
+
+::-moz-selection {
+	background: #009a61;
+	color: #fff;
+}
+
+::-webkit-selection {
+	background: #009a61;
+	color: #fff;
 }

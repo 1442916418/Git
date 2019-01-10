@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多彩的渐变</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            float: left;
+            padding: 10px;
+            margin: 10px 20px;
+            color: #333;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .linerGradient1{
+            /* 水平条纹 */
+            background: linear-gradient(red 50%, blue 50%);
+            /* 宽度100% 高度30px，一直反复填充整个空间**/
+            background-size: 100% 30px;
+        }
+        .linerGradient2{
+            /* 垂直条纹 */
+            background: linear-gradient(to right, blue 50%, yellow 50%);
+            /* 宽度30px 高度100%，一直反复填充整个空间**/
+            background-size: 30px 100%;
+        }
+        .linerGradient3{
+            /*斜向条纹*/
+            /* background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0); */
+            /* background: linear-gradient(45deg, red 25%, blue 0, yellow 50%,violet 0,green 75%, coral 0); */
+            background: linear-gradient(45deg, green 25%, yellow 0, yellow 50%, green 0, green 75%, yellow 0);
+            /* 宽度30px 高度30px，一直反复填充整个空间**/
+            background-size: 30px 30px;
+        }
+        .linerGradient4{
+            /*60度斜向条纹：用重复的线性渐变创建图像。 */
+            background: repeating-linear-gradient(60deg, #fb3, #fb3 15px, #58a 0, #58a 30px);
+            /* background: repeating-linear-gradient(60deg, red, yellow 15px, black 0, blue 30px); */
+            /* background: repeating-linear-gradient(60deg, red, yellow 15px, #f0f 0, blue 30px); */
+        }
+        .grid{
+            background: white;
+            /* 桌布网格：
+            第一条线性渐变90度方向，也就是垂直的，通过bg-size，两种颜色都是30px，一直循环下去；
+            第二条线性渐变没有设置方向，默认x轴方向，通过bg-size，两种颜色都是30px，一直循环下去*/
+            /* background-image: linear-gradient(90deg, rgba(200, 0, 0, .5) 50%, transparent 0), linear-gradient( rgba(200, 0, 0, .5) 50%, transparent 0); */
+            background-size: 30px 30px;
+            /* background-image: linear-gradient(90deg, rgba(0, 0, 255, 0.5) 50%, transparent 0), linear-gradient( rgba(0, 255, 0, 0.5) 50%, transparent 0); */
+            background-image: linear-gradient(90deg, rgba(0, 0, 200, 0.5) 50%, transparent 0), linear-gradient(rgba(0, 200, 0, 0.5) 50%, transparent 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="box linerGradient1">水平条纹</div>
+    <div class="box linerGradient2">垂直条纹</div>
+    <div class="box linerGradient3">斜向条纹</div>
+    <div class="box linerGradient4">60度斜向条纹</div>
+    <div class="box grid">桌布网格</div>
+</body>
+</html>
