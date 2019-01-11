@@ -1,0 +1,297 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500; 
+}
+/* 页眉 */
+.HeaderTitle{
+    width: 1500px;
+    height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+/* 主体内容 */
+.RegisterSection{
+    width: 1500px;
+    height: 750px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+}
+.LinearTransition{
+    width: 1500px;
+    height: 30px;
+    /* background: linear-gradient(#86D2FC, rgb(160, 233, 255), #C1FDFE); */
+    background: url(../images/register/market_bg.gif);
+}
+.RegistrationForm{
+    width: 100%;
+    height: 720px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; 
+    -ms-flex-wrap: wrap; 
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.RegistrationForm-Navigation{
+    width: 1200px;
+    height: 50px;
+    border-bottom: 2px solid #bbb;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.QuickRegistration{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+}
+.QuickRegistration p{
+    font-size: 25px;
+    color: black;
+    font-weight: 700;
+    margin: 0 5px;
+}
+.QuickRegistration p:last-child{
+    font-weight: 500;
+    font-size: 18px;
+    color: #ccc;
+}
+.RegistrationForm-Navigation a{
+    text-decoration: none;
+    color: blue;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+}
+.Register-Form{
+    width: 1200px;
+    height: 670px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.Register-Form-Title{
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    margin: 10px 0 20px 0;
+}
+.Register-Form-Title .s1{
+    font-size: 18px;
+    font-weight: 600;
+    color: #CC6600;
+}
+.Register-Form-Title .s2{
+    font-size: 18px;
+    font-weight: 600;
+    color: blue;
+}
+.Register-Form-Title-Message{
+    width: 900px;
+    height: 80px;
+    border: 1px solid #FFD42A;
+    background-color: #FFFFCC;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+}
+.Register-Form-Title-Message div:first-child{
+    margin-bottom: 10px;
+}
+.RequiredFields{
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    color: green;
+    margin-left: 150px;
+}
+.Asterisk{
+    color: red;
+}
+/* 注册表单 */
+.FillInForm{
+    width: 700px;
+    height: 500px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.Left-FillInForm{
+    width: 160px;
+    height: 500px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+}
+.font{
+    font-size: 20px;
+}
+.Cell-PhoneNumber{
+    margin: 20px 0;
+}
+.Email{
+    margin: 60px 0 20px 0;
+}
+.Name{
+    margin: 45px 0 20px 0;
+}
+.Gender{
+    margin: 10px 0 20px 0;
+}
+.Inviter{
+    margin: 20px 0 20px 0;
+}
+
+.Right-FillInForm{
+    width: 100%;
+    height: 500px;
+}
+.Right-FillInForm input{
+    width: 220px;
+    height: 30px;
+    border: 1px solid #ACACAC;
+}
+.Right-FillInForm input:nth-child(1){
+    margin: 20px 0 20px 10px;
+}
+.Right-FillInForm p:nth-child(2),
+.Right-FillInForm p:nth-child(4){
+    color: #ACACAC;
+}
+.Right-FillInForm input:nth-child(3){
+    margin: 10px 0 20px 10px;
+}
+.Right-FillInForm input:nth-child(5){
+    margin: 20px 0 20px 10px;  
+}
+.Right-FillInForm p:nth-child(6),
+#Inviter-Cell-PhoneNumber{
+    display: inline;
+    color: #FF8635;
+}
+#Gender{
+    width: 20px;
+    height: 20px;
+    margin: 10px 0 20px 10px;
+}
+#Select-List{
+    margin: 3px 10px 20px 10px;
+}
+.Other{
+    display: inline-block;
+    font-size: 14px;
+    width: 40px;
+    height: 20px;
+    background-color: #66CCCC;
+    color: white;
+    text-align: center;
+    margin: -4px 0 20px 0;
+    cursor: pointer;
+}
+#Inviter{
+    margin: 0 0 20px 10px;
+}
+#Checkbox{
+    width: 16px;
+    height: 16px;
+    margin: 0 0 20px 10px;
+}
+#Checkbox-A{
+    text-decoration: none;
+    color: blue;
+}
+#Subission{
+    width: 200px;
+    height: 40px;
+    border: 0;
+    background: #FF6600;
+    color: white;
+    margin: 0 0 0 10px;
+}
