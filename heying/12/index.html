@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>六人行首页</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!-- 
+    flexFrame是容器,子元素都是项目;
+    垂直的是主轴,水平的是侧轴.
+    -->
+    <div class="flexFrame">
+        <div class="header">
+            <div class="header-details">
+                <img class="header-details-img" src="images/login/logo.gif" alt="六人行">
+                <div class="header-details-menu">
+                    <div class="menu-contain">
+                        <div class="menu-contain-list"><a href="javascript:;" style="color:black;">首页</a>|</div>
+                        <div class="menu-contain-list"><a href="javascript:;">活动</a>|</div>
+                        <div class="menu-contain-list"><a href="javascript:;" style="color:black;">据点</a>|</div>
+                        <div class="menu-contain-list"><a href="javascript:;">招贴</a>|</div>
+                        <div class="menu-contain-list"><a href="javascript:;">VIP服务</a>|</div>
+                        <div class="menu-contain-list"><a href="javascript:;">随便逛逛</a></div>
+                    </div>
+                    <div class="header-details-search">
+                        <input class="txt-search" type="text" name="search">
+                        <input class="btn-search" type="button" name="btn" value="找我!">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="content-section">
+                <div class="section-left">
+                    <div class="section-left-top">
+                        <img src="images/homepage/focus.gif" src="雪人" width="100%" height="280px">
+                    </div>
+                    <div class="section-left-center">
+                        <div class="center-activity">
+                            <div class="activity-title">参加丰富的<span>活动</span></div>
+                            <div class="activity-content">
+                                <img src="images/homepage/spot1.gif" alt="活动" width="100px" height="90px">
+                                <div class="activity-content-title">
+                                    [培训]<span>11月17号婚恋心里工作坊</span>
+                                    <p>活动介绍婚恋心里工作坊：单身人士进入婚恋关系的十大障碍，一、哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒...</p>
+                                </div>
+                            </div>
+                            <div class="activity-content">
+                                <img src="images/homepage/spot2.gif" alt="演出" width="100px" height="90px">
+                                <div class="activity-content-title">
+                                    [演出]<span>天籁之夜－－尚雯婕2009北京演唱会</span>
+                                    <p>尚雯婕2009北京演唱会 天籁之夜－－尚雯婕2009巡回演唱会/音乐会</p>
+                                </div>
+                            </div>
+                            <div class="activity-content">
+                                <img src="images/homepage/spot3.gif" alt="休闲户外" width="100px" height="90px">
+                                <div class="activity-content-title">
+                                    [休闲户外]<span>爱旅行11月8日黄山游</span>
+                                    <p>【行程安排】 早上7：00集合，集合地：苹果花园地铁D出口左拐再右转再直走1000米</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="center-stronghold">
+                            <div class="activity-title">加入身边的<span>据点</span></div>
+                            <div class="activity-content">
+                                <img src="images/homepage/spot1.gif" alt="活动" width="100px" height="90px">
+                                <div class="activity-content-title">
+                                    剧场 <span>梅兰芳大剧院</span>
+                                    <p>拥有者:(价值 : 3000<img src="images/homepage/money.gif" alt="人民币">)</p>
+                                    <p>地址 : 西域区平安里西大街345号</p>
+                                </div>
+                            </div>
+                            <div class="activity-content">
+                                <img src="images/homepage/spot2.gif" alt="演出" width="100px" height="90px">
+                                <div class="activity-content-title">
+                                    滑雪场 <span>莲花山滑雪场</span>
+                                    <p>拥有者:(价值 : 6000<img src="images/homepage/money.gif" alt="人民币">)</p>
+                                    <p>地址 : 顺义区张振良山东路</p>
+                                </div>
+                            </div>
+                            <div class="activity-content">
+                                <img src="images/homepage/spot3.gif" alt="休闲户外" width="100px" height="90px">
+                                <div class="activity-content-title">
+                                    餐厅 <span>四川简阳羊肉汤</span>
+                                    <p>拥有者:(价值 : 11009<img src="images/homepage/money.gif" alt="人民币">)</p>
+                                    <p>地址 : 朝阳区今台路9路总站西100米</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-left-bottom">
+                        <img src="images/homepage/advfasion.gif" alt="底部广告" width="100%" height="100px">
+                    </div>
+                </div>
+                <div class="section-right">
+                    <div class="section-right-login">
+                        <div class="login-frame">
+                            <div class="login-frame-logo">登陆 <span>LOGIN</span></div>
+                            <form id="form-login">
+                                <p>你的手机号 : </p>
+                                <input id="phoneNumber" type="text" name="phone">
+                                <p>你的密码 : </p>
+                                <input id="pwd" type="text" name="pwd"><br>
+                                <input id="checkbox" type="checkbox" name="pwd">在这台电脑上记住我<br>
+                                <input id="btn" type="button" name="btn" value="登陆">
+                                <a href="javascript:;">忘记密码？</a>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="section-right-register">
+                        <a href="javascript:;">还不是六人行会员？马上注册</a>
+                    </div>
+                    <div class="section-right-neighbor">
+                        <div class="neighbor-title">
+                            找到身边的<span>邻居</span>
+                        </div>
+                        <div class="neighbor-title-content">
+                            <div class="block-content">
+                                <img src="images/homepage/neighbor1.jpg" alt="圣哲西" width="70px" height="80px">
+                                <div class="block-content-introducion">
+                                    <span>圣哲西</span><br>
+                                    所在写字楼<br>
+                                    <span>华杰大厦</span>
+                                </div>
+                            </div>
+                            <div class="block-content">
+                                <img src="images/homepage/neighbor2.jpg" alt="圣哲西" width="70px" height="80px">
+                                <div class="block-content-introducion">
+                                    <span>zhengj</span><br>
+                                    所在写字楼<br>
+                                    <span>海龙大厦</span>
+                                </div>
+                            </div>
+                            <div class="block-content">
+                                <img src="images/homepage/neighbor3.jpg" alt="圣哲西" width="70px" height="80px">
+                                <div class="block-content-introducion">
+                                    <span>凤凰花</span><br>
+                                    所在写字楼<br>
+                                    <span>大成国际中心</span>
+                                </div>
+                            </div>
+                            <div class="block-content">
+                                <img src="images/homepage/neighbor4.jpg" alt="圣哲西" width="70px" height="80px">
+                                <div class="block-content-introducion">
+                                    <span>镜花水</span><br>
+                                    所在写字楼<br>
+                                    <span>SHOH现代城</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-right-advertising"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer"></div>
+    </div>
+</body>
+</html>
