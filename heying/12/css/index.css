@@ -107,6 +107,19 @@ input{
     padding: 5px 10px;
     font-weight: 600;
 }
+.menu-contain-list a:link{
+    color: #ccc;
+}
+.menu-contain-list a:visited{
+    color: #ccc;
+}
+.menu-contain-list a:hover{
+    color: black;
+}
+.menu-contain-list a:active{
+    color: red;
+}
+
 .header-details-searcch{
     display: -webkit-box;
     display: -ms-flexbox;

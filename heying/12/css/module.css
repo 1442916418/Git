@@ -37,9 +37,21 @@
         -ms-flex-align: center;
             align-items: center;
 }
+/* 欢迎语 */
+.Welocme{
+    width: 1500px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
 /* 内容模块 */
 .new-content{
     width: 1500px;
+    /* min-height: 830px; */
     height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -69,7 +81,6 @@
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-    border: 1px solid red;
     box-sizing: border-box;
 }
 /* 内容模块：左侧内容 */
