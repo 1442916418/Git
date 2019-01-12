@@ -1,13 +1,7 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 500; 
-}
 /* 页眉 */
 .HeaderTitle{
     width: 1500px;
+    min-width: 1500px;
     height: 100px;
     display: -webkit-box;
     display: -ms-flexbox;
