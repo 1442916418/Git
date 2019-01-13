@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flex 布局一</title>
+    <style>
+        body{ margin: 0;padding: 0;font-size: 20px;font-weight: 600;text-align: center;line-height: 40px; }
+        #header,#footer{ height: 80px;background-color: #aaa; }
+        #content{ width: 100%;height: 600px;display: flex; }
+        #content div:first-of-type{ width: 300px;background-color: #bbb;flex: 0 0 auto; }
+        #content div:last-of-type{ background-color: #ccc;flex: 1; }
+    </style>
+</head>
+<body>
+    <div id="header">页眉</div>
+    <div id="content">
+        <div>左侧固定</div>
+        <div>
+            右侧自适应<br>
+            左侧CSS属性：flex: 0 0 auto;<br>
+            右侧CSS属性：flex: 1;
+        </div>
+    </div>
+    <div id="footer">页脚</div>
+</body>
+</html>
