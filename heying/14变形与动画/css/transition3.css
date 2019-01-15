@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    width: 70px;
+    height: 70px;
+    background-color: aqua;
+    color: black;
+    border: 1px solid blue;
+    margin: 200px auto;
+    cursor: pointer;
+}
+.box:hover{
+    animation: smaller 1s;
+}
+@keyframes smaller{
+    from{
+        
+    }
+    to{
+        background-color: blue;
+        transform: rotate(360deg) scale(0);
+    }
+}

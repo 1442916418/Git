@@ -1,0 +1,72 @@
+.stage{
+    transform-style: preserve-3d;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    animation: rotateR 4s infinite linear;
+}
+.c{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    text-align: center;
+    font-size: 200px;
+    line-height: 300px;
+}
+.front{
+    /* 向前走150px */
+    transform: translateZ(150px);
+    background: #59e7fa;
+    background: url(../images/8.jpg);
+    background-size: 300px;
+}
+.after{
+    /* 原地转身180度，再向前走150px */
+    transform: rotateX(-180deg) translateZ(150px);
+    background: #fa5959;
+    background: url(../images/8.jpg);
+    background-size: 300px;
+}
+.top{
+    /* 沿X轴旋转90度，再向前150px */
+    transform: rotateX(90deg) translateZ(150px);
+    background: #f7fa59;
+    background: url(../images/8.jpg);
+    background-size: 300px;
+}
+.bottom{
+    /* 沿X轴旋转-90度，再向前150px */
+    transform: rotateX(-90deg) translateZ(150px);
+    background: #8833aa;
+    background: url(../images/8.jpg);
+    background-size: 300px;
+}
+.left{
+    /* 沿Y轴旋转-90度，再向前走150px */
+    transform: rotateY(-90deg) translateZ(150px);
+    background: #aaccaa;
+    background: url(../images/8.jpg);
+    background-size: 300px;
+}
+.right{
+    /* 沿Y轴旋转90度，再向前走150px */
+    transform: rotateY(90deg) translateZ(150px);
+    background: #ccc;
+    background: url(../images/8.jpg);
+    background-size: 300px;
+}
+
+@keyframes rotateR{
+    0%{
+        transform: rotateY(0deg);
+    }
+    50%{
+        transform: rotateY(360deg);
+    }
+    51%{
+        transform: rotateX(0deg);
+    }
+    100%{
+        transform: rotateX(360deg);
+    }
+}

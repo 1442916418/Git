@@ -1,0 +1,29 @@
+body{
+    font-size: 18px;
+    display: flex;
+    color: black;
+}
+.box{
+    width: 200px;
+    height: 100px;
+    border: 2px solid blue;
+    margin: 20px auto;
+    transition: transform 2s;
+}
+.boxhover1:hover{
+    transform: scale(1.5);
+}
+.boxhover2:hover{
+    transform: scale(1.5);
+    background-color: yellow;
+}
+.boxhover3:hover{
+    transform: skewX(45deg);
+}
+.boxhover4:hover{
+    transform: rotate(360deg);
+}
+.boxhover5:hover{
+    transform: scale(1.5) skewX(35deg) rotate(360deg);
+    background-color: red;
+}

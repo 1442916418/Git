@@ -9,7 +9,7 @@ body {
     "微软雅黑";font - size: 13px;line - height: 1.8
 }
 a {
-    color: #399AB2;text-decoration:none}a:hover{color:# FE4165
+    color: #399AB2;text-decoration:none}a:hover{color:#FE4165
 }
 img {
     border: none;border - radius: 16 px
@@ -104,14 +104,26 @@ blockquote {
                         }#
                         MyIng.ing_title,
                         #sideBar h3 {
-                            margin: 10 px 0 10 px 0;font - size: 14 px;text - align: left;padding - left: 10 px;box - shadow: 3 px 3 px 2 px #586F76}h3.catListTitle{color:# FFF;background - color: #F1AAA6;text - indent: 2 px
+                            margin: 10 px 0 10 px 0;font - size: 14 px;text - align: left;padding - left: 10 px;box - shadow: 3 px 3 px 2 px #586F76}
+        h3.catListTitle{
+            color:# FFF;
+            background - color: #F1AAA6;
+            text - indent: 2 px
                         }#
                         calendar {
                             margin - top: 16 px;
                             text - align: center
                         }#
                         footer {
-                            height: 60 px;line - height: 60 px;color: #586F76;text-align:center;padding:10px 5px 0 15px;border-radius:8px 8px 8px 8px}.postBody{padding:10px 20px 10px;border-bottom:1px solid # D9DBE1;background - color: #FCFCFA
+                            height: 60 px;
+                            line - height: 60 px;
+                            color: #586F76;
+                            text-align:center;
+                            padding:10px 5px 0 15px;
+                            border-radius:8px 8px 8px 8px}
+                .postBody{padding:10px 20px 10px;
+                    border-bottom:1px solid # D9DBE1;
+                    background-color: #fCFCFA;
                         }.feedbackItem {
                             padding: 8 px;border - bottom: 1 px dotted# CCC
                         }.post {

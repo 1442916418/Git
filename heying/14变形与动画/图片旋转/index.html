@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片旋转</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="text/javascript">
+        var count = 1;
+        function rotateRound(){ //不管第几次点击，myCircle取出来的Img列表都是HTML中的原始顺序
+            var myCircle = document.getElementById("circle").getElementsByTagName("img");
+            var i;
+            var myImg;
+            for(i=0;i<myCircle.length;i++){
+                  myImg = myCircle[i];    
+                  myImg.style.transform = "rotateY("+(i-count)*40+"deg) translateZ(300px)";  //每次transform都是基于原始位置，而不是当前视图显示的位置。
+            }        
+            count++;
+        };
+    </script>
+</head>
+<body>
+    <h2 style="text-align: center;margin-top: 100px;">点击任意图片浏览</h2>
+    <div class="demo">
+        <div id="circle" onclick="rotateRound()" >
+            <img src="1.jpg" alt="cat">
+            <img src="2.jpg" alt="cat">
+            <img src="3.jpg" alt="cat">
+            <img src="4.jpg" alt="cat">
+            <img src="5.jpg" alt="cat">
+            <img src="6.jpg" alt="cat">
+            <img src="7.jpg" alt="cat">
+            <img src="8.jpg" alt="cat">
+            <img src="9.jpg" alt="cat">
+        </div>
+    </div>
+</body>
+</html>

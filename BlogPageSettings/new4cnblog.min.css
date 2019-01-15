@@ -1,20 +1,21 @@
+/* 页面样式已修改 */
 *{
     margin: 0;
     padding: 0;
 }
 body{
-    color: #3161A3;
+    color: #586f76;
     background-color: #EBFFFB;
     font-family: Verdana,Arial,Helvetica,sans-serif,"微软雅黑";
     font-size: 14px;
-    line-height: 1.8;
+    line-height: 16px;
 }
 a{
-    color: #7efaff;
+    color: #399AB2;
     text-decoration: none;
 }
 a:hover{
-    color: #13abc4;
+    color: darkblue;
 }
 img{
     border: 0;
@@ -31,7 +32,7 @@ blockquote{
     border-radius: 16px;
 }
 .cnblogs_code{
-    background-color: #53F6F8 !important;
+    background-color: rgba(221, 254, 255, 0.5) !important;
     border-radius: 10px;
     box-shadow: 1px 1px 1px #888;
 }
@@ -69,11 +70,12 @@ blockquote{
 }
 .headermaintitle{
     font-size: 18px;
-    color: #0c005a;
+    color: darkblue;
 }
 #Header1_HeaderTitle{
     font-size: 24px;
-    color: #0c005a;
+    color: darkblue;
+    font-weight: 800;
     font-family: "隶书",serif;
 }
 #bologTitle h2{
@@ -103,7 +105,7 @@ blockquote{
     font-weight: 700;
 }
 /* 目录列表 */
-div#navCategroy blockquote{
+div#navCategory blockquote{
     padding: 20px;
     margin-bottom: 25px;
     background-color: rgb(226, 253, 248);
@@ -174,6 +176,12 @@ div#navCategroy blockquote{
     padding-left: 10px;
     box-shadow:  3px 3px 2px #586f76;
 }
+/* 公告背景 */
+h3.catListTitle{
+    color: #fff;
+    background-color: #13ABC4;
+    text-indent: 2px;
+}
 #calendar{
     margin-top: 16px;
     text-align: center; 
@@ -183,6 +191,15 @@ div#navCategroy blockquote{
     height: 60px;
     line-height: 60px;
     color: #586f76;
+    text-align: center;
+    padding: 10px 5px 0 15px;
+    border-radius: 8px 8px 8px 8px;
+}
+/* 右侧文章背景 */
+.postBody {
+    padding: 10px 20px 10px;
+    border-bottom: 1px solid #D9DBE1;
+    background-color: rgba(252, 252, 250, 0.9);
 }
 .feedackItem{
     padding: 8px;
@@ -203,29 +220,29 @@ div#navCategroy blockquote{
     font-family: 'Titillium Web',sans - serif;
     position: relative;
     line-height: 40px;
-    text-shadow:  0 -1px 5px rgba(0, 0, 0, 0.3);
+    text-shadow:  0 -1px 5px rgba(0, 0, 0, 0.2);
 }
 #cnblogs_post_body h1{
-    color: #399ab2;
+    color: #001bb3;
     font-size: 22px;
     border-bottom: 2px solid rgba(53, 86, 129, 0.3);
-    text-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
 }
 #cnblogs_post_body h2{
-    color: #60497c;
+    color: #001ec5;
     font-size: 20px;
     border-bottom: 2px solid rgba(53, 86, 129, 0.3);
-    text-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
 }
 #cnblogs_post_body h3{
     font-size: 18px;
-    color: #346093;
-    text-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
+    color: #0020d8;
+    text-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
 }
 #cnblogs_post_body h4{
     font-size: 16px;
-    color: #78943A;
-    text-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
+    color: #0024f0;
+    text-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
 }
 /* 右侧文章底部作者留言出 */
 #cnblogs_post_body #signature{
@@ -236,7 +253,7 @@ div#navCategroy blockquote{
     font-size: 14px;
 }
 /* 页面右侧点赞处 */
-.div_digg{
+#div_digg{
     position: fixed;
     bottom: 10px;
     right: 15px;

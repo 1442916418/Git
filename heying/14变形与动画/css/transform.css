@@ -1,0 +1,79 @@
+.box1{
+    width: 100px;
+    height: 100px;
+    background-color: greenyellow; 
+}
+.box1:hover{
+    /* transform: translate(40px,50px); */
+    /* transform: rotate(60deg); */
+    /* transform: scale(1.5); */
+    /* transform: skewX(10deg); */
+    /* transform-origin: left top; */
+    /* 六个参数，包含旋转，缩放，移动（平移）和倾斜功能。 */
+    transform:matrix(0.866,0.5,-0.5,0.866,0,0);
+}
+.box2{
+    width: 300px;
+    height: 400px;
+    border: 2px solid rebeccapurple;
+    margin: 40px;
+    float: left;
+    overflow: hidden;
+}
+.title{
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    float: right;
+    text-align: center;
+    /* 多个值空格隔开 */
+    transform: rotate(45deg) translate(70px);
+}
+.box3{
+    margin: 40px;
+    width: 300px;
+    height: 400px;
+    float: left;
+    border: 1px solid red;
+}
+.box4{
+    width: 100px;
+    height: 100px;
+    background-color: yellowgreen;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.box5{
+    margin: 40px;
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    float: left;
+    opacity: 0.5;
+    transition: transform 3s ease-in-out,background-color 5s,opactiy 5s;   
+}
+.box5:hover{ 
+    transform: rotate(360deg); 
+    background-color: blue;
+    opacity: 1;
+}
+.box6{
+    width: 200px;
+    height: 200px;
+    float: left;
+    border-radius: 50%;
+}
+.box6 img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-size: 100% 100%;
+}
+.box6:hover{
+    box-shadow: 0 0 10px 3px rgba(0, 191, 255, 0.7);
+    transition: box-shadow 1.5s;
+}
