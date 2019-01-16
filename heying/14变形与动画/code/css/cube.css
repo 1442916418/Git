@@ -3,7 +3,7 @@
     width: 300px;
     height: 300px;
     position: relative;
-    animation: rotateR 4s infinite linear;
+    animation: rotateR 8s infinite linear;
 }
 .c{
     width: 300px;
