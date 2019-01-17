@@ -1,0 +1,111 @@
+.header{
+    width: 1013px;
+    height: 150px;
+    background-color: yellow;
+    background: url(../images/h_bg.jpg) no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+.header-right-nav{
+    width: 42%;
+    height: 40px;
+    position: absolute;
+    top: 7px;
+    right: 0;
+    box-sizing: border-box; 
+}
+.right-nav{
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    float: left;
+}
+.right-nav a{
+    font-size: 12px;
+    position: relative;
+    top: 4px;
+}
+.pic{
+    width: 30px;
+    height: 30px;
+}
+.picture1{
+    background: url(../images/icon.gif) no-repeat;
+    background-position: 0 1px;
+}
+.picture2{
+    background: url(../images/icon.gif) no-repeat;
+    background-position: -40px 1px;
+}
+.picture3{
+    background: url(../images/icon.gif) no-repeat;
+    background-position: -80px 1px;
+}
+.picture4{
+    background: url(../images/icon.gif) no-repeat;
+    background-position: -122px 1px;
+}
+.login,.register{
+    border: 1px solid #C3C4C3;
+    border-radius: 3px;
+    padding: 0 8px;
+    background-color: #FCFBF9;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+.header-nav{
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 114px;
+}
+.nav{
+    width: 85px;
+    height: 35px;
+    line-height: 30px;
+    text-align: center;
+}
+.nav:hover{
+    background: url(../images/nav_bg.gif) no-repeat;
+    background-size: 105px 35px;
+}
+.left-nav{
+    margin-left: 2px;
+}
+.left-nav3{
+    margin-left: 0px;
+}
+.nav a{
+    font-weight: 600;
+}
+.welcome{
+    width: 500px;
+    height: 30px;
+    position: absolute;
+    top: 80px;
+    right: 0;
+}
+.rolling{
+    display: inline-block;
+    width: 170px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #636362;
+    animation: 10s wordsLoop linear infinite alternate;
+}
+@keyframes wordsLoop{
+    0%{
+        transform: translateX(300px);
+    }
+    100%{
+        transform: translateX(-200px);
+    }
+}

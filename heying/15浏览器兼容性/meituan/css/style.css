@@ -27,7 +27,7 @@ body{
     }
     .search{
         float: left;
-        width: 22%;
+        width: 23%;
         height: 45px;
         background: url(../images/header.png) no-repeat;
         background-position: 0 -35px;
@@ -128,11 +128,11 @@ body{
 
 /* 页面宽度小于等于720px和页面宽度大于等于320px的使用以下样式 */
 @media screen and (max-width:720px) and (min-width:320px){
-    /* .logo{
-        width: 140px;
-        height: 45px;
-        margin-left: 20%;
-        margin-top: 15px;
+    .logo{
+        width: 80px;
+        height: 25px;
+        margin-left: 5%;
+        margin-top: 25px;
         float: left;
     }
     .search{
@@ -156,7 +156,7 @@ body{
         top: 10px;
         right: 40px;
         color: #eee;
-    } */
+    }
 
     #content-MyShoppingCart{
         font-family: 黑体;
@@ -216,9 +216,6 @@ body{
     }
     #footer-title{
         width: 100%;
-        text-align: center;
         font-size: 14px;
-        height: 80px;
-        line-height: 80px;
     }
 }
