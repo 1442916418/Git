@@ -1,0 +1,83 @@
+.com-article{
+    width: 100%;
+    height: 590px;
+    background: url(../images/catlist_bg.gif) no-repeat;
+    background-size: 100%;
+    margin-top: 10px;
+}
+.classified-headings{
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px dashed #D1D1D1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-top: 50px;
+    font-weight: 600;
+}
+.btn-all{
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    margin-left: 75px;
+}
+.c-height{
+    height: 30px;
+    line-height: 30px;
+}
+.com-pictures{
+    margin-left: 150px;
+}
+.trade-name{
+    margin-left: 230px;
+}
+.com-price{
+    margin-left: 200px;
+}
+.com-single{
+    width: 100%;
+    height: 120px;
+    border-bottom: 1px dashed #D1D1D1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#btn-single{
+    margin-left: 85px;
+}
+#picture-single{
+    margin-left: 160px;
+}
+.com-introduce{
+    width: 500px;
+    height: 100px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+.introduce1{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.seller{
+    font-weight: 600;
+}
+.commodity-price{
+    width: 80px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}

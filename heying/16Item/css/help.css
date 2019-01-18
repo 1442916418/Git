@@ -1,0 +1,98 @@
+.help-article{
+    width: 100%;
+    height: 590px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+.h-left-section{
+    width: 200px;
+    height: 580px;
+    background: url(../images/customer.jpg) no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.h-options{
+    width: 170px;
+    height: 390px;
+    margin-top: 190px;
+}
+.options-list{
+    cursor: pointer;
+}
+.options-list ul li{
+    width: 170px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #FE720C;
+    font-weight: 600;
+    cursor: pointer;
+}
+.options-list:hover ul{
+    display: block;
+}
+.options-list ul{
+    display: none;
+}
+
+
+
+
+
+
+.h-right-section{
+    width: 800px;
+    height: 580px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border: 1px solid #D1777E;
+}
+.knowledge-title{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 30px;
+    margin: 30px 0 30px 20px;
+}
+.reg-line{
+    width: 100%;
+    height: 10px;
+    line-height: 10px;
+}
+.reg-line img{
+    margin-left: 20px;
+}
+.h-infomation{
+    width: 90%;
+    height: 50px;
+    padding: 20px 20px;
+}
+.reg-step{
+    margin-left: 20px;
+}
+.problem{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.problem div{
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    margin: 2px 20px;
+}

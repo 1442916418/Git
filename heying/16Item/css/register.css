@@ -1,0 +1,70 @@
+.article{
+    width: 100%;
+    height: 580px;
+    background: url(../images/reg_bg.gif) no-repeat;
+    background-size: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.reg-left-section{
+    width: 50%;
+    height: 500px;
+    display: flex;
+}
+.reg-right-section{
+    width: 50%;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+.reg-key{
+    width: 200px;
+    height: 500px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+.reg-key span{
+    margin: 10px 2px 19px 0;
+}
+.reg-value{
+    width: 100%;
+    height: 500px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.form-value div{
+    font-size: 12px;
+    margin: 7px 0 20px 2px;
+}
+.form-value img{
+    cursor: pointer;
+}
+.reg-agreement{
+    width: 300px;
+    height: 350px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.agreement-title{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.agreement-title span{
+    font-weight: 700;
+}

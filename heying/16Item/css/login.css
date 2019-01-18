@@ -1,0 +1,169 @@
+.article{
+    width: 100%;
+    height: 580px;
+    background: url(../images/login_bg.gif) no-repeat;
+    background-size: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.L-section{
+    width: 50%;
+    height: 580px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.member-landing{
+    margin-top: 50px;
+    margin-left: 15px;
+}
+.login-form{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+.membership,
+.pwd{
+    margin-left: 115px;
+    margin-bottom: 15px;
+}
+.mem input{
+    width: 120px;
+    height: 20px;
+    box-sizing: border-box;
+}
+.form img{
+    margin-left: 175px;
+}
+.login-information{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.info{
+    margin-left: 90px;
+    font-size: 12px;
+}
+.info a,
+.memberLogin a{
+    color: #366DC9;
+    text-decoration-style: solid;
+    text-decoration-line: underline; 
+}
+.info span{
+    margin-right: 10px;
+}
+.C-line{
+    width: 1px;
+    height: 510px;
+    border-left: 1px solid #D0D0D0;
+    margin-top: 50px;
+}
+.R-section{
+    width: 50%;
+    height: 580px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.registered-memder{
+    margin-left: 15px;
+    margin-top: 65px;
+}
+.introduce{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    margin: 5px 0;
+}
+.ghost-map{
+    width: 40px;
+    height: 45px;
+    display: inline-block;
+    margin-left: 45px;
+    vertical-align: middle;
+}
+.gm1{
+    background: url(../images/icon.gif) no-repeat;
+    background-position: 0 -120px;
+}
+.gm2{
+    background: url(../images/icon.gif) no-repeat;
+    background-position: 0 -155px;
+}
+.gm3{
+    background: url(../images/icon.gif) no-repeat;
+    background-position: 0 -195px;
+}
+.gm4{
+    background: url(../images/icon.gif) no-repeat;
+    background-position: 0 -235px;
+}
+.introduce span:nth-of-type(1){
+    font-size: 20px;
+    color: #0099FF;
+    font-weight: 700; 
+}
+.btn-registernow{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-registernow img{
+    margin-right: 50px;
+}
+.btn-box{
+    width: 350px;
+    height: 150px;
+    background: #FDF7E7;
+    border: 1px solid #F2BE74;
+    margin: 20px 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.memberLogin{
+    width: 260px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #F6DEC0;
+    background: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0;
+}
+.user-picture{
+    width: 30px;
+    height: 30px;
+    background: url(../images/icon.gif) no-repeat;
+    background-position: -14px -278px;
+    float: left;
+}
+.TCC-user{
+    width: 30px;
+    height: 30px;
+    background: url(../images/icon.gif) no-repeat;
+    background-position: -14px -318px;
+    float: left;
+}

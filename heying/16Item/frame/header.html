@@ -7,6 +7,7 @@
     <title>页眉</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/header.css">
+    <base target="_parent">
 </head>
 <body>
     <div class="header">
@@ -17,7 +18,7 @@
             </div> 
             <div class="right-nav">
                <div class="pic picture2"></div> 
-                <a href="javascript:;">帮助中心</a>
+                <a href="../help.html">帮助中心</a>
             </div>
             <div class="right-nav">
                 <div class="pic picture3"></div> 
@@ -27,8 +28,10 @@
                 <div class="pic picture4"></div> 
                 <a href="javascript:;">设为首页</a>
             </div>
-            <input class="login" type="button" name="btn" value="登陆">
-            <input class="register" type="button" name="btn" value="注册">
+            <!-- <input class="login" type="button" name="btn" value="登陆" onclick="javascript:location='../login.html'">
+            <input class="register" type="button" name="btn" value="注册" onclick="javascript:location='../register.html'"> -->
+            <a class="login login-position" href="../login.html">登陆</a>
+            <a class="register register-position" href="../register.html">注册</a>
         </div>
 
         <div class="welcome">
@@ -38,14 +41,14 @@
         </div>
 
         <div class="header-nav">
-            <div class="nav left-nav"><a href="javascript:;">首&nbsp;&nbsp;页</a></div>
-            <div class="nav left-nav"><a href="javascript:;">家用电器</a></div>
-            <div class="nav left-nav"><a href="javascript:;">手机数码</a></div>
-            <div class="nav left-nav"><a href="javascript:;">日用百货</a></div>
-            <div class="nav left-nav"><a href="javascript:;">书&nbsp;&nbsp;籍</a></div>
-            <div class="nav left-nav3"><a href="javascript:;">帮助中心</a></div>
-            <div class="nav left-nav3"><a href="javascript:;">免费开店</a></div>
-            <div class="nav left-nav3"><a href="javascript:;">全球咨询</a></div>
+            <div class="nav left-nav"><a href="../index.html">首&nbsp;&nbsp;页</a></div>
+            <div class="nav left-nav"><a href="../commodity.html">家用电器</a></div>
+            <div class="nav left-nav"><a href="../commodity.html">手机数码</a></div>
+            <div class="nav left-nav"><a href="../commodity.html">日用百货</a></div>
+            <div class="nav left-nav"><a href="../commodity.html">书&nbsp;&nbsp;籍</a></div>
+            <div class="nav left-nav3"><a href="../help.html">帮助中心</a></div>
+            <div class="nav left-nav3"><a href="../commodity.html">免费开店</a></div>
+            <div class="nav left-nav3"><a href="../commodity.html">全球咨询</a></div>
         </div>      
     </div>
 </body>

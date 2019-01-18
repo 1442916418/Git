@@ -51,7 +51,7 @@
 }
 .login,.register{
     border: 1px solid #C3C4C3;
-    border-radius: 3px;
+    border-radius: 6px;
     padding: 0 8px;
     background-color: #FCFBF9;
     font-size: 12px;
@@ -59,6 +59,15 @@
     line-height: 20px;
     margin-top: 15px;
     margin-left: 10px;
+}
+.login-position{
+    position: absolute;
+    top: -2px;
+}
+.register-position{
+    position: absolute;
+    top: -2px;
+    right: 20px;
 }
 .header-nav{
     display: flex;
