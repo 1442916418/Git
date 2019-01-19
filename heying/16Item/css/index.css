@@ -1,22 +1,20 @@
 .main-body{
     width: 100%;
     box-sizing: border-box;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
 }
 .header{
     width: 53.4%;
     height: 150px;
     margin: auto;
     box-sizing: border-box;
-
-    border: 2px dashed red;
+    /* border: 2px dashed red; */
 }
 .footer{
     width: 53.4%;
     margin: auto;
     box-sizing: border-box;
-
-    border: 2px dashed green;
+    /* border: 2px dashed green; */
 }
 
 /* 中间主体内容 */
@@ -24,8 +22,7 @@
     width: 53.4%;
     margin: auto;
     box-sizing: border-box;
-   
-    border: 2px dashed yellow;
+    /* border: 2px dashed yellow; */
 }
 /* 文章内容 */
 .article{

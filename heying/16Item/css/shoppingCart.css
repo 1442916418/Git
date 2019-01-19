@@ -5,8 +5,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-
-    background: #eee;
 }
 .sc-mycart{
     width: 100%;
@@ -29,4 +27,59 @@
     height: 32px;
     line-height: 32px;
     margin-left: 60px;
+}
+#sc-table{
+    width: 98%;
+    height: 150px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+#sc-table tr:first-child{
+    font-weight: 600;
+}
+.sc-gray{
+    color: #A5A4AF;
+}
+.sc-red{
+    color: #FF0305;
+}
+.sc-delete{
+    padding-right: 20px;
+}
+.sc-number{
+    width: 120px;
+    padding-right: 20px;
+}
+.sc-discount{
+    padding-right: 20px;
+}
+.sc-total-sum{
+    text-align: center;
+}
+.sc-supplementary-info{
+    width: 450px;
+    height: 150px;
+    margin-left: 100px;
+    margin-top: 20px;
+    display: flex;
+}
+.sc-list-key{
+    width: 20%;
+    height: 100%;
+}
+.sc-list-key div{
+    text-align: right;
+    height: 35px;
+    line-height: 35px;
+}
+.sc-list-value{
+    width: 80%;
+    height: 100%;
+}
+.sc-list-value{
+    height: 35px;
+    line-height: 35px;
+}
+.sc-list-value img{
+    cursor: pointer;
 }
