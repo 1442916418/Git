@@ -1,10 +1,12 @@
 .main-body{
     width: 100%;
+    min-width: 1016px;
     box-sizing: border-box;
     /* border: 2px solid blue; */
 }
 .header{
     width: 53.4%;
+    min-width: 1016px;
     height: 150px;
     margin: auto;
     box-sizing: border-box;
@@ -12,6 +14,7 @@
 }
 .footer{
     width: 53.4%;
+    min-width: 1016px;
     margin: auto;
     box-sizing: border-box;
     /* border: 2px dashed green; */
@@ -20,6 +23,7 @@
 /* 中间主体内容 */
 .content{
     width: 53.4%;
+    min-width: 1016px;
     margin: auto;
     box-sizing: border-box;
     /* border: 2px dashed yellow; */

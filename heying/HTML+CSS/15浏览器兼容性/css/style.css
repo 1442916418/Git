@@ -30,11 +30,19 @@ body{
 #search{
     width: 422px;
     height: 40px;
-    background: url(../images/header.png) no-repeat;
-    background-position: 0px -37px;
+    /* background: url(../images/header.png) no-repeat;
+    background-position: 0px -37px; */
+    background: url(../images/header_02.png) no-repeat;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/header_02.png'); 
+    zoom: 1; 
+
     position: absolute;
     top: 15px;
     left: 380px;
+    
+    /* IE6下不兼容图片的透明度：两个解决方法一、加滤镜  二、图片不要使用png格式，换一种格式 */
+    /* _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/header.png'); 
+    zoom: 1; */
 }
 #s1{
     position: absolute;

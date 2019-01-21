@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>习题一</title>
+</head>
+<body>
+   
+    <script>
+        var i = 10,k = 5;
+        var sum = i + k;
+        var difference = i - k;
+        var product = i * k;
+        var division = i / k;
+        document.write("习题一：和：" + sum + "<br>差：" + difference + "<br>积：" + product + "<br>商：" + division);
+
+        document.write("<br>=====================================<br>");
+
+        var c = 4;
+        document.write("习题二：直径：" + (c*2) + "<br>");
+        document.write("面积：" + (Math.PI*c*c) + "<br>");
+        document.write("周长：" + Math.floor((2*Math.PI*c)));    
+
+        document.write("<br>=====================================<br>");
+
+        var n1 = 3,n2 = 6;
+        document.write("习题三：" + n1>n2 ? n1 : n2 );
+        
+        document.write("<br>=====================================<br>");
+
+        var f = 2.34566;
+        document.write("习题四：" + f.toFixed(2));
+
+        document.write("<br>=====================================<br>");
+
+        var number = 42933;
+        var a,b,c,d,e;
+
+        a = number / 10000 % 10;
+        b = number / 1000 % 10;
+        c  = number / 100 % 10;
+        d  = number / 10 % 10;
+        e = number / 1 % 10;
+
+        document.write("习题五：" + Math.floor(a) + "***" + Math.floor(b) + "***" + Math.floor(c) + "***" + Math.floor(d) + "***" + Math.floor(e));
+
+        document.write("<br>=====================================<br>");
+
+        var ic = 60;
+        if ( ic%3 == 0 || ic%4 == 0 || ic%5 == 0)
+        {
+            document.write("习题六：" + ic + ":能被3或者4或者5整除");
+        }
+        else 
+        {
+            document.write("习题六：" + ic + ":不能被3或者4或者5整除");
+        }
+
+        document.write("<br>=====================================<br>");
+
+        var jc = 13;
+        if ( jc%2 == 0 && jc%3 == 0 )
+        {
+            document.write("习题七：" + jc + ":能被2和3整除");
+        }
+        else
+        {
+            document.write("习题七：" + jc + ":不能被2和3整除");
+        }
+
+    </script>
+</body>
+</html>
