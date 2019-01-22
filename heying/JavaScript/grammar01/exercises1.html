@@ -31,20 +31,22 @@
         document.write("<br>=====================================<br>");
 
         var f = 2.34566;
-        document.write("习题四：" + f.toFixed(2));
+        var nf = f * 100;
+        document.write("习题四：" + (nf - nf%1) / 100);
 
         document.write("<br>=====================================<br>");
 
         var number = 42933;
         var a,b,c,d,e;
 
-        a = number / 10000 % 10;
-        b = number / 1000 % 10;
-        c  = number / 100 % 10;
-        d  = number / 10 % 10;
-        e = number / 1 % 10;
+        a = number/10000 - number/10000%1;
+        b = (number/1000 - number/1000%1) % 10;
+        c = (number/100 - number/100%1) % 10;
+        d = (number/10 - number/10%1) % 10;
+        e = number % 10;
 
-        document.write("习题五：" + Math.floor(a) + "***" + Math.floor(b) + "***" + Math.floor(c) + "***" + Math.floor(d) + "***" + Math.floor(e));
+        // document.write("习题五：" + Math.floor(a) + "***" + Math.floor(b) + "***" + Math.floor(c) + "***" + Math.floor(d) + "***" + Math.floor(e));
+        document.write("习题五：" + a + "***" + b + "***" + c + "***" + d + "***" + e);
 
         document.write("<br>=====================================<br>");
 
@@ -70,6 +72,26 @@
             document.write("习题七：" + jc + ":不能被2和3整除");
         }
 
+        document.write("<br>=====================================<br>");
+        document.write("var a = 123; var b = 234;交换a和b的值。<br>");
+
+        var a1 = 123,b1 = 234;
+        // 一
+        // var temp = a1; 
+        //     a1 = b1;   
+        //     b1 = temp; 
+
+        // 二
+        // a1 = a1 + b1;
+        // b1 = a1 - b1;
+        // a1 = a1 - b1; 
+
+        // 三
+        a1 = a1 - b1;
+        b1 = a1 + b1;
+        a1 = b1 - a1;
+
+        document.write( "a1=" + a1 + "&nbsp;&nbsp;&nbsp;&nbsp;" + "b1=" + b1);
     </script>
 </body>
 </html>

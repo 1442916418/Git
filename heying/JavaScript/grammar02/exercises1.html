@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>习题</title>
+</head>
+<body>
+    <script>
+        // 习题一
+        // var year = prompt("请输入年份","");
+        // if ( year%4 == 0 && year%100 != 0 )
+        // {
+        //     document.write(year + "年：是闰年");
+        // }    
+        // else if ( year%400 == 0 )
+        // {
+        //     document.write(year + "年：是闰年");
+        // }
+        // else
+        // {
+        //     document.write(year + "年：不是闰年");
+        // }
+
+        // 习题二
+        // i 是行
+        // for ( var i = 1; i <= 9; i ++ )
+        // {
+        //     // j 是列
+        //     for ( var j = 1; j <= i; j ++ )
+        //     {
+        //         document.write(j + "*" + i + "=" + i*j + "&nbsp;&nbsp;");
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // 习题三
+        // var sum = 0;
+        // for ( var i = 1; i <= 99; i += 2 )
+        // {
+        //     sum += i;
+        // }
+        // document.write("总和是：" + sum);
+
+        // 第四题
+        // var h = 0.0001;
+        // var a = 0;
+        // console.time();
+        // while(h<8848)
+        // {
+        //     h = h*2;
+        //     a++;
+        // }
+        // document.write(a + "次");
+        // console.timeEnd();
+
+        // 第五题
+        // var numberx = prompt("请输入x：");
+        // var symbol = prompt("请输入操作符号：");
+        // var numbery = prompt("请输入y：");
+        // var i = 0;
+
+        // switch( symbol )
+        // {
+        //     case '+': i = numberx + numbery; break;
+        //     case '*': i = numberx * numbery; break;
+        //     case '/': i = numberx / numbery; break;
+        //     case '-': i = numberx - numbery; break;
+        // }
+
+        // document.write("x-y的值为：" + i);
+
+        // 习题六
+        // for(var i=0;i<6;i++){
+        //     for(var k=0;k<6-i-1;k++){  
+        //         document.writeln("&nbsp;");  
+        //     }  
+        //     for(var j=0;j<=(2*i-1)+1;j++){  
+        //         document.writeln("*");  
+        //     }  
+        //     document.writeln("<br/>");  
+        // }  
+        // for(var i=0;i<5;i++){  
+        //     for(var k=0;k<i+1;k++){  
+        //         document.writeln("&nbsp;");  
+        //     }  
+        //     for(var m=0;m<(9-3*i)+i;m++){  
+        //         document.writeln("*");  
+        //     }  
+        //     document.writeln("<br/>");  
+        // }
+
+        for ( var i = 0; i < 5; i ++ )
+        {
+            for ( var k = 0; k < 5-i-1; k ++ )
+            {
+                document.write("&nbsp;");
+            }
+            for ( var j = 0; j <= (2*i-1)+1; j ++ )
+            {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+        for ( var i = 0; i < 4; i ++ )
+        {
+            for (var k = 0; k < i+1; k ++)
+            {
+                document.write("&nbsp;");
+            }
+            for (var j = 0; j < (7-3*i)+i; j ++)
+            {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>
