@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 习题一
+        function Calculation()
+        {
+            // 不可以声明在循环里，否则每循环一次都被重新赋值为0
+            var count = 0;
+            for ( var i = 1; i < 1000; i ++ )
+            {
+                if ( (i%3==0) && (i%5==0) && (i%7==0) )
+                {
+                    count += 1;
+                    if ( count == 7 )
+                    {
+                        document.write("<br>");
+                        count = 0;
+                    }
+                    document.write(i+"&nbsp;"); 
+                }
+            }
+            document.write("<br><hr>");
+        }
+
+        // 习题二
+        function Area(radius)
+        {
+            return Math.PI*radius*radius;
+        }
+        
+        // 习题三
+        function UserInput()
+        {   
+            var sumU = 0;
+            var number = [];
+
+            number.push(Number(prompt("请输入数字，当输入零时，我们将计算总和：")));
+            // do
+            // {
+            //     number.push(Number(prompt("请输入数字，当输入零时，我们将计算总和：")));
+            // }while(number[0] != 0);
+
+            for ( var i = 0; i < number.length; i ++ )
+            {
+                if ( number[i] != 0 )
+                {
+                    number.push(Number(prompt("请输入数字，当输入零时，我们将计算总和：")));
+                }
+                else
+                {
+                    if ( number.length == 0)
+                    {
+                        document.write("总和是："+sumU);
+                    }
+                    else 
+                    {
+                        for ( var j = 0; j < number.length; j ++ )
+                        {
+                            sumU += number[j];
+                        }
+                        document.write("总和是："+sumU);
+                    }
+                }
+            }
+           
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        // 习题一
+        // Calculation();
+        // 习题二
+        // document.write(Area(4)+"<br><hr>");
+        // 习题三
+        UserInput();
+    </script>
+</body>
+</html>

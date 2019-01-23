@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>swicth-case</title>
+</head>
+<body>
+    <script>
+        var month = parseInt(prompt("请输入月份：","1"));   
+
+        Start(month);
+
+        // 开始判断用户输入的值是否符合要求
+        function Start(month)
+        {
+            if ( month > 12 || month < 1  )
+            {
+                alert("请输入1-12的月份！");
+                Circulation();
+            }
+            else 
+            {
+                InputMonth(month);
+            }
+        }
+
+        // 如果不符合要求，则重复循环调用Circulation()函数，知道达到条件为止
+        function Circulation()
+        {
+            month = parseInt(prompt("请输入月份：","1"));   
+
+            if ( month > 12 || month < 1 )
+            {
+                alert("请输入1-12的月份！");
+                Circulation();
+            }
+            else 
+            {
+                InputMonth(month);
+            }
+        } 
+
+        // 判断输入的是几月份，对应输出多少天。
+        function InputMonth(month){
+            switch( month )
+            {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12: document.write("<h1>"+month+"月是31天</h1>"); break;
+                case 4:
+                case 6:
+                case 9:
+                case 11: document.write("<h1>"+month+"月是30天</h1>"); break;
+                case 2: document.write("<h1>"+month+"月是28天</h1>"); break;
+            }
+        }
+    </script>
+</body>
+</html>
