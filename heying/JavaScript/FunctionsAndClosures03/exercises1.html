@@ -42,15 +42,16 @@
             var number = [];
 
             number.push(Number(prompt("请输入数字，当输入零时，我们将计算总和：")));
-            // do
-            // {
-            //     number.push(Number(prompt("请输入数字，当输入零时，我们将计算总和：")));
-            // }while(number[0] != 0);
 
             for ( var i = 0; i < number.length; i ++ )
             {
                 if ( number[i] != 0 )
                 {
+                    if ( isNaN(number[i]) )
+                    {
+                        alert("输入的不是数字，请重新输入！");
+                        number[i] = null;
+                    }
                     number.push(Number(prompt("请输入数字，当输入零时，我们将计算总和：")));
                 }
                 else
@@ -69,12 +70,60 @@
                     }
                 }
             }
-           
         }
 
+        // 习题四
+        function coordinatePoints(r){
+            for ( var x = -r; x <= r; x ++ )
+            {
+                for ( var y = -r; y <= r; y ++ )
+                {
+                    if ( r*r == x*x + y*y )
+                    {
+                        document.write("("+x+","+y+")");
+                    }
+                }
+            }
+        }
 
-
-
+        // 习题五
+        function mcm(a, b, c, d, e)
+        {
+            var sumM = 0;
+            var sm = a*b*c*d*e;
+            for ( var i = 1; i <= sm; i ++ )
+            {
+                if ( i%a == 0 )
+                {
+                    sumM ++;
+                }
+                if ( i%b == 0 )
+                {
+                    sumM ++;
+                }
+                if ( i%c == 0 )
+                {
+                    sumM ++;
+                }
+                if ( i%d == 0 )
+                {
+                    sumM ++;
+                }
+                if ( i%e== 0 )
+                {
+                    sumM ++;
+                } 
+                else if ( sumM >= 3 )
+                {
+                    document.write(i+"&nbsp;&nbsp;");
+                    break;
+                }
+                else
+                {
+                    sumM = 0;
+                }
+            }
+        }
 
 
 
@@ -88,7 +137,11 @@
         // 习题二
         // document.write(Area(4)+"<br><hr>");
         // 习题三
-        UserInput();
+        // UserInput();
+        // 习题四
+        // coordinatePoints(10);
+        // 习题五
+        mcm(1,2,3,4,5);
     </script>
 </body>
 </html>

@@ -71,7 +71,7 @@
 
         switch( symbol )
         {
-            case '+': i = numberx + numbery; break;
+            case '+': i = Number(numberx) + Number(numbery); break;
             case '*': i = numberx * numbery; break;
             case '/': i = numberx / numbery; break;
             case '-': i = numberx - numbery; break;
@@ -90,7 +90,7 @@
             }
             for ( var j = 0; j <= (2*i-1)+1; j ++ )
             {
-                document.write("*");
+                document.write("&#42;");
             }
             document.write("<br>");
         }
@@ -102,7 +102,7 @@
             }
             for (var j = 0; j < (7-3*i)+i; j ++)
             {
-                document.write("*");
+                document.write("&#42;");
             }
             document.write("<br>");
         }

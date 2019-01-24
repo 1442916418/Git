@@ -7,16 +7,37 @@
     <title>Document</title>
 </head>
 <body>
+    <input type="button" value="点我啊！！！" onclick="btn()">
+    <a href="javascript:btn();">哈哈哈哈</a>
+
+    <input type="button" name="name" id="name" value="匿名函数">
+
     <script>
-        var count = 0;
-        for ( var i = 1; i < 10; i ++ )
+        // var count = 0;
+        // for ( var i = 1; i < 10; i ++ )
+        // {
+        //     count += 1;
+        //     if ( count == 7 )
+        //     {
+        //         document.write("<br>");
+        //     }
+        //     document.write(i+"次");
+        // }
+
+        function btn()
         {
-            count += 1;
-            if ( count == 7 )
+            alert(Math.random());
+        }
+
+        // 匿名函数
+        var oBtn = document.getElementById("name");
+        
+        oBtn.onclick = function()
+        {
+            for ( var i = 1; i < 4; i ++ )
             {
-                document.write("<br>");
-            }
-            document.write(i+"次");
+                alert("匿名函数!" + "   " + i);
+            }    
         }
     </script>
 </body>
