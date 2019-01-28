@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>闭包</title>
+</head>
+<body>
+    <script>
+        // function closure(){
+        //     var count = 0;
+            
+        //     return function(){ return ++count; };
+        // }
+
+        // var add = closure();
+        // var c = add();
+        // document.write(c);
+        // var c = add();
+        // document.write(c);
+        // var c = add();
+        // document.write(c);
+
+        // 只生成一个闭包函数，使用自调用函数
+        // var one = (function(){
+        //     var count = 0;
+        //     return function(){ return ++count; };
+        // })();
+
+        // //
+        // document.write(one());
+
+        function a(a,b){
+            console.log(a,b);            
+            
+            // 隐含对象数组，无需声明，直接使用
+            for ( var i = 0; i < arguments.length; i ++ )
+            {
+                console.log(arguments[i] + "," + i);
+            }
+        }
+
+
+        // a(13,56,2,3,6,2);
+        a();
+    </script>
+</body>
+</html>

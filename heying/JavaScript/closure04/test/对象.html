@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>面向对象</title>
+</head>
+<body>
+    
+    <script>
+        // var cat = new Object();
+        
+        // cat.name = "大白";
+        // cat.age = 7;
+        // cat.color = "白";
+        // cat.food = "猫罐头";
+
+        // cat.describe = function(){
+        //     document.write("我有一只可爱小猫，名字叫"+cat.name+",刚刚"+cat.age+"个月，是一只"+cat.color+"色的布偶猫，最喜欢吃"+cat.food);
+        // }
+
+        // cat.describe();
+
+
+
+        // 构造函数,
+        function Cat(name, age)
+        {
+            this.name = name;
+            this.age = age;
+
+            this.describe = function()
+            {
+                document.write("故宫里有一只御猫，名字叫"+this.name+",已经"+this.age+"岁了。");
+            };
+        }
+
+        var cat = new Cat("丢丢",6);
+        document.write(cat.describe());
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/exercises1.js"></script>
+</head>
+<body>
+     
+    <script>
+        // 习题一
+        var circular = new Circular(3);  
+        document.write("面积是："+circular.acreage()+"<br>");
+        document.write("周长是："+circular.perimeter()+"<br><hr>");    
+
+        // 习题二
+        var userInfo = new UserInfo(1, "123", "123456@qq.com");
+        userInfo.show();
+        document.write("<br><hr>");
+
+        // 习题三：
+        var calculator = new Calculator(20,30);
+        document.write("加：" + calculator.addition() + "<br>");
+        document.write("减：" + calculator.subtration() + "<br>");
+        document.write("乘：" + calculator.multiplication() + "<br>");
+        document.write("除：" + calculator.division() + "<br>");
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String</title>
+</head>
+<body>
+    <a name="myanchor"></a>
+
+    <script>
+        document.write("创建HTML锚<br>");
+        var txt="Hello world!"
+        document.write(txt.anchor("myanchor"),"<br><hr>")
+
+        document.write("把字符串显示为大号字体<br>");
+        var str="Hello world!"
+        document.write(str.big(),"<br><hr>")
+
+        document.write("显示闪动的字符串<br>");
+        document.write(str.blink(),"<br><hr>");
+
+        document.write("显示粗体的字符串<br>");
+        document.write(str.bold(),"<br><hr>");
+
+        document.write("返回指定位置的字符串<br>");
+        document.write(str.charAt(3),"<br><hr>");
+
+        document.write("返回指定位置的字符的 Unicode 编码。这个返回值是 0 - 65535 之间的整数<br>");
+        document.write(str.charCodeAt(3),"<br><hr>");
+
+        document.write("链接字符串<br>");
+        var a1 = "e232";
+        var b1 = "333";
+        document.write(a1.concat(b1),"<br><hr>");
+
+        document.write("字符串显示为打字机字体<br>");
+        document.write(str.fixed(),"<br><hr>");
+
+        document.write("指定颜色显示字符串<br>");
+        document.write(str.fontcolor("red"),"<br><hr>");
+
+        document.write("指定尺寸显示字符串<br>");
+        document.write(str.fontsize(7),"<br><hr>");
+
+        document.write("接受一个指定的 Unicode 值，然后返回一个字符串<br>");
+        document.write(String.fromCharCode(72,69,76,76,79))
+        document.write("<br />")
+        document.write(String.fromCharCode(65,66,67))
+
+        document.write("返回某个指定的字符串值字符串中首次出现的位置，如果没检测到返回-1<br>");
+        document.write(str.indexOf("H"),"<br><hr>");
+
+        document.write("斜体显示字符串<br>");
+        document.write(str.italics(),"<br><hr>");
+
+        document.write("返回一个指定的字符串值最后出现的位置，在一个字符串中的指定位置从后向前搜索<br>");
+        document.write(str.lastIndexOf("Hello") + "<br />");
+        document.write(str.lastIndexOf("World") + "<br />");
+        document.write(str.lastIndexOf("world"),"<br><hr>");
+
+        document.write("将字符串显示为超链接<br>");
+        var w3 = "W3School";
+        document.write(w3.link("http://www.w3school.com.cn"),"<br><hr>");
+
+        document.write("stringObject.localeCompare(target)用本地特定的顺序来比较两个字符串<br><hr>");
+
+        document.write("match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。该方法类似 indexOf() 和 lastIndexOf()，但是它返回指定的值，而不是字符串的位置。<br>");
+        document.write(str.match("world") + "<br />");
+        document.write(str.match("World") + "<br />");
+        document.write(str.match("worlld") + "<br />");
+        document.write(str.match("world!"),"<br><hr>");
+
+        document.write("replace() 方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。<br>");
+        var s="Visit Microsoft!"
+        document.write(s.replace(/Microsoft/, "W3School"),"<br><hr>");
+
+        document.write("search() 方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。<br>");
+        var str="Visit W3School!"
+        document.write(str.search(/w3school/),"<br><hr>")
+
+        document.write("slice() 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。<br>");
+        var stra="Hello happy world!"
+        document.write(stra.slice(6),"<br><hr>");
+
+        document.write("small() 方法用于把字符串显示为小号字<br>");
+        document.write(str.small(),"<br><hr>");
+
+        document.write("split() 方法用于把一个字符串分割成字符串数组<br>");
+        var strb="How are you doing today?"
+        document.write(strb.split(" ") + "<br />")
+        document.write(strb.split("") + "<br />")
+        document.write(strb.split(" ",3),"<br><hr>")
+
+        document.write("strike() 方法用于显示加删除线的字符串<br>");
+        document.write(str.strike(),"<br><hr>");
+
+        document.write("sub() 方法用于把字符串显示为下标<br>");
+        document.write(str.sub(),"<br><hr>");
+
+        document.write("substr() 方法可在字符串中抽取从 start 下标开始的指定数目的字符。<br>");
+        document.write(str.substr(3,7),"<br>");
+        document.write(str.substr(3),"<br><hr>");
+
+        document.write("substring() 方法用于提取字符串中介于两个指定下标之间的字符<br>");
+        document.write(str.substring(3,7),"<br><hr>");
+
+        document.write("sup() 方法用于把字符串显示为上标<br>");
+        document.write(str.sup(),"<br><hr>");
+
+        document.write("toLocaleLowerCase() 方法用于把字符串转换为小写<br>");
+        document.write(str.toLocaleLowerCase(),"<br><hr>");
+
+        document.write("toLocaleUpperCase() 方法用于把字符串转换为大写<br>");
+        document.write(str.toLocaleUpperCase(),"<br><hr>");
+
+        document.write("toLowerCase() 方法用于把字符串转换为小写<br>");
+        document.write(str.toLowerCase(),"<br><hr>");
+
+        document.write("toUpperCase() 方法用于把字符串转换为大写<br>");
+        document.write(str.toUpperCase(),"<br><hr>");
+
+        document.write("toString() 方法返回字符串<br><hr>");
+
+        document.write("valueOf() 方法可返回 String 对象的原始值");
+    </script>
+</body>
+</html>

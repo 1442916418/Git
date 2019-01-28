@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>内置对象 Math</title>
+</head>
+<body>
+    <div id="time"></div>
+    <script>
+    
+        function time()
+        {
+            var date = new Date();
+
+            var year = date.getFullYear();
+            var month = date.getMonth()+1;
+            var day = date.getDate();
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var seconds = date.getSeconds();
+            if ( seconds < 10 )
+            {
+                seconds = "0" + seconds;
+            }
+            var milliseconds = date.getMilliseconds();
+
+            document.getElementById("time").innerHTML = "现在时间是："+year+"年 "+month+"月 "+day+"日 "+hours+"时 "+minutes+"分 "+seconds+"秒 ";
+        }
+
+        time();
+        setInterval(time, 1000);
+    </script>
+</body>
+</html>

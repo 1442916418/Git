@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象原型化</title>
+</head>
+<body>
+    
+    <script>
+        // 构造函数，又称之为类
+        function Zoology(name, age)
+        {
+            this.name = name;
+            this.age = age;
+        }
+
+        // 为构造函数创建对象
+        var z = new Zoology();
+        var zz = new Zoology();
+
+        // 给类使用原型添加方法，这样所有的对象都可以访问到这个方法
+        Zoology.prototype.info = function(gender)
+        {
+            console.log( gender );
+        }
+
+        z.info("男");
+        zz.info("女");
+
+        // 给类使用原型添加属性，这样所有的对象都可以访问到这个属性
+        Zoology.prototype.weight = "100公斤";
+        console.log(z.weight,zz.info);
+    </script>
+</body>
+</html>
