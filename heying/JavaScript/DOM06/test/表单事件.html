@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单事件</title>
+    <script>
+        function submit()
+        {
+            alert("提交成功");
+        }
+    </script>
+</head>
+<body>
+    <form action="form.html" action="get" onsubmit="submit()">
+        ID:<input type="text" name="txt" id="name"><br>
+        密码: <input type="pwd" name="pwd" id="pwd"><br>
+        <input type="submit" name="submit" value="登陆">
+    </form>
+</body>
+</html>

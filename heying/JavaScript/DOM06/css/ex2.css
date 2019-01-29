@@ -1,0 +1,36 @@
+body,p{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    width: 300px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.listItem{
+    display: none;
+    width: 200px;
+    margin: 10px 20px;
+    position: relative;
+    /* display: flex;
+    flex-direction: column; */
+}
+.listItem p,.listItem span{
+    position: relative;
+}
+.listItem p:nth-child(n)::before{
+    content: url(../images/z-top.gif);
+    position: absolute;
+    top: 3px;
+    left: -20px;
+}
+.listItem span::before{
+    content: url(../images/z-end.gif);
+    position: absolute;
+    top: 3px;
+    left: -20px;
+}

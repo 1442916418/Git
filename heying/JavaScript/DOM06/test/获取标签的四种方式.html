@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .color{
+            font-size: 30px;
+            color: white;
+            background: blue;
+        }
+    </style>
+    <script>
+        function load(){
+            alert("当某个对象被装载完毕时触发");
+        }
+        function focus(){
+            document.getElementById("body").style.backgroundColor = "#ddd";
+        }
+    </script>
+</head>
+<body id="body" onload="load()" onfocus="focus()">
+    <p id="p1">p1p1p1p1p1p1p<u>嵌套标签</u>111111111111</p>
+    <p class="p2">p2p2p2p2p2p2p2p2p2p222222</p>
+    <a href="javascript:void(0);" target="_blank" name="baidu">hehehehehehheheheh</a>
+    <!-- HTML 不区分大小写/标记语言
+    JS 严格区分大小写/脚本语言 -->
+    <script>
+        var p1 = document.getElementById("p1");
+        console.log(p1.innerHTML);
+        console.log(p1.innerText);
+        console.log(p1, p1.toString());
+        // 操作标签的属性
+        p1.id = "box1";
+        p1.className = "color";
+        // 操作标签的css样式
+        p1.style.color = "red";
+        p1.style.backgroundColor = "#eee";
+        p1.style.fontFamily = "黑体";
+        p1.style.fontSize = "3em";
+
+
+        var name = document.getElementsByName("baidu");
+        console.log(name, name[0]);
+
+        var p2 = document.getElementsByClassName("p2");
+        console.log(p2, p2[0]);
+
+        var p = document.getElementsByTagName("p");
+        console.log(p, p.length);
+        for ( var i = 0; i < p.length; i ++ )
+        {   
+            console.log(i, p[i]);
+        }
+
+        p1.onclick = function()
+        {
+            // 获得标签的内容必须是双标签
+            // p1.innerHTML = "innerHTML 会解析内容的标签";
+            p1.innerText = "innerText 不会解析内容中的标签"
+        }
+    </script>
+</body>
+</html>

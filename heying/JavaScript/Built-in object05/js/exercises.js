@@ -16,22 +16,22 @@ function time()
 
     document.getElementById("time").innerHTML = "现在时间是："+year+"年"+month+"月"+day+"日"+hours+"时"+minutes+"分"+seconds+"秒 ";
 
-    // if ( hours >= 8 && hours < 12 )
-    // {
-    //     alert("早上好！");
-    // }
-    // else if ( hours >= 12 && hours < 14 )
-    // {
-    //     alert("中午好!该休息了");
-    // }
-    // else if ( hours >= 14 && hours < 18 )
-    // {
-    //     alert("下午好！");
-    // }
-    // else if ( hours >= 19 && hours < 24 )
-    // {
-    //     alert("晚上好!天黑了,心还是要亮着");
-    // }
+    if ( hours >= 8 && hours < 12 )
+    {
+        alert("早上好！");
+    }
+    else if ( hours >= 12 && hours < 14 )
+    {
+        alert("中午好!该休息了");
+    }
+    else if ( hours >= 14 && hours < 18 )
+    {
+        alert("下午好！");
+    }
+    else if ( hours >= 19 && hours < 24 )
+    {
+        alert("晚上好!天黑了,心还是要亮着");
+    }
 }
 
 // 习题二
@@ -129,7 +129,7 @@ function ex5()
     do
     {
         if ( userInput > random )
-        {
+        { 
             alert("猜大了！请重新输入");
             userInput = Number(prompt("请输入自己的猜测："));
         }
@@ -146,17 +146,22 @@ function ex5()
 // 第六题
 function life()
 {
+    // 当前时间
     var date = new Date();
     
+    // 用户输入出生日期
     var userInput = prompt("请输入出生年月日，格式为2019-1-1","1997-6-21");
+    // 把用户输入的字符串转换成日期类型
     var d = new Date(userInput);
 
+    // 当前时间毫秒数减去用户输入时间毫秒数，得到用户出生到现在的总共毫秒数
     var sum = date.getTime() - d.getTime();
+    // 通过转换，得到多少天
     var days = sum/1000/60/60/24;
 
+    // 假如能活到100岁，100年的天数减去已存活的天数，得到还可以生活多少天
     var surplus = (100*365*24*60*60) - days;
     
     document.write("你已经存活了",Math.floor(days),"天了！","<br>");
-    document.write("如果能活到100岁，还有",Math.floor(surplus),"天可以得瑟!!!!!");
+    document.write("如果能活到100岁，还有",Math.floor(surplus),"天可以生活!!!!!");
 }
-
