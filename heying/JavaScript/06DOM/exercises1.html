@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>全选</title>
+    <title>习题一</title>
     <link rel="stylesheet" href="css/ex1.css">
 </head>
 <body>
@@ -95,7 +95,41 @@
             </div>
         </article>
     </div>
+    <script>
+        var oBox = document.getElementById("checkbox");
+        var aBtn = document.getElementsByClassName("radioButton");
 
-    <script src="js/ex1.js"></script>
+        oBox.onchange = function()
+        {
+            for ( var i = 0; i < aBtn.length; i ++ )
+            {
+                // 当点击全选按钮时，这时按钮是选中状态(true),循环把选中状态赋给列表按钮，这时实现全部选中的状态
+                // 当再次点击全选按钮时，这时按钮是取消状态(false),循环把取消状态赋给列表按钮，这时实现全部取消的状态
+                aBtn[i].checked = oBox.checked;
+            }
+        }
+
+        // 外循环把所有的单选框加onchange()事件，不做其它操作
+        for ( var i = 0; i < aBtn.length; i ++ )
+        {
+            aBtn[i].onchange = function()
+            {
+                // 内循环，循环所有的单选框，判断状态
+                for ( var i = 0; i < aBtn.length; i ++ )
+                {
+                    // 如果有一个没有勾选，全选按钮为不勾选状态，跳出循环
+                    if ( !aBtn[i].checked )
+                    {
+                        oBox.checked = false;
+                        break;
+                    }
+                    else // 或者全部都勾选时，全选按钮为选中状态
+                    {
+                        oBox.checked = true;
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>

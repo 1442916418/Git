@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三种添加事件的方式</title>
+    <script>
+        // 2)、2.1，在window下添加onload事件，意思就是等页面加载完成再加载
+        // window.onload = function()
+        // {
+        //     var b = document.getElementById("btn");
+        //     btn.onclick = function()
+        //     {
+        //         console.log("第二种方式的第一个");
+        //     }
+        // }
+        // 2)、2.2再document.body中添加onload事件，意思同上
+        // document.body.onload = function()
+        // {
+        //     var b = document.getElementById("btn");
+        //     btn.onclick = function()
+        //     {
+        //         console.log("第二种方式的第二个");
+        //     }
+        // }
+    </script>
+</head>
+<body>
+    <!-- 1)、在元素标签种添加事件 -->
+    <!-- <button id="btn" onclick="btn()">点我啊！</button> -->
+
+    <!-- 2)、在window和document.body中添加onload事件 -->
+    <button id="btn">点我啊！</button>
+
+    <script>
+        function btn()
+        {
+            console.log("第一种方式");
+        }
+        function btn3()
+        {
+            console.log("第三种方式");
+        }
+        // 3)、使用 addEventListener 添加事件,使用 removeEventListener 删除事件
+        var b = document.getElementById("btn");
+        b.addEventListener("click", btn3);
+
+        // b.removeEventListener("click", btn3);
+    </script>
+</body>
+</html>

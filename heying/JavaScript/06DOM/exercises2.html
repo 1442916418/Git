@@ -54,6 +54,51 @@
         </div>
     </div>
 
-    <script src="js/ex2.js"></script>
+    <script>
+        var aBtn = document.getElementsByClassName("listBtn");
+        var aItem = document.getElementsByClassName("listItem");
+
+        for ( var i = 0; i < aBtn.length; i ++ )
+        {
+            // 把当前i的值赋给图片按钮，这样就可以得知当前点击的是哪一个按钮了
+            aBtn[i].index = i;
+            aBtn[i].onclick = function()
+            {
+                if ( aItem[this.index].style.display != 'block' )
+                {
+                    aItem[this.index].style.display = 'block';
+                }
+                else
+                {
+                    aItem[this.index].style.display = 'none';
+                }                
+            }
+        }
+
+
+
+        // 鼠标按下显示，鼠标移出按钮位置坐标时隐藏
+        // for ( var i = 0; i < aBtn.length; i ++ )
+        // {
+        //     aBtn[i].index = i;
+        //     aBtn[i].onmousedown = function()
+        //     {
+        //         for ( var j = 0; j < aItem.length; j ++ )
+        //         {
+        //             aItem[j].style.display = 'none';
+        //         }
+        //         aItem[this.index].style.display = 'block';
+        //     }
+
+        //     aBtn[i].onmousemove = function()
+        //     {
+        //         for ( var j = 0; j < aItem.length; j ++ )
+        //         {
+        //             aItem[j].style.display = 'none';
+        //         }
+        //         aItem[this.index].style.display = 'none';
+        //     }
+        // }
+    </script>
 </body>
 </html>

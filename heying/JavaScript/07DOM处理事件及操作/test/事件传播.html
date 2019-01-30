@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件传播</title>
+</head>
+<!-- (一)、事件冒泡阶段 -->
+<body onclick="testBody(event)">
+    <div onclick="testParent()">
+        <button onclick="testChild(event)">点击按钮，观察事件传播顺序</button>
+    </div>
+
+    <!-- (二)、 -->
+    <div id="catch">
+        <div id="btn1">点击按钮事件捕获</div>
+        <div id="btn2">点击按钮事件2</div>
+    </div>
+
+    <!-- (三)、 -->
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+
+    <script src="../js/事件传播.js"></script>
+</body>
+</html>
