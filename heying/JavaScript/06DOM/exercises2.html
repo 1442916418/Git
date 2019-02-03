@@ -62,8 +62,10 @@
         {
             // 把当前i的值赋给图片按钮，这样就可以得知当前点击的是哪一个按钮了
             aBtn[i].index = i;
+           
             aBtn[i].onclick = function()
             {
+                console.log(this.index);
                 if ( aItem[this.index].style.display != 'block' )
                 {
                     aItem[this.index].style.display = 'block';

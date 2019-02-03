@@ -105,7 +105,7 @@ body{
 .introduce span:nth-of-type(5){
     float: right;
 }
-#btn{
+.btn{
     float: right;
     margin-top: 5px;
 }
@@ -119,8 +119,92 @@ body{
 /* 我的购物车 */
 #myShoppingCart{
     width: 1280px;
-    height: 600px;
+    height: 700px;
     margin: auto;
     background-color: white;
     display: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/* 滚动条整体样式 */
+#myShoppingCart::-webkit-scrollbar{
+    width: 4px;
+    height: 4px;
+}
+/* 滚动条里的小方块 */
+#myShoppingCart::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: rgba(65, 65, 65, 0.2);
+}
+/* 滚动条里的轨道 */
+#myShoppingCart::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 0;
+    background: rgba(0,0,0,0.1);
+}
+#tab{
+    min-width: 100%;
+    border: 0;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+#tab thead tr{
+    background: #eee;
+}
+#tab thead tr th{
+    text-align: center;
+    min-width: 220px;
+    height: 25px;
+    line-height: 25px;
+}
+#tab tbody tr td{
+    text-align: center;
+}
+#tab tbody tr td:nth-of-type(2) img{
+    width: 100px;
+    height: 110px;
+    padding: 5px 0;
+}
+#tab tbody tr:nth-child(odd):hover{
+    background: rgba(238, 238, 238, 0.5);
+}
+#tab tbody tr:nth-child(even):hover{
+    background: rgba(238, 238, 238, 0.1);
+}
+#allCheckboxOne{
+    vertical-align: -2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 提示框 */
+#prompt{
+    position: fixed;
+    top: 14%;
+    left: 41%;
+    z-index: 1000;
+    display: none;
+}
+#prompt p{
+    padding: 80px 120px;
+    background: white;
+    font-size: 20px;
+    font-family: Microsoft YaHei;
+    color: #555;
+    font-weight: 500;
+    letter-spacing: 10px;
 }
