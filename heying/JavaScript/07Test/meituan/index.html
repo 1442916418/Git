@@ -28,7 +28,7 @@
             <img src="images/1.jpg" alt="meituan" id="picture">
             <div class="introduce">
                 <span>烤肉串</span>
-                <span>10元/份</span>
+                <span>10.00元/份</span>
                 <p>月销8148单</p>
                 <span>10元起送</span>
                 <span>免配送费</span>
@@ -41,7 +41,7 @@
             <img src="images/2.jpg" alt="meituan" id="picture">
             <div class="introduce">
                 <span>便当</span>
-                <span>15元/份</span>
+                <span>15.00元/份</span>
                 <p>月销4639单</p>
                 <span>10元起送</span>
                 <span>免配送费</span>
@@ -193,12 +193,19 @@
                     </th>
                     <th>图片</th>
                     <th>菜品</th>
+                    <th>数量</th>
                     <th>价格(元/份)</th>
                     <th>操作</th>
                 </tr>
             </thead>
             <tbody id="tbody"></tbody>
         </table>
+        <div class="tableFooter">
+            <button class="tableDel">删除选中</button>
+            <span id="set">合计￥<span id="sMoney">0</span></span>
+            <button id="settlement">结算</button>
+        </div>
+        <span id="order">继续任性点餐</span>
     </div> 
 
     <div class="footer">
