@@ -2,19 +2,20 @@
 var oBtn = document.getElementById('content-MyShoppingCart');       // 我的购物车按钮
 var oContent = document.getElementById('content');                  // 内容页面
 var oMyCart = document.getElementById('myShoppingCart');            // 购物车页面
-var page = true;
 var oOrder = document.getElementById('order');                      // 继续任性点餐按钮
 var aInput = document.getElementsByClassName('btn');                // 加入购物车按钮
 var oTab = document.getElementById('tab');                          // 购物车表格
 var oCount = document.getElementById('content-0');                  // 我的购物车数量
 var oPrompt = document.getElementById('prompt');                    // 提示框
-var total = 0;      // 总数量
-var number = 0;     // 单条记录数量
-var oMoney = document.getElementById('sMoney');                     // 金额
-var sum = 0;        // 累计金额
+var oMoney = document.getElementById('sMoney');                     // 总金额
 var tTbodyNumber = document.getElementById('tbody');                // 获取表格里的tbody
+var tSetTlement = document.getElementById('settlement');            // 结算按钮
+var page = true;                                                    // 页面状态
+var total = 0;                                                      // 总数量
+var number = 0;                                                     // 单条记录数量
+var sum = 0;                                                        // 累计金额
 
-// 点击我的购物车，切换页面、商品数量加减、全选商品、删除选中商品等
+// 点击我的购物车，切换页面、提示语、全选商品、删除选中商品、结算
 oBtn.onclick = function()
 {
     // 切换页面
@@ -30,28 +31,26 @@ oBtn.onclick = function()
         oContent.style.display = 'block';
         page = true;
     }
-
     // 提示语
     if ( tTbodyNumber.firstChild == null )
     {
         promptInformation('购物车空空的，赶紧去选购商品吧！');
     }
-    
-    // 全选、不选、反选
+    // 全选
     var oAllOne = document.getElementById('allCheckboxOne');    // 全选按钮
     var aAll = document.getElementsByClassName('allCheckbox');  // 单选框
     var oSet = document.getElementById('settlement');           // 结算按钮
     oSet.disabled = true;
-
+    // 全选按钮
     oAllOne.onclick = function()
     {
         for ( var i = 0; i < aAll.length; i ++ )
         {
-            // aAll[i].checked = oAllOne.checked;
             if ( !oAllOne.checked )
             {
                 aAll[i].checked = false;
                 oSet.disabled = true;
+                oMoney.innerHTML = 0;
             }
             else
             {
@@ -59,10 +58,23 @@ oBtn.onclick = function()
                 oSet.disabled = false;
             }
         }
+        // 累加全部选中项的金额
+        if ( oAllOne.checked == true )
+        {
+            for ( var i = 0; i < aAll.length; i ++ )
+            {
+                var tMoneyCount = parseFloat(aAll[i].parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML).toFixed(2);      // 获取价格
+                var tNumbers = parseInt(aAll[i].parentNode.parentNode.getElementsByClassName('number')[0].innerHTML);                      // 获取数量
+                sum += tMoneyCount*tNumbers;
+                oMoney.innerHTML = sum.toFixed(2);
+            }
+            sum = 0;
+        }
     }    
     // 复选框全选
     for ( var i = 0; i < aAll.length; i ++ )
     {
+        aAll[i].index = i;
         aAll[i].onclick = function()
         {
              // 内循环，循环所有的单选框，判断状态
@@ -71,6 +83,7 @@ oBtn.onclick = function()
                 // 如果有一个没有勾选，全选按钮为不勾选状态，跳出循环
                 if ( !aAll[i].checked )
                 {
+                    oSet.disabled = false;
                     oAllOne.checked = false;
                     break;
                 }
@@ -78,20 +91,26 @@ oBtn.onclick = function()
                 {
                     oAllOne.checked = true;
                     oSet.disabled = false;
-                }               
+                }    
             }
-            // 选中累加金额 !!!!!
-            for ( var i = 0; i < aAll.length; i ++ )
+            // 累加选中项的金额
+            if ( aAll[this.index].checked == true )
             {
-                if ( aAll[i].checked == true )
-                {
-                    var tMoneyCount = aAll[i].parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML;
-                    console.log(parseFloat(tMoneyCount));
-                }
+                var tMoneyCount = parseFloat(aAll[this.index].parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML).toFixed(2);      // 获取价格
+                var tNumbers = parseInt(aAll[this.index].parentNode.parentNode.getElementsByClassName('number')[0].innerHTML);                      // 获取数量
+                sum += tMoneyCount*tNumbers;
+                oMoney.innerHTML = sum.toFixed(2);
             }
+            else
+            {
+                var tMoneyCount = parseFloat(aAll[this.index].parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML).toFixed(2);      // 获取价格
+                var tNumbers = parseInt(aAll[this.index].parentNode.parentNode.getElementsByClassName('number')[0].innerHTML);                      // 获取数量
+                sum -= tMoneyCount*tNumbers;
+                oMoney.innerHTML = sum.toFixed(2);
+            }
+            
         }       
     }
-    
     // 删除选中商品
     var tTableDel = document.getElementsByClassName('tableDel')[0];
     var oTab = document.getElementById('tab');      // 购物车表格
@@ -110,7 +129,8 @@ oBtn.onclick = function()
                 }
                 oCount.innerHTML = 0;
                 total = 0;
-                oAllOne.checked = false;    
+                oAllOne.checked = false;
+                oMoney.innerHTML = 0;    
                 promptInformation('删除成功');
             }
             else
@@ -133,6 +153,7 @@ oBtn.onclick = function()
                     {
                         oTab.tBodies[0].removeChild(aAll[i].parentNode.parentNode);
                         oCount.innerHTML = --total;
+                        oMoney.innerHTML = 0;    
                     }
                     else
                     {
@@ -148,8 +169,27 @@ oBtn.onclick = function()
             }
         }
     }
+    // 结算
+    tSetTlement.onclick = function()
+    {
+        var r = confirm('结算金额为：'+parseFloat(oMoney.innerHTML).toFixed(2));
+        if ( r == true )
+        {
+            for ( var i = aAll.length-1; i >= 0; i -- )
+            {
+                if ( aAll[i].checked == true )
+                {
+                    oTab.tBodies[0].removeChild(aAll[i].parentNode.parentNode);
+                    oCount.innerHTML = --total;
+                }
+            }
+            total = 0;
+            oAllOne.checked = false;
+            oMoney.innerHTML = 0;    
+            promptInformation('结算成功！');
+        }
+    }
 }
-
 
 // 点击继续任性点餐，切换页面
 oOrder.onclick = function()
@@ -168,15 +208,12 @@ oOrder.onclick = function()
     }
 }
 
-
 // 购物车操作
 for ( var i = 0; i < aInput.length; i ++ )
 {
     aInput[i].index = i;
     aInput[i].onclick = function()
     {
-        
-
         if ( tTbodyNumber.firstChild == null )
         {
             establish(oTab, oCount, oPrompt, this.index); 
@@ -289,36 +326,34 @@ function establish(oTab, oCount, oPrompt, index)
     var tReduce = document.getElementsByClassName('reduce');     // 减少按钮
     for (var i = 0; i < tReduce.length; i ++ )
     {
+        tReduce[i].index = i;
         tReduce[i].onclick = function()
         {
-            for ( var i = 0; i < tReduce.length; i ++ )
+            var tBox = document.getElementsByClassName('box')[this.index];       // 获取数量外框
+            var tNumber = tBox.getElementsByClassName('number')[0];     // 获取购物车商品的数量
+            var tConvert = parseInt(tNumber.innerHTML);
+            if ( tConvert == 1 )
             {
-                var tBox = document.getElementsByClassName('box')[i];       // 获取数量外框
-                var tNumber = tBox.getElementsByClassName('number')[0];     // 获取购物车商品的数量
-                var tConvert = parseInt(tNumber.innerHTML);
-                if ( tConvert == 1 )
-                {
-                    promptInformation('数量最低为1份哦');
-                }
-                else
-                {
-                    tNumber.innerHTML = --tConvert;
-                }
+                promptInformation('数量最低为1份哦');
             }
+            else
+            {
+                tNumber.innerHTML = --tConvert;
+            }
+            
         }
     }
     var tIncrease = document.getElementsByClassName('increase'); // 增加按钮
     for ( var j = 0; j < tIncrease.length; j ++ )
     {
+        tIncrease[j].index = j;
         tIncrease[j].onclick = function()
         {
-            for ( var i = 0; i < tIncrease.length; i ++ )
-            {
-                var tBox = document.getElementsByClassName('box')[i];       // 获取数量外框
-                var tNumber = tBox.getElementsByClassName('number')[0];     // 获取购物车商品的数量
-                var tConvert = parseInt(tNumber.innerHTML);
-                tNumber.innerHTML = ++tConvert;
-            }
+            var tBox = document.getElementsByClassName('box')[this.index];       // 获取数量外框
+            var tNumber = tBox.getElementsByClassName('number')[0];     // 获取购物车商品的数量
+            var tConvert = parseInt(tNumber.innerHTML);
+            tNumber.innerHTML = ++tConvert;
+            
         }
     }
 }
