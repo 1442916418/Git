@@ -118,19 +118,15 @@ body{
 }
 /* 我的购物车 */
 #myShoppingCart{
-    width: 1280px;
+    width: 1320px;
     height: 700px;
     margin: auto;
     background-color: white;
     display: none;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: auto; 
     position: relative;
 }
-
-
-
-
 /* 滚动条整体样式 */
 #myShoppingCart::-webkit-scrollbar{
     width: 4px;
@@ -150,6 +146,7 @@ body{
     border-radius: 0;
     background: rgba(0,0,0,0.1);
 }
+/* table表格 */
 #tab{
     min-width: 100%;
     border: 0;
@@ -211,15 +208,6 @@ body{
     margin: 20px 0;
     cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
 /* 提示框 */
 #prompt{
     position: fixed;

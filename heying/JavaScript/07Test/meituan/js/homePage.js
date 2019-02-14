@@ -32,7 +32,7 @@ oBtn.onclick = function()
         page = true;
     }
     // 提示语
-    if ( tTbodyNumber.firstChild == null )
+    if ( tTbodyNumber.innerHTML == '' )
     {
         promptInformation('购物车空空的，赶紧去选购商品吧！');
     }
@@ -108,7 +108,6 @@ oBtn.onclick = function()
                 sum -= tMoneyCount*tNumbers;
                 oMoney.innerHTML = sum.toFixed(2);
             }
-            
         }       
     }
     // 删除选中商品
@@ -156,7 +155,7 @@ oBtn.onclick = function()
                         oMoney.innerHTML = 0;    
                     }
                     else
-                    {
+                    { 
                         oAllOne.checked = false;    
                         for ( var i = 0; i < aAll.length; i ++ )
                         {
@@ -214,44 +213,40 @@ for ( var i = 0; i < aInput.length; i ++ )
     aInput[i].index = i;
     aInput[i].onclick = function()
     {
-        if ( tTbodyNumber.firstChild == null )
+        if ( tTbodyNumber.innerHTML == '' )
         {
             establish(oTab, oCount, oPrompt, this.index); 
         }
-        else if ( tTbodyNumber.innerHTML != null )
+        else if ( tTbodyNumber.innerHTML != '' )
         {
-            // 一、第一次点击创建新记录 OK
-            // 二、第二次点击相同按钮时，数量加一 待定！！！
-            var tCommodityName = document.getElementsByClassName('commodityName');      // 获取购物车商品的名称
-            
-            var tIntroduce = document.getElementsByClassName('introduce')[this.index];   // 获取主页面商品详细信息
-            var oCName = tIntroduce.getElementsByTagName('span')[0];            // 获取主页面商品名称
+            // 重复点击一次有bug，要优化
+            var tCommodityName = document.getElementsByClassName('commodityName');          // 获取购物车商品的名称
+            var tIntroduce = document.getElementsByClassName('introduce')[this.index];      // 获取主页面商品详细信息
+            var oCName = tIntroduce.getElementsByTagName('span')[0];                        // 获取主页面商品名称
 
-            for ( var i = 0; i < tCommodityName.length; i ++ )
+            for ( var j = 0; j < tCommodityName.length; j ++ )
             {
-                if ( tCommodityName[i].innerHTML != oCName.innerHTML )
+                tCommodityName[j].index = j;
+                if ( tCommodityName[j].innerHTML == oCName.innerHTML )
                 {
-                    establish(oTab, oCount, oPrompt, this.index); 
-                    break;
-                }
-                else
-                {
-                    var tNumber = document.getElementsByClassName('number')[0];     // 获取购物车商品的数量
+                    var tBox = document.getElementsByClassName('box')[this.index];          // 获取数量外框
+                    var tNumber = tBox.getElementsByClassName('number')[0];                 // 获取购物车商品的数量
                     var convert = parseInt(tNumber.innerHTML);
                     tNumber.innerHTML = ++convert;
-                    break;
+                    oCount.innerHTML = ++total;
+                    return;
                 }
             }
+            establish(oTab, oCount, oPrompt, this.index); 
         }            
     }
 }
 
-
 // 创建新购物车记录
 function establish(oTab, oCount, oPrompt, index)
 {
-    var aIntroduce = document.getElementsByClassName('introduce')[index];   // 商品详细信息
-    var oItem = document.getElementsByClassName('item')[index];             // 商品列表项
+    var aIntroduce = document.getElementsByClassName('introduce')[index];       // 商品详细信息
+    var oItem = document.getElementsByClassName('item')[index];                 // 商品列表项
     var oPicture = oItem.getElementsByTagName('img')[0].src;                    // 商品图片
     var oCommodityName = aIntroduce.getElementsByTagName('span')[0];            // 商品名称
     var oCommodityPrice = aIntroduce.getElementsByTagName('span')[1];           // 商品价格
@@ -329,8 +324,11 @@ function establish(oTab, oCount, oPrompt, index)
         tReduce[i].index = i;
         tReduce[i].onclick = function()
         {
-            var tBox = document.getElementsByClassName('box')[this.index];       // 获取数量外框
-            var tNumber = tBox.getElementsByClassName('number')[0];     // 获取购物车商品的数量
+            var tBox = document.getElementsByClassName('box')[this.index];          // 获取数量外框
+            var tNumber = tBox.getElementsByClassName('number')[0];                 // 获取购物车商品的数量
+            var tReduceCheckbox = tBox.parentNode.parentNode.getElementsByClassName('allCheckbox')[0];      // 获取当前减少按钮一行的单选按钮
+            var tGetMoney = parseFloat(tBox.parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML).toFixed(2);    // 花去当前减少按钮一行商品的价格
+            console.log(tGetMoney);
             var tConvert = parseInt(tNumber.innerHTML);
             if ( tConvert == 1 )
             {
@@ -339,8 +337,14 @@ function establish(oTab, oCount, oPrompt, index)
             else
             {
                 tNumber.innerHTML = --tConvert;
+                if ( tReduceCheckbox.checked == true )
+                {
+                    var tfMoney = parseFloat(oMoney.innerHTML).toFixed(2);  // 转换
+                    var tMoneyReduce = parseFloat(tfMoney) - parseFloat(tGetMoney);                // 总金额和当前单个金额相减
+                    oMoney.innerHTML = tMoneyReduce.toFixed(2);
+                    return;
+                }
             }
-            
         }
     }
     var tIncrease = document.getElementsByClassName('increase'); // 增加按钮
@@ -349,20 +353,24 @@ function establish(oTab, oCount, oPrompt, index)
         tIncrease[j].index = j;
         tIncrease[j].onclick = function()
         {
-            var tBox = document.getElementsByClassName('box')[this.index];       // 获取数量外框
-            var tNumber = tBox.getElementsByClassName('number')[0];     // 获取购物车商品的数量
+            var tBox = document.getElementsByClassName('box')[this.index];          // 获取数量外框
+            var tNumber = tBox.getElementsByClassName('number')[0];                 // 获取购物车商品的数量
+            var tReduceCheckbox = tBox.parentNode.parentNode.getElementsByClassName('allCheckbox')[0];      // 获取当前增加按钮一行的单选按钮
+            var tGetMoney = parseFloat(tBox.parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML).toFixed(2);    // 获取当前增加按钮一行商品的价格
             var tConvert = parseInt(tNumber.innerHTML);
             tNumber.innerHTML = ++tConvert;
             
+            if ( tReduceCheckbox.checked == true )
+            {
+                var tfMoney = parseFloat(oMoney.innerHTML).toFixed(2);  // 转换
+                var tMoneyReduce = parseFloat(tfMoney) + parseFloat(tGetMoney);                 // 总金额和当前单个金额相加
+                oMoney.innerHTML = tMoneyReduce.toFixed(2);
+                return;
+            }
         }
     }
 }
 
-// 弹窗隐藏
-function closePrompt()
-{
-    oPrompt.style.display = 'none';
-}
 // 提示信息
 function promptInformation(txt)
 {
@@ -370,4 +378,9 @@ function promptInformation(txt)
     p[0].innerHTML= txt;
     oPrompt.style.display = 'block';
     setTimeout("closePrompt()", 1500);
+}
+// 弹窗隐藏
+function closePrompt()
+{
+    oPrompt.style.display = 'none';
 }
