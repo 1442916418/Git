@@ -119,7 +119,7 @@ body{
 /* 我的购物车 */
 #myShoppingCart{
     width: 1320px;
-    height: 700px;
+    height: 703px;
     margin: auto;
     background-color: white;
     display: none;
@@ -295,3 +295,7 @@ body{
 }
 .commodityName{ }
 .tMoney{ }
+/* 遮罩层 */
+.aItemMask{
+    background: rgba(255, 255, 255, 0.3);
+}
