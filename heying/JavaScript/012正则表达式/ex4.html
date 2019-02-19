@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>习题四</title>
+</head>
+<body>
+    <script>
+        function isUSD(str)
+        {
+            var reg = /^\$[1-9]\d{0,2}(\,\d{3})*(\.\d{2})?$/;
+            return reg.test(str);
+        }
+
+        console.log(isUSD("$1,234,453.99"));
+        console.log(isUSD("11111111"));
+
+        // 1、以$开始：\$
+        // 2、一位或者三位数，第一位必须大于0：[1-9]\d{0,2}
+        // 3、逗号（,）+三位数（0-9），以零次或多次出现：(\,\d{3})*
+        // 4、小数点（.）+两位数（表示小数），以零次或一次出现：(\.\d{2})?
+        // 5、$：匹配输入字符串的结尾位置
+        // 6、^：匹配输入字符串的开始位置
+    </script>
+</body>
+</html>

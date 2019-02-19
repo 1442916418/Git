@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>习题一</title>
+</head>
+<body>
+    请输入邮箱 <input type="text" name="email" id="email">
+    <input type="button" value="验证" id="btn">
+
+    <script>
+        var btn = document.getElementById('btn');
+        
+        btn.onclick = function()
+        {
+            var email = document.getElementById('email').value;
+            var reg = /^[a-zA-Z][a-zA-Z0-9_]{3,18}@[A-Za-z]{1,}\.[com]/;
+
+            if ( reg.test(email) )
+            {
+                alert("格式正确");
+            }
+            else
+            {
+                alert("格式错误，请重新输入");
+            }
+        }
+    </script>
+</body>
+</html>

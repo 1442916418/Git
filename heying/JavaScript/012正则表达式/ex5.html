@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>习题五</title>
+</head>
+<body>
+    <script>
+        var s = "爱";
+        var reg = new RegExp("(" + s + ")", "g");
+        var str = "我爱javascript哈哈爱javascript";
+        var newstr = str.replace(reg, "<font color=red>$1</font>");
+        document.write(newstr + "<br />");
+    </script>
+</body>
+</html>

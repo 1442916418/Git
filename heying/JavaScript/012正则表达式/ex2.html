@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>习题二</title>
+</head>
+<body>
+    请输入QQ号码 <input type="text" id="txt">
+    <input type="button" value="验证" id="btn">
+
+    <script>
+        document.getElementById('btn').onclick = function()
+        {
+            var qq = document.getElementById('txt').value;
+            
+            var reg = /^[1-9]{5,15}$/;
+
+            if ( reg.test(qq) )
+            {
+                alert("输入正确");
+            }
+            else
+            {
+                alert("输入错误");
+            }
+        }
+    </script>
+</body>
+</html>

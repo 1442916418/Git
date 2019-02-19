@@ -63,9 +63,6 @@ function changeCity(proSelect)
     aCtiyArray["香港特别行政区"] = [ "香港" ];
     aCtiyArray["澳门特别行政区"] = [ "澳门" ];
 
-
-
-
     var oProvince = proSelect.value;
     console.log(oProvince, oCitySelect[oProvince]);
     var city = aCtiyArray[oProvince];

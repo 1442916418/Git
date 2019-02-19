@@ -70,16 +70,18 @@ function getStyle(obj, name)
 // 获取类名
 function getByClass(oParent, sClass)
 {
-    var aEle = document.getElementsByTagName('*');
-    var aResult = [];
+    var aEle = document.getElementsByTagName('*');  // 获取所有标签名称
+    var aResult = [];   // 定义结果数组
 
-    for (var i = 0; i < aEle.length; i++)
+    // 循环所有的标签名称
+    for ( var i = 0; i < aEle.length; i ++ )
     {
-        if (aEle[i].className == sClass)
+        // 判断只要标签类名等于传入的类名，就把它放到数组中，然后返回出去
+        if ( aEle[i].className == sClass )
         {
-            aResult.push(aEle[i]);
+            aResult.push( aEle[i] );
         }
     }
-    
+
     return aResult;
 }

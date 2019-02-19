@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.play {
+    width: 1180px;
+    height: 664px;
+    background: red;
+    position: relative;
+    top: 100px;
+    left: 350px;
+    overflow: hidden;
+}
+
+.play ul {
+    width: 5900px;
+    height: 664px;
+    float: left;
+    position: absolute;
+}
+
+.play ul li {
+    width: 1180px;
+    height: 664px;
+    float: left;
+}
+
+.play ol {
+    position: absolute;
+    bottom: 0;
+    left: 42%;
+    text-align: center;
+    font-size: 10px;
+    color: #ccc;
+    z-index: 10000
+}
+
+.play ol li {
+    width: 15px;
+    height: 15px;
+    background: #aaa;
+    float: left;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* .active { background: rgba(77, 21, 226, 1); color: cornflowerblue;} */
+
+.mark_box {
+    width: 1180px;
+    height: 664px;
+    background: #ccc;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    opacity: 0;
+}
+
+.prev {
+    width: 50px;
+    height: 50px;
+    background: url('../images/65左双箭头.png') no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.next {
+    width: 50px;
+    height: 50px;
+    background: url('../images/64右双箭头.png') no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 45%;
+    right: 0;
+    z-index: 1000;
+    opacity: 0;
+    cursor: pointer;
+}
