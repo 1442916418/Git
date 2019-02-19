@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>习题一</title>
+</head>
+<body>
+    <input type="button" id="btn1" value="弹出窗口">
+    <input type="button" id="btn2" value="弹窗固定大小窗口，且无菜单栏">
+    <input type="button" id="btn3" value="全屏显示">
+    <input type="button" id="btn4" value="打开确认窗口">
+
+    <script>
+        function $(id)
+        {
+            return document.getElementById(id);
+        }
+
+        $('btn1').onclick = function()
+        {
+            window.open('popup.html');
+        }
+
+        $('btn2').onclick = function()
+        {
+            window.open('popup.html',"_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=400, height=400");
+        }
+
+        $('btn3').onclick = function()
+        {
+            document.documentElement.webkitRequestFullScreen();
+        }
+
+        $('btn4').onclick = function()
+        {
+            var r = confirm('请点击');
+            if ( r == true )
+            {
+                alert('heheh');
+            }
+            else
+            {
+                alert('hahah');
+            }
+        }
+    </script>
+</body>
+</html>

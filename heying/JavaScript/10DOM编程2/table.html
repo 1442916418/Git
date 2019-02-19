@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表格基本功能</title>
+    <link rel="stylesheet" href="css/table.css">
+</head>
+<body>
+    <table id="table" border="1" cellspacing="0" cellPadding="2">
+        <thead id="thead">
+            <tr>
+                <th>商品名称</th>
+                <th>数量</th>
+                <th>单价</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <td colspan="4">
+                    <input type="button" name="btn" value="增加订单" id="add">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="js/table.js"></script>
+</body>
+</html>

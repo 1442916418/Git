@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式</title>
+</head>
+<body>
+    请输入银行密码：<input type="text" name="txt" id="pwd">
+    <input type="button" value="检测" id="btn">
+
+    <script>
+        document.getElementById('btn').onclick = function()
+        {
+            var pwd = document.getElementById('pwd').value;
+            var reg = /^\d{6}$/;
+
+            if ( reg.test(pwd) )
+            {
+                console.log("密码合法");
+            }
+            else
+            {
+                console.log("不合法，只能输入六位数字");
+            }
+        }
+
+        // 匹配标识符
+        var tag = "asdaf";
+        var reg = /^[a-zA-Z_]\w*/;
+        console.log("匹配标识符", reg.test(tag));
+
+        // 匹配价格
+        var t = "11";
+        var r = /^\d+(\.\d{1,2})?$/;
+        // var r = /^[0-9]+[.][0-9]{1,2}$/;
+        console.log("匹配价格", r.test(t));
+ 
+        // 匹配ip地址
+        var ip = "192.168.111.222";
+        var reg = /^([0-9]{1,3}\.){3}[0-9]{1,3}$/;
+        console.log("匹配ip地址", reg.test(ip));
+
+        // 匹配中文
+        var chinese = "流浪地球";
+        var cnReg = /^[\u4e00-\u9fa5]+$/;
+        console.log("匹配中文", cnReg.test(chinese));
+
+        // 贪心模式
+        var a = "ccccccccc";
+        var reg = /c{1,}/;
+        console.log("贪心模式", reg.test(a));
+
+        // 非贪心模式
+        var regb = /c{1,}?/;
+        
+        console.log("非贪心模式", regb.test(a));
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>习题二</title>
+    <style>
+        .img{
+            width: 600px;
+            height: 500px;
+            margin: 100px auto;
+            background: url('images/1.jpg') no-repeat;
+            background-size: 100% 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .img a{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .c{
+           position: absolute;
+           top: 175px;
+           left: 135px; 
+        }
+        .x{
+            position: absolute;
+            top: 175px;
+            right: 135px; 
+        }
+        .q{
+            position: absolute;
+            bottom: 20px;
+            left: 130px; 
+        }
+        .d{
+            position: absolute;
+            bottom: 20px;
+            right: 135px;
+        }
+        .reload{
+            position: absolute;
+            top: 600px;
+            left: 48%;
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="img">
+        <a class="c" href="FourSeasons/spring.html"></a>
+        <a class="x" href="FourSeasons/summer.html"></a>
+        <a class="q" href="FourSeasons/autumn.html"></a>
+        <a class="d" href="FourSeasons/winter.html"></a>
+    </div>
+    <div class="reload" onclick="window.location.reload();">刷新页面</div>
+</body>
+</html>

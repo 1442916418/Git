@@ -57,20 +57,6 @@ oBtn.onclick = function () {
                     oSet.disabled = false;
                 }
             }
-            // 累加选中项的金额
-            console.log('当前按钮位置:', this.index);
-            if (aAll[this.index].checked == true) {  
-                var tMoneyCount = parseFloat(aAll[this.index].parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML).toFixed(2);      // 获取价格
-                var tNumbers = parseInt(aAll[this.index].parentNode.parentNode.getElementsByClassName('number')[0].innerHTML);                      // 获取数量
-                sum += tMoneyCount * tNumbers;
-                oMoney.innerHTML = sum.toFixed(2);
-            }
-            else {
-                var tMoneyCount = parseFloat(aAll[this.index].parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML).toFixed(2);      // 获取价格
-                var tNumbers = parseInt(aAll[this.index].parentNode.parentNode.getElementsByClassName('number')[0].innerHTML);                      // 获取数量
-                sum -= tMoneyCount * tNumbers;
-                oMoney.innerHTML = sum.toFixed(2);
-            }
         }
     }
 }
@@ -93,8 +79,10 @@ oAllOne.onclick = function () {
         for (var i = 0; i < aAll.length; i++) {
             var tMoneyCount = parseFloat(aAll[i].parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML).toFixed(2);      // 获取价格
             var tNumbers = parseInt(aAll[i].parentNode.parentNode.getElementsByClassName('number')[0].innerHTML);                      // 获取数量
-            sum += tMoneyCount * tNumbers;
-            oMoney.innerHTML = sum.toFixed(2);
+            var s = tMoneyCount * tNumbers;         // 当前商品价格x数量
+            var o = parseFloat(oMoney.innerHTML);   // 总价格
+            var so = o + s;
+            oMoney.innerHTML = so.toFixed(2);
         }
     }
     else {
@@ -130,8 +118,10 @@ tTableDel.onclick = function () {
                 if (r == true) {
                     var tMoneyCount = parseFloat(aAll[i].parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML).toFixed(2);      // 获取价格
                     var tNumbers = parseInt(aAll[i].parentNode.parentNode.getElementsByClassName('number')[0].innerHTML);                      // 获取数量
-                    sum -= tMoneyCount * tNumbers;
-                    oMoney.innerHTML = sum.toFixed(2);
+                    var s = tMoneyCount * tNumbers;         // 当前商品价格x数量
+                    var o = parseFloat(oMoney.innerHTML);   // 总价格
+                    var so = o - s;
+                    oMoney.innerHTML = so.toFixed(2);
                     oCount.innerHTML = --total;
                     oTab.tBodies[0].removeChild(aAll[i].parentNode.parentNode);
                 }
@@ -157,9 +147,11 @@ tSetTlement.onclick = function () {
         oAllOne.checked = false;
         oMoney.innerHTML = 0;
         promptInformation('结算成功！');
+        oMyCart.style.display = 'none';
+        oContent.style.display = 'block';
     }
     else {
-        cancelState(oAllOne, aAll);
+        cancelState(oAllOne, aAll); 
     }
 }
 // 点击继续任性点餐，切换页面
@@ -215,26 +207,27 @@ function establish(oTab, oCount, index) {
     // 创建行
     var oTr = document.createElement('tr');
     // 在新建行里添加第一列：单选框
-    var oTd = document.createElement('td');
+    var oTd1 = document.createElement('td');
     var checkbox = document.createElement('input');
     checkbox.setAttribute('type', 'checkbox');
     checkbox.setAttribute('class', 'allCheckbox');
-    oTd.appendChild(checkbox);
-    oTr.appendChild(oTd);
+    oTd1.appendChild(checkbox);
+    oTr.appendChild(oTd1);
+
     // 在新建行里添加第二列：图片
-    var oTd = document.createElement('td');
+    var oTd2 = document.createElement('td');
     var oImg = document.createElement('img');
     oImg.src = oPicture;
-    oTd.appendChild(oImg);
-    oTr.appendChild(oTd);
+    oTd2.appendChild(oImg);
+    oTr.appendChild(oTd2);
     // 在新建行里添加第三列：商品名称
-    var oTd = document.createElement('td');
-    oTd.className = 'commodityName';
-    oTd.innerHTML = oCommodityName.innerHTML;
-    oTr.appendChild(oTd);
+    var oTd3 = document.createElement('td');
+    oTd3.className = 'commodityName';
+    oTd3.innerHTML = oCommodityName.innerHTML;
+    oTr.appendChild(oTd3);
 
     // 在新建行里添加第四列：数量
-    var oTd = document.createElement('td');
+    var oTd4 = document.createElement('td');
     var oBox = document.createElement('div');
     var oReduce = document.createElement('div');
     var oIncrease = document.createElement('div');
@@ -247,93 +240,111 @@ function establish(oTab, oCount, index) {
     oBox.appendChild(oReduce);
     oBox.appendChild(oIncrease);
     oBox.appendChild(oNumber);
-    oTd.appendChild(oBox);
-    oTr.appendChild(oTd);
+    oTd4.appendChild(oBox);
+    oTr.appendChild(oTd4);
 
     // 在新建行里添加第五列：商品价格
-    var oTd = document.createElement('td');
-    oTd.className = 'tMoney';
-    oTd.innerHTML = oCommodityPrice.innerHTML;
-    oTr.appendChild(oTd);
+    var oTd5 = document.createElement('td');
+    oTd5.className = 'tMoney';
+    oTd5.innerHTML = oCommodityPrice.innerHTML;
+    oTr.appendChild(oTd5);
     // 在新建行里添加第六列：删除
-    var oTd = document.createElement('td');
-    oTd.innerHTML = '<a href="javascript:void(0);">删除</a>';
-    oTr.appendChild(oTd);
+    var oTd6 = document.createElement('td');
+    oTd6.innerHTML = '<a href="javascript:void(0);">删除</a>';
+    oTr.appendChild(oTd6);
 
     // 把新建行放入 tbody 中
     oTab.tBodies[0].appendChild(oTr);
     number = 0;
 
+    var che = oTd1.getElementsByClassName('allCheckbox')[0];    // 获取复选按钮
+    // 复选框按钮
+    che.addEventListener('click', function(){
+        if ( che.checked == true )
+        {
+            var tMoneyCount = parseFloat(che.parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML).toFixed(2);      // 获取价格
+            var tNumbers = parseInt(che.parentNode.parentNode.getElementsByClassName('number')[0].innerHTML);                      // 获取数量
+            var s = tMoneyCount * tNumbers;         // 当前商品价格x数量
+            var o = parseFloat(oMoney.innerHTML);   // 总价格
+            var so = o + s;
+            oMoney.innerHTML = so.toFixed(2);
+        }
+        else
+        {
+            var tMoneyCount = parseFloat(che.parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML).toFixed(2);      // 获取价格
+            var tNumbers = parseInt(che.parentNode.parentNode.getElementsByClassName('number')[0].innerHTML);                      // 获取数量
+            var s = tMoneyCount * tNumbers;         // 当前商品价格x数量
+            var o = parseFloat(oMoney.innerHTML);   // 总价格
+            var so = o - s;                         // 总价格减去当前价格
+            oMoney.innerHTML = so.toFixed(2);
+        }
+    });
+
     // 删除按钮添加事件
-    oTd.getElementsByTagName('a')[0].onclick = function () {
+    oTd6.getElementsByTagName('a')[0].onclick = function () {
         var r = confirm("确定要删除菜品:\n" + oCommodityName.innerHTML);
+        console.log(oMoney);
         if (r == true) {
-            // 注意要从整个表格中获取tbody
-            oTab.tBodies[0].removeChild(this.parentNode.parentNode);
-            oCount.innerHTML = --total;
             var thisCheckBox = this.parentNode.parentNode.getElementsByClassName("allCheckbox")[0];     // 获取当前商品的复选框
             // 判断当前的复选框为true，就减去当前商品价格
             if (thisCheckBox.checked == true) {
-                var thisMoneyCount = parseFloat(this.parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML).toFixed(2);     // 获取价格
-                var thisNumbers = parseInt(this.parentNode.parentNode.getElementsByClassName('number')[0].innerHTML);                      // 获取数量
-                sum -= thisMoneyCount * thisNumbers;
-                oMoney.innerHTML = sum.toFixed(2);
-                console.log("单项总和：", sum, "单个商品价格：", thisMoneyCount, "单个商品数量：", thisNumbers, "总价", oMoney);
+                var tMoneyCount = parseFloat(this.parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML).toFixed(2);     // 获取价格
+                var tNumbers = parseInt(this.parentNode.parentNode.getElementsByClassName('number')[0].innerHTML);                      // 获取数量
+                var s = tMoneyCount * tNumbers;         // 当前商品价格x数量
+                var o = parseFloat(oMoney.innerHTML);   // 总价格
+                var so = o - s;
+                oMoney.innerHTML = so.toFixed(2);
             }
+            // 注意要从整个表格中获取tbody
+            oTab.tBodies[0].removeChild(this.parentNode.parentNode);
+            oCount.innerHTML = --total;
             promptInformation('删除成功');
         }
     }
 
-    // 数量加减，减少按钮
-    var tReduce = document.getElementsByClassName('reduce');
-    for (var i = 0; i < tReduce.length; i++) {
-        tReduce[i].index = i;
-        tReduce[i].onclick = function () {
-            var tBox = document.getElementsByClassName('box')[this.index];          // 获取数量外框
-            var tNumber = tBox.getElementsByClassName('number')[0];                 // 获取购物车商品的数量
-            var tReduceCheckbox = tBox.parentNode.parentNode.getElementsByClassName('allCheckbox')[0];      // 获取当前减少按钮一行的单选按钮
-            var tGetMoney = parseFloat(tBox.parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML).toFixed(2);    // 花去当前减少按钮一行商品的价格
-            var tConvert = parseInt(tNumber.innerHTML);
-            if (tConvert == 1) {
-                promptInformation('数量最低为1份哦');
-            }
-            else {
-                tNumber.innerHTML = --tConvert;
-                if (tReduceCheckbox.checked == true) {
-                    var tfMoney = parseFloat(oMoney.innerHTML).toFixed(2);  // 转换
-                    var tMoneyReduce = parseFloat(tfMoney) - parseFloat(tGetMoney);                // 总金额和当前单个金额相减
-                    oMoney.innerHTML = tMoneyReduce.toFixed(2);
-                    return;
-                }
-            }
+    var reduce = oTd4.getElementsByClassName('reduce')[0];     // 获取减号
+    var increase = oTd4.getElementsByClassName('increase')[0]; // 获取加号
+    var tBtn = reduce.parentNode.parentNode.parentNode.getElementsByClassName('allCheckbox')[0];   // 获取当前行的复选框
+    // 减少按钮
+    reduce.onclick = function()
+    {
+        var nb = reduce.parentNode.getElementsByClassName('number')[0]; // 获取数量
+        var tNb = parseInt(nb.innerHTML);
+        var getMoney = parseFloat(reduce.parentNode.parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML).toFixed(2);   // 获取当前行的商品价格
+        
+        if ( tNb == 1 )
+        {
+            promptInformation('数量最低为1份哦');
         }
-    }
-
-    // 数量加减，增加按钮
-    var tIncrease = document.getElementsByClassName('increase');
-    console.log(tIncrease);
-    for (var j = 0; j < tIncrease.length; j++) {
-        tIncrease[j].index = j;
-        tIncrease[j].onclick = function () {
-            console.log(this, this.index);
-            var tBox = document.getElementsByClassName('box')[this.index];          // 获取数量外框
-            console.log(tBox);
-            var tNumber = tBox.getElementsByClassName('number')[0];                 // 获取购物车商品的数量
-            var tReduceCheckbox = tBox.parentNode.parentNode.getElementsByClassName('allCheckbox')[0];      // 获取当前增加按钮一行的单选按钮
-            var tGetMoney = parseFloat(tBox.parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML).toFixed(2);    // 获取当前增加按钮一行商品的价格
-            var tConvert = parseInt(tNumber.innerHTML);
-            tNumber.innerHTML = ++tConvert;
-
-            if (tReduceCheckbox.checked == true) {
+        else
+        {
+            nb.innerHTML = --tNb;
+            if ( tBtn.checked == true )
+            {
                 var tfMoney = parseFloat(oMoney.innerHTML).toFixed(2);  // 转换
-                var tMoneyReduce = parseFloat(tfMoney) + parseFloat(tGetMoney);                 // 总金额和当前单个金额相加
+                var tMoneyReduce = parseFloat(tfMoney) - parseFloat(getMoney);                // 总金额和当前单个金额相减
                 oMoney.innerHTML = tMoneyReduce.toFixed(2);
                 return;
             }
         }
     }
-}
+    // 添加按钮
+    increase.onclick = function()
+    {
+        var inc = increase.parentNode.getElementsByClassName('number')[0];
+        var tInc = parseInt(inc.innerHTML);        
+        var getMoney = parseFloat(reduce.parentNode.parentNode.parentNode.getElementsByClassName('tMoney')[0].innerHTML).toFixed(2);   // 获取当前行的商品价格
 
+        inc.innerHTML = ++tInc;
+        if ( tBtn.checked == true )
+        {
+            var tfMoney = parseFloat(oMoney.innerHTML).toFixed(2);  // 总价转换
+            var tMoneyReduce = parseFloat(tfMoney) + parseFloat(getMoney);                // 总金额和当前单个金额相减
+            oMoney.innerHTML = tMoneyReduce.toFixed(2);
+            return;
+        }
+    }
+}
 // 提示信息
 function promptInformation(txt) {
     var p = document.getElementById('prompt').children;
@@ -353,6 +364,6 @@ function cancelState(oAllOne, aAll) {
     }
     oMoney.innerHTML = 0;
     oSet.disabled = true;
-
+    sum = 0;
     console.log("取消按钮，结算按钮总和", sum);
 }
