@@ -15,15 +15,32 @@
         {
             var qq = document.getElementById('txt').value;
             
-            var reg = /^[1-9]{5,15}$/;
+            // var reg = /^[1-9]{5,15}$/;
 
-            if ( reg.test(qq) )
+            // if ( reg.test(qq) )
+            // {
+            //     alert("输入正确");
+            // }
+            // else
+            // {
+            //     alert("输入错误");
+            // }
+
+            var number = qq.split('');
+            if ( isNaN(qq) ) 
             {
-                alert("输入正确");
+                alert("请输入数字");
             }
             else
             {
-                alert("输入错误");
+                if ( number.length >= 3 && number.length <= 15 && number[0] != 0 )
+                {
+                    alert('输入正确');
+                }
+                else
+                {
+                    alert('输入错误');
+                }
             }
         }
     </script>

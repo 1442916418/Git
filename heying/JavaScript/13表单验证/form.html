@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单验证</title>
+    <link rel="stylesheet" href="css/ex1.css">
+</head>
+
+<body>
+    <div class="prompt">
+        <div class="information"></div>
+    </div>
+
+    <article id="article">
+        <header id="header-img"></header>
+        <section id="section">
+            <div class="title"> 
+                <div class="pic1"></div>
+                <div class="pic2"></div>
+                <span class="con">欢迎您申请 SOHO联名信用卡</span>
+            </div>
+            <form action="success.html" method="GET" onsubmit="return checkSubmit()" nome="form">
+                <div class="list">
+                    <div class="list-name">登陆名</div><input type="text" class="txt" id="name" onchange="checkName()" onkeypress="pressEnter(event, form.logPwd)" onfocus="clearStyle(this)"> 
+                    <span id="landingName"></span> 
+                    <span class="prom">由4~16数字/字母组成,必须以字母开头</span>
+                </div>
+                <div class="list">
+                    <div class="list-name">登陆密码</div><input type="password" class="txt" id="logPwd" onchange="checkPwd()" onkeypress="pressEnter(event, form.conPwd)" onfocus="clearStyle(this)"> 
+                    <span id="loginPwd"></span>
+                    <span class="prom">由4~10位的数字/字母组成</span>
+                </div>
+                <div class="list">
+                    <div class="list-name">确认密码</div><input type="password" class="txt" id="conPwd" onchange="checkConPwd()" onkeypress="pressEnter(event, form.idNumber)" onfocus="clearStyle(this)">
+                    <span id="confirmPwd"></span>
+                    <span class="prom">必须和登陆密码一致</span>
+                </div>
+                <div class="list">
+                    <div class="list-name">身份证号码</div><input type="text" class="txt" id="idNumber" onchange="checkIDNumber()" onkeypress="pressEnter(event, form.fPhone)" onfocus="clearStyle(this)">
+                    <span id="IDNumber"></span>
+                    <span class="prom">18位数字身份证号码</span>
+                </div>
+                <div class="list">
+                    <div class="list-name">固定电话</div><input type="text" class="txt" id="fPhone" onchange="checkfPhone()" onkeypress="pressEnter(event, form.cPhone)" onfocus="clearStyle(this)">
+                    <span id="fixedLineTelePhone"></span>
+                    <span class="prom">1~5位数字,0开头,-连接,后面为7/8位数字</span>
+                </div>
+                <div class="list">
+                    <div class="list-name">手机号码</div><input type="text" class="txt" id="cPhone" onchange="checkcPhone()" onkeypress="pressEnter(event, form.eEmail)" onfocus="clearStyle(this)">
+                    <span id="cellPhoneNumber"></span>
+                    <span class="prom">11位手机号码</span>
+                </div>
+                <div class="list">
+                    <div class="list-name">电子邮件</div><input type="text" class="txt" id="eEmail" onchange="checkeEmail()" onkeypress="pressEnter(event, form.province)" onfocus="clearStyle(this)">
+                    <span id="email"></span>
+                    <span class="prom">必须包含@和.符号</span>
+                </div>
+                <div class="list">
+                    <div class="list-name">现居住地</div>
+                    <select name="" id="province" onchange="changeCity(this)"  onkeypress="pressEnter(event, form.city)">
+                        <option>--选择省份--</option>
+                    </select>
+                    <select name="" id="city"  onkeypress="pressEnter(event, submit)">
+                        <option>--选择城市--</option>
+                    </select>
+                </div>
+                <input type="submit" id="submit" value="">
+            </form>
+        </section>
+    </article>
+
+    <script src="js/select3.js"></script>
+</body>
+
+</html>
