@@ -32,13 +32,22 @@ function promptInformation(txt) {
     var subElement = prompt.children[0];
 
     subElement.innerHTML = txt;
-    prompt.style.display = 'block';
+    prompt.setAttribute('id', 'addAnimation');
     setTimeout("closePrompt()", 1500);
 }
 // 弹窗隐藏
 function closePrompt() {
     var prompt = document.getElementsByClassName('prompt')[0];
-    prompt.style.display = 'none';
+    prompt.setAttribute('id', '');
+}
+// 预先确认
+function priorValidation(inputBox, txt)
+{
+    var input = $(inputBox);
+    if ( input.value == '' )
+    {
+        promptInformation(txt);
+    }
 }
 // 判断登陆名
 function checkName()
@@ -60,9 +69,13 @@ function checkName()
         {
             promptInformation('登陆名长度过短或超出');
         }
-        else if ( /^[a-zA-Z]/.test(str[0]) == false )
+        else if ( !/^[a-zA-Z]/.test(str[0]) )
         {
             promptInformation('登陆名必须以字母开头');
+        } 
+        else if ( /[^a-zA-Z\d]/.test(name.value) )
+        {
+            promptInformation('登陆名必须是字母或数字');
         }
 
         changeStyle('landingName', state, name);
@@ -84,7 +97,6 @@ function checkPwd()
     {
         state = false;
         var str = pwd.value.split('');
-        console.log(str);
         if ( str.length < 4 || str.length > 10 )
         {
             promptInformation('密码过短或超出');
@@ -191,7 +203,7 @@ function checkfPhone()
 {
     var fPhone = $('fPhone');
     var state = true;
-    if ( /^0[0-9]{1,4}-[0-9]{7,8}$/.test(fPhone.value) )
+    if ( /^0\d{2,4}-?\d{7,8}$/.test(fPhone.value) )
     {
         state = true;
         changeStyle('fixedLineTelePhone', state );
@@ -201,10 +213,23 @@ function checkfPhone()
     {
         state = false;
         var str = fPhone.value.split('');
+        var areaCode = fPhone.value.split('-');
 
         if ( str[0] != 0 )
         {
             promptInformation('固定电话必须0开头');
+        }
+        else if ( areaCode[0].length < 2 || areaCode[0].length > 5 )
+        {
+            promptInformation('固定电话的区号必须是2~4位的数字');
+        }
+        else if ( !/^0\d{2,4}-/.test(fPhone.value) )
+        {
+            promptInformation('固定电话区号后面必须是-连接符');
+        }
+        else if ( !/^0\d{2,4}-?\d{7,8}/.test(fPhone.value) )
+        {
+            promptInformation('固定电话连接符后面必须是7位或8位的的数字');
         }
  
         changeStyle('fixedLineTelePhone', state, fPhone);
@@ -281,7 +306,23 @@ function checkeEmail()
         }
         else if ( !/^[1-9|a-z|A-Z][0-9a-zA-Z]{2,17}/.test(eEmail.value) )
         {
-            promptInformation('电子邮件@符前过短或过长(必须是数字或字母2~17位)');
+            promptInformation('电子邮件@符前过短或过长(必须是2~17位之间的数字或字母)');
+        }
+        else if ( !/^[1-9|a-z|A-Z][0-9a-zA-Z]{2,17}@/.test(eEmail.value) )
+        {
+            promptInformation('电子邮件必须包含@符');
+        }
+        else if ( !/^[1-9|a-z|A-Z][0-9a-zA-Z]{2,17}@[a-zA-Z]{1,}/.test(eEmail.value) )
+        {
+            promptInformation('电子邮件@符后必须是1位或多位的数字或字母');
+        }
+        else if ( !/^[1-9|a-z|A-Z][0-9a-zA-Z]{2,17}@[a-zA-Z]{1,}\./.test(eEmail.value) )
+        {
+            promptInformation('电子邮件必须包含.点');
+        }
+        else if ( !/^[1-9|a-z|A-Z][0-9a-zA-Z]{2,17}@[a-zA-Z]{1,}\.[a-zA-Z]{1,10}$/.test(eEmail.value) )
+        {
+            promptInformation('电子邮件.点后面必须包含1~10位的数字或字母');
         }
 
         changeStyle('email', state, eEmail );
@@ -295,42 +336,49 @@ function checkSubmit()
     var result = checkName();
     if ( !result )
     {
+        priorValidation('name', '请输入姓名');
         return false; // 不再提交表单
     }
     // 校验登陆密码
     result = checkPwd();
     if ( !result )
     {
+        priorValidation('logPwd', '请输入登陆密码');
         return false; 
     }
     // 校验确认密码
     result = checkConPwd();
     if ( !result )
     {
+        priorValidation('conPwd', '请输入确认密码');
         return false; 
     }
     // 校验身份证号码
     result = checkIDNumber()
     if ( !result )
     {
+        priorValidation('idNumber', '请输入身份证号码');
         return false; 
     }
     // 校验固定号码
     result = checkfPhone();
     if ( !result )
     {
+        priorValidation('fPhone', '请输入固定号码');
         return false; 
     }
     // 校验手机号码
     result = checkcPhone();
     if ( !result )
     {
+        priorValidation('cPhone', '请输入手机号码');
         return false; 
     }
     // 校验电子邮件
     result = checkeEmail();
     if ( !result )
     {
+        priorValidation('eEmail', '请输入电子邮件');
         return false; 
     }
 
@@ -347,19 +395,8 @@ function pressEnter(ev, input)
         input.focus();          // 传入的文本框获得焦点
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-var sProSelect = $('province');   // 获取省份
+// 获取省份
+var sProSelect = $('province');  
 // 定义省份数组
 var aProArray = [ 
     "北京市", "天津市", "上海市", "重庆市", "河北省", "山西省", "辽宁省", "吉林省", "黑龙江省", "江苏省",
@@ -367,7 +404,7 @@ var aProArray = [
     "四川省", "贵州省", "云南省", "陕西省", "甘肃省", "青海省", "台湾省", "内蒙古自治区", "广西壮族自治区",  "西藏自治区",
     "宁夏回族自治区", "新疆维吾尔自治区", "香港特别行政区", "澳门特别行政区"
  ];      
-
+// 循环给省份下拉列表添加省份
 for ( var i = 0; i < aProArray.length; i ++ )
 {
     var oOption = document.createElement('option');
@@ -375,7 +412,7 @@ for ( var i = 0; i < aProArray.length; i ++ )
     oOption.value = aProArray[i];
     sProSelect.appendChild(oOption);
 }
-
+// 点击省份对应相对应的城市
 function changeCity(proSelect)
 {
     // 获取选中的省份

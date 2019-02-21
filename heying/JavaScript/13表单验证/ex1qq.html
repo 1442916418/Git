@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QQ验证</title>
+    <link rel="stylesheet" href="css/ex1qq.css">
+</head>
+<body>
+    <div class="prompt">
+        <div class="information"></div>
+    </div>
+
+    <div class="page">
+        <div class="title"></div>
+        <div class="content">
+            <div class="con-form">
+                <div class="con-title">
+                    欢迎您申请免费QQ号码，申请过程将不会收取您任何费用。我们成脓保护您的信息安全，不会将它提供给任何第三方。<br>
+                    注：<span class="xh">*</span>为必填项
+                </div>
+                <form action="success.html" id="form" name="form">
+                    <div class="accountInfo lable">您的账户信息</div>
+                    <div class="inputInfo">
+                        <div class="inputNmae">
+                            <span class="xh">*</span> <span class="colon">昵称:</span>
+                            <input type="text" class="txt" id="name" name="name" onblur="checkName()" onfocus="clearStyle(this)" onkeypress='pressEnter(event, form.pwd)'> <span></span>
+                            <div class="prop">英文字母，数字或下划线，长度为4-16个字符</div>
+                        </div>
+                        <div class="inputPwd">
+                            <span class="xh">*</span> <span class="colon">密码:</span>
+                            <input type="password" class="txt" id="pwd" name="pwd" onchange="checkPwd()" onfocus="clearStyle(this)" onkeypress='pressEnter(event, form.rePwd)'> <span></span>
+                            <div class="prop">6~16个字符字母或数字组成</div>
+                        </div>
+                        <div class="reInput">
+                            <span class="xh">*</span> <span class="colon">重新输入密码:</span>
+                            <input type="password" class="txt2" id="rePwd" name="rePwd" onchange="checkRePwd()" onfocus="clearStyle(this)" onkeypress='pressEnter(event, form.date)'> <span></span>
+                        </div>
+                    </div>
+                    <div class="personalInfo lable">您的个人信息</div>
+                    <div class="inputInfo infoTwo">
+                        <div class="dateOfBirth two">
+                            <span class="xh">*</span> <span class="colon">出生日期:</span>
+                            <input type="text" class="txt2" id="date" name="date" onblur="checkDate()" onfocus="clearStyle(this)" onkeypress='pressEnter(event, form.mail)'> <span></span>
+                            <span>日期格式yyyy-mm-dd</span>
+                        </div>
+                        <div class="checkbox two">
+                            <span class="xh"></span> <span class="colon chc">性别:</span>
+                            <input type="radio" name="a" id="nan" checked >男
+                            <input type="radio" name="a" id="nv" >女 <span></span>
+                        </div>
+                        <div class="mail two">
+                            <span class="xh">*</span> <span class="colon">电子邮件:</span>
+                            <input type="text" class="txt2" id="mail" name="mail" onblur="checkEmail()" onfocus="clearStyle(this)" onkeypress='pressEnter(event, form.country)'> <span></span>
+                        </div>
+                    </div>
+                    <div class="region lable">所在地区</div>
+                    <div class="inputInfo infoThree">
+                        <div class="country">
+                            <span class="xh"></span> <span class="colon cun">国家:</span>
+                            <select id="country" name="country" onblur="checkProvince(this)" onkeypress='pressEnter(event, form.province)'>
+                                <option>--请选择--</option>
+                            </select>
+                        </div>
+                        <div class="province">
+                            <span class="xh"></span> <span class="colon cun">省份:</span>
+                            <select id="province" name="province" onkeypress='pressEnter(event, form.submit)'>
+                                <option>--请选择--</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="region lable">相关服务条款</div>
+                    <input type="button" id="btn" value="提交注册" name="submit" onclick="btnSubmit()">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/ex1qq.js"></script>
+</body>
+</html>

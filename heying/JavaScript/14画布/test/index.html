@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #canvas{
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="400px" height="400px"></canvas>
+    <!-- <img src="images/show2.jpg" alt="图片" id="img"> -->
+
+    <script>
+        var cvs = document.getElementById('canvas');
+        var ct = cvs.getContext('2d');
+        // 1、创建矩形
+        // // 实心
+        // ct.scale(1, 2);
+        // ct.fillRect = 'red';
+        // ct.fillRect(0, 0, 100, 50);
+        // // 空心
+        // ct.strokeStyle = 'blue';
+        // ct.strokeRect(100, 50, 50, 50);
+        // // 橡皮
+        // // ct.clearRect(20, 20, 20, 20);
+
+        // 2、状态
+        // 保存之前
+        // ct.fillStyle = 'red';
+        // ct.fillRect(0, 0, 100, 50);
+
+        // // 保存状态
+        // ct.save();
+
+        // // 保存之后
+        // ct.scale(2, 0.5);
+        // ct.fillStyle = 'blue';
+        // ct.fillRect(10, 100, 100, 100);
+
+        // // 恢复
+        // ct.restore();
+        // ct.fillStyle = 'green';
+        // ct.fillRect(200, 200, 50, 50);
+
+        // alt+shift+a 多行注释
+        // 3、更换画布原点
+        // ct.fillRect(10, 10, 100, 100);
+        // ct.translate(50, 50);   // 画布原点
+        // ct.fillStyle = 'yellow';
+        // ct.fillRect(10, 10, 100, 100);
+
+        // 4、颜色渐变
+        // var grad = ct.createLinearGradient(0, 0, 200, 200);
+        // grad.addColorStop(0, '#f00');
+        // grad.addColorStop(1, 'blue');
+        // ct.fillStyle = grad;
+        // ct.fillRect(0, 0, 200, 200);
+
+        // 5、线条
+       /*  ct.moveTo(10, 10);    // 画笔移至某个点
+        ct.lineTo(100, 100);    
+        ct.lineTo(100, 10);
+        ct.lineTo(10, 10);
+        ct.lineWidth = '10';
+        ct.lineCap = 'round';   // 末端添加圆点
+        ct.lineJoin = 'round';  // 连接厨添加圆点
+        ct.stroke(); */
+
+        // 5.1、线条创建三角形
+        // ct.moveTo(10, 10);
+        // ct.lineTo(100, 10);
+        // ct.moveTo(10, 10);
+        // ct.lineTo(50, 60);
+        // ct.moveTo(100, 10);
+        // ct.lineTo(50, 60);
+
+        // ct.moveTo(100, 100);
+        // ct.lineTo(200, 100); // X, Y
+        // ct.lineTo(150, 50);
+        // ct.lineTo(100, 100);
+        
+
+        // ct.lineWidth = '10';
+        // ct.lineCap = 'round';   // 末端添加圆点
+        // ct.lineJoin = 'round';  // 连接厨添加圆点
+        // ct.stroke();
+
+        // 6、弧形或圆形
+        // ct.fillStyle = 'red';
+        // ct.beginPath();
+        // ct.arc(100, 100, 100, 0, (Math.PI/2), false);
+        // ct.closePath();
+        // ct.stroke();
+
+        // 7、绘制文字
+        // ct.shadowColor = '#ccc';    // 阴影颜色
+        // ct.shadowOffsetX = '8';     // 阴影水平偏移度
+        // ct.shadowOffsetY = '8';     // 阴影垂直偏移度
+        // ct.shadowBlur = '3';        // 阴影模糊度
+
+        // ct.fillStyle = 'red';
+        // ct.strokeStyle = 'yellow';
+        // ct.font = 'bold 50px 楷体';
+        // ct.textAlign = 'left';      // 文字水平对齐方式 
+        // ct.textBaseline = 'top';    // 文字的垂直对齐方式
+        // ct.strokeText('芝麻开门', 0, 0);    // 空心，X,Y
+        // ct.fillText('芝麻开门', 100, 100);  // 实心，X,Y
+
+        // 8、绘制图像
+        var img = new Image();
+        img.src = 'images/show2.jpg';
+        // 当图像加载完成，将其绘制在画布上
+        img.onload = function()
+        {
+            ct.drawImage(img, 0, 0, 100, 100);
+        }
+    </script>
+</body>
+</html>

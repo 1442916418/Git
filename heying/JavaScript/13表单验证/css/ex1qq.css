@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.title {
+    width: 1000px;
+    min-width: 1000px;
+    height: 115px;
+    background: url('../images/top.jpg') no-repeat;
+    background-size: 100% 100%;
+}
+
+.content {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.con-form {
+    width: 700px;
+    height: 600px;
+    font-size: 13px;
+    color: rgb(20, 20, 20);
+}
+
+.xh {
+    color: red;
+}
+
+.lable {
+    width: 100%;
+    line-height: 25px;
+    background: #F4FBFF;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.inputInfo {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.inputNmae, .inputPwd {
+    width: 320px;
+    height: 50px;
+    line-height: 25px;
+    position: relative;
+}
+
+.txt {
+    width: 240px;
+    height: 17px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.txt2 {
+    margin-left: 10px;
+}
+
+.prop {
+    font-size: 10px;
+    color: rgb(20, 20, 20);
+    margin-left: 50px;
+}
+
+.reInput {
+    width: 300px;
+    height: 25px;
+    line-height: 25px;
+    position: relative;
+}
+
+.reInput {
+    width: 425px;
+}
+
+.two {
+    width: 410px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 38px;
+    position: relative;
+}
+
+.chc {
+    margin-left: 36px;
+    margin-right: 10px;
+}
+
+.infoTwo {
+    height: 100px;
+}
+
+.infoThree {
+    height: 80px;
+}
+
+.country, .province {
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: -10px;
+}
+
+.cun {
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+#btn {
+    margin: 10px 0 10px 250px;
+}
+
+.ok {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(../images/li_ok.gif) no-repeat;
+    vertical-align: -3px;
+}
+
+.error {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(../images/li_err.gif) no-repeat;
+    vertical-align: -3px;
+}
+
+/* 提示框  兼容插件*/
+
+.prompt {
+    width: 350px;
+    height: 150px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    /* 
+    第一个参数：左右X轴阴影位置
+    第二个参数：上下Y轴阴影位置，正数向下偏移，负数向上偏移
+    第三个参数：模糊度，数值越大越模糊，越小越清晰
+    第四个参数：模糊范围，数值越大范围越大，越小范围越小
+    第五个参数：颜色
+     */
+    -webkit-box-shadow: 0 4px 10px -1px #ccc;
+    box-shadow: 0 4px 10px -1px #ccc;
+    background-color: rgb(255, 251, 251);
+    position: fixed;
+    top: 5%;
+    left: 41%;
+    z-index: 1000;
+    display: none;
+    overflow: hidden;
+}
+
+.information {
+    width: 100%;
+    line-height: 30px;
+    margin: 60px auto;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+#addAnimation {
+    display: block;
+    -webkit-animation: add 2s;
+    animation: add 2s;
+}
+
+@-webkit-keyframes add {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes add {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
