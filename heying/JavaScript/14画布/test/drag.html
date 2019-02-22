@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖放过程</title>
+    <style>
+        body{
+            height: 10000px;
+        }
+        .one, .two{
+            width: 600px;
+            height: 500px;
+            float: left;
+            border: 1px dashed black;
+            margin-right: 200px;
+        }
+    </style>
+</head> 
+<body ondragover="dragover(event)" ondrop="drop(event)">
+    <div class="one" ondragover="dragover(event)" ondrop="drop(event)">
+        <img src="images/show2.jpg" id="img" alt="图片拖放" draggable="true" ondragstart="dragStart(event)" ondrag="drag()" ondragend="dragEnd()">
+    </div>
+
+    <div class="two" ondragenter="dragenter()" ondragover="dragover(event)" ondrop="drop(event)" ondragleave="dragLeave()"></div>
+
+    <script src="js/drag.js"></script>
+</body>
+</html>

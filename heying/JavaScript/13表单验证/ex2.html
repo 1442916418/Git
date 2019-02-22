@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登陆验证</title>
+    <link rel="stylesheet" href="css/ex2.css">
+</head>
+<body>
+    <div class="prompt">
+        <div class="information"></div>
+    </div>
+
+    <div class="content">
+        <div class="login">
+            <form action="success.html" method="get" id="uploadForms" name="uploadForms" onsubmit="return submission()">
+            <!-- <form action="success.html" method="get" id="uploadForms" name="uploadForms"> -->
+                <div class="input">
+                    <span class="mh">用户名</span> 
+                    <input type="text" class="user" name="name" id="userName" onblur="checkName()" onkeypress="pressEnter(event, uploadForms.pwd)" onfocus="clearStyle(this)">
+                    <span></span>
+                </div>
+                <div class="input">
+                    <span id="p" class="mh">密码</span>
+                    <input type="password" class="user" name="pwd" id="userPwd" onblur="checkPwd()" onkeypress="pressEnter(event, uploadForms.name)" onfocus="clearStyle(this)">
+                    <span></span>
+                </div>
+                <div class="input">
+                    <!-- <input type="image" id="login" name="log" src="images/login.gif" alt="登陆"> -->
+                    <img src="images/login.gif" id="login" alt="登陆" onclick="submission()">
+                    <!-- <button id="login">提交</button> -->
+                </div>
+            </form>
+        </div>
+    </div> 
+
+    <script src="js/ex2.js"></script>
+</body>
+</html>

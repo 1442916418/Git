@@ -345,7 +345,7 @@ function checkSubmit()
     {
         priorValidation('logPwd', '请输入登陆密码');
         return false; 
-    }
+    } 
     // 校验确认密码
     result = checkConPwd();
     if ( !result )

@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.content{
+    width: 700px;
+    height: 450px;
+    margin: 50px auto;
+    background: url('../images/backbg.jpg') no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+.login{
+    width: 400px;
+    height: 150px;
+    margin-top: 170px;
+    margin-left: 370px;
+}
+.input{
+    width: 81%;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+}
+.user{
+    margin-left: 10px;
+}
+#p{
+    margin-left: 15px;
+}
+#login{
+    margin-left: 90px;
+}
+.mh::after{
+    content: ':';
+    position: absolute;
+    top: 0;
+    margin-left: 5px;
+}
+.ok{
+    color: yellowgreen;
+    font-size: 12px;
+}
+.error{
+    color: red;
+    font-size: 12px;
+}
+/* 提示框  兼容插件*/
+.prompt{
+    width: 350px;
+    height: 150px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    /* 
+    第一个参数：左右X轴阴影位置
+    第二个参数：上下Y轴阴影位置，正数向下偏移，负数向上偏移
+    第三个参数：模糊度，数值越大越模糊，越小越清晰
+    第四个参数：模糊范围，数值越大范围越大，越小范围越小
+    第五个参数：颜色
+     */
+    -webkit-box-shadow: 0 4px 10px -1px #ccc;
+            box-shadow: 0 4px 10px -1px #ccc;
+    background-color: rgb(253, 253, 253);
+    position: fixed;
+    top: 5%;
+    left: 41%;
+    z-index: 1000;
+    display: none;
+    overflow: hidden;
+}
+.information{
+    width: 100%;
+    line-height: 30px;
+    margin: 60px auto;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 16px;
+    color: rgb(24, 24, 24);
+}
+#addAnimation{
+    display: block;
+    -webkit-animation: add 2s;
+            animation: add 2s;
+}
+
+@-webkit-keyframes add{
+    0%{
+        
+        height: 0;
+    }
+    50%{
+       
+        height: 150px;
+    }
+    100%{
+       
+        height: 0;
+    }
+}
+@keyframes add{
+    0%{
+       
+        height: 0;
+    }
+    50%{
+     
+        height: 150px;
+    }
+    100%{
+      
+        height: 0;
+    }
+}

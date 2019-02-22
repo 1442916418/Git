@@ -1,3 +1,7 @@
+
+// onblur:（当鼠标失去焦点时） 判断密码时，没有输入内容也会显示正确，会显示提示
+// onchange：（当内容发生变化时） 判断密码，没有输入内容不会判断，不会显示提示
+
 // 获取id
 function $(id)
 {
@@ -58,9 +62,6 @@ function pressEnter(ev, input)
         input.focus();          // 传入的文本框获得焦点
     }
 }
-
-// onblur:（当鼠标失去焦点时） 判断密码时，没有输入内容也会显示正确，会显示提示
-// onchange：（当内容发生变化时） 判断密码，没有输入内容不会判断，不会显示提示
 
 // 判断昵称
 function checkName()
@@ -264,7 +265,7 @@ function checkEmail()
     }
 }
 // 手动提交按钮
-function btnSubmit()
+function submission()
 {
     // 校验昵称
     var result = checkName();
@@ -302,7 +303,7 @@ function btnSubmit()
         return;
     }
 
-    $('form').submit();     // 手动提交表单
+    $('subForm').submit();     // 手动提交表单
 }
 // 获取国家
 var country = $('country');

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>随机粒子</title>
+    <style>
+        html, body{
+            margin: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            cursor: none;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        var ctx = document.getElementById('canvas');
+        var content = ctx.getContext('2d');
+        var WIDTH;
+        var HEIGHT;
+        var round = [];
+        var initRoundPopulation = 80;
+
+        WIDTH = document.documentElement.clientWidth;
+        HEIGHT = document.documentElement.clientHeight;
+
+        ctx.width = WIDTH;
+        ctx.height = HEIGHT;
+
+
+        // 构造函数的方式来创建单个的圆
+        function Round_item(index, x, y){
+            this.index = index;
+            this.x = x;
+            this.y = y;
+            this.r = Math.random() * 2 + 1;
+            var alpha = (Math.floor(Math.random() * 10) + 1) / 10 / 2;
+            this.color = "rgba(255,255,255," + alpha + ")";
+        }
+
+        // 通过原型给 Round_item 添加 draw() 方法，创建圆
+        Round_item.prototype.draw = function(){
+            content.fillStyle = this.color;
+            content.shadowBlur = this.r * 2;
+            content.beginPath();
+            content.arc(this.x, this.y, this.r, 0, 2*Math.PI, false);
+            content.closePath();
+            content.fill();
+        };
+
+        // 使用 move() 函数来改变 round 的 y 坐标
+        Round_item.prototype.move = function(){
+            this.y -= 0.15;
+            if ( this.y <= -10 )
+            {
+                this.y = HEIGHT + 10;
+            }
+            this.draw();
+        };
+
+        // 初始化 init() 函数了，在 init() 函数中，我们的主要任务是创建单个的 round，然后使用其 draw() 方法
+        function init(){
+            for ( var i = 0; i < initRoundPopulation; i ++ )
+            {
+                round[i] = new Round_item(i, Math.random() * WIDTH, Math.random() * HEIGHT);
+                round[i].draw();
+            }
+            // 实现动画的效果，需要在 init() 中加入 animate() 函数
+            animate();
+        }
+
+       // 使粒子动起来，requestAnimationFrame() 函数递归的调用 animate() 函数来实现动画的效果
+       function animate(){
+           content.clearRect(0, 0, WIDTH, HEIGHT);
+
+           for ( var i in round )
+           {
+               round[i].move();
+           }
+           requestAnimationFrame(animate);
+       }
+
+
+
+
+        init();
+
+    </script>
+</body>
+</html>

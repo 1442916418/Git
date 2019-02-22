@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>习题二</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #topItem{
+            width: 1000px;
+            height: 200px;
+            border:  1px solid black;
+        }
+        .itemTitle{
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 100px;
+        }
+        .item{
+            display: inline-block;
+            padding: 15px 35px;
+            margin: 10px;
+            background: #ccc;
+            border-radius: 4px;
+            font-size: 18px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+        }
+        #favorites{
+            width: 700px;
+            height: 600px;
+            border: 1px solid black;
+            float: left;
+        }
+        #trashCan{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="topItem">
+        <div class="itemTitle">可将你喜欢的项目拖进收藏夹</div>
+        <div id="item1" class="item" draggable="true" ondragstart="dragStart(event)">项目一</div>
+        <div id="item2" class="item" draggable="true" ondragstart="dragStart(event)">项目二</div>
+        <div id="item3" class="item" draggable="true" ondragstart="dragStart(event)">项目三</div>
+        <div id="item4" class="item" draggable="true" ondragstart="dragStart(event)">项目四</div>
+        <div id="item5" class="item" draggable="true" ondragstart="dragStart(event)">项目五</div>
+    </div>
+    <div id="favorites" ondragover="dragover(event)" ondrop="drop(event)" >
+        <div class="itemTitle">收藏夹</div>
+    </div>
+    <div id="trashCan">
+        <div class="itemTitle">垃圾桶</div>
+    </div>
+
+    <script>
+        // 源元素拖放开始
+        function dragStart(ev){
+            var ev = ev || event;
+            var dt = ev.dataTransfer;
+            dt.setData('Text', ev.target.id);
+        }
+
+        // 当源文件在目标元素区域内移动式持续触发
+        function dragover(ev){
+            ev.preventDefault();
+        }
+
+        // 当源元素在目标区域内投放时触发，在目标上完成一次有效投放时触发
+        function drop(ev){
+            var ev = ev || event;
+            ev.preventDefault();
+
+            var id = ev.dataTransfer.getData('Text');
+            console.log('源元素id属性', id);
+            console.log('目标元素', ev.target);
+
+            var sourceObj = document.getElementById(id);
+            
+        }
+    </script>
+</body>
+</html>

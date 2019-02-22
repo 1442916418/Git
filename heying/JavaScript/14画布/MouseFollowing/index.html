@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鼠标跟随</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #canvas{
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        var convas = document.getElementById('canvas'),
+            ctx = canvas.getContext('2d'),
+            WIDTH = canvas.width = document.documentElement.clientWidth,
+            HEIGHT = canvas.height = document.documentElement.clientHeight,
+            para = {
+                num: 100,
+                color: false,   // 颜色，如果是false，则是随机渐变颜色
+                r: 0.9,         // 圆每次增加的半径
+                o: 0.09,        // 判读圆消失的条件，数值越大，消失的越快
+                a: 1,
+            },
+            color,
+            color2,
+            round_arr = [];     // 存放圆的数组
+
+            // 鼠标移动的过程我们首先要获得鼠标的坐标，然后将鼠标的坐标以及其他信息 push 到数组中去：
+            window.onmousemove = function(event){
+                
+                mouseX = event.clientX;
+                mouseY = event.clientY;
+
+                round_arr.push({
+                    mouseX: mouseX,
+                    mouseY:mouseY,
+                    r: para.r,      // 设置半径每次增大的数值
+                    o: 1            // 判断圆消失的条件，数值越大，消失的越快
+                })
+            }
+
+            // 在 para 参数中，我们可以看出，其中有设置 color 值。如果 color 值不为 false，那么设置的圆的颜色就是设置的 color 值；如果设置的 color 值为 false，那么圆的颜色就是随机的。
+            if ( para.color )
+            {
+                color2 = para.color;
+            }
+            else
+            {
+                color = Math.random() * 360;
+            }
+
+            // 一个一直执行的函数,清除屏幕再重新绘制
+            function animate()
+            {
+                // 颜色的渐变,color 的颜色值依次增加一个增量。
+                if ( !para.color )
+                {
+                    color += 1;
+                    color2 = 'hsl(' + color + ',100%, 80%';
+                }
+
+                ctx.clearRect(0, 0, WIDTH, HEIGHT);
+
+                for ( var i = 0; i < round_arr.length; i ++  )
+                {
+                    ctx.fillStyle = color2;
+                    ctx.beginPath();
+                    ctx.arc(round_arr[i].mouseX, round_arr[i].mouseY, round_arr[i].r, 0, Math.PI * 2);
+                    ctx.closePath();
+                    ctx.fill();
+                    round_arr[i].r += para.r;
+                    round_arr[i].o -= para.o;
+
+                    if ( round_arr[i].o <= 0 )
+                    {
+                        round_arr.splice(i, 1);
+                        i--;
+                    }
+                }
+                window.requestAnimationFrame(animate);
+            }
+
+            animate();
+
+    </script>
+</body>
+</html>

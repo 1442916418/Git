@@ -20,7 +20,7 @@
                     欢迎您申请免费QQ号码，申请过程将不会收取您任何费用。我们成脓保护您的信息安全，不会将它提供给任何第三方。<br>
                     注：<span class="xh">*</span>为必填项
                 </div>
-                <form action="success.html" id="form" name="form">
+                <form action="success.html" method="GET" id="subForm" name="form">
                     <div class="accountInfo lable">您的账户信息</div>
                     <div class="inputInfo">
                         <div class="inputNmae">
@@ -48,7 +48,7 @@
                         <div class="checkbox two">
                             <span class="xh"></span> <span class="colon chc">性别:</span>
                             <input type="radio" name="a" id="nan" checked >男
-                            <input type="radio" name="a" id="nv" >女 <span></span>
+                            <input type="radio" name="a" id="nv" >女 
                         </div>
                         <div class="mail two">
                             <span class="xh">*</span> <span class="colon">电子邮件:</span>
@@ -59,19 +59,19 @@
                     <div class="inputInfo infoThree">
                         <div class="country">
                             <span class="xh"></span> <span class="colon cun">国家:</span>
-                            <select id="country" name="country" onblur="checkProvince(this)" onkeypress='pressEnter(event, form.province)'>
+                            <select id="country" name="country" onblur="checkProvince(this)" onkeypress='pressEnter(event, form.province)'> <span></span>
                                 <option>--请选择--</option>
                             </select>
                         </div>
                         <div class="province">
                             <span class="xh"></span> <span class="colon cun">省份:</span>
-                            <select id="province" name="province" onkeypress='pressEnter(event, form.submit)'>
+                            <select id="province" name="province" onkeypress='pressEnter(event, form.submission)'> <span></span>
                                 <option>--请选择--</option>
                             </select>
                         </div>
                     </div>
                     <div class="region lable">相关服务条款</div>
-                    <input type="button" id="btn" value="提交注册" name="submit" onclick="btnSubmit()">
+                    <input type="button" id="btn" value="提交注册" onclick="submission()">
                 </form>
             </div>
         </div>

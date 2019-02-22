@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100%;
+            height: 1000px;
+            position: relative;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #canvas2{
+            position: absolute;
+            top: 342px;
+            left: 400px;
+        }
+        #canvas3{
+            position: absolute;
+            top: 500px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas1"></canvas>
+    <canvas id="canvas2" width="400px" height="150px"></canvas>
+    <canvas id="canvas3" width="450px" height="350px"></canvas>
+
+    <script>
+        var ctx1 = document.getElementById('canvas1');
+        var content1 = ctx1.getContext('2d');
+
+        WIDTH = document.documentElement.clientWidth;
+        HEIGHT = document.documentElement.clientHeight;
+
+        ctx1.width = WIDTH;
+        ctx1.height = HEIGHT;
+        
+        // 一、线条
+        content1.strokeStyle = 'blue';
+        content1.moveTo(10, 10);
+        content1.lineTo(200, 200);
+        content1.moveTo(10, 10);
+        content1.lineTo(50, 120);
+        content1.lineTo(10, 200);
+        content1.lineTo(200, 200);
+        content1.stroke();
+       
+        // 二、文字
+        content1.shadowColor = '#888';    // 阴影颜色
+        content1.shadowOffsetX = '8';     // 阴影水平偏移度
+        content1.shadowOffsetY = '-8';     // 阴影垂直偏移度
+        content1.shadowBlur = '3';        // 阴影模糊度
+        content1.fillStyle = 'blue';
+        content1.font = 'italic bold 50px 黑体';
+        content1.textAlign = 'left';      // 文字水平对齐方式 
+        content1.textBaseline = 'top';    // 文字的垂直对齐方式
+        content1.fillText('疯狂讲义', 10, 220);  // 实心，X,y
+
+        content1.shadowColor = '#333';    // 阴影颜色
+        content1.shadowOffsetX = '10';     // 阴影水平偏移度
+        content1.shadowOffsetY = '-8';     // 阴影垂直偏移度
+        content1.shadowBlur = '8';        // 阴影模糊度
+        content1.strokeStyle = '#ff00ff';
+        content1.font = 'italic bold 50px 黑体';
+        content1.textAlign = 'left';      // 文字水平对齐方式 
+        content1.textBaseline = 'top';    // 文字的垂直对齐方式
+        content1.strokeText('轻量级 企业实战应用', 10, 260);  // 实心，X,y
+
+        // 三、矩形
+        content1.fillRect(10, 350, 300, 100);
+
+        var ctx2 = document.getElementById('canvas2');
+        var content2 = ctx2.getContext('2d');
+
+        content2.moveTo(10, 10);
+        content2.lineTo(300, 10);
+        content2.lineTo(300, 100);
+        content2.lineTo(10, 100);
+        content2.lineTo(10, 5);
+        content2.lineWidth = 10;
+        content2.strokeStyle = '#ff00ff';
+        content2.shadowColor = 'black';    // 阴影颜色
+        content2.shadowOffsetX = '13';     // 阴影水平偏移度
+        content2.shadowOffsetY = '-8';     // 阴影垂直偏移度
+        content2.shadowBlur = '10';        // 阴影模糊度
+        content2.stroke();
+
+        var ctx3 = document.getElementById('canvas3');
+        var content3 = ctx3.getContext('2d');
+
+        rectangle('black', 4, 5, 5, 340, 340);
+        connect(5, 5, 20, 20);
+        connect(345, 5, 330, 20);
+        connect(5, 345, 20, 330);
+        connect(345, 345, 325, 325);
+        rectangle('red', 10, 20, 20, 310, 310);
+        rectangle('black', 4, 40, 40, 270, 270);
+        rectangle('red', 10, 60, 60, 230, 230);
+        rectangle('#05C0FF', 4, 80, 80, 190, 190);
+        rectangle('red', 10, 100, 100, 150, 150);
+        rectangle('blue', 4, 120, 120, 110, 110);
+        rectangle('yellow', 10, 140, 140, 70, 70);
+        rectangle('yellowgreen', 4, 160, 160, 30, 30);
+
+        // 创建矩形
+        function rectangle(col, wid, rectX, rectY, rectW, rectH)
+        {
+            content3.strokeStyle = col;
+            content3.lineWidth = wid;
+            content3.strokeRect(rectX, rectY, rectW, rectH);
+        }
+        // 连接矩形
+        function connect(mX, mY, lX, lY)
+        {
+            content3.moveTo(mX, mY);
+            content3.lineTo(lX, lY);
+            content3.stroke();
+        }
+
+    </script>
+</body>
+</html>
