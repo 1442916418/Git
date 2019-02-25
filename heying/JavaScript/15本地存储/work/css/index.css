@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.content{
+    width: 550px;
+    height: 400px;
+    margin: 50px auto;
+}
+.logo{
+    width: 100%;
+    height: 52px;
+    background: url('../images/logo.png') no-repeat;
+    background-size: 100% 100%;
+}
+.formStyle{
+    width: 320px;
+    height: 200px;
+    margin: 20px auto;
+    border: 6px solid #CC0000;
+    border-radius: 10px;
+    border-top: 6px solid #780000;
+    border-left: 6px solid #780000;
+    box-shadow: 2px -1px 5px 1px rgb(56, 56, 56);
+    text-align: center;
+}
+.form{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+}
+.btn{
+    padding: 1px 10px;
+    margin-top: 20px; 
+    font-size: 16px;
+    cursor: pointer;
+}

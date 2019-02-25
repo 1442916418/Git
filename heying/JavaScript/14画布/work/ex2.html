@@ -47,17 +47,17 @@
 <body>
     <div id="topItem">
         <div class="itemTitle">可将你喜欢的项目拖进收藏夹</div>
-        <div id="item1" class="item" draggable="true" ondragstart="dragStart(event)">项目一</div>
-        <div id="item2" class="item" draggable="true" ondragstart="dragStart(event)">项目二</div>
-        <div id="item3" class="item" draggable="true" ondragstart="dragStart(event)">项目三</div>
-        <div id="item4" class="item" draggable="true" ondragstart="dragStart(event)">项目四</div>
-        <div id="item5" class="item" draggable="true" ondragstart="dragStart(event)">项目五</div>
+        <div id="item1" class="item item1" draggable="true" ondragstart="dragStart(event)">项目一</div>
+        <div id="item2" class="item itme2" draggable="true" ondragstart="dragStart(event)">项目二</div>
+        <div id="item3" class="item itme3" draggable="true" ondragstart="dragStart(event)">项目三</div>
+        <div id="item4" class="item itme4" draggable="true" ondragstart="dragStart(event)">项目四</div>
+        <div id="item5" class="item itme5" draggable="true" ondragstart="dragStart(event)">项目五</div>
     </div>
     <div id="favorites" ondragover="dragover(event)" ondrop="drop(event)" >
         <div class="itemTitle">收藏夹</div>
     </div>
-    <div id="trashCan">
-        <div class="itemTitle">垃圾桶</div>
+    <div id="trashCan" ondragover="dragover(event)" ondrop="delDrop(event)">
+        <div class="itemTitle" >垃圾桶</div>
     </div>
 
     <script>
@@ -65,7 +65,7 @@
         function dragStart(ev){
             var ev = ev || event;
             var dt = ev.dataTransfer;
-            dt.setData('Text', ev.target.id);
+            dt.setData('Text', ev.target.className);
         }
 
         // 当源文件在目标元素区域内移动式持续触发
@@ -78,12 +78,28 @@
             var ev = ev || event;
             ev.preventDefault();
 
-            var id = ev.dataTransfer.getData('Text');
-            console.log('源元素id属性', id);
-            console.log('目标元素', ev.target);
-
-            var sourceObj = document.getElementById(id);
+            var cName = ev.dataTransfer.getData('Text');   
+            var sourceObj = document.getElementsByClassName(cName);
             
+            if ( sourceObj.length == 2 )
+            {
+                alert('不要重复添加');
+                return;
+            }
+            
+            var a = sourceObj[0].cloneNode(true);
+            ev.target.appendChild(a);
+        }
+
+        // 删除
+        function delDrop(ev)
+        {
+            var ev = ev || event;
+            var cName = ev.dataTransfer.getData('Text');   // 获取id
+            var favorites = document.getElementById('favorites');   // 收藏夹
+            var sourceObj = favorites.getElementsByClassName(cName)[0];
+
+            favorites.removeChild(sourceObj);
         }
     </script>
 </body>

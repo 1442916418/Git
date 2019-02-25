@@ -22,7 +22,7 @@ function changeStyle(idNmae, state, txt)
     var first = idNmae.nextElementSibling;
     if ( state == true )
     { 
-        first.innerHTML = txt;
+        first.innerHTML = txt; 
         first.className = 'ok';
     }
     else

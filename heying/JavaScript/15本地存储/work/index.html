@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户登陆</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="content">
+        <div class="logo"></div>
+        <form class="formStyle" action="com.html" method="get" onsubmit="return checkLog()">
+            <div class="nameTitle form">请输入你的账号:</div>
+            <input type="text" name="name" id="name">
+            <div class="form pwdTitle">请输入你的密码:</div>
+            <input type="pwd" name="pwd" id="pwd"><br>
+            <input type="submit" value="登陆" class="btn">
+        </form>
+    </div>
+
+    <script>
+        function checkLog()
+        {
+            var oName = document.getElementById('name');
+            var oPwd = document.getElementById('pwd');
+            var vName = oName.value;
+            var vPwd = oPwd.value;
+
+            // 把用户输入的信息存储到本地计算机
+            localStorage.setItem('userName', vName);      
+            localStorage.setItem('userPwd', vPwd);
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测试</title>
+</head>
+<body>
+    <a href="login.html" id="log">亲,请登录</a>
+    <h2 id="welcome">
+        欢迎您,
+        <span id="user"></span><br>
+        <span id="pwd"></span>
+    </h2>
+
+    <script>
+        var username = sessionStorage.getItem('username');
+        var Upwd = sessionStorage.getItem('userpwd');
+        var wel = document.getElementById('welcome');
+        var log = document.getElementById('log');
+
+        if ( username )
+        {
+            wel.style.display = 'block';
+            log.style.display = 'none';
+            var userSpan = document.getElementById('user');
+            var userPwd = document.getElementById('pwd');
+            userSpan.innerHTML = username;
+            userPwd.innerHTML = Upwd;
+        }
+        else
+        {
+            wel.style.display = 'none';
+            log.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登陆</title>
+</head>
+<body>
+    <form action="test.html" method="GET" onsubmit="return checkLog()">
+        <input type="text" name="account" id="acc">
+        <input type="text" name="pwd" id="pwd">
+        <input type="submit" value="login">
+    </form>
+
+    <script>
+        function checkLog()
+        {
+            var accInput = document.getElementById('acc');
+            var accPwd = document.getElementById('pwd');
+            var accout = accInput.value;
+            var pwd = accPwd.value;
+            sessionStorage.setItem('username', accout);
+            sessionStorage.setItem('userpwd', pwd);
+            return true;
+        }    
+    </script>
+</body>
+</html>

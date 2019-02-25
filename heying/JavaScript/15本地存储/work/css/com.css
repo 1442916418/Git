@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    width: 800px;
+    height: 920px;
+    margin: auto;
+    border:  2px solid black;
+    background: url('../images/fruit-midbg.png');
+    position: relative;
+}
+.top{
+    width: 100%;
+    height: 80px;
+    background: url('../images/fruit-bg.png');
+}
+.cancellation{
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    text-align: right;
+    position: absolute;
+    top: 0;
+}
+.cancellation input{
+    margin-right: 5px;
+    padding: 0 8px;
+}
+.shoppingCart{
+    width: 1005;
+    height: 200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.cart{
+    width: 190px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.userName{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.clearCart, .addCart{
+    width: 100%;
+    height: 55px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 45px;
+}
+.clearCart{
+    background: url('../images/cart.png') no-repeat;
+}
+.addCart{
+    background: url('../images/cart.png') no-repeat;
+}
+.shoppingList{
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    border:  1px solid black;
+}
+.content{
+    width: 100%;
+    height: 620px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+}
+.com-box{
+    width: 180px;
+    height: 202px;
+    margin: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.border{
+    width: 140px;
+    height: 140px;
+    box-sizing: border-box;
+    border: 4px solid #CC0000;
+    border-radius: 10px;
+    border-top: 4px solid #780000;
+    border-left: 4px solid #780000;
+    box-shadow: 2px -1px 5px 1px rgb(56, 56, 56);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.com-name{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.tradeName{
+    color: red;
+    font-size: 15px;
+}
+.select{
+    vertical-align: -1px;
+    width: 15px;
+    height: 15px;
+}
+.footer{
+    width: 800px;
+    height: 50px;
+    margin: auto;
+    text-align: center;
+}
