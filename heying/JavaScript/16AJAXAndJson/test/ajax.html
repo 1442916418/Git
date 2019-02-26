@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax</title>
+</head>
+<body>
+    <input type="text" id="content">
+    <input type="text">
+    <button onclick="sendAjax()">请求</button>
+
+    <script>
+        function sendAjax()
+        {
+            // 一、创建XMLHttpRequest对象
+            var xhr;
+            if ( window.XMLHttpRequest )
+            {
+                xhr = new XMLHttpRequest();
+            }
+            else
+            {
+                xhr = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            console.log(xhr);
+
+            // 0 为初始化，还未调用openfangfa
+
+            // 二、向服务器发送异步请求
+            // 规定请求的url，请求方式以及是否是异步请求
+            // 参数一：请求方式get/post；参数二：url；参数三：Boolean数据 true-异步 false-同步
+            xhr.open('get', 'data/test.txt', true);
+
+            // 1 正在加载中
+            console.log(xhr.readyState);
+
+            // 发送请求
+            xhr.send();
+
+            // 三、获得服务器端响应的数据
+            xhr.onreadystatechange = function()
+            {
+                // 2 3 4
+                console.log(xhr.readyState);
+                if ( xhr.readyState == 4 && xhr.status == 200 )
+                {
+                    console.log('响应完成');
+                    // 获得响应内容
+                    var text = xhr.responseText;
+                    console.log('响应的内容',text);
+                    // 通过dom局部更新html中的内容
+                    var con = document.getElementById('content');
+                    con.value = text;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

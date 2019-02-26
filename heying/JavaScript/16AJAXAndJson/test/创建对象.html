@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>创建对象</title>
+</head>
+<body>
+    <script>
+        // 一、Object 创建
+        var obj1 = new Object();
+        obj1.id = 1;
+        obj1.name = '呵呵地';
+        obj1.age = 12;
+        console.log(obj1);
+
+        // 二、构造函数创建
+        var obj2 = new Person( 2, '哈哈哈', 13 );
+        function Person(id, name, age)
+        {
+            this._id = id;
+            this._name = name;
+            this._age = age;
+        }
+        console.log(obj2);
+
+        // 三、JSON创建
+        var obj3 = {
+            id: 3,
+            name: '嘻嘻嘻',
+            age: 14
+        }
+        console.log(obj3);
+
+        // 四、数组：中括号声明的是数组，大括号声明的是数组对象
+        var objArr1 = [ 1, 'haha', 19 ];
+
+        // 数组对象
+        var objArr2 = [
+            { 'id':1, 'name':'hehe', 'age':11 },
+            { 'id':2, 'name':'haha', 'age':12 },
+            { 'id':3, 'name':'heihei', 'age':13 }
+        ]
+
+        for ( var i = 0; i < objArr2.length; i ++ )
+        {
+            console.log(objArr2[i]);
+            console.log(objArr2[i].id, objArr2[i].name, objArr2[i].age);
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+[
+    {"stuid": 1,"name": "张三","sex": "男","age": 18}, 
+    {"stuid": 2,"name": "李四","sex": "女","age": 12}, 
+    {"stuid": 3,"name": "王五","sex": "男","age": 20},
+    {"stuid": 4,"name": "hehe","sex": "女","age": 20},
+    {"stuid": 5,"name": "haha","sex": "男","age": 22},
+    {"stuid": 6,"name": "chaha","sex": "女","age": 0}
+  ]
