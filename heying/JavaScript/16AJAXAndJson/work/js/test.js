@@ -26,7 +26,7 @@ function init()
         {
             // 响应JSON格式文本
             var jsonText = xhr.responseText;
-            console.log(jsonText, typeof jsonText);
+            // console.log(jsonText, typeof jsonText);
 
             // 将json格式的文本解析成js对象。1、早期的eval()，2、现在的全局对象JSON.parse()
             var obj2 = JSON.parse(jsonText);
@@ -45,9 +45,13 @@ function updateTable(objArray)
     var table = document.getElementById('stuTable');
     var tbody = document.getElementById('stuTbody');
 
-    // 通过DOM跟新html中部分内容(表格中的数据)
     for ( var i = 0; i < objArray.length; i ++ )
     {
-        
+        console.log(objArray[i], objArray[i].city[i]);
+        for ( var j = 0; j < objArray[i].city[i]; j ++ )
+        {
+            console.log(objArray[j]);
+        }
     }
+
 }

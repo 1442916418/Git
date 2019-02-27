@@ -29,7 +29,7 @@ function init()
             var obj2 = JSON.parse(jsonText);
             console.log(obj2);
 
-            // 通过DOM跟新html中部分内容(表格中的数据)
+            // 通过DOM更新html中部分内容(表格中的数据)
             var table = document.getElementById('stuTable');
             var tr = table.insertRow(-1);
             tr.insertCell(-1).innerHTML = obj2.stuid;

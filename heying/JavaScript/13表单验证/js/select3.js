@@ -43,7 +43,7 @@ function closePrompt() {
 // 预先确认
 function priorValidation(inputBox, txt)
 {
-    var input = $(inputBox);
+    var input = $(inputBox); 
     if ( input.value == '' )
     {
         promptInformation(txt);

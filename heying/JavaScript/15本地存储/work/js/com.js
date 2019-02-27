@@ -47,7 +47,7 @@ function addCart()
     {
     if ( select[i].checked == true )
     {
-        var n = shoList.innerHTML += ( tradeNaem[i].innerHTML + '\n' );
+        var n = shoList.innerHTML += ( tradeNaem[i].innerHTML + "<br>" );
         console.log(tradeNaem[i].innerHTML);
         
         // 把复选框对应的商品名称存储到本地
@@ -61,7 +61,7 @@ function addCart()
 // 清除购物车按钮
 function clearCart()
 {
-    var r = confirm("要乖乖清空购物车吗？");
+    var r = confirm("要清空购物车吗？");
     if (r == true) {
         for (var n = 0; n < select.length; n++) {
             select[n].checked = false;
