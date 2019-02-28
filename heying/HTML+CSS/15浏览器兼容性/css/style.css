@@ -91,6 +91,8 @@ body{
     padding: 30px 0;
     text-align: center;
     color: blue;
+    background: #F4F4F4;
+    cursor: pointer;
 }
 #content-brackets{
     color: black;
@@ -181,4 +183,190 @@ body{
 #footer-title span{
     font-size: 16px;
     font-weight: 500;
+}
+
+/* 我的购物车 */
+#myShoppingCart{
+    width: 1320px;
+    height: 703px;
+    margin: auto;
+    background-color: white;
+    display: none;
+    overflow-x: hidden;
+    overflow-y: auto; 
+    position: relative;
+}
+/* 滚动条整体样式 */
+#myShoppingCart::-webkit-scrollbar{
+    width: 4px;
+    height: 4px;
+}
+/* 滚动条里的小方块 */
+#myShoppingCart::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: rgba(65, 65, 65, 0.2);
+}
+/* 滚动条里的轨道 */
+#myShoppingCart::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 0;
+    background: rgba(0,0,0,0.1);
+}
+/* table表格 */
+#tab{
+    min-width: 100%;
+    border: 0;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+#tab thead tr{
+    background: #eee;
+}
+#tab thead tr th{
+    text-align: center;
+    min-width: 220px;
+    height: 25px;
+    line-height: 25px;
+}
+#tab tbody tr td{
+    text-align: center;
+}
+#tab tbody tr td:nth-of-type(2) img{
+    width: 100px;
+    height: 110px;
+    padding: 5px 0;
+}
+#tab tbody tr:nth-child(odd):hover{
+    background: rgba(238, 238, 238, 0.5);
+}
+#tab tbody tr:nth-child(even):hover{
+    background: rgba(238, 238, 238, 0.1);
+}
+#allCheckboxOne{
+    vertical-align: -2px;
+}
+.tableFooter{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    position: relative;
+    text-align: left;
+}
+#set{
+    position: absolute;
+    right: 85px;
+    color: rgb(255, 51, 0);
+}
+#settlement{
+    position: absolute;
+    right: 20px;
+    top: 9px;
+    padding: 2px 5px;
+    background: #FED61B;
+    color: black;
+}
+#order{
+    font-size: 18px;
+    color: blue;
+    font-weight: 600;
+    display: block;
+    margin: 20px 0;
+    cursor: pointer;
+    text-align: left;
+}
+/* 提示框 */
+#prompt{
+    position: fixed;
+    top: 14%;
+    left: 41%;
+    z-index: 1000;
+    display: none;
+}
+#prompt p{
+    /* padding: 80px 120px; */
+    width: 360px;
+    height: 175px;
+    line-height: 175px;
+    text-align: center;
+    background: rgba(248, 248, 248, 0.9);
+    font-size: 20px;
+    font-family: Microsoft YaHei;
+    color: #555;
+    font-weight: 500;
+    letter-spacing: 0px;
+}
+/* 数量按钮 */
+.box{
+    width: 100px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    margin: auto;
+    position: relative;
+}
+.reduce{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    cursor: pointer;
+}
+.reduce::before,.reduce::after,
+.increase::before,.increase::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    height: 50%;
+}
+.reduce::before{
+    width: 15px;
+    border-top: 3px solid;
+    margin: -2px 0 0 -10px;
+    color: #bbb;
+}
+.increase{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10000;
+    cursor: pointer;
+}
+.increase::before{
+    width: 15px;
+    border-top: 3px solid;
+    margin: -2px 0 0 -8px;
+    color: #bbb;
+}
+.increase::after{
+    width: 15px;
+    border-left: 3px solid;
+    margin: -8px 0 0 -2px;
+    color: #bbb;
+}
+.number{
+    display: inline-block;
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+.commodityName{ }
+.tMoney{ }
+/* 遮罩层 */
+.aItemMask{
+    background: rgba(255, 255, 255, 0.3);
 }

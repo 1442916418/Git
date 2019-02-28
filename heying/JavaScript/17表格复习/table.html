@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表格</title>
+</head>
+<body>
+    <input type="button" value="增加信息" onclick="add()">
+    <input type="button" value="获得信息" onclick="getStudent()">
+    <input type="button" value="修改数据" onclick="modify()">
+    <input type="button" value="遍历数组" onclick="getAll()">
+
+    <table border="1" width="500" cellspacing="0" id="stuTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="tbody" align="center"></tbody>
+    </table>
+
+    <script>
+        var stuid = 1;
+        var tTbody = document.getElementById('tbody');
+        function add()
+        {
+            var tr = tTbody.insertRow(-1);
+            tr.insertCell(-1).innerHTML = stuid;
+            tr.insertCell(-1).innerHTML = "hehhe" + stuid;
+            stuid++;
+            tr.insertCell(-1).innerHTML = '21';
+            tr.insertCell(-1).innerHTML = '女';
+            tr.insertCell(-1).innerHTML = '<input type="button" id="del" value="删除" onclick="del(this)">';
+
+            // var tr = document.createElement('tr');
+            // tTbody.appendChild(tr);
+            
+            // var td1 = document.createElement('td');
+            // td1.innerHTML = stuid;
+            // var td2 = document.createElement('td');
+            // td2.innerHTML = '章三' + stuid;
+            // stuid++;
+            // var td3 = document.createElement('td');
+            // td3.innerHTML = 39;
+            // var td4 = document.createElement('td');
+            // td4.innerHTML = '女';
+            // var td5 = document.createElement('td');
+            // td5.innerHTML = '<input type="button" id="del" value="删除">';
+
+            // tr.appendChild(td1);
+            // tr.appendChild(td2);
+            // tr.appendChild(td3);
+            // tr.appendChild(td4);
+            // tr.appendChild(td5);
+        }
+ 
+        function getStudent()
+        {
+            console.log(tTbody.rows[3].cells[0].innerHTML);
+            console.log(tTbody.rows[3].cells[1].innerHTML);
+            console.log(tTbody.rows[3].cells[2].innerHTML);
+            console.log(tTbody.rows[3].cells[3].innerHTML);
+            console.log(tTbody.rows[3].cells[4].innerHTML);
+        }
+
+        function del(t)
+        {
+            // console.log(t.parentNode.parentNode.rowIndex);
+            tTbody.deleteRow(t.parentNode.parentNode.rowIndex-1);
+        }
+
+        function modify()
+        {
+            tTbody.rows[2].cells[1].innerHTML = 'chahahaha';
+        }
+
+        function getAll()
+        {
+            // var trList = tTbody.rows;
+            // for ( var i = 0; i < trList.length; i ++ )
+            // {
+            //     console.log(trList[i].cells[i].innerHTML);
+            // }
+
+            var tTable = document.getElementById('stuTable');
+            var rowList = tTable.tBodies[0].rows;
+            for ( var j = 0; j < rowList.length; j ++ )
+            {
+                console.log(rowList[j].innerText);
+            }
+        }
+
+
+    </script>
+</body>
+</html>

@@ -28,7 +28,6 @@ window.onload = function()
                 document.getElementById('form1').submit();
             }
         }
-        
     }
 
     // 删除提示标签
@@ -49,25 +48,30 @@ window.onload = function()
     // 添加ul、li节点
     function addNode(json)
     {
-        if ( json != null || json != "" )
-        {
-            removeCode();
-            var selBox = $('selectionBox')[0];
-            var listItem = document.createElement('ul');
-            listItem.setAttribute('class', 'listItem');
-            selBox.appendChild(listItem);
+        removeCode();
+        var selBox = $('selectionBox')[0]; 
+        var txt = document.getElementsByClassName('contentBox')[0];
+        var listItem = document.createElement('ul');
+        listItem.setAttribute('class', 'listItem');
+        selBox.appendChild(listItem);
 
-            for ( var i = 0; i < json.length; i ++ )
+        for ( var i = 0; i < json.length; i ++ )
+        {
+            var nextNode = json[i].name;
+
+            var char = txt.value.charAt(0);
+            var nextChar = nextNode.charAt(0);
+
+            if ( char == nextChar )
             {
-                var nextNode = json[i].name;
+                console.log(txt.value);
                 var li = document.createElement('li');
                 var litext = document.createTextNode(nextNode);
                 li.appendChild(litext);
                 listItem.appendChild(li);
             }
-        
-            selBox.style.display = 'block';
         }
+        selBox.style.display = 'block';
     }
 
     // 搜索
@@ -90,8 +94,8 @@ window.onload = function()
             {
                 xhr = new ActiveXObject('Microsoft.XMLHTTP');
             }
-        
-            xhr.open('get', 'data/studentArr.json', true);
+            console.log(xhr.readyState);
+            xhr.open('get', 'data/studentArr.json',true);
             xhr.send();
 
             xhr.onreadystatechange = function()
@@ -99,8 +103,10 @@ window.onload = function()
                 if ( xhr.readyState==4 && xhr.status==200 )
                 {
                     var jsonText = xhr.responseText;
+                    // console.log(jsonText);
     
                     var objArr = JSON.parse(jsonText);
+                    // console.log(objArr);
 
                     addNode(objArr);
                 }

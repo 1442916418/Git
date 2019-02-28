@@ -266,7 +266,7 @@ body{
     display: inline-block;
     width: 30px;
     height: 30px;
-    overflow: hidden;
+    overflow: hidden; 
     position: absolute;
     right: 0;
     top: 0;

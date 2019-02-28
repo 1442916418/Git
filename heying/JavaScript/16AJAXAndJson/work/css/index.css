@@ -11,7 +11,7 @@ html, body{
 input{
     outline: none;
 }
-.search{
+.search{ 
     width: 50%;
     min-width: 510px;
     height: 600px;
@@ -58,16 +58,16 @@ input{
 .selectionBox{
     display: none;
     width: 481px;
-    /* height: 90px; */
     max-height: 200px;
     border: 1px solid #ddd;
     border-top: none;
     box-shadow: 1px 1px 1px #eee;
-    background: rgb(250, 250, 250);
+    background: rgb(253, 253, 253);
     font-size: 16px;
     color: black;
     box-sizing: border-box;
     margin-right: 101px;
+    margin-top: 1px;
     overflow-x: hidden;
     overflow-y: auto; 
     position: relative;
@@ -96,6 +96,6 @@ input{
     color: rgb(0, 0, 124);
     list-style-type: none;
     padding: 0;
-    margin: 5px 5px;
+    margin: 0px 5px;
     cursor: pointer;
 } 

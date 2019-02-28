@@ -213,7 +213,7 @@ function establish(oTab, oCount, index) {
     checkbox.setAttribute('class', 'allCheckbox');
     oTd1.appendChild(checkbox);
     oTr.appendChild(oTd1);
-
+ 
     // 在新建行里添加第二列：图片
     var oTd2 = document.createElement('td');
     var oImg = document.createElement('img');
