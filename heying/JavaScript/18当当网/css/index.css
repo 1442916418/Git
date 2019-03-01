@@ -1,0 +1,295 @@
+.page{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.header{
+    width: 1300px;
+    height: 300px;
+}
+#topAdver{
+    width: 100%;
+    height: 100px;
+    margin: 12px 0;
+}
+/* 主体内容 */
+.contentBox{
+    width: 1300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    border: 1px dashed blue;
+}
+/* 主体内容，左侧部分 */
+.leftContent{
+    box-sizing: border-box;
+    width: 200px;
+    margin-top: 10px;
+}
+.levelOne{
+    width: 100%;
+    border: 1px solid #A4A4A4;
+}
+.primaryDl{
+    width: 100%;
+}
+.primaryDl dt:nth-child(1){
+    height: 30px;
+    line-height: 30px;    
+    background-color: #FFF0D9;
+}
+.primaryDl dt:nth-child(1) span{
+    color: #A52D01;
+    font-weight: 600;
+    margin-left: 12px;
+}
+.c1{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+
+/* 左侧导航通用格式，通用竖线 */
+.ul{
+    margin-left: 12px;
+}
+.currencyUL{
+    display: inline-block;
+}
+.currencyUL li{
+    float: left;
+    line-height: 25px;
+}
+.currencyUL li a{
+    font-size: 15px;
+}
+.currencyUL li::after{
+    content: '|';
+    margin: 0 4px;
+    font-weight: 500;
+}
+.currencyUL li:last-child::after{
+    content: '';
+}
+
+#bookCate{
+    margin-right: 5px;
+}
+.levelTwo{
+    margin-top: 10px;
+}
+/* 左侧导航通用格式，通用外框 */
+.title{
+    width: 90%;
+    padding-bottom: 10px;
+    margin: 10px auto 10px;
+    border-bottom: 1px solid #767676;
+}
+.title span{
+    display: block;
+    line-height: 30px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+.noBorder{
+    border: none;
+    padding: 0;
+}
+/* 主体内容，中间部分 */
+.centerContent{
+    box-sizing: border-box;
+    width: 850px;
+}
+.rotationChart{
+    width: 100%;
+    height: 370px;
+    border: 1px solid #DBDBDC;
+    border-radius: 10px;
+    background-color: #F2F2F3;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 10px;
+}
+#scrollTop{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: -10px;
+}
+.picture{
+    width: 820px;
+    height: 300px;
+    position: absolute;
+    bottom: 15px;
+    left: 14px;
+    box-sizing: border-box;
+
+    border: 1px dashed black;
+}
+.latestProducts{
+    width: 100%;
+    height: 450px;
+    border: 1px solid #B1B1B1;
+    margin-top: 15px;
+}
+.latTitle{
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    background-color: #EBEBEB;
+    border-bottom: 1px solid #E5E5E5;
+}
+.latTitle span:first-child{
+    color: #A52D01;
+    font-weight: 600;
+    margin: 15px;
+}   
+.topBtn{
+    width: 300px;
+    margin-left: 100px;
+    display: inline-block;
+}
+.btn{
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 6px 5px 0;
+    cursor: pointer;
+    background: url('../images/dd_book_bg1.jpg') no-repeat;
+    background-size: 60px 30px;
+}
+/* 鼠标经过样式 */
+.mousePass{
+    background: url('../images/dd_book_bg2.jpg') no-repeat;
+    background-size: 60px 30px;
+    color: #A52D01;
+    font-weight: 600;
+}
+.latTitle span:last-child{
+    float: right;
+    margin-right: 15px;
+}
+.con{
+    width: 100%;
+    height: 414px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.conBox{
+    width: 350px;
+    height: 190px;
+}
+.conLeft{
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+.family{
+    width: 100px;
+    height: 100px;
+}
+.conRight{
+    width: 230px;
+    height: 190px;
+    float: right;
+    padding-top: 5px;
+}
+.conRight li{
+    line-height: 30px;
+}
+.mh::after{
+    content: ':';
+    margin: 0 5px;
+}
+.conRight ul li:nth-child(1){
+    color: #2468B4;
+}
+.conRight ul li:nth-child(4){
+    color: red;
+}
+.emphases{
+    width: 100%;
+    height: 500px;
+    border: 1px solid #B1B1B1;
+    margin-top: 15px;
+}
+#emp{
+    color: #A52D01;
+    font-weight: 600;
+    margin-left: 15px;
+}
+.exhibitionBook{
+    width: 100%;
+    height: 465px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.bookBox{
+    width: 200px;
+    height: 220px;
+}
+.bk{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.focus{
+    width: 120px;
+    height: 100px;
+}
+.bookBox ul{
+    height: 120px;
+}
+.bookBox ul li{
+    float: left;
+    line-height: 25px;
+    margin-left: 20px;
+}
+.bookName{
+    height: 70px;
+    line-height: 25px;
+    color: #2468B4;
+}
+/* 主体内容右侧部分 */
+.rightContent{
+    box-sizing: border-box;
+    width: 220px;
+    margin-top: 10px;
+}
+#bookMess{
+    vertical-align: -4px;
+}
+#rollingUL{
+    height: 450px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+#rollingUL li{
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    border-bottom: 1px dashed #999999;
+}
+#rollingUL li::before{
+    content: '·';
+}
