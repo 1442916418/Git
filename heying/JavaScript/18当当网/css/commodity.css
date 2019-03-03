@@ -1,0 +1,234 @@
+.page{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.header{
+    width: 1300px;
+    height: 300px;
+}
+.topA{
+    display: block;
+}
+#topAdver{
+    width: 100%;
+    height: 100px;
+    margin: 12px 0;
+    vertical-align: bottom;
+}
+.content{
+    width: 1300px;
+    }
+.content ul{
+    width: 500px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+.content ul li{
+    float: left;
+}
+.mh::after{
+    content: ':';
+    margin: 0 5px;
+}
+.jkh::after{
+    content: '>>';
+    margin: 0 5px;
+}
+.conLeft{
+    box-sizing: border-box;
+    float: left;
+    width: 200px;
+    border: 1px solid #DAD8D4;
+}
+.conLeft ol{
+    width: 100%;
+}
+.conLeft ol li{
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    float: left;
+    background-color: #FFF4D7;
+}
+.leftOne{
+    background: repeating-linear-gradient(rgb(252, 161, 51), #D55C07);
+}
+.leftOne span{
+    color: white;
+    padding-left: 15px;
+}
+#afterA{
+    color: #2B6FB7;
+    margin-left: 10px;
+}
+#afterA::before{
+    content: '·';
+}
+.ad{
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #DAD8D4;
+}
+.conRight{
+    box-sizing: border-box;
+    float: right;
+    width: 1085px;
+    border: 1px solid #AFAFAF;
+    position: relative;
+    padding-bottom: 50px;
+}
+.conTop{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #F9D8A9;
+}
+.conTop ol{
+    width: 100%;
+}
+.conTop ol li{
+    float: left;
+    height: 50px;
+    line-height: 50px;
+}
+#arrowRight{
+    vertical-align: 3px;
+    padding: 0 5px;
+}
+#sel{
+    width: 150px;
+}
+.product, .product20, .productPage{
+    width: 30px;
+    height: 20px;
+    margin-left: 10px;
+    vertical-align: -4px;
+    cursor: pointer;
+}
+.conTop ol li:nth-child(1){
+    margin-left: 15px;
+}
+.conTop ol li:nth-child(4){
+    margin-left: 10px;
+}
+#liRight{
+    float: right;
+    margin-right: 15px;
+}
+#productPage{
+    width: 25px;
+    height: 20px;
+    vertical-align: -4px;
+    cursor: pointer;
+    margin: 0 4px;
+}
+.con{
+    width: 95%;
+    height: 220px;
+    margin: 10px auto;
+    border-bottom: 1px solid #737373;
+}
+.pricture{
+    width: 150px;
+    height: 150px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bookList{
+    width: 120px;
+    height: 100px;
+}
+#conUL{
+    float: right;
+    width: 860px;
+    height: 100%;
+}
+#conUL li{
+    line-height: 25px;
+}
+#conUL li:nth-child(1){
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px dashed #767676;
+}
+#a{
+    color: #2B6FB7;
+    margin-right: 2px;
+}
+#conUL li:last-child{
+    text-align: right;
+}
+.m{
+    color: #9D2D12;
+    margin: 0 10px;
+}
+.mar{
+    margin: 0 10px;
+}
+.buy{
+    width: 80px;
+    height: 25px;
+    margin: 0 10px;
+    vertical-align: -4px;
+    cursor: pointer;
+}
+.conButtom{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.conButtom dl{
+    float: right;
+}
+.box{
+    padding: 2px 4px;
+    margin: 0 2px;
+    background-color: #FFCC66;
+    font-size: 12px;
+}
+.pro{
+    height: 20px;
+    vertical-align: -5px;
+    margin: 0 5px;
+}
+.number{
+    width: 30px;
+    height: 20px;
+}
+.ok{
+    margin-right: 50px;
+}
+/* 页脚 */
+.footer{
+    width: 1300px;
+}
+.footer ul{
+    width: 440px;
+    height: 50px;
+    margin: auto;
+}
+.footer ul li{
+    float: left;
+    line-height: 50px;
+    color: #A0351C;
+}
+.footer ul li::after{
+    content: '|';
+    margin: 0 10px;
+}
+.footer ul li:last-child::after{
+    content: '';
+}

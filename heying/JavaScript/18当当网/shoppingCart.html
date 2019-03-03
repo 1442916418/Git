@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <iframe src="header.html" width="1300px" height="175px" frameborder="0" scrolling="no" name="headFrame" marginwidth="0" marginheight="0"></iframe>
+        </div>
+
+        <div class="content">
+            <div class="cart">
+                <div class="cartLogo">
+                    <img src="images/shopping_myshopping.gif" alt="购物车" id="myShopping">
+                    <span>全程免费活动种</span>
+                </div>
+                <ul id="cartUL">
+                    <li class="cartLI">
+                        <span id="liTitle">根据您挑选的商品，当当为您推荐</span>
+                        <img src="images/shopping_arrow_up.gif" alt="上" id="shoppingUp">
+                    </li>
+                    <li id="cartLI2">
+                        <ol class="ol1">
+                            <li>
+                                <a href="#" id="dd">JavaScript DOM 编程艺术</a>
+                                <del>￥39.00</del>
+                                <span class="zs">￥29.30</span>
+                                <span class="gm">购买</span>
+                            </li>
+                            <li>
+                                <a href="#" id="dd">解禁</a>
+                                <del>￥28.00</del>
+                                <span class="zs">￥19.40</span>
+                                <span class="gm">购买</span>
+                            </li>
+                            <li>
+                                <a href="#" id="dd">地王之王（金融危机下房地产行...</a>
+                                <del>￥32.80</del>
+                                <span class="zs">￥25.10</span>
+                                <span class="gm">购买</span>
+                            </li>
+                            <li>
+                                <a href="#" id="dd">逃庄</a>
+                                <del>￥36.00</del>
+                                <span class="zs">￥27.70</span>
+                                <span class="gm">购买</span>
+                            </li>
+                        </ol>
+                        <ol class="ol2">
+                            <li>
+                                <a href="#" id="dd">深入浅出MySQL数据库开发、优...</a>
+                                <del>￥59.00</del>
+                                <span class="zs">￥47.20</span>
+                                <span class="gm">购买</span>
+                            </li>
+                            <li>
+                                <a href="#" id="dd">大王家（马未都、王刚推荐！央...</a>
+                                <del>￥34.80</del>
+                                <span class="zs">￥20.60</span>
+                                <span class="gm">购买</span>
+                            </li>
+                            <li>
+                                <a href="#" id="dd">都市分水师--官场分水小说：一...</a>
+                                <del>￥39.80</del>
+                                <span class="zs">￥30.50</span>
+                                <span class="gm">购买</span>
+                            </li>
+                            <li>
+                                <a href="#" id="dd">国戏（以麻将术解读宦海沉浮...</a>
+                                <del>￥325.00</del>
+                                <span class="zs">￥17.30</span>
+                                <span class="gm">购买</span>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="selected">
+                <div class="selTitle">您已选购以下商品</div>
+                <table border="1" cellspaning="0" cellpadding="0"id="tab">
+                    <thead>
+                        <tr>
+                            <th><span class="name">商品名</span></th>
+                            <th>单品积分</th>
+                            <th>市场价</th>
+                            <th>当当价</th>
+                            <th>数量</th>
+                            <th>删除</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <tr>
+                            <td><a href="#" class="name" id="co">私募（首部揭露资本博弈密码的金融...</a></td>
+                            <td>189</td>
+                            <td>￥32.00</td>
+                            <td>￥18.90（59折）</td>
+                            <td><input type="text" value="1" class="txtBox"></td>
+                            <td><a href="#" id="co" class="del">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" class="name" id="co">小团圆（张爱玲最生米小说遗稿）</a></td>
+                            <td>173</td>
+                            <td>￥28.00</td>
+                            <td>￥17.30（62折）</td>
+                            <td><input type="text" value="1" class="txtBox"></td>
+                            <td><a href="#" id="co" class="del">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" class="name" id="co">不抱怨的世界（畅销全球80国的世界...</a></td>
+                            <td>154</td>
+                            <td>￥24.80</td>
+                            <td>￥15.40（62折）</td>
+                            <td><input type="text" value="2" class="txtBox"></td>
+                            <td><a href="#" id="co" class="del">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" class="name" id="co">福玛特双筒洗衣机XPB20-075</a></td>
+                            <td>358</td>
+                            <td>￥458.00/td>
+                            <td>￥358.00（78折）</td>
+                            <td><input type="text" value="1" class="txtBox"></td>
+                            <td><a href="#" id="co" class="del">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" class="name" id="co">PHP和MySQL Web开发（原书第4版）</a></td>
+                            <td>712</td>
+                            <td>￥95.00</td>
+                            <td>￥71.20（75折）</td>
+                            <td><input type="text" value="1" class="txtBox"></td>
+                            <td><a href="#" id="co" class="del">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" class="name" id="co">法布尔昆虫记(再买￥68.30即可参加“满199元1减10元现金”活动)</a></td>
+                            <td>10</td>
+                            <td>￥198.00</td>
+                            <td>￥130.70(66折)</td>
+                            <td><input type="text" value="1" class="txtBox"></td>
+                            <td><a href="#" id="co" class="del">删除</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="bot">
+                    <div class="botRight">
+                        <ol>
+                            <li><span class="mh">您共节省金额</span>￥<span id="save">233.37</span></li>
+                            <li><span class="mh">可获商品积分</span><span id="integral">1750</span></li>
+                        </ol>
+                        <div class="total">
+                            <span class="mh sp">商品金额总计</span>
+                            <span id="tol">￥626.9</span>
+                        </div>
+                        <img src="images/shopping_balance.gif" alt="结算" id="balance">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <iframe src="footer.html" width="1300px" height="50px" frameborder="0" scrolling="no" name="headFrame" marginwidth="0" marginheight="0"></iframe>
+        </div>
+    </div>
+</body>
+</html>

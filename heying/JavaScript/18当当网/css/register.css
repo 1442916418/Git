@@ -1,0 +1,124 @@
+.page{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.header{
+    width: 1000px;
+    height: 60px;
+    border: 1px double #D2D2D2;
+    background: repeating-linear-gradient(rgb(253, 243, 214), rgb(255, 255, 255));
+}
+#logo{
+    margin-top: 20px;
+    margin-left: 60px;
+}
+.header ul{
+    float: right;
+    margin-right: 50px;
+    margin-top: 30px;
+}
+.header ul li{
+    line-height: 30px;
+    float: left;
+    color: #2D73B6;
+}
+.header ul li a{
+    color: #2D73B6;
+}
+.header ul li::after{
+    content: '|';
+    margin: 0 4px;
+}
+.header ul li:last-child::after{
+    content: '';
+}
+.content{
+    width: 1000px;
+    height: 440px;
+    margin-top: 15px;
+    background: url('../images/reg.png') no-repeat;
+    background-size: 100% 100%;
+}
+.con{
+    width: 95%;
+    height: 60px;
+    margin: 60px auto 0;
+    border-bottom: 1px dotted #CDCDCD;
+}
+#pic{
+    margin-left: 100px;
+}
+.con ul{
+    display: inline-block;
+}
+.con ul li{
+    line-height: 30px;
+    margin-left: 15px;
+}
+#conTitle1{
+    font-size: 18px;
+    font-weight: 600;
+}
+#conTitle2{
+    color: #CD4B27;
+}
+#form{
+    width: 95%;
+    height: 310px;
+    margin: 0 auto;
+}
+#form ul{
+    margin-top: 20px;
+}
+#form ul li{
+    height: 37px;
+    line-height: 37px;
+    padding-left: 60px;
+}
+.n{
+    display: inline-block;
+    width: 130px;
+    text-align: right;
+}
+.n::after{
+    content: ':';
+    margin: 0 5px;
+}
+.male, .girl{
+    margin: 0 3px;
+}
+#province, #city{
+    width: 150px;
+    text-align: center;
+    margin-left: -3px;
+}
+#sub{
+    width: 143px;
+    height: 31px;
+    background: url('../images/register_btn_out.gif') no-repeat;  
+    margin-left: 130px;
+    cursor: pointer;
+}
+#sub:hover{
+    width: 143px;
+    height: 31px;
+    background: url('../images/register_btn_over.gif') no-repeat;  
+    margin-left: 130px;
+    cursor: pointer;
+}
+#form ul li:last-child{
+    margin-top: 10px;
+}
+#footer{
+    width: 1000px;
+    height: 50px;
+    text-align: center;
+}
+#validate{
+    vertical-align: -15px;
+}

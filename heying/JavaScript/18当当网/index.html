@@ -12,7 +12,7 @@
     <div class="page">
         <div class="header">
             <iframe src="header.html" width="1300px" height="175px" frameborder="0" scrolling="no" name="headFrame" marginwidth="0" marginheight="0"></iframe>
-            <a href="#"><img src="images/dd_index_top_adver.jpg" alt="广告" id="topAdver"></a>
+            <a href="#" class="topA"><img src="images/dd_index_top_adver.jpg" alt="广告" id="topAdver"></a>
         </div>
 
         <!-- 主体内容 -->
@@ -342,8 +342,94 @@
                     <img src="images/dd_book_right_adver1.jpg" alt="广告" class="rightAdver">
                     <img src="images/dd_book_right_adver2.gif" alt="广告" class="rightAdver">
                 </div>
+                <div class="seven">
+                    <div class="sevTitle">
+                        <span>近七日畅销榜</span><img src="images/dd_bang.gif" alt="七日榜单" id="bangdan">
+                    </div>
+                    <div class="sevList">
+                        <ul>
+                            <li>励志</li>
+                            <li>旅游</li>
+                            <li>外语</li>
+                            <li>小说</li>
+                            <li>动漫</li>
+                        </ul>
+                        <ol class="listOL">
+                            <li class="listLI">
+                                <div class="r"><img src="images/dd_book_no_01.gif" alt="1" class="book1"></div>
+                                <div class="c"> <img src="images/dd_seven_hearten_01.jpg" alt="书" class="hearten"> </div>
+                                <dt>
+                                    <dl><a href="#">不抱怨的世界</a></dl>
+                                    <dl><span class="mh">作者</span>（美）鲍温</dl>
+                                    <dl><span class="mh">出版社</span>陕西师范</dl>
+                                    <dl><span class="mh">出版时间</span>2009年4月</dl>
+                                </dt>
+                            </li>
+                            <li class="listLI">
+                                <div class="r"><img src="images/dd_book_no_02.gif" alt="1" class="book1"></div>
+                                <div class="c"> <img src="images/dd_seven_hearten_02.jpg" alt="书" class="hearten"> </div>
+                                <dt>
+                                    <dl><a href="#">遇见未知的自己</a></dl>
+                                    <dl><span class="mh">作者</span>张德芬</dl>
+                                    <dl><span class="mh">出版社</span>华夏出版</dl>
+                                    <dl><span class="mh">出版时间</span>2008年1月</dl>
+                                </dt>
+                            </li>
+                            <li class="listLI">
+                                <div class="r"><img src="images/dd_book_no_03.gif" alt="1" class="book1"></div>
+                                <div class="c"> <img src="images/dd_seven_hearten_03.jpg" alt="书" class="hearten"> </div>
+                                <dt>
+                                    <dl><a href="#">活法</a></dl>
+                                    <dl><span class="mh">作者</span>（日）稻盛</dl>
+                                    <dl><span class="mh">出版社</span>东方出版</dl>
+                                    <dl><span class="mh">出版时间</span>2005年3月</dl>
+                                </dt>
+                            </li>
+                            <li><img src="images/dd_book_no_04.gif" alt="1" class="book4">高效能人士的七个习惯</li>
+                            <li><img src="images/dd_book_no_05.gif" alt="1" class="book4">被迫强大</li>
+                            <li><img src="images/dd_book_no_06.gif" alt="1" class="book4">遇见心想事成的自己</li>
+                            <li><img src="images/dd_book_no_07.gif" alt="1" class="book4">世界上最伟大的推销员</li>
+                            <li><img src="images/dd_book_no_08.gif" alt="1" class="book4">我的成功可以复制</li>
+                        </ol>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div class="footer">
+            <ul>
+                <li><span class="fg">公司简介</span></li>
+                <li><span class="fg">诚证英才</span></li>
+                <li><span class="fg">网站联盟</span></li>
+                <li><span class="fg">百货招商</span></li>
+                <li><span class="fg">交易条款</span></li>
+            </ul>
+            <iframe src="footer.html" width="1300px" height="50px" frameborder="0" scrolling="no" name="headFrame" marginwidth="0" marginheight="0"></iframe>
+        </div>
     </div>
+
+    <div class="top" onclick="GoTop()">
+        <div class="t"></div>
+    </div>
+
+    <script>
+        var currentPosition,timer;
+        function GoTop(){
+            timer=setInterval("runToTop()",1);
+        }
+        function runToTop(){
+            // 兼容IE、火狐、谷歌
+            currentPosition=document.documentElement.scrollTop || document.body.scrollTop;
+            currentPosition-=10;    /*调整滚动的值,值大小会影响速度*/
+            if(currentPosition>0){
+                // scrollTo() 方法可把内容滚动到指定的坐标
+                window.scrollTo(0,currentPosition);
+            }else{
+                window.scrollTo(0,0);
+                clearInterval(timer);
+            }
+        }
+        // window.scrollTo(0,document.body.scrollHeight);//页面刷新定位在底部
+     </script>
 </body>
 </html>

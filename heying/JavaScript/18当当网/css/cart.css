@@ -1,0 +1,196 @@
+.page{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.header{
+    width: 1300px;
+    height: 170px;
+}
+.content{
+    width: 1300px;
+    box-sizing: border-box;
+}
+.cart{
+    width: 100%;
+}
+.cartLogo{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    padding-top: 10px;
+}
+#cartUL{
+    width: 100%;
+    height: 170px;
+    border: 1px solid #A1A1A1;
+}
+#cartUL li{
+    float: left;
+}
+.cartLI{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background: repeating-linear-gradient(#FEFDF9, rgb(253, 246, 224));
+}
+#liTitle{
+    float: left;
+    margin-left: 10px;
+}
+#shoppingUp{
+    float: right;
+    margin-right: 10px;
+    margin-top: 7px;
+}
+#cartLI2{
+    width: 100%;
+    height: 130px;
+    box-sizing: border-box;
+}
+.ol1, .ol2{
+    margin: 5px 0;
+    width: 648px;
+    height: 120px;
+}
+.ol1 li, .ol2 li{
+    box-sizing: border-box;
+    width: 95%;
+    height: 30px;
+    line-height: 30px;
+}
+.ol1{
+    float: left;
+    border-right: 1px dotted #B2B2B2;
+}
+.ol2{
+    float: right;
+}
+.ol1 li, .ol2 li{
+    font-size: 14px;
+}
+.ol1 li del, .ol2 li del{
+    color: #999999;
+    margin-left: 50px;
+}
+#dd{
+    display: inline-block;
+    width: 350px;
+    color: #1D67B4;
+    margin-left: 20px;
+}
+#dd::before{
+    content: '·';
+}
+.zs{
+    margin-left: 20px;
+}
+.gm{
+    color: #EE671C;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.selected{
+    width: 100%;
+    margin-top: 20px;
+    }
+.selTitle{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 600;
+}
+#tab{
+    width: 100%;
+    border: 1px solid #999999;
+}
+#tab thead tr th,
+#tab tbody tr td{
+    border: none;
+    text-align: center;
+}
+#tab thead tr{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background-color: #D8E4C6;
+}
+#tab thead tr th:nth-child(1),
+#tab tbody tr td:nth-child(1){
+    width: 600px;
+    text-align: left;
+}
+.name{
+    margin-left: 40px;
+}
+#tbody tr{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px dashed #CCCCCC;
+}
+.txtBox{
+    width: 40px;
+    height: 20px;
+}
+#co{
+    color: #1D67B4;
+}
+#bot{
+    width: 100%;
+    height: 100px;
+    background-color: #CDDBB8;
+}
+.botRight{
+    width: 650px;
+    height: 100px;
+    float: right;
+}
+.botRight ol{
+    display: inline-block;
+    width: 220px;
+    height: 80px;
+    border-right: 1px solid black;
+    margin: 10px 0;
+}
+.botRight ol li{
+    width: 220px;
+    height: 40px;
+    line-height: 40px;
+}
+.mh{
+    margin-left: 20px;
+}
+.mh::after{
+    content: ':';
+    margin: 0 5px;
+}
+#save, #integral{
+    color: #BD4104;
+}
+.sp{
+    color: black;
+}
+.total{
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    font-weight: 600;
+    color: #BD4104;
+    font-size: 20px;
+    vertical-align: 30px;
+}
+#balance{
+    width: 110px;
+    height: 40px;
+    margin-left: 10px;
+    vertical-align: 15px;
+    cursor: pointer;
+}
+.footer{
+    width: 1300px;
+}

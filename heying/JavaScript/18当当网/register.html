@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <img src="images/logo.gif" alt="logo" id="logo">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#">商品展示页</a></li>
+                <li><a href="#">购物车</a></li>
+                <li><a href="login.html">登录</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="con">
+                <img src="images/register_pic_01.gif" alt="图片" id="pic">
+                <ul>
+                    <li id="conTitle1">HI，欢迎注册当当网！尽享多重优惠服务。</li>
+                    <li id="conTitle2">您所提供的的资料不会做其他用途，敬请按下填写。</li>
+                </ul>
+            </div>
+            <form action="" method="get" id="form">
+                <ul>
+                    <li><span class="n">Email地址</span><input type="text" name="email" class="txt"><div></div></li>
+                    <li><span class="n">设置昵称</span><input type="text" name="name" class="txt"><div></div></li>
+                    <li><span class="n">设定密码</span><input type="text" name="pwd" class="txt"><div></div></li>
+                    <li><span class="n">再输入一次密码</span><input type="text" name="ipwd" class="txt"><div></div></li>
+                    <li><span class="n">性别</span><input type="radio" name="sex" class="male" checked>男<input type="radio" name="sex" class="girl">女</li>
+                    <li>
+                        <span class="n">所在地区</span>
+                        <select name="" id="province" onchange="changeCity(this)"  onkeypress="pressEnter(event, form.city)">
+                            <option>选择省份</option>
+                        </select>
+                        <select name="" id="city"  onkeypress="pressEnter(event, submit)">
+                            <option>选择城市</option>
+                        </select>
+                    </li>
+                    <li>
+                        <div id="sub"></div>
+                    </li>
+                </ul>
+            </form>
+        </div>
+
+        <div id="footer">
+            <span>Copyright(C) 当当网 2004-2009,All Rights Reserved</span>
+            <img src="images/validate.gif" alt="徽标" id="validate">
+            <span>京ICP证041189号 音像制品经验许可证 京音网8号</span>
+        </div>
+    </div>
+
+    <script src="js/register.js"></script>
+</body>
+</html>

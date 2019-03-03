@@ -12,10 +12,35 @@ textarea{ overflow: auto;resize: none; }
 label,summary{ cursor: default; }
 a,button,input{ cursor: pointer; }
 h1,h2,h3,h4,h5,h6,em,strong,b{ font-weight: bold; }
-del,ins,u,s,a,a:hover{ text-decoration: none; }
+/* del,ins, */
+u,s,a,a:hover{ text-decoration: none; }
 body{ background: #fff; }
 a:link{ color: black; }
 a:visited{ color: black; }
 a:hover{ color: red; }
 a:active{ color: yellow; }
 body,textarea,input,button,select,keygen,legend{ font: normal 16px/15px 微软雅黑,宋体; }
+/* 返回顶部 */
+.top{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(221, 220, 220);
+    border-radius: 50%;
+    position: fixed;
+    right: 150px;
+    bottom: 30px;
+}
+.t{
+    width: 50px;
+    height: 50px;
+    background: url('../images/top22.png') no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
+.t:hover{
+    width: 50px;
+    height: 50px;
+    background: url('../images/top2.png') no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
