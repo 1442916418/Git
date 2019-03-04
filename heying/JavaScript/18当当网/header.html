@@ -11,11 +11,11 @@
 </head>
 <body>
     <div class="header">
-        <div class="topNavigation"> 
+        <div class="topNavigation">  
             <ul>
                 <li id="welcome">您好！欢迎光临当当网</li>
                 <li> 
-                    [<a href="login.html" id="login">登陆</a><a href="#">免费注册</a>]
+                    [<a href="login.html" id="login">登陆</a><a href="register.html">免费注册</a>]
                 </li>
             </ul>
             <ol>
@@ -23,7 +23,19 @@
                 <li><a href="javascript:void(0);">个性化推荐</a></li>
                 <li><a href="javascript:void(0);">礼品卡</a></li>
                 <li><a href="javascript:void(0);">团购</a></li>
-                <li><a href="javascript:void(0);">我的当当</a><img src="images/dd_arrow_down.gif" alt="我的当当" id="down"></li>
+                <li id="position">
+                    <a href="javascript:void(0);">我的当当</a>
+                    <img src="images/上.png" alt="我的当当" id="down">
+                    <div id="selBox">
+                        <dt>
+                            <dl><a href="javascript:void(0);">银铃铛抵现</a></dl>
+                            <dl><a href="javascript:void(0);">我的收藏</a></dl>
+                            <dl><a href="javascript:void(0);">我的余额</a></dl>
+                            <dl><a href="javascript:void(0);">我的评论</a></dl>
+                            <dl><a href="javascript:void(0);">礼券/礼品卡</a></dl>
+                        </dt>
+                    </div>
+                </li>
                 <li><a href="javascript:void(0);">帮助</a></li>
             </ol>
         </div>
@@ -80,5 +92,7 @@
             </ul>
         </div>
     </div>
+
+    <script src="js/header.js"></script>
 </body>
 </html>

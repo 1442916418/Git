@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>注册</title>
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reset.css"> 
     <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
+    <div class="prompt">
+        <div class="information"></div>
+    </div>
     <div class="page">
         <div class="header">
             <img src="images/logo.gif" alt="logo" id="logo">
@@ -28,24 +31,42 @@
                     <li id="conTitle2">您所提供的的资料不会做其他用途，敬请按下填写。</li>
                 </ul>
             </div>
-            <form action="" method="get" id="form">
+            <form action="login.html" method="get" id="form">
                 <ul>
-                    <li><span class="n">Email地址</span><input type="text" name="email" class="txt"><div></div></li>
-                    <li><span class="n">设置昵称</span><input type="text" name="name" class="txt"><div></div></li>
-                    <li><span class="n">设定密码</span><input type="text" name="pwd" class="txt"><div></div></li>
-                    <li><span class="n">再输入一次密码</span><input type="text" name="ipwd" class="txt"><div></div></li>
-                    <li><span class="n">性别</span><input type="radio" name="sex" class="male" checked>男<input type="radio" name="sex" class="girl">女</li>
+                    <li>
+                        <span class="n">Email地址</span>
+                        <input type="text" name="email" class="txt" id="email" onchange="checkeEmail()" onkeypress="pressEnter(event, form.name)" onfocus="clearStyle(this)">
+                        <div></div>
+                    </li>
+                    <li>
+                        <span class="n">设置昵称</span>
+                        <input type="text" name="name" class="txt" id="name" onchange="checkName()" onkeypress="pressEnter(event, form.pwd)" onfocus="clearStyle(this)">
+                        <div></div>
+                    </li>
+                    <li>
+                        <span class="n">设定密码</span>
+                        <input type="password" name="pwd" class="txt" id="logPwd" onchange="checkPwd()" onkeypress="pressEnter(event, form.conPwd)" onfocus="clearStyle(this)">
+                        <div></div>
+                    </li>
+                    <li>
+                        <span class="n">再输入一次密码</span>
+                        <input type="password" name="ipwd" class="txt" id="conPwd" onchange="checkConPwd()" onkeypress="pressEnter(event, form.province)" onfocus="clearStyle(this)">
+                        <div></div>
+                    </li>
+                    <li>
+                        <span class="n">性别</span>
+                        <input type="radio" name="sex" class="male" checked>男<input type="radio" name="sex" class="girl">女</li>
                     <li>
                         <span class="n">所在地区</span>
-                        <select name="" id="province" onchange="changeCity(this)"  onkeypress="pressEnter(event, form.city)">
+                        <select name="province" id="province" onchange="changeCity(this)"  onkeypress="pressEnter(event, form.city)">
                             <option>选择省份</option>
                         </select>
-                        <select name="" id="city"  onkeypress="pressEnter(event, submit)">
+                        <select name="city" id="city"  onkeypress="pressEnter(event, form.sub)">
                             <option>选择城市</option>
                         </select>
                     </li>
                     <li>
-                        <div id="sub"></div>
+                        <input type="button" id="sub" name='sub' onclick="checkSubmit()" onkeypress="pressEnter(event, form.email)"/>
                     </li>
                 </ul>
             </form>

@@ -53,6 +53,7 @@
             // 先关闭定时器，防止重复使用运动框架函数
             clearInterval(timer);
             timer = setInterval(function(){
+                console.log(iTarget);
                 // 计算速度，除的数字越大物体移动越慢，越小物体移动越快
                 var speedLeft = (iTarget-oLeft.offsetTop) / 4;
                 var speedRight = (iTarget-oRight.offsetTop) / 4;

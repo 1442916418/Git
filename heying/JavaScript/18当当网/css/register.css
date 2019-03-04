@@ -103,6 +103,7 @@
     background: url('../images/register_btn_out.gif') no-repeat;  
     margin-left: 130px;
     cursor: pointer;
+    border: none;
 }
 #sub:hover{
     width: 143px;
@@ -121,4 +122,89 @@
 }
 #validate{
     vertical-align: -15px;
+}
+/* 提示信息 */
+input{
+    outline: none;
+}
+/* 输入框后的提示信息框 */
+.error{
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    border: 1px solid #A09F9D;
+    background-color: #FEF4D0;
+    color: #CB2315;
+    font-size: 14px;
+    vertical-align: 1px;
+}
+.ok{
+    display: inline-block;
+    padding: 0 10px;
+    height: 20px;
+    line-height: 20px;
+    border: 1px solid green;
+    background-color: greenyellow;
+    color: green;
+    font-size: 12px;
+    vertical-align: 1px;
+}
+
+/* 输入框获取焦点后的颜色 */
+.inputBox{
+    border: 1px solid #00bfff;
+    background-color: #FEF4D0;
+}
+/* 提示框  兼容插件*/
+.prompt{
+    width: 350px;
+    height: 150px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 4px 10px -1px #ccc;
+            box-shadow: 0 4px 10px -1px #ccc;
+    background-color: rgb(253, 253, 253);
+    position: fixed;
+    top: 5%;
+    left: 41%;
+    z-index: 1000;
+    display: none;
+    overflow: hidden;
+}
+.information{
+    width: 100%;
+    line-height: 30px;
+    margin: 60px auto;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 16px;
+    color: rgb(24, 24, 24);
+}
+#addAnimation{
+    display: block;
+    -webkit-animation: add 2s;
+            animation: add 2s;
+}
+
+@-webkit-keyframes add{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes add{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
 }

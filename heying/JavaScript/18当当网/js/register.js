@@ -75,3 +75,237 @@ function changeCity(proSelect)
         oCitySelect.appendChild(oOption);
     }
 }
+// 鼠标移入清除输入框后面的提示信息
+function clearStyle(t)
+{
+    var nextSiblingNode = t.nextElementSibling;
+    nextSiblingNode.innerHTML = '';
+    nextSiblingNode.className = '';
+}
+// 提示信息
+function promptInformation(txt) {
+    var prompt = document.getElementsByClassName('prompt')[0];
+    var subElement = prompt.children[0];
+
+    subElement.innerHTML = txt;
+    prompt.setAttribute('id', 'addAnimation');
+    setTimeout("closePrompt()", 1500);
+}
+// 弹窗隐藏
+function closePrompt() {
+    var prompt = document.getElementsByClassName('prompt')[0];
+    prompt.setAttribute('id', '');
+}
+// 鼠标移入清除输入框后面的提示信息
+function clearStyle(t)
+{
+    var prompt = t.nextElementSibling;
+    t.value = '';
+    t.style.border = '1px solid #ccc';
+    t.style.background = 'white';
+    prompt.innerHTML = '';
+    prompt.className = '';
+}
+// 回车切换到下一个输入框
+function pressEnter(ev, input)
+{
+    // console.log(ev,ev.keyCode); // 获得按下的键
+    var ev = ev || event;
+    if ( ev.keyCode == 13 )
+    {
+        ev.preventDefault();    // 阻止默认操作(阻止提交表单), ie9下无效
+        input.focus();          // 传入的文本框获得焦点
+    }
+}
+// 预先确认
+function priorValidation(inputBox, txt)
+{
+    var input = document.getElementById(inputBox); 
+    if ( input.value == '' )
+    {
+        promptInformation(txt);
+    }
+}
+// 改变样式。id：文本框。state：状态。txt：提示文本。
+function changeStyle(id, state, txt)
+{
+    var inputID = $(id);    
+    var prompt = inputID.nextElementSibling;
+    if ( state == true )
+    {
+        prompt.className = 'ok';
+        prompt.innerHTML = '正确';
+        inputID.style.border = '1px solid greenyellow';
+        inputID.style.background = 'white';
+    }
+    else
+    {
+        prompt.innerHTML = txt;
+        prompt.className = 'error';
+        inputID.style.border = '1px solid #A09F9D';
+        inputID.style.background = '#FEF4D0';
+    }
+}
+function checkeEmail()
+{
+    var eEmail = $('email');
+    var state = true;
+    if ( /^[1-9|a-z|A-Z][0-9a-zA-Z]{2,17}@[a-zA-Z]{1,}\.[a-zA-Z]{1,10}$/.test(eEmail.value) )
+    {
+        state = true;
+        changeStyle('email', state );
+        return state;
+    }
+    else
+    {
+        state = false;
+        var str = eEmail.value.split('');
+        // console.log(str, eEmail.value);
+
+        // 如果不等于true则提示
+        if ( !/[1-9|a-z|A-Z]/.test(str[0]) )
+        {
+            changeStyle('email', state, '电子邮件必须以数字1~9或大小写字母开头');
+        }
+        else if ( !/^[1-9|a-z|A-Z][0-9a-zA-Z]{2,17}/.test(eEmail.value) )
+        {
+            changeStyle('email', state, '电子邮件@符前过短或过长(必须是2~17位之间的数字或字母)');
+        }
+        else if ( !/^[1-9|a-z|A-Z][0-9a-zA-Z]{2,17}@/.test(eEmail.value) )
+        {
+            changeStyle('email', state, '电子邮件必须包含@符');
+        }
+        else if ( !/^[1-9|a-z|A-Z][0-9a-zA-Z]{2,17}@[a-zA-Z]{1,}/.test(eEmail.value) )
+        {
+            changeStyle('email', state, '电子邮件@符后必须是1位或多位的数字或字母');
+        }
+        else if ( !/^[1-9|a-z|A-Z][0-9a-zA-Z]{2,17}@[a-zA-Z]{1,}\./.test(eEmail.value) )
+        {
+            changeStyle('email', state, '电子邮件必须包含.点');
+        }
+        else if ( !/^[1-9|a-z|A-Z][0-9a-zA-Z]{2,17}@[a-zA-Z]{1,}\.[a-zA-Z]{1,10}$/.test(eEmail.value) )
+        {
+            changeStyle('email', state, '电子邮件.点后面必须包含1~10位的数字或字母');
+        }
+        return state;
+    }
+}
+function checkName()
+{
+    var name = $('name');
+    var state = true;
+    if ( /[\u4E00-\u9FA5]/.test(name.value) )
+    {
+        state = true;
+        changeStyle('name', state );
+        return state;
+    }
+    else
+    {
+        state = false;
+        if ( /^[^\u4E00-\u9FA5]/.test(name.value) )
+        {
+            changeStyle('name', state, '必须为汉字');
+        }
+        return state;
+    }
+}
+// 判断登陆密码
+function checkPwd()
+{
+    var pwd = $('logPwd');
+    var state = true;
+    if ( /^[a-zA-Z\d]{4,10}$/.test(pwd.value) )
+    {
+        state = true;
+        changeStyle('logPwd', state);
+        return state;
+    }
+    else
+    {
+        state = false;
+        var str = pwd.value.split('');
+        if ( str.length < 4 || str.length > 10 )
+        {
+            changeStyle('logPwd', state, '密码过短或超出');
+        }
+        else 
+        {
+            for ( var i = 0; i < str.length; i ++ )
+            {
+                if ( /[^a-zA-Z]/.test(str[i]) == false )
+                {
+                    changeStyle('logPwd', state, '密码只能由数字/字母组成');
+                    break;
+                }
+            }
+        }
+        return state;
+    }
+}
+// 确认密码
+function checkConPwd()
+{
+    var logPwd = $('logPwd'); // 登陆密码
+    var conPwd = $('conPwd'); // 确认密码
+    var state = true;
+    if ( logPwd.value == conPwd.value )
+    {
+        state = true;
+        changeStyle('logPwd', state );   
+        changeStyle('conPwd', state );
+        return state;
+    }
+    else
+    {
+        state = false;
+        var strLogPwd = logPwd.value.split('');
+        var strConPwd = conPwd.value.split('');
+        if ( strLogPwd.length != strConPwd.length )
+        {
+            changeStyle('conPwd', state, '两次密码长度不一致');
+        }
+        else
+        {
+            for ( var i = 0; i < strLogPwd.length; i ++ )
+            {
+                if ( strLogPwd[i] != strConPwd[i] )
+                {
+                    changeStyle('conPwd', state, '两次密码输入不一致');
+                    break;
+                }
+            }
+        }
+        return state;
+    }
+}
+function checkSubmit()
+{
+    var result = checkName();
+    if ( !result )
+    {
+        priorValidation('email', '请输入邮箱');
+        return;
+    }
+    result = checkName();
+    if ( !result )
+    {
+        priorValidation('name', '请输入昵称');
+        return;
+    }
+    result = checkPwd();
+    if ( !result )
+    {
+        priorValidation('logPwd', '请输入密码');
+        return;
+    }
+    result = checkConPwd();
+    if ( !result )
+    {
+        priorValidation('conPwd', '请输入正确密码');
+        return;
+    }
+    
+
+    document.getElementById('form').submit();
+}

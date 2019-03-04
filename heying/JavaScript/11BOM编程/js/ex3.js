@@ -72,7 +72,7 @@ window.onload = function () {
     }
 
     // 定义一个定时器，每两秒执行一次执行运动函数
-    var timer = setInterval(next, 2000);
+    // var timer = setInterval(next, 2000);
 
     oPlay.onmouseover = function () {
         // 当鼠标移入时结束定时器

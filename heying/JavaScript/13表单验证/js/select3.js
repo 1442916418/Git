@@ -15,7 +15,7 @@ function changeStyle(id, state, own)
     {
         $(id).innerHTML = 'x';
         $(id).className = 'error';
-        own.value = '';
+        own.value = ''; 
     }
 }
 // 鼠标移入清除输入框后面的提示信息

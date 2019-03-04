@@ -128,14 +128,11 @@
     margin-right: 105px;
     background: url('../images/login_icon_bg_01.gif') no-repeat;
     background-position: left bottom;
+    cursor: pointer;
 }
-/* 鼠标经过登录按钮 */
-.b{
-    width: 78px;
-    height: 30px;
-    margin-right: 105px;
+.formBtn:hover{
     background: url('../images/login_icon_bg_01.gif') no-repeat;
-    background-position: 78px bottom;
+    background-position: -78px bottom; 
 }
 .reg{
     width: 335px;
@@ -161,15 +158,9 @@
     margin-top: 10px;
     cursor: pointer;
 }
-/* 鼠标经过 */
-.registerBtn{
-    display: inline-block;
-    width: 144px;
-    height: 30px;
+.register:hover{
     background: url('../images/login_icon_bg_01.gif') no-repeat;
-    background-position: top 144px;
-    margin-left: 160px;
-    margin-top: 10px;
+    background-position: -144px top;
 }
 .listItem{
     width: 570px;
@@ -206,4 +197,57 @@
 .footer{
     width: 1300px;
     margin-top: 20px;
+}
+/* 提示框  兼容插件*/
+.prompt{
+    width: 350px;
+    height: 150px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 4px 10px -1px #ccc;
+            box-shadow: 0 4px 10px -1px #ccc;
+    background-color: rgb(253, 253, 253);
+    position: fixed;
+    top: 5%;
+    left: 41%;
+    z-index: 1000;
+    display: none;
+    overflow: hidden;
+}
+.information{
+    width: 100%;
+    line-height: 30px;
+    margin: 60px auto;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 16px;
+    color: rgb(24, 24, 24);
+}
+#addAnimation{
+    display: block;
+    -webkit-animation: add 2s;
+            animation: add 2s;
+}
+
+@-webkit-keyframes add{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes add{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
 }
