@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>返回或者设置元素内容向上滚动的尺寸(垂直无缝滚动)</title>
+    <style type="text/css">
+        #box {
+            width: 150px;
+            height: 200px;
+            background-color: green;
+            overflow: auto;
+        }
+
+        #inner {
+            width: 25px;
+            height: 550px;
+            line-height: 150px;
+            text-align: center;
+            margin-top: 20px;
+            background-color: #ccc;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let obox = document.getElementById("box");
+            let oinner = document.getElementById("inner");
+            let scrollNum = 550 + 20 - 200;
+            function done() {
+                obox.scrollTop++;
+                if (scrollNum == obox.scrollTop) {
+                    clearInterval(flag);
+                }
+            }
+            let flag = setInterval(done, 10);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <div id="inner"></div>
+    </div>
+    <!-- 上述代码实现了滚动条连续不断滚动效果，到达底部后，会自动停止定时器函数的执行。
+代码分析如下：
+（1）.上述代码中，每一次调用done函数，即可实现scrollTop属性值加1，也就是向上滚动一像素。
+（2）.然后通过定时器函数setInterval每隔10毫秒调用一次done函数，即可实现连续滚动效果。
+（3）.这也是垂直无缝滚动的实现原理之一，当然上述代码很不完善。
+（4）.当滚动到滚动到最顶端之后，最好要停止定时器函数的执行，否则就是白白消耗资源。
+（5）.判断内容是否到达顶端（也就是滚动条拖动块到达低端）非常简单，向上滚动的尺寸就是子在垂直方位所占据空间被遮挡的部分，子元素在垂直方位所占据空间的尺寸是550（height高度）+20（上外边距）=570，能够直接被观测到的高度就是父元素的高度（200），所以向上滚动的所有尺寸是550+20-200。 -->
+</body>
+
+</html>

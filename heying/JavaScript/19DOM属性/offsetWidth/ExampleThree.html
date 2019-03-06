@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>返回元素偏移宽度</title>
+    <style type="text/css">
+        #box {
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            background: red;
+            text-align: center;
+            font-size: 12px;
+            border: 10px solid blue;
+            padding-left: 10px;
+            overflow: auto;
+        }
+
+        #ant {
+            width: 100px;
+            height: 200px;
+            background: green;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let odiv = document.getElementById("box");
+            console.log(odiv.offsetWidth);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <div id="ant"></div>
+    </div>
+    <!-- 代码分析如下：
+（1）.内部div高度较大，所以父div元素会出现滚动条。
+（2）.滚动条自然有一定的宽度（或者说厚度），当前在谷歌浏览器下宽度值为17px，其他浏览器可能不同。
+（3）.offsetWidth包括滚动条的宽度，滚动条是向内占据宽度，也就是滚动条不额外增加offsetWidth值。 -->
+</body>
+
+</html>

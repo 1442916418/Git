@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="http://www.softwhy.com/" />
+<title>左偏移量</title>
+<style type="text/css">
+*{margin:0px;padding:0px;}
+body{padding:50px;margin:50px;}
+#main{width:300px;height:300px;background:red;position:relative;}
+#box{width:200px;height:200px;background:blue;}
+#inner{
+  width:100px;
+  height:100px;
+  line-height:100px;
+  background:green;
+  text-align:center;
+  margin:20px;
+}
+</style>
+<script>
+window.onload=function(){
+  let oinner=document.getElementById("inner");
+  oinner.innerHTML=oinner.offsetLeft;
+}
+</script>
+</head>
+<body>
+  <div id="main">
+    <div id="box">
+      <div id="inner"></div>
+    </div>
+  </div>
+
+    <!-- main元素采用相对定位，那么inner元素offsetParent属性返回值是main元素对象。
+    也就是inner元素偏移是以main元素为参考对象，最终结果是inner元素的左外边距20px。 -->
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>scrollLeft属性可以返回或者设置元素内容向左滚动的尺寸(也就是被元素左侧所遮挡的尺寸，或者说滚动条向右滚动的距离)</title>
+    <style type="text/css">
+        #box {
+            width: 200px;
+            height: 100px;
+            background-color: green;
+            margin: 0px auto;
+            overflow: auto;
+        }
+
+        #inner {
+            width: 380px;
+            height: 20px;
+            text-align: center;
+            margin-top: 20px;
+            background-color: #ccc;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let obox = document.getElementById("box");
+            let oinner = document.getElementById("inner");
+            obox.scrollLeft = 50;
+            console.log(obox.scrollLeft);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <div id="inner">本站url地址是www.softwhy.com</div>
+    </div>
+    <!-- 需要有两点需要特别注意：
+（1）.设置的值是一个数字，不能是带有单位的字符串，返回值也是如此。
+（2）.不要误认为内容向左滚动的尺寸，就是上图中标出滚动条处的尺寸，图中距离仅具有标识意义。
+上面的代码效果都是静态的，下面再分享一个动态效果，更加有利于理解。 -->
+</body>
+
+</html>

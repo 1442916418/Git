@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>scrollLeft属性可以返回或者设置元素内容向左滚动的尺寸(也就是被元素左侧所遮挡的尺寸，或者说滚动条向右滚动的距离)</title>
+    <style type="text/css">
+        #box {
+            width: 200px;
+            height: 100px;
+            background-color: green;
+            margin: 0px auto;
+            overflow: auto;
+        }
+
+        #inner {
+            width: 600px;
+            height: 30px;
+            margin-top: 20px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let obox = document.getElementById("box");
+            let oinner = document.getElementById("inner");
+            function done() { obox.scrollLeft++; }
+            setInterval(done, 10);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <div id="inner">蚂蚁部落欢迎您，只有奋斗才会有美好的未来</div>
+    </div>
+    <!-- 每调用一次此方法，外层div元素的scrollLeft属性值加1。
+也就是外层div元素内容向左滚动1px。
+最后通过定时器方法setInterval每隔10毫秒调用一次done函数。
+那么就在视觉上形成了不间断滚动效果，这也是当前线上大多数水平无缝滚动效果的原理。
+当然上述代码仅仅是一个简单的对scrollLeft属性的演示，非常不完善。 -->
+</body>
+
+</html>

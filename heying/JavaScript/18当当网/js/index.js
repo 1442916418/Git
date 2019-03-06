@@ -181,12 +181,21 @@ for ( var i = 0; i < listLI.length; i ++ )
 // 滚动广告
 window.onscroll = function()
 {
-    var oRight = $id('couplet');
-    // 获取滚动条的位置
-    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;    
+    var oRight = $id('couplet');    // 获取滚动广告框
+    var t = $cl('top')[0];          // 获取回到顶部按钮
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;      // 获取滚动条的位置
+
+    if ( scrollTop > 100 )
+    {
+        t.style.display = 'block';
+    }
+    else
+    {
+        t.style.display = 'none';
+    }
+
     // 把可视区的高度 减去 div的高度除2 加上 滚动条纵坐标的位置
     startMovePicture(parseInt((document.documentElement.clientHeight-oRight.offsetHeight) / 4 + scrollTop));
-    // console.log(parseInt((document.documentElement.clientHeight-oRight.offsetHeight) / 4 + scrollTop));
 }
 
 // 悬浮运动框架函数

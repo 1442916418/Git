@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>返回元素对象</title>
+    <style type="text/css">
+        #box {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            background: red;
+        }
+
+        #middle {
+            width: 200px;
+            height: 100px;
+            background: blue;
+        }
+
+        #inner {
+            width: 50px;
+            height: 50px;
+            background: green;
+            line-height: 50px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let inner = document.getElementById("inner");
+            inner.innerHTML = inner.offsetParent.id;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <div id="middle">
+            <div id="inner"></div>
+        </div>
+    </div>
+
+    <!-- 上述代码可以获取inner元素的offsetParent属性值。
+代码分析如下：
+（1）.inner祖先元素中，box元素采用相对定位。
+（2）.那么inner的offsetParent属性返回值就是box元素。
+（3）.所以最终将box元素的id属性值写入inner元素。 -->
+</body>
+
+</html>

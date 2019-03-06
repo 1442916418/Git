@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>返回指定元素客户区高度</title>
+    <style type="text/css">
+        #ant {
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            background: red;
+            border: 10px solid green;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            odiv = document.getElementById("ant");
+            odiv.innerHTML = odiv.clientHeight;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="ant"></div>
+    <!-- 上述代码可以计算出clientHeight属性值为140，并将其写入div中。140=100+20+20。
+    特别说明：此属性返回的是一个数字140，不带单位，但默认单位是像素。 -->
+</body>
+
+</html>

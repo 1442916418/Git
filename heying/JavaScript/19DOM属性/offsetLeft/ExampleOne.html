@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>左边界偏移量</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            padding: 50px;
+            margin: 50px;
+        }
+
+        #main {
+            width: 300px;
+            height: 300px;
+            background: red;
+            margin: 20px;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+
+        #inner {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            background: green;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let oinner = document.getElementById("inner");
+            oinner.innerHTML = oinner.offsetLeft;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="box">
+            <div id="inner"></div>
+        </div>
+    </div>
+
+    <!-- 上述代码可以获取inner元素的offsetLeft属性值。
+    确定偏移参考元素inner.offsetParent是关键，规则如下：
+    （1）.如果inner具有定祖先元素，那么offsetParent返回值是第一个定位元素。
+    （2）.如果inner没有定位祖先元素，那么offsetParent返回值是body。
+    代码中，inner并没有定位的祖先元素，那么offsetParent返回值是body元素。
+    offsetLeft的返回值就是inner元素左侧距离body左边界的尺寸：
+    body的左外边距 + body的左内边距 + main的左外边距，等于120px。 -->
+</body>
+
+</html>

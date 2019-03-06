@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>返回元素高度</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #box {
+            height: 600px;
+            width: 800px;
+            line-height: 600px;
+            color: white;
+            background-color: blue;
+        }
+
+        .float {
+            width: 800px;
+            height: 200px;
+            background-color: red;
+            float: left;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let odiv = document.getElementById("box");
+            odiv.innerHTML = document.body.offsetHeight;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box"></div>
+    <div class="float"></div>
+    <!-- 前面介绍的都是普通HTML元素的offsetHeight属性值。
+对于body，offsetHeight返回值有一点特别，那么就是浮动元素向下延展的高度不在计算范围内。
+比如上面的代码，底部的div是浮动的，那么它的高度不在计算范围之内。
+大家可以将float属性删除，再看一下offsetHeight属性的返回值。 -->
+</body>
+
+</html>

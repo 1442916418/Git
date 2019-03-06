@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>返回元素的内容高度</title>
+    <style type="text/css">
+        #ant {
+            width: 120px;
+            height: 210px;
+            text-align: center;
+            line-height: 60px;
+            background: #ccc;
+            margin: 5px;
+            padding: 10px;
+            border: 5px solid blue;
+            overflow: auto;
+        }
+
+        #inner {
+            width: 100px;
+            height: 200px;
+            margin: 5px;
+            background-color: green;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let odiv = document.getElementById("ant");
+            let oshow = document.getElementById("show");
+            let num = odiv.scrollHeight;
+            oshow.innerHTML = num;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="ant">
+        <div id="inner"></div>
+    </div>
+    <div id="show"></div>
+    <!-- 上述代码，将父元素的height设置为210px，此时在垂直方位恰好没有滚动条。
+临界点时，父元素客户区高度就是scollHeight高度，值是父元素的height与上下内边距的和。
+这个高度也就是父元素的"内容高度"，不过这个内容高度是其内容实质占据的高度与父元素的上下内边距的和。 -->
+</body>
+
+</html>

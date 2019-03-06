@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>返回指定元素客户区宽度</title>
+    <style type="text/css">
+        #ant {
+            width: 200px;
+            line-height: 100px;
+            background: red;
+            border: 10px solid green;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            odiv = document.getElementById("ant");
+            odiv.innerHTML = odiv.clientWidth;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="ant"></div>
+    <!-- 上述代码可以计算出clientWidth属性值为240，并将其写入div中。240=200+20+20。
+    特别说明：此属性返回的是一个数字240，不带单位，但默认单位是像素。 -->
+</body>
+
+</html>

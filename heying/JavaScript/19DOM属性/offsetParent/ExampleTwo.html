@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>返回元素对象</title>
+    <style type="text/css">
+        #box {
+            width: 300px;
+            height: 200px;
+            background: red;
+        }
+
+        #middle {
+            width: 200px;
+            height: 100px;
+            background: blue;
+        }
+
+        #inner {
+            width: 120px;
+            height: 50px;
+            background: green;
+            line-height: 50px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let inner = document.getElementById("inner");
+            inner.innerHTML = inner.offsetParent.id;
+        }
+    </script>
+</head>
+
+<body id="ant">
+    <div id="box">
+        <div id="middle">
+            <div id="inner"></div>
+        </div>
+    </div>
+    <!-- 在上面代码中，inner元素没有定位祖先元素。
+所以inner的offsetParent属性返回值就是body元素，最终将body的id写入inner。 -->
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>返回指定元素客户区左部与整个元素左部之间的距离(左边框)</title>
+    <style>
+        #ant {
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+            border: 20px solid blue;
+            border-left: 40px solid blue;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let odiv = document.getElementById("ant");
+            odiv.innerHTML = odiv.clientLeft;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="ant"></div>
+    <!-- 可以看到clientLeft的的确确是返回元素左边框的宽度值。
+    有一点与borderLeftWidth属性功能重复的感觉，其实两者还是有区别的。
+    两属性的区别总结如下：
+    （1）.clientLeft是只读属性，而borderLeftWidth是可读写属性。
+    （2）.clientLeft的返回值是一个数字，而borderLeftWidth的返回值是一个字符串，带有单位。
+    （3）.clientLeft的返回值会对小数进行四舍五入处理并返回整数，borderLeftWidth属性会返回精确的数。
+    （4）.当元素设置display:none不可见状态，那么clientLeft属性返回0，而borderLeftWidth可以返回正常值。
+    掌握两者的区别之后，就可以根据项目中不同的需求，选择不同的属性，也可以避免一些意外情况发生。 -->
+</body>
+
+</html>

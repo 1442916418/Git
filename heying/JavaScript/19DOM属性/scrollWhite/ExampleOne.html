@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>返回元素的内容宽度</title>
+    <style type="text/css">
+        #ant {
+            width: 100px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            background: #ccc;
+            margin: 5px;
+            padding: 10px;
+            border: 5px solid blue;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let odiv = document.getElementById("ant");
+            let num = odiv.scrollWidth;
+            odiv.innerHTML = num;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="ant"></div>
+    <!-- 代码分析如下：
+（1）.120是scrollWidth属性返回值。
+（2）.scrollWidth包含左右内边距的尺寸。
+（3）.scrollWidth属性值不包括左右边框尺寸，但是包括左右内边距尺寸。
+（4）.div元素没有出现水平滚动条，此时scrollWidth属性值与clientWidth属性值相同。
+（5）.120 = 100（width）+ 10（padding-left）+ 10（padding-right）。 -->
+</body>
+
+</html>

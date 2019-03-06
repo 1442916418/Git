@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>返回指定元素客户区高度</title>
+    <style type="text/css">
+        #ant {
+            width: 200px;
+            height: 100px;
+            background: red;
+            border: 10px solid green;
+            padding: 20px;
+            text-align: center;
+            overflow: auto
+        }
+
+        #inner {
+            height: 50px;
+            width: 300px;
+            background-color: #ccc;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var odiv = document.getElementById("ant");
+            var ospan = document.getElementById("show");
+            ospan.innerHTML = odiv.clientHeight;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="ant">
+        <div id="inner"></div>
+    </div>
+    <span id="show"></span>
+    <!-- 实际应用中，可能元素的子元素较宽，可能会出现横向滚动条。
+此滚动条在垂直方位上必然有一个厚度，当前谷歌浏览器中值为17px，其他浏览器不得而知，感兴趣的朋友可以自行测试。这个厚度不包括在clientHeight之中。
+上面clientHeight的计算方式：
+height属性值 + padding-top + padding+bottom - 滚动条厚度 = 100 + 20 + 20 - 17 = 123。 -->
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>返回元素的内容高度</title>
+    <style type="text/css">
+        #ant {
+            width: 100px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            background: #ccc;
+            margin: 5px;
+            padding: 10px;
+            border: 5px solid blue;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let odiv = document.getElementById("ant");
+            let num = odiv.scrollHeight;
+            odiv.innerHTML = num;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="ant"></div>
+    <!-- 垂直方位没有出现滚动条，那么scrollHeight值与clientHeight值相同。
+80 = 60（height）+ 10（padding-top）+ 10（padding-bottom）。
+scrollHeight值等于元素height高度加上下内边距。 -->
+</body>
+
+</html>

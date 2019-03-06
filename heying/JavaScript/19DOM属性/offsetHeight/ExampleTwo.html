@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>返回元素高度</title>
+    <style type="text/css">
+        #box {
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            background: red;
+            text-align: center;
+            font-size: 12px;
+            border: 10px solid blue;
+            padding-top: 10px;
+            overflow: auto;
+        }
+
+        #ant {
+            width: 500px;
+            height: 20px;
+            background: green;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let odiv = document.getElementById("box");
+            console.log(odiv.offsetHeight);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <div id="ant"></div>
+    </div>
+    <!-- 上述代码中，出现了水平滚动条，offsetHeight属性返回值包括这个滚动条的高度。
+在谷歌浏览器此高度为17px（也许以后会变，也许其他浏览器的值不同，以实测为准）。
+注意：滚动条的高度包括在height高度之内（height超过滚动条高度时候）。 -->
+</body>
+
+</html>

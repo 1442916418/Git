@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>返回元素的内容宽度</title>
+    <style type="text/css">
+        #ant {
+            width: 120px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            background: #ccc;
+            margin: 5px;
+            padding: 10px;
+            border: 5px solid blue;
+            overflow: auto;
+        }
+
+        #inner {
+            width: 180px;
+            height: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let odiv = document.getElementById("ant");
+            let oshow = document.getElementById("show");
+            let num = odiv.scrollWidth;
+            oshow.innerHTML = num;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="ant">
+        <div id="inner"></div>
+    </div>
+    <div id="show"></div>
+    <!-- 代码分析如下：
+（1）.外层div元素出现滚动条，那么它的内容宽度大于width+padding。
+（2）.这时scrollWidth属性值等于子元素宽度加上它padding-left值，需要特别注意，从上面图示也可以看出，只有左内边距宽度会被计算在内，右内边距不会对scrollWidth宽度产生影响，同时设置左右外边距时，左外边距优先级高。
+（3）.190 = 180（width） + 10 （padding-left）. -->
+</body>
+
+</html>
