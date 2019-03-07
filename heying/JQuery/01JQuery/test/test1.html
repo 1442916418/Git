@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基础操作</title>
+    <style>
+        .one{
+            border: 10px dotted royalblue;
+            font-size: 20px;
+        }
+        .back{
+            background: repeating-linear-gradient(#aaa, rgb(240, 240, 240), #ccc, #888);
+        }
+    </style>
+</head>
+<body>
+    <div class="divBox">
+        <div id="div1">div1</div>
+    </div>
+    <div class="box">div2</div>
+    <div id="box">div3</div>
+    <del id="del">呵呵呵</del>
+    <p>111111111111111</p>
+    <p>222222222222222</p>
+    <p class="cp">333333333333</p>
+    <p id="pp">44444444444444
+        <span>45454545454545</span>
+    </p>
+
+    <div class="scroll">
+        <p></div>
+    </div>
+
+    <script src="../../jquery/jquery-3.1.1.js"></script>
+    <script>
+        $('.box').html('这是新内容!!!');
+        $('.box').width('200px');
+        $('.box').height('200px');
+        $('.box').css('text-align', 'center').css('font-size', '22px').css('color', 'blue');;
+        // $('div').append('这是追加内容!!!');
+        $(document.getElementById('del')).css('border', '10px solid blue');
+
+        $('p').attr('style', 'color:red');
+        $('p > span').attr('style', 'color:blue');
+        $('#pp').css({'color':'red', 'width':'200px', 'height':'300px', 'background':'yellow', 'padding':'10px', 'margin':'10px'});
+        $('#pp').addClass('one');
+        // $('#pp').removeClass('one');
+        $('#pp').removeClass();
+
+        $('#div1').css({ 'margin':'20px' });
+        console.log( $('#div1').offset() );
+
+        $('.divBox').css({ 'position':'relative' });
+        console.log( $('#div1').offset() );
+
+        console.log( $('#div1').offsetParent() );
+
+        $('.scroll').css({ 'width':'300px', 'height':'500px', 'border':'1px solid blue', 'overflow':'auto' });
+        $('.scroll p:first').css({ 'width':'100px', 'height':'1000px', 'margin':'auto' });
+        $('.scroll p:first').addClass('back');
+        $('.scroll').scrollTop(100);
+    </script>
+</body>
+</html>

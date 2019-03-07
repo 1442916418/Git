@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    width: 45%;
+    margin: 50px auto;
+    background: #aaa;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    transition: background .3s ease 0s;
+}
+#menu{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    background: none;
+    margin-bottom: 15px;
+    box-shadow: 0 -2px 0 rgba(255, 255, 255, 0.2) inset;
+}
+#menu li{
+    flex: 1 1 auto;
+}
+#menu li a{
+    display: block;
+    font-family: '宋体';
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+}
+.menu li a{
+    opacity: 0.5;
+    transition: box-shadow .3s ease 0s, opacity .3s ease 0s;
+}
+.content{
+    padding: 10px;
+}
+.txt{
+    font-size: 16px;
+    font-family: '黑体';
+    line-height: 30px;
+    color: white;
+}

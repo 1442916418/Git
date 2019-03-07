@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习六：品牌展示</title>
+    <style>
+        .box ul {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+
+        .box ul li {
+            margin: 10px;
+            padding-left: 10px;
+        }
+
+        .box ul li a {
+            text-decoration: none;
+        }
+
+        #upper {
+            width: 25px;
+            height: 25px;
+            vertical-align: -5px;
+        }
+        .promoted{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="showmore">
+            <a href="more.html">
+                <img src="images/upper.png" id="upper" alt="上"><span>显示全部品牌</span>
+            </a>
+        </div>
+        <ul>
+            <li><a href="#">佳能</a><i>(30440) </i></li>
+            <li><a href="#">索尼</a><i>(27220) </i></li>
+            <li><a href="#">三星</a><i>(20808) </i></li>
+            <li><a href="#">尼康</a><i>(17821) </i></li>
+            <li><a href="#">松下</a><i>(12289) </i></li>
+            <li><a href="#">卡西欧</a><i>(8242) </i></li>
+            <li><a href="#">富士</a><i>(14894) </i></li>
+            <li><a href="#">柯达</a><i>(9520) </i></li>
+            <li><a href="#">宾得</a><i>(2195) </i></li>
+            <li><a href="#">理光</a><i>(4114) </i></li>
+            <li><a href="#">奥林巴斯</a><i>(12205) </i></li>
+            <li><a href="#">明基</a><i>(1466) </i></li>
+            <li><a href="#">爱国者</a><i>(3091) </i></li>
+            <li><a href="#">其它品牌相机</a><i>(7275) </i></li>
+        </ul>
+
+    </div>
+
+    <script src="../../../jquery/jquery-3.1.1.js"></script>
+    <script>
+        $(function(){
+            // 1. 需要选择从 "富士" - "爱国者" 的所有 li: $category
+            // lt是在gt 的基础上 选择，所以是6，不是10. 
+            var $category = $("li:gt(5):lt(6)"); 
+
+            // 2、把他们隐藏
+            $category.hide();
+
+            // 3、为showmore添加点击事件（取消默认行为）
+            $('.showmore').click(function(){
+                // 4、若$category是隐藏的，使用is
+                if ( $category.is(':hidden') )
+                {
+                    // 4.1、$category就显示
+                    $category.show();
+
+                    // 4.2、使选中的内容高亮
+                    $("li:contains('佳能'), li:contains('尼康'), li:contains('奥林巴斯')").addClass('promoted');
+
+                    // 4.3、.showmore > a > span 的文字变为：显示精简品牌
+                    $('.showmore > a > span').text("显示精简品牌");
+
+                    // 4.4、改变箭头图标
+                    $('img').attr('src','images/lower.png');
+
+                    return false;
+                }
+                else
+                {
+                    // 5、若$category是显示的
+                    $category.hide();
+                    $('li').removeClass('promoted');
+                    $('.showmore > a > span').text('显示全部品牌');
+                    $('img').attr('src','images/upper.png');
+                    return false;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

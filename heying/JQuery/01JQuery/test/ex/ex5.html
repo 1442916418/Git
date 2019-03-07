@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习5：员工信息的增加和删除</title>
+    <style>
+        .P{
+            font-weight: 100
+        }
+    </style>
+</head>
+<body>
+    <center id="cen">
+        <ul>
+            <li id="title">添加新员工</li>
+            <li><span>name</span><input type="text" name="name" id="name"></li>
+            <li><span>email</span><input type="text" name="email" id="email"></li>
+            <li><span>salary</span><input type="text" name="salary" id="salary"></li>
+            <li><button id="add" value="ADD">Submit</button></li>
+        </ul>
+
+        <table border="1" id="tab" cellpadding='5' cellspacing="0" width="500px">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>salary</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <tr>
+                    <td>zJ</td>
+                    <td>zj@qq.com</td>
+                    <td>5000</td>
+                    <td><a href="deleteEmp?id=001">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>Tom</td>
+                    <td>Tom@qq.com</td>
+                    <td>50000</td>
+                    <td><a href="deleteEmp?id=002">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>Jerry</td>
+                    <td>Jerry@qq.com</td>
+                    <td>5550</td>
+                    <td><a href="deleteEmp?id=003">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
+
+    <!-- 　注意：1、jQuery 对象 调用 jQuery 提供的方法的返回值，如果是一个对象的话，那么这个对象一定是一个 jQuery 对象。
+    　　　　　   2、找第一个 td 子节点的文本值，find() 方法：查找子节点，返回值为子节点对应的 jQuery 对象。 -->
+
+    <script src="../../../jquery/jquery-3.1.1.js"></script>
+    <script>
+        $('#title').css( { 'font-size':'18px', 'font-weight':'600' } );
+        $('#cen ul:first').css( { 'list-style':'none', 'margin-bottom':'100px' } );
+        $('#cen ul:first li').css( { 'margin':'10px' } );
+        $('#cen ul:first li > span').after(' : ');
+
+        $(function(){
+            // 删除方法
+            function removeTr(aNoe){
+                var $trNode = $(aNoe).parent().parent();
+                var textContent = $trNode.find('td:first').text();
+                textContent = $.trim(textContent);
+
+                var r = confirm("确定要删除" + textContent + "的信息吗？");
+                if ( r )
+                {
+                    $trNode.remove();
+                }
+                return false;
+            }
+
+            // 给a标签添加删除事件
+            $('#tbody a').click(function(){
+                return removeTr(this);
+            });
+
+            // 给submit添加事件
+            $('#add').click(function(){
+                $('<tr></tr>').append("<td>" + $('#name').val() + "</td>")
+                            .append("<td>" + $('#email').val() + "</td>")
+                            .append("<td>" + $('#salary').val() + "</td>")
+                            .append('<td><a href="deleteEmp?id=003">Delete</a></td>')
+                            .appendTo('#tbody')
+                            .find('a').click(function(){
+                                return removeTr(this);
+                            });
+                $('#name').val('');
+                $('#email').val('');
+                $('#salary').val('');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使一个 table 隔行变色。</title>
+</head>
+<body>
+    <table>
+       <thead>
+           <tr>
+               <th>ID</th>
+               <th>姓名</th>
+               <th>年龄</th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr>
+               <td>1</td>
+               <td>11</td>
+               <td>111</td>
+           </tr>
+           <tr>
+                <td>2</td>
+                <td>22</td>
+                <td>222</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>33</td>
+                <td>333</td>
+            </tr>
+       </tbody>
+    </table>
+
+    <script src="../../../jquery/jquery-3.1.1.js"></script>
+    <script>
+        $('table').css({ 'width':'300', 'border':'1' });
+        $('tbody:first tr:even').css('background','#eee');
+    </script>
+</body>
+</html>

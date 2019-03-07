@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习3：点击 button ，弹出被选中的个数。</title>
+</head>
+<body>
+    <input type="checkbox" name="test">
+    <input type="checkbox" name="test">
+    <input type="checkbox" name="test">
+    <input type="checkbox" name="test">
+    <input type="checkbox" name="test">
+
+    <script src="../../../jquery/jquery-3.1.1.js"></script>
+    <script>
+        $(function(){
+            $('input').click(function(){
+                console.log($(':checkbox:checked').length);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选择器</title>
+</head>
+
+<body>
+    <div class="box">
+        <p class="ps">ps</p>
+        <p class="html">html</p>
+        <p class="css">css</p>
+        <p class="js">javascript</p>
+        <p class="jquery">jquery</p>
+    </div>
+
+    <script src="../../jquery/jquery-3.1.1.js"></script>
+    <script>
+        $('p').css('color', '#eee');
+        $('p:first').css('color', '#ccc');
+        $('p:last').css('color', '#111');
+        $('p:even').css('color', 'red');
+        $('p:odd').css('color', 'blue');
+        
+    </script>
+</body>
+
+</html>
