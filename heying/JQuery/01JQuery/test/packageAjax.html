@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>封装ajax</title>
+    <style>
+        select {
+            width: 150px;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <select name="province" id="province" onchange="checkProvince(this)">
+            <option>请选择</option>
+        </select>
+
+        <select name="city" id="city" onchange="checkCity(this)">
+            <option>请选择</option>
+        </select>
+
+        <select name="county" id="county">
+            <option>请选择</option>
+        </select>
+    </center>       
+         
+    <script>   
+        // 加载省
+        window.onload = function () {
+            ajax('GET', '../data/city.json', '', function (obj) {
+                var obj = JSON.parse(obj);
+
+                var province = document.getElementById('province');
+                for (var i = 0; i < obj.length; i++) {
+                    var option = document.createElement('option');
+                    option.innerHTML = obj[i].name;
+                    option.value = obj[i].name;
+                    province.appendChild(option);
+                }
+            });
+        }
+
+        // 加载市
+        function checkProvince(pro) {
+            var city = document.getElementById('city');
+            var county = document.getElementById('county');
+            
+            county.options.length = 1;
+            city.options.length = 1;
+            ajax('GET', '../data/city.json', '', function (obj) {
+                var obj = JSON.parse(obj);
+
+                var proValue = pro.value;
+
+                for (var i = 0; i < obj.length; i++) {
+
+                    if (obj[i].name == proValue) {
+                        for (var j = 0; j < obj[i].city.length; j++) {
+                            var option = document.createElement('option');
+                            option.innerHTML = obj[i].city[j].name;
+                            option.value = obj[i].city[j].name;
+                            city.appendChild(option);
+                        }
+                        return;
+                    }
+                }
+            });
+        }
+
+        function checkCity(pro) {
+            var county = document.getElementById('county');
+            county.options.length = 1;
+
+            ajax('GET', '../data/city.json', '', function (obj) {
+                var obj = JSON.parse(obj);
+
+                var proValue = pro.value;
+
+                for (var i = 0; i < obj.length; i++) {
+
+                    for (var j = 0; j < obj[i].city.length; j++) {
+                        if (obj[i].city[j].name == proValue) {
+
+                            for (var k = 0; k < obj[i].city[j].area.length; k++) {
+                                var option = document.createElement('option');
+                                option.innerHTML = obj[i].city[j].area[k];
+                                option.value = obj[i].city[j].area[k];
+                                county.appendChild(option);
+                            }
+                            return;
+                        }
+                    }
+                }
+            })
+        }
+
+        //第一个参数：数据传输方式 get post
+        //第二个参数：调用文件的路径
+        //第三个参数：data
+        //第四个参数：回调函数
+        function ajax(method, url, data, fnsuccess) {
+            var xhr;
+            // 1、创建对象，兼容问题
+            if (window.XMLHttpRequest) {
+                xhr = new XMLHttpRequest();
+            }
+            else {
+                xhr = new ActiveXObject();
+            }
+
+            // 2、发送请求
+            // get模式路径上同时加上需要传输的内容
+            if (method == 'GET' && data) {
+                url = url + '?' + data;
+            }
+            xhr.open(method, url, true);
+            // send()如果是get模式，写null或者为空；
+            // 如果是post模式参数直接写要传输的内容
+            if (method == 'GET') {
+                xhr.send('');
+            }
+            else {
+                // 创建头文件信息
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.send(data);
+            }
+
+            // 4、回调函数
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // fnsuccess && fnsuccess(xhr.responseText);
+                    return fnsuccess(xhr.responseText);
+                }
+                else {
+                    console.log(xhr.status);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

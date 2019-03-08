@@ -13,7 +13,7 @@ function init()
         // ie7 ie6 ie5
         xhr = new ActiveXObject('Microsoft.XMLHTTP');
     }
-
+ 
     // 二、向服务器发送异步请求
     // xhr.open('GET', 'data/studentArr.json', true);
     var url = "http://192.168.1.222:80/deal/data";
