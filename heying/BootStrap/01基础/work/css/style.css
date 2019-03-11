@@ -1,0 +1,17 @@
+.item{
+    min-width: 100%;
+}
+.control{
+    position: absolute;
+    top: 45%;
+    font-size: 35px;
+}
+.case{
+    text-align: center;
+    margin-top: 20px;
+}
+.screenshot .item {
+    border-top: 1px solid #CCC;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
