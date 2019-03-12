@@ -1,0 +1,39 @@
+.item{
+    min-width: 100%;
+}
+.control{
+    position: absolute;
+    top: 45%;
+    font-size: 35px;
+}
+.case{
+    text-align: center;
+    margin-top: 20px;
+}
+.screenshot .item {
+    border-top: 1px solid #CCC;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+.picture{
+    min-width: 100%;
+    max-height: 400px;
+}
+.img-size{
+    min-width: 100px;
+    min-height: 100px;
+}
+.lr{
+    margin: 0 10%;
+}
+.single-product{
+    margin-top: 30px;
+}
+.text-p{
+    margin: 5px 0;
+}
+footer{
+    width: 100%;
+    padding: 15px 0;
+    background: #F8F8F8;
+}

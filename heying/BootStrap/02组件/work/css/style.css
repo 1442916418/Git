@@ -1,0 +1,149 @@
+.right-ul{
+    margin-top: 20px;
+}
+.right-ul ul li{
+    padding: 0;
+}
+.right-ul ul li::after{
+    content: '|';
+    margin: 0 5px;
+    vertical-align: 1px;
+}
+.right-ul ul li:last-child::after{
+    content: '';
+}
+i{
+    font-size: 5px;
+}
+.content{
+    width: 100%;
+    padding: 50px 15px 0;
+    background: url('../images/bg.png') no-repeat;
+    background-color: #1E78B2;
+}
+.con{
+    width: 100%;
+    height: 600px;
+    box-shadow: 0px -5px 15px 1px rgb(41, 81, 110);
+    position: relative;
+}
+.top{
+    width: 100%;
+    padding: 8px 0;
+    background: #134B72;
+    border-bottom: 2px solid white;
+}
+.list-unstyled{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.list-title{
+    width: 180px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+    color: white;
+    background-color: #1E78B2;
+    text-align: center;
+}
+.list-unstyled li:nth-child(n+2){
+    width: 180px;
+    height: 47px;
+    line-height: 47px;
+    background-color: #134B72;
+    text-align: center;
+    margin-top: 10px;
+}
+.list-unstyled li:nth-child(n+2):hover{
+    width: 180px;
+    height: 47px;
+    background: url(../images/daohang.png) no-repeat;
+    background-size: 100% 100%;
+}
+.a-color{
+    color: white;
+    font-size: 18px;
+}
+/* .table-r{
+    float: right;
+    width: 930px;
+    height: 548px;
+    background-color: #1E78B2;
+} */
+.col-tab{
+    background-color: #1E78B2;
+}
+.table-con{
+    margin: 80px 40px 165px;
+}
+.tab{
+    width: 100%;    
+}
+.h{
+    height: 50px;
+}
+.col-span{
+    color: white;
+}
+.col-span::after{
+    content: ':';
+}
+input,textarea,select{
+    outline: none;
+    color: white;
+}
+.col-input{
+    width: 240px;
+    height: 30px;
+    border: none;
+    background: none;
+}
+.td-after::after{
+    content: '*';
+    color: red;
+    font-size: 15px;
+    display: inline-block;
+}
+.h-bottom{
+    height: 100px;
+}
+.col-txt{
+    border: none;
+    background: none;
+}
+textarea::-webkit-input-placeholder{
+    color: white;
+}
+.top-title{
+    color: white;
+    font-size: 24px;
+    margin: 0;
+    padding-left: 170px;
+}
+.sel-btn{
+    display: inline-block;
+    padding: 0;
+    width: 240px;
+    height: 30px;
+    outline: none;
+    border: none;
+    background: none;
+    color: white;
+}
+.sel-btn option{
+    background: none;
+    background-color: none;
+    color: black;
+}
+footer{
+    background: #D8E5F6;
+    padding: 10px 0;
+}
+.row-bg{
+    background: #F6F7F7;
+    margin: 0;
+}
+.footer p{
+    margin: 0;
+}
