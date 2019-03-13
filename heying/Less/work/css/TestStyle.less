@@ -1,0 +1,68 @@
+@import 'LessExample.less';
+.box{
+    width: 200px;
+    height: 250px;
+    background: #ccc;
+    float: left;
+    margin: 20px;
+    // .border-radius(10px);   // 简单圆角
+    // .border-radius-custom(5px, 10px, 15px, 20px);   // 四角半径定制
+    // .box-shadow-ordinary(5px, 5px, 10px, 0.2);      // 普通方块阴影
+    // .box-shadow-complete(10px, 10px, 10px, 10px, 0.8);  // 未解决，内外阴影未解决
+    // .gradient();    // 线形渐变
+}
+.circular{
+    float: left;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    background-color: cornflowerblue;
+    opacity: 0.5;
+    .border-radius(100px);
+    .transition(width, 3s, ease-in);      // 元素动画过渡
+}
+.circular:hover{
+    width: 1000px;
+    .box-shadow-cicular(0px, 0px, 10px, 5px, red);  // 圆形外阴影
+}
+.txt{
+    float: left;
+    font-size: 30px;
+    color: #aaa;
+    .text-shadow(15px, 8px, 2px, 0.5);  // 文本阴影
+    .transform(10deg, 2, 10deg, 5px);   // 元素转换/旋转
+}
+.img{
+    width: 200px;
+    height: 200px;
+    float: left;
+    background-color: #ddd;
+    .quick-gradient();  // 快速渐变
+    .reflect();     // 镜像效果
+}
+.bor{
+    float: right;
+    width: 100px;
+    height: 200px;
+    display: inline-block;
+}
+// .one{
+//     background-color: @obase;
+// }
+// .two{
+//     background-color: @ocomplement1;
+// }
+// .three{
+//     background-color: @ocomplement2;
+// }
+// .four{
+//     background-color: @olighten1;
+// }
+// .five{
+//     background-color: @olighten2;
+// }
+.one   {background-color: @base;}
+.two   {background-color: @lighter1;}
+.three {background-color: @lighter2;}
+.four  {background-color: @darker1;}
+.five  {background-color: @darker2;}

@@ -1,0 +1,28 @@
+p {
+  font-size: 20px;
+  text-indent: 40px;
+  background-color: red;
+  color: white;
+  border-top: 10px solid blue;
+  border-right: 10px solid blue;
+}
+#bg {
+  width: 100px;
+  height: 100px;
+  background: url("/heying/Less/test/img/春.jpg");
+}
+header {
+  background: #ccc;
+}
+header ul {
+  display: inline-block;
+  list-style-type: none;
+}
+header ul li {
+  float: left;
+  font-size: 20px;
+  padding: 10px 120px;
+  margin: 10px;
+  background: blue;
+  color: white;
+}

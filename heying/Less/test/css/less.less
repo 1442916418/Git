@@ -1,0 +1,42 @@
+@fs: font-size;
+@fontSiz: 20px;
+@bgImg: "/heying/Less/test/img/春.jpg";
+@bg: background;
+@h: height;
+@w: width;
+@c: color;
+@pd: padding;
+@md: margin;
+
+.border(@white, @style, @color:red){
+    border-top: @white @style @color;
+    border-right: @white @style @color;
+}
+
+p{
+    @{fs}: @fontSiz;
+    text-indent: @fontSiz*2;
+    background-color: red;
+    color: white;
+    .border(10px, solid, blue);
+}
+#bg{
+    @{w}: 100px;
+    @{h}: 100px;
+    @{bg}: url("@{bgImg}");
+}
+header{
+    @{bg}: #ccc;
+    ul{
+        display: inline-block;
+        list-style-type: none;
+    }
+    ul li{
+        float: left;
+        @{fs}: @fontSiz;
+        @{pd}: 10px 120px;
+        @{md}: 10px;
+        @{bg}: blue;
+        @{c}: white;
+    }
+}
