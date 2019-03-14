@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angular</title>
+</head>
+
+<body>
+    <div ng-app="" ng-init="name='aowin';age=18;points=[1,15,23,11,98];names=[
+    {name:'Jani',country:'Norway'},
+    {name:'Jani',country:'Norway'},
+    {name:'Jani',country:'Norway'},
+    {name:'Jani',country:'Norway'}
+    ]">
+        <div ng-include="'header.html'"></div>
+        <p>{{ name }}</p>
+        <p>{{ age*2 }}</p>
+        <p>{{ points[2] }}</p>
+
+        <input type="text" ng-model="name"><span ng-bind="name"></span>
+
+        <ul>
+            <li ng-repeat="u in points">{{ u }}</li>
+        </ul>
+
+
+        <p>循环对象:</p>
+        <ul>
+            <li ng-repeat="x in names">
+                {{ x.name + ', ' + x.country }}
+            </li>
+        </ul>
+    </div>
+
+    <script src="js/angular-1.7.0.js"></script>
+</body>
+
+</html>

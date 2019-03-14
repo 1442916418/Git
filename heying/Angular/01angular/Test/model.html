@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模块</title>
+</head>
+<body>
+    <div ng-app="app" ng-controller="ctrl">
+        <h2>hello, {{ name }}</h2>
+
+        <input type="text" ng-model='number'>
+        <h3>{{ n }}</h3>
+        <button ng-click="num()">点我啊</button>
+
+        <ul>
+            <li ng-repeat="x in names">{{x}}</li>
+        </ul>
+
+        <div>
+            我的购物车(<span>{{ count }}</span>)
+        </div>
+        <button ng-click="add()">加入购物车</button><br>
+
+        名：<input type="text" ng-model="firstName"><br>
+        姓：<input type="text" ng-model="lastName"><br>
+        <br>
+        姓名:{{ lastName + "·" + firstName }}
+
+    </div>
+
+    <script src="js/angular-1.7.0.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.controller('ctrl', function($scope){
+            $scope.name = 'aowin';
+            $scope.num = function(){
+                $scope.n = 'hello' + $scope.number;
+            }
+            $scope.names = ['111', '222', '333', '4444'];
+            $scope.count = 0;
+            $scope.add = function(){
+                $scope.count ++;
+            }
+            $scope.lastName = '张';
+            $scope.firstName = '成功';
+        })    
+    </script>
+</body>
+</html>

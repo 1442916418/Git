@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="box" class="container" ng-app="app" ng-controller="ctrl">
+        <table class="table table-condensed" id="table">
+            <thead>
+                <tr>
+                    <th>产品编号</th>
+                    <th>产品名称</th>
+                    <th>产品数量</th>
+                    <th>产品单价</th>
+                    <th>产品总价</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in productList">
+                    <td>{{ product.number }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>
+                        <button id="reduce" class="btn btn-primary" ng-click="operation($index, -1)">-</button>
+                        <input type="text" ng-model="product.count">
+                        <button class="btn btn-primary" ng-click="operation($index, +1)">+</button>
+                    </td>
+                    <td>{{ product.unitPrice }}</td>
+                    <td>{{ product.count * product.unitPrice }}</td>
+                    <td><button class="btn btn-danger" ng-click="deleteSingle($index)">移除</button></td>
+                </tr>
+                <tr>
+                    <td>总购买价</td>
+                    <td>{{ totalPrice() }}</td>
+                    <td>总购买数量</td>
+                    <td>{{ totalNumber() }}</td>
+                    <td><button class="btn btn-danger" ng-click="empty()">清空购物车</button></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            亲，不要我了吗？
+                        </h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">要得要得
+                        </button>
+                        <button type="button" class="btn btn-primary" ng-click="delete()">
+                            狠心抛弃
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+    </div>
+
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular-1.7.0.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+
+</html>
