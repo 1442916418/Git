@@ -1,39 +1,67 @@
 var app = angular.module('app', []);
 
-app.controller('ctrl', function ($scope) {
-    $scope.productList = [
-        { "number": 1003, "name": "iphone4", "count": 3, "unitPrice": 4300 },
-        { "number": 3300, "name": "iphone5", "count": 30, "unitPrice": 3300 },
-        { "number": 232, "name": "mac", "count": 4, "unitPrice": 23000 },
-        { "number": 1000, "name": "ipad", "count": 5, "unitPrice": 6900 }
-    ];
+app.controller('ctrl', function ($scope, $filter, $http) {
+    $scope.productList = [];
+    $scope.order = 'number';
+    $scope.rule = false;
+    $scope.search = '100';
+    // 总价排序
+    $scope.totalPriceSort = function (own) {
+        
+    }
+    // 排序
+    $scope.sort = function (own) {
+        console.log($scope.order);
+        $scope.order = own.target.alt;
+        if ($scope.rule == false) {
+            $scope.rule = true;
+            $(own.target).addClass('transform');
+        }
+        else {
+            $scope.rule = false;
+            $(own.target).removeClass('transform');
+        }
+    }
+    // 请求数据
+    $http.get('data/commodityData.json').then(function (com) {
+        $scope.productList = com.data;
+    });
     // 总价格
     $scope.totalPrice = function () {
-        var sum = 0;
-        for (var i = 0; i < $scope.productList.length; i++) {
-            sum += $scope.productList[i].count * $scope.productList[i].unitPrice;
-        }
-        return sum;
+        $scope.sum = 0;
+        angular.forEach($scope.productList, function (value, index) {
+            $scope.sum += value.count * value.unitPrice;
+        });
+        $scope.totalp = $scope.sum;
+        return $filter('currency')($scope.sum, '￥');
     }
     // 总数量
     $scope.totalNumber = function () {
-        var number = 0;
-        for (var i = 0; i < $scope.productList.length; i++) {
-            number += $scope.productList[i].count;
-        }
-        return number;
+        $scope.serialNumber = 0;
+        angular.forEach($scope.productList, function (value, index) {
+            $scope.serialNumber += value.count;
+        });
+        return $scope.serialNumber;
     }
     // 加减
-    $scope.operation = function (index, count) {
-        var n = index;
+    $scope.operation = function (own, index, count) {
+        $scope.n = index;
         $scope.productList[index].count = $scope.productList[index].count + count;
-
+        
         if ($scope.productList[index].count <= 1) {
             $("#myModal").modal('show');
             $scope.delete = function () {
-                $scope.productList.splice(n, 1);
+                $scope.productList.splice($scope.n, 1);
                 $("#myModal").modal('hide');
             }
+        }
+        if ( $scope.productList[index].count == 1 )
+        {
+            $(own.target).attr('disabled','disabled');
+        }
+        else
+        {
+            $(own.target).removeAttr('disabled');
         }
     }
     // 删除单个商品
@@ -52,7 +80,6 @@ app.controller('ctrl', function ($scope) {
             $scope.productList = [];
             $("#table").hide();
             $("#myModal").modal('hide');
-           
             $("#box").append("<h2 class='text-center'>购物车空空如也！！！</h2>");
         }
     }

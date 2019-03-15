@@ -7,29 +7,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>购物车</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .transform {
+            transform: rotate(-180deg);
+        }
+        .page{
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
     <div id="box" class="container" ng-app="app" ng-controller="ctrl">
+        <div style="padding: 50px 100px 30px;">
+            <form class="bs-example bs-example-form" role="form">
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" ng-model="search">
+                    </div>
+                </div>
+            </form>
+        </div>
         <table class="table table-condensed" id="table">
             <thead>
                 <tr>
-                    <th>产品编号</th>
-                    <th>产品名称</th>
-                    <th>产品数量</th>
-                    <th>产品单价</th>
-                    <th>产品总价</th>
+                    <th>产品编号<img class="number" src="img/arrow.png" alt="number" ng-click="sort($event)"></th>
+                    <th>产品名称<img class="name" src="img/arrow.png" alt="name" ng-click="sort($event)"></th>
+                    <th>产品数量<img class="count" src="img/arrow.png" alt="count" ng-click="sort($event)"></th>
+                    <th>产品单价<img class="unitPrice" src="img/arrow.png" alt="unitPrice" ng-click="sort($event)"></th>
+                    <th>产品总价<img class="totalPrice" src="img/arrow.png" alt="totalPrice"
+                            ng-click="totalPriceSort($event)"></th>
                     <th>操作</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="product in productList">
+                <tr ng-repeat="product in productList | orderBy:order:rule | filter:search">
                     <td>{{ product.number }}</td>
                     <td>{{ product.name }}</td>
                     <td>
-                        <button id="reduce" class="btn btn-primary" ng-click="operation($index, -1)">-</button>
+                        <button class="btn btn-primary reduce" ng-click="operation($event,$index, -1)">-</button>
                         <input type="text" ng-model="product.count">
-                        <button class="btn btn-primary" ng-click="operation($index, +1)">+</button>
+                        <button class="btn btn-primary" ng-click="operation($event,$index, +1)">+</button>
                     </td>
                     <td>{{ product.unitPrice }}</td>
                     <td>{{ product.count * product.unitPrice }}</td>
@@ -42,6 +60,17 @@
                     <td>{{ totalNumber() }}</td>
                     <td><button class="btn btn-danger" ng-click="empty()">清空购物车</button></td>
                     <td></td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="page">
+                        <ul class="pagination">
+                            <li ng-click="previous()"><a href="#">&laquo;</a></li>
+                            <li ng-repeat="page in productList">
+                                <a href="#" ng-click="selectPage(page)">{{ page }}</a>
+                            </li>
+                            <li ng-click="next()"><a href="#">&raquo;</a></li>
+                        </ul>
+                    </td>
                 </tr>
             </tbody>
         </table>
