@@ -1,16 +1,18 @@
-[
-    { "number": 3, "name": "iphone4", "count": 3, "unitPrice": 4300 },
-    { "number": 3300, "name": "iphone5", "count": 30, "unitPrice": 3300 },
-    { "number": 232, "name": "mac", "count": 4, "unitPrice": 23000 },
-    { "number": 1000, "name": "aipad1", "count": 5, "unitPrice": 6900 },
-    { "number": 1001, "name": "ipad2", "count": 45, "unitPrice": 60 },
-    { "number": 1002, "name": "ipad3", "count": 15, "unitPrice": 600 },
-    { "number": 333, "name": "cipad4", "count": 25, "unitPrice": 6100 },
-    { "number": 1004, "name": "ipad5", "count": 35, "unitPrice": 6200 },
-    { "number": 1005, "name": "ipad6", "count": 55, "unitPrice": 6500 },
-    { "number": 1006, "name": "ipad7", "count": 65, "unitPrice": 6800 },
-    { "number": 1007, "name": "ipad8", "count": 75, "unitPrice": 7200 },
-    { "number": 1008, "name": "bipad9", "count": 85, "unitPrice": 8200 },
-    { "number": 1009, "name": "ipadx", "count": 95, "unitPrice": 62000 },
-    { "number": 1010, "name": "zipadxPro", "count": 135, "unitPrice": 620000 }
-]
+{
+    "records" : [
+        { "number": 3, "name": "iphone4", "count": 3, "unitPrice": 4300 },
+        { "number": 3300, "name": "iphone5", "count": 30, "unitPrice": 3300 },
+        { "number": 232, "name": "mac", "count": 4, "unitPrice": 23000 },
+        { "number": 1000, "name": "aipad1", "count": 5, "unitPrice": 6900 },
+        { "number": 1001, "name": "ipad2", "count": 45, "unitPrice": 60 },
+        { "number": 1002, "name": "ipad3", "count": 15, "unitPrice": 600 },
+        { "number": 333, "name": "cipad4", "count": 25, "unitPrice": 6100 },
+        { "number": 1004, "name": "ipad5", "count": 35, "unitPrice": 6200 },
+        { "number": 1005, "name": "ipad6", "count": 55, "unitPrice": 6500 },
+        { "number": 1006, "name": "ipad7", "count": 65, "unitPrice": 6800 },
+        { "number": 1007, "name": "ipad8", "count": 75, "unitPrice": 7200 },
+        { "number": 1008, "name": "bipad9", "count": 85, "unitPrice": 8200 },
+        { "number": 1009, "name": "ipadx", "count": 95, "unitPrice": 62000 },
+        { "number": 1010, "name": "zipadxPro", "count": 135, "unitPrice": 620000 }
+    ]  
+}

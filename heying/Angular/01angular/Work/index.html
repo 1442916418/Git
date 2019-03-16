@@ -41,7 +41,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="product in productList | orderBy:order:rule | filter:search">
+                <tr ng-repeat="product in items | orderBy:order:rule | filter:search">
                     <td>{{ product.number }}</td>
                     <td>{{ product.name }}</td>
                     <td>
@@ -65,7 +65,7 @@
                     <td colspan="6" class="page">
                         <ul class="pagination">
                             <li ng-click="previous()"><a href="#">&laquo;</a></li>
-                            <li ng-repeat="page in productList">
+                            <li ng-repeat="page in pagesList" ng-class="{active: isActivePage(page)}">
                                 <a href="#" ng-click="selectPage(page)">{{ page }}</a>
                             </li>
                             <li ng-click="next()"><a href="#">&raquo;</a></li>
