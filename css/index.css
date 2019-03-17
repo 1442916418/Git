@@ -1,101 +1,331 @@
 @media screen and (min-width: 1200px) {
-  #page {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 18px;
+    color: black;
+    font-family: '黑体', '宋体';
+    font-weight: 500;
+  }
+  .page {
     width: 1100px;
+    background-color: red;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
   }
-  #content,
-  .div1 {
-    width: 730px;
+  .page header {
+    width: 100%;
+    background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
   }
-  #secondary {
-    width: 310px;
+  .page header .header-box {
+    margin-left: 20%;
+  }
+  .page header .header-box .logo-box {
+    display: inline-block;
+    width: 15%;
+    height: 65px;
+  }
+  .page header .header-box .logo-box .logo-a {
+    display: block;
+    line-height: 0px;
+  }
+  .page header .header-box .logo-box .logo-a .logo {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+    vertical-align: -10px;
+  }
+  .page header .header-box .search-box {
+    display: inline-block;
+    width: 50%;
+    height: 65px;
+    vertical-align: center;
+  }
+  .page header .header-box .search-box nav {
+    line-height: 30px;
+  }
+  .page header .header-box .search-box nav a {
+    color: #ccc;
+    text-decoration: none;
+  }
+  .page header .header-box .search-box nav a::after {
+    content: '|';
+    margin-left: 10px;
+  }
+  .page header .header-box .search-box nav a:last-child::after {
+    content: '';
+  }
+  .page header .header-box .search-box form {
+    line-height: 30px;
+  }
+  .page header .header-box .search-box form input:first-child {
+    width: 75%;
+    height: 20px;
+    border: 4px solid blue;
+  }
+  .page header .header-box .search-box form input:last-child {
+    padding: 6px 10px;
+    color: white;
+    border: none;
+    background-color: blue;
+  }
+  .page article {
+    width: 100%;
+    background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page article section:first-child {
+    display: inline-block;
+    width: 70%;
+  }
+  .page article section:first-child .focus-box {
+    display: inline-block;
+    width: 100%;
+  }
+  .page article section:first-child .focus-box .focus-a {
+    display: block;
+    line-height: 0px;
+    width: 100%;
+    height: 170px;
+  }
+  .page article section:first-child .focus-box .focus-a .focus {
+    width: 100%;
+    height: 100%;
+  }
+  .page article section:first-child .content-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .page article section:first-child .content-box .content-left,
+  .page article section:first-child .content-box .content-right {
+    display: inline-block;
+    width: 48%;
+    margin-left: 1%;
+  }
+  .page article section:first-child .content-box .content-left h3 span,
+  .page article section:first-child .content-box .content-right h3 span {
+    color: orangered;
+  }
+  .page article section:first-child .content-box .content-left .list,
+  .page article section:first-child .content-box .content-right .list {
+    margin-bottom: 10px;
+  }
+  .page article section:first-child .content-box .content-left .list img,
+  .page article section:first-child .content-box .content-right .list img {
+    width: 70px;
+    height: 70px;
+  }
+  .page article section:first-child .content-box .content-left .list p,
+  .page article section:first-child .content-box .content-right .list p {
+    margin: 0;
+    padding: 0;
+    float: right;
+    width: calc(100% - 70px);
+    color: #ccc;
+  }
+  .page article section:first-child .content-box .content-left .list p a,
+  .page article section:first-child .content-box .content-right .list p a {
+    text-decoration: none;
+  }
+  .page article section:first-child .content-box .content-left .list p a span,
+  .page article section:first-child .content-box .content-right .list p a span {
+    color: blue;
+  }
+  .page article section:first-child .advfasion-box {
+    display: inline-block;
+    width: 100%;
+  }
+  .page article section:first-child .advfasion-box .advfasion-a {
+    display: block;
+    line-height: 0px;
+    width: 100%;
+    height: 100px;
+  }
+  .page article section:first-child .advfasion-box .advfasion-a .advfasion {
+    width: 100%;
+    height: 100%;
+  }
+  .page article section:last-child {
+    display: inline-block;
+    width: 28%;
+    margin-left: 1%;
+  }
+  .page article section:last-child form {
+    width: 100%;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border: 1px solid #bbb;
+    background-color: #eee;
+  }
+  .page article section:last-child form h1 {
+    font-family: "黑体";
+    margin: 10px 0;
+  }
+  .page article section:last-child form h1 span {
+    font-size: 22px;
+  }
+  .page article section:last-child form h1 span:first-child {
+    color: #42CDCD;
+  }
+  .page article section:last-child form h1 span:last-child {
+    color: orangered;
+    padding-left: 5px;
+  }
+  .page article section:last-child form .input-title {
+    margin: 5px 0;
+    color: blue;
+  }
+  .page article section:last-child form span {
+    font-size: 14px;
+    color: #ccc;
+  }
+  .page article section:last-child form .login {
+    border: none;
+    background-color: #FF9900;
+    color: white;
+    padding: 5px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  .page article section:last-child form .login + a {
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .page article section:last-child h3 {
+    margin: 10px 0;
+    padding: 20px 0;
+    border: 1px solid #bbb;
+    background-color: #eee;
+  }
+  .page article section:last-child h3 a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+  .page article section:last-child .neighbor {
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background-color: #eee;
+  }
+  .page article section:last-child .neighbor p:first-child {
+    border: none;
+    border-bottom: 1px solid #0ACCFC;
+    background-color: #ccc;
+    margin: 0;
+    padding: 10px;
+    color: #aaa;
+    font-weight: 600;
+  }
+  .page article section:last-child .neighbor p:first-child span {
+    color: #ff7b00;
+  }
+  .page article section:last-child .neighbor .info-box {
+    display: inline-block;
+    width: 45%;
+    margin: 10px 5px;
+  }
+  .page article section:last-child .neighbor .info-box p {
+    width: calc(100% - 50px);
+    margin: 0;
+    padding: 0;
+    float: right;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .page article section:last-child .neighbor .info-box p span {
+    color: blue;
+  }
+  .page article section:last-child .train-box {
+    display: inline-block;
+    width: 100%;
+  }
+  .page article section:last-child .train-box .train-a {
+    display: block;
+    line-height: 0px;
+    width: 100%;
+    height: 100px;
+  }
+  .page article section:last-child .train-box .train-a .train {
+    width: 100%;
+    height: 100%;
+  }
+  .page footer {
+    width: 100%;
+    background-color: #eee;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page footer nav {
+    padding: 10px 0;
+    text-align: center;
+  }
+  .page footer nav a {
+    color: black;
+    text-decoration: none;
+  }
+  .page footer p {
+    color: #ccc;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+  }
+  .page footer p span {
+    color: black;
   }
 }
 @media screen and (min-width: 960px) and (max-width: 1199px) {
-  #page {
+  .page {
     width: 960px;
-  }
-  #content,
-  .div1 {
-    width: 650px;
-  }
-  #secondary {
-    width: 250px;
-  }
-  select {
-    max-width: 200px;
+    background-color: yellow;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 959px) {
-  #page {
+  .page {
     width: 900px;
-  }
-  #content,
-  .div1 {
-    width: 620px;
-  }
-  #secondary {
-    width: 220px;
-  }
-  select {
-    max-width: 180px;
+    background-color: blue;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  #page {
+  .page {
     width: 450px;
-  }
-  #content,
-  .div1 {
-    width: 420px;
-    position: relative;
-  }
-  #secondary {
-    display: none;
-  }
-  #access {
-    width: 450px;
-  }
-  #access a {
-    padding-right: 5px;
-  }
-  #access a img {
-    display: none;
-  }
-  #rss {
-    display: none;
-  }
-  #branding #s {
-    display: none;
+    background-color: green;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 @media only screen and (max-width: 479px) {
-  #page {
+  .page {
     width: 300px;
-  }
-  #content,
-  .div1 {
-    width: 300px;
-  }
-  #secondary {
-    display: none;
-  }
-  #access {
-    width: 330px;
-  }
-  #access a {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-  #access a img {
-    display: none;
-  }
-  #rss {
-    display: none;
-  }
-  #branding #s {
-    display: none;
-  }
-  #access ul ul a {
-    width: 100px;
+    background-color: #ccc;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }

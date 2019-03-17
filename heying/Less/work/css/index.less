@@ -1,38 +1,305 @@
+// 初始字体大小
+.initial-font(@font-size: 16px, @line-height: 16px){
+    margin: 0;
+    padding: 0;
+    font-size: @font-size;
+    line-height: @line-height;
+    color: black;
+    font-family: '黑体','宋体';
+    font-weight: 500;
+}
+
+// page、header、article、footer最外层基础设置
+.initial-width(@width: 1100px, @color: red, @margin-top: 0px, @margin-bottom: 0px){
+    width: @width;
+    background-color: @color;
+    margin-top: @margin-top;
+    margin-bottom: @margin-bottom;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// 1280分辨率以上（大于1200px）
 @media screen and (min-width:1200px){
-#page{width:1100px}
-#content,.div1{width:730px}
-#secondary{width:310px}
+    html, body{
+        .initial-font(18px, 18px);
+    }
+    .page{
+        .initial-width(1100px, red);
+        header{
+            .initial-width(100%, white);
+            .header-box{
+                margin-left: 20%;
+                .logo-box{
+                    display: inline-block;
+                    width: 15%;
+                    height: 65px;
+                    .logo-a{
+                        display: block;
+                        line-height: 0px;
+                        .logo{
+                            display: inline-block;
+                            height: auto;
+                            max-width: 100%;
+                            vertical-align: -10px;
+                        }
+                    }
+                }
+                .search-box{
+                    display: inline-block;
+                    width: 50%;
+                    height: 65px;
+                    vertical-align: center;
+                    nav{
+                        line-height: 30px;
+                    }
+                    nav a{
+                        color: #ccc;
+                        text-decoration: none;
+                        &::after{
+                            content: '|';
+                            margin-left: 10px;
+                        }
+                        &:last-child::after{
+                            content: '';
+                        }
+                    }
+                    form{
+                        line-height: 30px;
+                        input:first-child{
+                            width: 75%;
+                            height: 20px;
+                            border: 4px solid blue;
+                        }
+                        input:last-child{
+                            padding: 6px 10px;
+                            color: white;
+                            border: none;
+                            background-color: blue;
+                        }
+                    }
+                }
+            }
+        }
+        article{
+            .initial-width(100%, white);
+            section:first-child{
+                display: inline-block;
+                width: 70%;
+                .focus-box{
+                    display: inline-block;
+                    width: 100%;
+                    .focus-a{
+                        display: block;
+                        line-height: 0px;
+                        width: 100%;
+                        height: 170px;
+                        .focus{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    
+                }
+                .content-box{
+                    width: 100%;
+                    margin-bottom: 20px;
+                    .content-left, .content-right{
+                        display: inline-block;
+                        width: 48%;
+                        margin-left: 1%;
+                        h3 span{
+                            color: orangered;
+                        }
+                        .list{
+                            margin-bottom: 10px;
+                            img{
+                                width: 70px;
+                                height: 70px;
+                            }
+                            p{
+                                margin: 0;
+                                padding: 0;
+                                float: right;
+                                width: calc(~"100% - 70px");
+                                color: #ccc;
+                                a{
+                                    text-decoration: none;
+                                    span{ 
+                                        color: blue;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .advfasion-box{
+                    display: inline-block;
+                    width: 100%;
+                    .advfasion-a{
+                        display: block;
+                        line-height: 0px;
+                        width: 100%;
+                        height: 100px;
+                        .advfasion{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    
+                }
+            }
+            section:last-child{
+                display: inline-block;
+                width: 28%;
+                margin-left: 1%;
+                form{
+                    width: 100%;
+                    padding-left: 10px;
+                    box-sizing: border-box;
+                    border: 1px solid #bbb;
+                    background-color: #eee;
+                    h1{
+                        font-family: "黑体";
+                        margin: 10px 0;
+                        span{
+                            font-size: 22px;
+                        }
+                        span:first-child{
+                            color: #42CDCD;
+                        }
+                        span:last-child{
+                            color: orangered;
+                            padding-left: 5px;
+                        }
+                    }
+                    .input-title{
+                        margin: 5px 0;
+                        color: blue;
+                    }
+                    span{
+                        font-size: 14px;
+                        color: #ccc;
+                    }
+                    .login{
+                        border: none;
+                        background-color: #FF9900;
+                        color: white;
+                        padding: 5px 20px;
+                        margin: 10px 0;
+                        cursor: pointer;
+                    }
+                    .login + a{
+                        font-size: 14px;
+                        text-decoration: none;
+                    }
+                }
+                h3{
+                    margin: 10px 0;
+                    padding: 20px 0;
+                    border: 1px solid #bbb;
+                    background-color: #eee;
+                    a{
+                        color: #ccc;
+                        text-decoration: none;
+                        font-weight: 500;
+                        padding-left: 10px;
+                    }
+                }
+                .neighbor{
+                    width: 100%;
+                    margin-bottom: 10px;
+                    box-sizing: border-box;
+                    border: 1px solid #ddd;
+                    background-color: #eee;
+                    p:first-child{
+                        border: none;
+                        border-bottom: 1px solid #0ACCFC;
+                        background-color: #ccc;
+                        margin: 0;
+                        padding: 10px;
+                        color: #aaa;
+                        font-weight: 600;
+                        span{
+                            color: rgb(255, 123, 0);
+                        }
+                    }
+                    .info-box{
+                        display: inline-block;
+                        width: 45%;
+                        margin: 10px 5px;
+                        p{
+                            width: calc(~"100% - 50px");
+                            margin: 0;
+                            padding: 0;
+                            float: right;
+                            font-weight: 500;
+                            font-size: 14px;
+                            span{
+                                color: blue;
+                            }
+                        }
+                    }
+                }
+                .train-box{
+                    display: inline-block;
+                    width: 100%;
+                    .train-a{
+                        display: block;
+                        line-height: 0px;
+                        width: 100%;
+                        height: 100px;
+                        .train{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        footer{
+            .initial-width(100%, #eee);
+            nav{
+                padding: 10px 0;
+                text-align: center;
+                a{
+                    color: black;
+                    text-decoration: none;
+                }
+            } 
+            p{
+                color: #ccc;
+                text-align: center;
+                margin: 0;
+                padding: 10px 0;
+                span{
+                    color: black;
+                }
+            }
+        }
+    }
 }
+// 1100分辨率（大于960px，小于1199px）
 @media screen and (min-width:960px) and (max-width:1199px){
-#page{width:960px}
-#content,.div1{width:650px}
-#secondary{width:250px}
-select{max-width:200px}
+    .page{
+        .initial-width(960px, yellow);
+    }
 }
+// 880分辨率（大于768px，小于959px）
 @media screen and (min-width:768px) and (max-width:959px){
-#page{width:900px}
-#content,.div1{width:620px}
-#secondary{width:220px}
-select{max-width:180px}
+    .page{
+        .initial-width(900px, blue);
+    }
 }
+// 720分辨率（大于480px，小于767px）
 @media only screen and (min-width:480px) and (max-width:767px){
-#page{width:450px}
-#content,.div1{width:420px;position:relative}
-#secondary{display:none}
-#access{width:450px}
-#access a{padding-right:5px}
-#access a img{display:none}
-#rss{display:none}
-#branding #s{display:none}
+    .page{
+        .initial-width(450px,green);
+    }
 }
+// 440分辨率以下（小于479px）
 @media only screen and (max-width:479px){
-#page{width:300px}
-#content,.div1{width:300px}
-#secondary{display:none}
-#access{width:330px}
-#access a{padding-right:10px;padding-left:10px}
-#access a img{display:none}
-#rss{display:none}
-#branding #s{display:none}
-#access ul ul a{width:100px}
+    .page{
+        .initial-width(300px, #ccc)
+    }
 }
