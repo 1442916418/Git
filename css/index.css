@@ -89,17 +89,17 @@
     display: inline-block;
     width: 70%;
   }
-  .page article section:first-child .focus-box {
+  .page article section:first-child > div:first-child {
     display: inline-block;
     width: 100%;
   }
-  .page article section:first-child .focus-box .focus-a {
+  .page article section:first-child > div:first-child a {
     display: block;
     line-height: 0px;
     width: 100%;
     height: 170px;
   }
-  .page article section:first-child .focus-box .focus-a .focus {
+  .page article section:first-child > div:first-child a img {
     width: 100%;
     height: 100%;
   }
@@ -142,17 +142,17 @@
   .page article section:first-child .content-box .content-right .list p a span {
     color: blue;
   }
-  .page article section:first-child .advfasion-box {
+  .page article section:first-child > div:last-child {
     display: inline-block;
     width: 100%;
   }
-  .page article section:first-child .advfasion-box .advfasion-a {
+  .page article section:first-child > div:last-child a {
     display: block;
     line-height: 0px;
     width: 100%;
     height: 100px;
   }
-  .page article section:first-child .advfasion-box .advfasion-a .advfasion {
+  .page article section:first-child > div:last-child a img {
     width: 100%;
     height: 100%;
   }
@@ -249,17 +249,17 @@
   .page article section:last-child .neighbor .info-box p span {
     color: blue;
   }
-  .page article section:last-child .train-box {
+  .page article section:last-child > div:last-child {
     display: inline-block;
     width: 100%;
   }
-  .page article section:last-child .train-box .train-a {
+  .page article section:last-child > div:last-child a {
     display: block;
     line-height: 0px;
     width: 100%;
     height: 100px;
   }
-  .page article section:last-child .train-box .train-a .train {
+  .page article section:last-child > div:last-child a img {
     width: 100%;
     height: 100%;
   }
@@ -290,6 +290,16 @@
   }
 }
 @media screen and (min-width: 960px) and (max-width: 1199px) {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 16px;
+    color: black;
+    font-family: '黑体', '宋体';
+    font-weight: 500;
+  }
   .page {
     width: 960px;
     background-color: yellow;
@@ -298,8 +308,289 @@
     margin-right: auto;
     margin-left: auto;
   }
+  .page header {
+    width: 100%;
+    background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page header .header-box {
+    margin-left: 17%;
+  }
+  .page header .header-box .logo-box {
+    display: inline-block;
+    width: 15%;
+    height: 65px;
+  }
+  .page header .header-box .logo-box .logo-a {
+    display: block;
+    line-height: 0px;
+  }
+  .page header .header-box .logo-box .logo-a .logo {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+    vertical-align: -10px;
+  }
+  .page header .header-box .search-box {
+    display: inline-block;
+    width: 60%;
+    height: 65px;
+    vertical-align: center;
+  }
+  .page header .header-box .search-box nav {
+    line-height: 30px;
+  }
+  .page header .header-box .search-box nav a {
+    color: #ccc;
+    text-decoration: none;
+  }
+  .page header .header-box .search-box nav a::after {
+    content: '|';
+    margin-left: 10px;
+  }
+  .page header .header-box .search-box nav a:last-child::after {
+    content: '';
+  }
+  .page header .header-box .search-box form {
+    line-height: 30px;
+  }
+  .page header .header-box .search-box form input:first-child {
+    width: 75%;
+    height: 20px;
+    border: 4px solid blue;
+  }
+  .page header .header-box .search-box form input:last-child {
+    padding: 6px 10px;
+    color: white;
+    border: none;
+    background-color: blue;
+  }
+  .page article {
+    width: 100%;
+    background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page article section:first-child {
+    display: inline-block;
+    width: 70%;
+  }
+  .page article section:first-child > div:first-child {
+    display: inline-block;
+    width: 100%;
+  }
+  .page article section:first-child > div:first-child a {
+    display: block;
+    line-height: 0px;
+    width: 100%;
+    height: 170px;
+  }
+  .page article section:first-child > div:first-child a img {
+    width: 100%;
+    height: 100%;
+  }
+  .page article section:first-child .content-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .page article section:first-child .content-box .content-left,
+  .page article section:first-child .content-box .content-right {
+    display: inline-block;
+    width: 48%;
+    margin-left: 1%;
+  }
+  .page article section:first-child .content-box .content-left h3 span,
+  .page article section:first-child .content-box .content-right h3 span {
+    color: orangered;
+  }
+  .page article section:first-child .content-box .content-left .list,
+  .page article section:first-child .content-box .content-right .list {
+    margin-bottom: 10px;
+  }
+  .page article section:first-child .content-box .content-left .list img,
+  .page article section:first-child .content-box .content-right .list img {
+    width: 70px;
+    height: 70px;
+  }
+  .page article section:first-child .content-box .content-left .list p,
+  .page article section:first-child .content-box .content-right .list p {
+    margin: 0;
+    padding: 0;
+    float: right;
+    width: calc(100% - 70px);
+    color: #ccc;
+  }
+  .page article section:first-child .content-box .content-left .list p a,
+  .page article section:first-child .content-box .content-right .list p a {
+    text-decoration: none;
+  }
+  .page article section:first-child .content-box .content-left .list p a span,
+  .page article section:first-child .content-box .content-right .list p a span {
+    color: blue;
+  }
+  .page article section:first-child > div:last-child {
+    display: inline-block;
+    width: 100%;
+  }
+  .page article section:first-child > div:last-child a {
+    display: block;
+    line-height: 0px;
+    width: 100%;
+    height: 100px;
+  }
+  .page article section:first-child > div:last-child a img {
+    width: 100%;
+    height: 100%;
+  }
+  .page article section:last-child {
+    display: inline-block;
+    width: 28%;
+    margin-left: 1%;
+  }
+  .page article section:last-child form {
+    width: 100%;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border: 1px solid #bbb;
+    background-color: #eee;
+  }
+  .page article section:last-child form h1 {
+    font-family: "黑体";
+    margin: 10px 0;
+  }
+  .page article section:last-child form h1 span {
+    font-size: 22px;
+  }
+  .page article section:last-child form h1 span:first-child {
+    color: #42CDCD;
+  }
+  .page article section:last-child form h1 span:last-child {
+    color: orangered;
+    padding-left: 5px;
+  }
+  .page article section:last-child form .input-title {
+    margin: 5px 0;
+    color: blue;
+  }
+  .page article section:last-child form span {
+    font-size: 14px;
+    color: #ccc;
+  }
+  .page article section:last-child form .login {
+    border: none;
+    background-color: #FF9900;
+    color: white;
+    padding: 5px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  .page article section:last-child form .login + a {
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .page article section:last-child h3 {
+    margin: 10px 0;
+    padding: 20px 0;
+    border: 1px solid #bbb;
+    background-color: #eee;
+  }
+  .page article section:last-child h3 a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+  .page article section:last-child .neighbor {
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background-color: #eee;
+  }
+  .page article section:last-child .neighbor p:first-child {
+    border: none;
+    border-bottom: 1px solid #0ACCFC;
+    background-color: #ccc;
+    margin: 0;
+    padding: 10px;
+    color: #aaa;
+    font-weight: 600;
+  }
+  .page article section:last-child .neighbor p:first-child span {
+    color: #ff7b00;
+  }
+  .page article section:last-child .neighbor .info-box {
+    display: inline-block;
+    width: 45%;
+    margin: 10px 4px;
+  }
+  .page article section:last-child .neighbor .info-box p {
+    width: calc(100% - 50px);
+    margin: 0;
+    padding: 0;
+    float: right;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .page article section:last-child .neighbor .info-box p span {
+    color: blue;
+  }
+  .page article section:last-child > div:last-child {
+    display: inline-block;
+    width: 100%;
+  }
+  .page article section:last-child > div:last-child a {
+    display: block;
+    line-height: 0px;
+    width: 100%;
+    height: 100px;
+  }
+  .page article section:last-child > div:last-child a img {
+    width: 100%;
+    height: 100%;
+  }
+  .page footer {
+    width: 100%;
+    background-color: #eee;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page footer nav {
+    padding: 10px 0;
+    text-align: center;
+  }
+  .page footer nav a {
+    color: black;
+    text-decoration: none;
+  }
+  .page footer p {
+    color: #ccc;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+  }
+  .page footer p span {
+    color: black;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 959px) {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 14px;
+    color: black;
+    font-family: '黑体', '宋体';
+    font-weight: 500;
+  }
   .page {
     width: 900px;
     background-color: blue;
@@ -308,8 +599,289 @@
     margin-right: auto;
     margin-left: auto;
   }
+  header {
+    width: 100%;
+    background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  header .header-box {
+    margin-left: 20%;
+  }
+  header .header-box .logo-box {
+    display: inline-block;
+    width: 15%;
+    height: 65px;
+  }
+  header .header-box .logo-box .logo-a {
+    display: block;
+    line-height: 0px;
+  }
+  header .header-box .logo-box .logo-a .logo {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+    vertical-align: -10px;
+  }
+  header .header-box .search-box {
+    display: inline-block;
+    width: 50%;
+    height: 65px;
+    vertical-align: center;
+  }
+  header .header-box .search-box nav {
+    line-height: 30px;
+  }
+  header .header-box .search-box nav a {
+    color: #ccc;
+    text-decoration: none;
+  }
+  header .header-box .search-box nav a::after {
+    content: '|';
+    margin-left: 10px;
+  }
+  header .header-box .search-box nav a:last-child::after {
+    content: '';
+  }
+  header .header-box .search-box form {
+    line-height: 30px;
+  }
+  header .header-box .search-box form input:first-child {
+    width: 75%;
+    height: 20px;
+    border: 4px solid blue;
+  }
+  header .header-box .search-box form input:last-child {
+    padding: 6px 10px;
+    color: white;
+    border: none;
+    background-color: blue;
+  }
+  article {
+    width: 100%;
+    background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  article section:first-child {
+    display: inline-block;
+    width: 70%;
+  }
+  article section:first-child > div:first-child {
+    display: inline-block;
+    width: 100%;
+  }
+  article section:first-child > div:first-child a {
+    display: block;
+    line-height: 0px;
+    width: 100%;
+    height: 170px;
+  }
+  article section:first-child > div:first-child a img {
+    width: 100%;
+    height: 100%;
+  }
+  article section:first-child .content-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  article section:first-child .content-box .content-left,
+  article section:first-child .content-box .content-right {
+    display: inline-block;
+    width: 48%;
+    margin-left: 1%;
+  }
+  article section:first-child .content-box .content-left h3 span,
+  article section:first-child .content-box .content-right h3 span {
+    color: orangered;
+  }
+  article section:first-child .content-box .content-left .list,
+  article section:first-child .content-box .content-right .list {
+    margin-bottom: 10px;
+  }
+  article section:first-child .content-box .content-left .list img,
+  article section:first-child .content-box .content-right .list img {
+    width: 70px;
+    height: 70px;
+  }
+  article section:first-child .content-box .content-left .list p,
+  article section:first-child .content-box .content-right .list p {
+    margin: 0;
+    padding: 0;
+    float: right;
+    width: calc(100% - 70px);
+    color: #ccc;
+  }
+  article section:first-child .content-box .content-left .list p a,
+  article section:first-child .content-box .content-right .list p a {
+    text-decoration: none;
+  }
+  article section:first-child .content-box .content-left .list p a span,
+  article section:first-child .content-box .content-right .list p a span {
+    color: blue;
+  }
+  article section:first-child > div:last-child {
+    display: inline-block;
+    width: 100%;
+  }
+  article section:first-child > div:last-child a {
+    display: block;
+    line-height: 0px;
+    width: 100%;
+    height: 100px;
+  }
+  article section:first-child > div:last-child a img {
+    width: 100%;
+    height: 100%;
+  }
+  article section:last-child {
+    display: inline-block;
+    width: 28%;
+    margin-left: 1%;
+  }
+  article section:last-child form {
+    width: 100%;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border: 1px solid #bbb;
+    background-color: #eee;
+  }
+  article section:last-child form h1 {
+    font-family: "黑体";
+    margin: 10px 0;
+  }
+  article section:last-child form h1 span {
+    font-size: 22px;
+  }
+  article section:last-child form h1 span:first-child {
+    color: #42CDCD;
+  }
+  article section:last-child form h1 span:last-child {
+    color: orangered;
+    padding-left: 5px;
+  }
+  article section:last-child form .input-title {
+    margin: 5px 0;
+    color: blue;
+  }
+  article section:last-child form span {
+    font-size: 14px;
+    color: #ccc;
+  }
+  article section:last-child form .login {
+    border: none;
+    background-color: #FF9900;
+    color: white;
+    padding: 5px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  article section:last-child form .login + a {
+    font-size: 14px;
+    text-decoration: none;
+  }
+  article section:last-child h3 {
+    margin: 10px 0;
+    padding: 20px 0;
+    border: 1px solid #bbb;
+    background-color: #eee;
+  }
+  article section:last-child h3 a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+  article section:last-child .neighbor {
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background-color: #eee;
+  }
+  article section:last-child .neighbor p:first-child {
+    border: none;
+    border-bottom: 1px solid #0ACCFC;
+    background-color: #ccc;
+    margin: 0;
+    padding: 10px;
+    color: #aaa;
+    font-weight: 600;
+  }
+  article section:last-child .neighbor p:first-child span {
+    color: #ff7b00;
+  }
+  article section:last-child .neighbor .info-box {
+    display: inline-block;
+    width: 45%;
+    margin: 10px 4px;
+  }
+  article section:last-child .neighbor .info-box p {
+    width: calc(100% - 50px);
+    margin: 0;
+    padding: 0;
+    float: right;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  article section:last-child .neighbor .info-box p span {
+    color: blue;
+  }
+  article section:last-child > div:last-child {
+    display: inline-block;
+    width: 100%;
+  }
+  article section:last-child > div:last-child a {
+    display: block;
+    line-height: 0px;
+    width: 100%;
+    height: 100px;
+  }
+  article section:last-child > div:last-child a img {
+    width: 100%;
+    height: 100%;
+  }
+  footer {
+    width: 100%;
+    background-color: #eee;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  footer nav {
+    padding: 10px 0;
+    text-align: center;
+  }
+  footer nav a {
+    color: black;
+    text-decoration: none;
+  }
+  footer p {
+    color: #ccc;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+  }
+  footer p span {
+    color: black;
+  }
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 14px;
+    color: black;
+    font-family: '黑体', '宋体';
+    font-weight: 500;
+  }
   .page {
     width: 450px;
     background-color: green;
@@ -318,8 +890,288 @@
     margin-right: auto;
     margin-left: auto;
   }
+  header {
+    width: 100%;
+    background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  header .header-box {
+    margin-left: 5%;
+  }
+  header .header-box .logo-box {
+    display: inline-block;
+    width: 15%;
+    height: 65px;
+  }
+  header .header-box .logo-box .logo-a {
+    display: block;
+    line-height: 0px;
+  }
+  header .header-box .logo-box .logo-a .logo {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+    vertical-align: -10px;
+  }
+  header .header-box .search-box {
+    display: inline-block;
+    width: 75%;
+    height: 65px;
+    vertical-align: center;
+  }
+  header .header-box .search-box nav {
+    line-height: 30px;
+  }
+  header .header-box .search-box nav a {
+    color: #ccc;
+    text-decoration: none;
+  }
+  header .header-box .search-box nav a::after {
+    content: '|';
+    margin-left: 5px;
+  }
+  header .header-box .search-box nav a:last-child::after {
+    content: '';
+  }
+  header .header-box .search-box form {
+    line-height: 30px;
+  }
+  header .header-box .search-box form input:first-child {
+    width: 75%;
+    height: 20px;
+    border: 4px solid blue;
+  }
+  header .header-box .search-box form input:last-child {
+    padding: 6px 10px;
+    color: white;
+    border: none;
+    background-color: blue;
+  }
+  article {
+    width: 100%;
+    background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  article section:first-child {
+    display: inline-block;
+    width: 100%;
+  }
+  article section:first-child > div:first-child {
+    display: inline-block;
+    width: 100%;
+  }
+  article section:first-child > div:first-child a {
+    display: block;
+    line-height: 0px;
+    width: 100%;
+    height: 170px;
+  }
+  article section:first-child > div:first-child a img {
+    width: 100%;
+    height: 100%;
+  }
+  article section:first-child .content-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  article section:first-child .content-box .content-left,
+  article section:first-child .content-box .content-right {
+    display: inline-block;
+    width: 48%;
+    margin-left: 1%;
+  }
+  article section:first-child .content-box .content-left h3 span,
+  article section:first-child .content-box .content-right h3 span {
+    color: orangered;
+  }
+  article section:first-child .content-box .content-left .list,
+  article section:first-child .content-box .content-right .list {
+    margin-bottom: 10px;
+  }
+  article section:first-child .content-box .content-left .list img,
+  article section:first-child .content-box .content-right .list img {
+    width: 70px;
+    height: 70px;
+  }
+  article section:first-child .content-box .content-left .list p,
+  article section:first-child .content-box .content-right .list p {
+    margin: 0;
+    padding: 0;
+    float: right;
+    width: calc(100% - 70px);
+    color: #ccc;
+  }
+  article section:first-child .content-box .content-left .list p a,
+  article section:first-child .content-box .content-right .list p a {
+    text-decoration: none;
+  }
+  article section:first-child .content-box .content-left .list p a span,
+  article section:first-child .content-box .content-right .list p a span {
+    color: blue;
+  }
+  article section:first-child > div:last-child {
+    display: inline-block;
+    width: 100%;
+  }
+  article section:first-child > div:last-child a {
+    display: block;
+    line-height: 0px;
+    width: 100%;
+    height: 100px;
+  }
+  article section:first-child > div:last-child a img {
+    width: 100%;
+    height: 100%;
+  }
+  article section:last-child {
+    display: inline-block;
+    width: 100%;
+  }
+  article section:last-child form {
+    width: 100%;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border: 1px solid #bbb;
+    background-color: #eee;
+  }
+  article section:last-child form h1 {
+    font-family: "黑体";
+    margin: 10px 0;
+  }
+  article section:last-child form h1 span {
+    font-size: 22px;
+  }
+  article section:last-child form h1 span:first-child {
+    color: #42CDCD;
+  }
+  article section:last-child form h1 span:last-child {
+    color: orangered;
+    padding-left: 5px;
+  }
+  article section:last-child form .input-title {
+    margin: 5px 0;
+    color: blue;
+  }
+  article section:last-child form span {
+    font-size: 14px;
+    color: #ccc;
+  }
+  article section:last-child form .login {
+    border: none;
+    background-color: #FF9900;
+    color: white;
+    padding: 5px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  article section:last-child form .login + a {
+    font-size: 14px;
+    text-decoration: none;
+  }
+  article section:last-child h3 {
+    margin: 10px 0;
+    padding: 20px 0;
+    border: 1px solid #bbb;
+    background-color: #eee;
+  }
+  article section:last-child h3 a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+  article section:last-child .neighbor {
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background-color: #eee;
+  }
+  article section:last-child .neighbor p:first-child {
+    border: none;
+    border-bottom: 1px solid #0ACCFC;
+    background-color: #ccc;
+    margin: 0;
+    padding: 10px;
+    color: #aaa;
+    font-weight: 600;
+  }
+  article section:last-child .neighbor p:first-child span {
+    color: #ff7b00;
+  }
+  article section:last-child .neighbor .info-box {
+    display: inline-block;
+    width: 45%;
+    margin: 10px 5px;
+  }
+  article section:last-child .neighbor .info-box p {
+    width: calc(100% - 50px);
+    margin: 0;
+    padding: 0;
+    float: right;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  article section:last-child .neighbor .info-box p span {
+    color: blue;
+  }
+  article section:last-child > div:last-child {
+    display: inline-block;
+    width: 100%;
+  }
+  article section:last-child > div:last-child a {
+    display: block;
+    line-height: 0px;
+    width: 100%;
+    height: 100px;
+  }
+  article section:last-child > div:last-child a img {
+    width: 100%;
+    height: 100%;
+  }
+  footer {
+    width: 100%;
+    background-color: #eee;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  footer nav {
+    padding: 10px 0;
+    text-align: center;
+  }
+  footer nav a {
+    color: black;
+    text-decoration: none;
+  }
+  footer p {
+    color: #ccc;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+  }
+  footer p span {
+    color: black;
+  }
 }
 @media only screen and (max-width: 479px) {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 12px;
+    color: black;
+    font-family: '黑体', '宋体';
+    font-weight: 500;
+  }
   .page {
     width: 300px;
     background-color: #ccc;
@@ -327,5 +1179,267 @@
     margin-bottom: 0px;
     margin-right: auto;
     margin-left: auto;
+  }
+  header {
+    width: 100%;
+    background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  header .header-box .logo-box {
+    display: inline-block;
+    width: 15%;
+    height: 65px;
+  }
+  header .header-box .logo-box .logo-a {
+    display: block;
+    line-height: 0px;
+  }
+  header .header-box .logo-box .logo-a .logo {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+    vertical-align: 25px;
+  }
+  header .header-box .search-box {
+    display: inline-block;
+    width: 75%;
+    height: 65px;
+    vertical-align: center;
+  }
+  header .header-box .search-box nav {
+    line-height: 30px;
+  }
+  header .header-box .search-box nav a {
+    color: #ccc;
+    text-decoration: none;
+  }
+  header .header-box .search-box form {
+    line-height: 30px;
+  }
+  header .header-box .search-box form input:first-child {
+    width: 70%;
+    height: 20px;
+    border: 4px solid blue;
+  }
+  header .header-box .search-box form input:last-child {
+    padding: 5px 10px;
+    color: white;
+    border: none;
+    background-color: blue;
+  }
+  article {
+    width: 100%;
+    background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  article section:first-child {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  article section:first-child > div:first-child {
+    display: inline-block;
+    width: 100%;
+  }
+  article section:first-child > div:first-child a {
+    display: block;
+    line-height: 0px;
+    width: 100%;
+    height: 170px;
+  }
+  article section:first-child > div:first-child a img {
+    width: 100%;
+    height: 100%;
+  }
+  article section:first-child .content-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  article section:first-child .content-box .content-left,
+  article section:first-child .content-box .content-right {
+    display: inline-block;
+    width: 100%;
+    margin-left: 1%;
+  }
+  article section:first-child .content-box .content-left h3 span,
+  article section:first-child .content-box .content-right h3 span {
+    color: orangered;
+  }
+  article section:first-child .content-box .content-left .list,
+  article section:first-child .content-box .content-right .list {
+    margin-bottom: 10px;
+  }
+  article section:first-child .content-box .content-left .list img,
+  article section:first-child .content-box .content-right .list img {
+    width: 70px;
+    height: 70px;
+  }
+  article section:first-child .content-box .content-left .list p,
+  article section:first-child .content-box .content-right .list p {
+    margin: 0;
+    padding: 0;
+    float: right;
+    width: calc(100% - 70px);
+    color: #ccc;
+  }
+  article section:first-child .content-box .content-left .list p a,
+  article section:first-child .content-box .content-right .list p a {
+    text-decoration: none;
+  }
+  article section:first-child .content-box .content-left .list p a span,
+  article section:first-child .content-box .content-right .list p a span {
+    color: blue;
+  }
+  article section:first-child > div:last-child {
+    display: inline-block;
+    width: 100%;
+  }
+  article section:first-child > div:last-child a {
+    display: block;
+    line-height: 0px;
+    width: 100%;
+    height: 100px;
+  }
+  article section:first-child > div:last-child a img {
+    width: 100%;
+    height: 100%;
+  }
+  article section:last-child {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  article section:last-child form {
+    width: 100%;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border: 1px solid #bbb;
+    background-color: #eee;
+  }
+  article section:last-child form h1 {
+    font-family: "黑体";
+    margin: 10px 0;
+  }
+  article section:last-child form h1 span {
+    font-size: 22px;
+  }
+  article section:last-child form h1 span:first-child {
+    color: #42CDCD;
+  }
+  article section:last-child form h1 span:last-child {
+    color: orangered;
+    padding-left: 5px;
+  }
+  article section:last-child form .input-title {
+    margin: 5px 0;
+    color: blue;
+  }
+  article section:last-child form span {
+    font-size: 14px;
+    color: #ccc;
+  }
+  article section:last-child form .login {
+    border: none;
+    background-color: #FF9900;
+    color: white;
+    padding: 5px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  article section:last-child form .login + a {
+    font-size: 14px;
+    text-decoration: none;
+  }
+  article section:last-child h3 {
+    margin: 10px 0;
+    padding: 20px 0;
+    border: 1px solid #bbb;
+    background-color: #eee;
+  }
+  article section:last-child h3 a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+  article section:last-child .neighbor {
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background-color: #eee;
+  }
+  article section:last-child .neighbor p:first-child {
+    border: none;
+    border-bottom: 1px solid #0ACCFC;
+    background-color: #ccc;
+    margin: 0;
+    padding: 10px;
+    color: #aaa;
+    font-weight: 600;
+  }
+  article section:last-child .neighbor p:first-child span {
+    color: #ff7b00;
+  }
+  article section:last-child .neighbor .info-box {
+    display: inline-block;
+    width: 45%;
+    margin: 10px 5px;
+  }
+  article section:last-child .neighbor .info-box p {
+    width: calc(100% - 50px);
+    margin: 0;
+    padding: 0;
+    float: right;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  article section:last-child .neighbor .info-box p span {
+    color: blue;
+  }
+  article section:last-child > div:last-child {
+    display: inline-block;
+    width: 100%;
+  }
+  article section:last-child > div:last-child a {
+    display: block;
+    line-height: 0px;
+    width: 100%;
+    height: 100px;
+  }
+  article section:last-child > div:last-child a img {
+    width: 100%;
+    height: 100%;
+  }
+  footer {
+    width: 100%;
+    background-color: #eee;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  footer nav {
+    padding: 10px 0;
+    text-align: center;
+  }
+  footer nav a {
+    color: black;
+    text-decoration: none;
+  }
+  footer p {
+    color: #ccc;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+  }
+  footer p span {
+    color: black;
   }
 }
