@@ -1,0 +1,18 @@
+<h3 ng-bind="book.bookName"></h3>
+<hr>
+<div class="row">
+  <div class="col-sm-2">作者:</div>
+  <div class="col-sm-6">{{book.author}}</div>
+</div>
+<div class="row">
+  <div class="col-sm-2">出版社:</div>
+  <div class="col-sm-6" ><span ng-bind="book.publish"></span></div>
+</div>
+<div class="row">
+  <div class="col-sm-2">价格:</div>
+  <div class="col-sm-6">{{book.price | currency:'¥'}}</div>
+</div>
+<div class="row">
+  <div class="col-sm-2">介绍:</div>
+  <div class="col-sm-6">{{book.description}}</div>
+</div>

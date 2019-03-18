@@ -1,0 +1,97 @@
+<div class="row">
+    <div class="col-xs-4 col-sm-6 col-md-3 cellPhonePictures text-center">
+        <img src="{{ phoneDet.images[0]  }}" alt="phone">
+    </div>
+    <div class="col-xs-8 col-sm-6 col-md-9 cellPhoneNname">
+        <h2>{{ phoneDet.name }}</h2>
+        <hr>
+        <p class="lead">{{ phoneDet.description }}</p>
+
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-1" ng-repeat="phoneImg in phoneDet.images">
+                <a href="#" class="thumbnail phonePricue">
+                    <img src="{{ phoneImg }}" alt="phone">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row list-item">
+    <div class="col-xs-6 col-sm-3 col-md-1 col-md-offset-1">
+        <b>Availability and Networks Availability</b>
+        <p ng-repeat="availability in phoneDet.availability">{{availability}}</p>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-1">
+        <b>Battery</b><br>
+        <b>Type</b>
+        <p>{{ phoneDet.battery.type }}</p>
+        <b>Talk Time</b>
+        <p>{{ phoneDet.battery.talkTime }}</p>
+        <b>Standby time(max)</b>
+        <p>{{ phoneDet.battery.standbyTime }}</p>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-1">
+        <b>Storage and Memory RAM</b>
+        <p>{{ phoneDet.storage.ram }}</p>
+        <b>Internal Storage</b>
+        <p>{{ phoneDet.storage.flash }}</p>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-1">
+        <b>Connectivity Networks Support</b>
+        <p>{{ phoneDet.connectivity.cell }}</p>
+        <b>WiFi</b>
+        <p>{{ phoneDet.connectivity.wifi }}</p>
+        <b>Bluetooth</b>
+        <p>{{ phoneDet.connectivity.bluetooth }}</p>
+        <b>Infrared</b>
+        <p>{{ phoneDet.connectivity.infrared }} </p>
+        <b>GPS</b>
+        <p>{{ phoneDet.connectivity.gps }}</p>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-1">
+        <b>Android OS Version</b>
+        <p>{{ phoneDet.android.os }}</p>
+        <b>UI</b>
+        <p>{{ phoneDet.android.ui }}</p>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-1">
+        <b>Size and Weight Dimensions</b>
+        <p ng-repeat="dimensions in phoneDet.sizeAndWeight.dimensions">{{ dimensions }}</p>
+        <b>Weight</b>
+        <p>{{ phoneDet.sizeAndWeight.weight }}</p>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-1">
+        <b>Display</b><br>
+        <b>Screen size</b>
+        <p>{{ phoneDet.display.screenSize }}</p>
+        <b>Screen resolution</b>
+        <p>{{ phoneDet.display.screenResolution }}</p>
+        <b>Touch screen</b>
+        <p>{{ phoneDet.display.touchScreen }}</p>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-1">
+        <b>Hardware</b><br>
+        <b>CPU</b>
+        <p>{{ phoneDet.hardware.cpu }}</p>
+        <b>USB</b>
+        <p>{{ phoneDet.hardware.usb }}</p>
+        <b>Audio/headphone jack</b>
+        <p>{{ phoneDet.hardware.audioJack }}</p>
+        <b>FM Radio</b>
+        <p>{{ phoneDet.hardware.fmRadio }}</p>
+        <b>Accelerometer</b>
+        <p>{{ phoneDet.hardware.accelerometer }}</p>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-1">
+        <b>Camera</b><br>
+        <b>Primary</b>
+        <p>{{ phoneDet.camera.primary }}</p>
+        <b>Features</b>
+        <span ng-repeat="features in phoneDet.camera.features">{{ features }},</span>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-1">
+        <b>Additional Features</b>
+        <p>{{ phoneDet.additionalFeatures }}</p>
+    </div>
+</div>

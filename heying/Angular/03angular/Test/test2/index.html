@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>带参数的路由</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container" ng-app="app" ng-ctrl="routeCtrl">
+        <div ng-view></div>
+    </div>
+
+    <script src="js/angular-1.7.0.js"></script>
+    <script src="js/angular-route-1.7.0.js"></script>
+    <script src="detail.module.js"></script>
+    <script>
+        // 注入依赖的模块:detailModule
+        var app = angular.module('app', ['ngRoute', 'detailModule']);
+        app.config(function ($routeProvider) {
+            $routeProvider.when('/products', {
+                templateUrl: 'proList.html'
+            }).when('/detail/:proId', {// 带参数 :proId
+                templateUrl: 'proDetail.html',
+                controller: 'detailCtrl' // 指定路由的控制器
+            }).otherwise({
+                redirectTo: '/products'
+            });
+        });
+    </script>
+</body>
+
+</html>

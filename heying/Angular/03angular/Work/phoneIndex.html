@@ -1,0 +1,23 @@
+<div class="row row-margin">
+    <div class="col-xs-12 col-sm-12 col-md-2 col-md-offset-1">
+        <div class="input-group input-margin">
+            <label for="txt">Search:</label>
+            <input type="text" id="txt" class="form-control">
+        </div>
+        <span>Sort by:</span>
+        <select class="selectpicker">
+            <option value="AIphabetical">AIphabetical</option>
+            <option value="Newest">Newest</option>
+        </select>
+    </div>
+
+    <ul class="col-xs-12 col-sm-12 col-md-9 list-group">
+        <li class="list-group-item" id="item-margin" ng-repeat="phone in phoneData">
+            <img src="{{ phone.imageUrl }}" alt="phone">
+            <div class="pull-right">
+                <a href="#!/detail/{{phone.id}}">{{ phone.name }}</a>
+                <p>{{ phone.snippet }}</p>
+            </div>
+        </li>
+    </ul>
+</div>

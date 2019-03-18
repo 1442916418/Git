@@ -1,0 +1,43 @@
+.row-margin {
+  margin: 20px 0 0 0;
+}
+.input-margin {
+  margin: 0 0 10px 0;
+}
+#item-margin {
+  margin: 0 0 10px 0;
+  padding: 10px 10px 10px 10px;
+  border-radius: 5px;
+}
+#item-margin img {
+  width: 100px;
+  height: 80px;
+}
+#item-margin div {
+  width: calc(100% - 100px);
+  padding: 5px 5px 5px 5px;
+}
+#item-margin div p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.row {
+  margin: 0px 0px 0px 0px;
+}
+.row .cellPhoneNname .row {
+  margin: 0px 0px 0px 0px;
+}
+.row .cellPhoneNname .row .phonePricue img {
+  width: 80px;
+  height: 100px;
+  padding: 5px 15px 5px 15px;
+}
+.list-item {
+  margin: 30px 0 0 0;
+}
+.list-item div p {
+  margin: 0px 0px 0px 0px;
+}

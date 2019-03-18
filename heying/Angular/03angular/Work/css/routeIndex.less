@@ -1,0 +1,56 @@
+.marginBox(@marginTop: 0px, @marginRight: 0px, @marginBottom: 0px, @marginLeft: 0px){
+    margin: @marginTop @marginRight @marginBottom @marginLeft;
+}
+.paddingBox(@paddingTop: 0px, @paddingRight: 0px, @paddingBottom: 0px, @paddingLeft: 0px){
+    padding: @paddingTop @paddingRight @paddingBottom @paddingLeft;
+}
+
+.row-margin{
+    .marginBox( 20px, 0, 0, 0 );
+}
+.input-margin{
+    .marginBox( 0, 0, 10px, 0 );
+}
+#item-margin{
+    .marginBox( 0, 0, 10px, 0 );
+    .paddingBox( 10px, 10px, 10px, 10px );
+    border-radius: 5px;
+    img{
+        width: 100px;
+        height: 80px;
+    }
+    div{
+        width: calc(~"100% - 100px");
+        .paddingBox( 5px, 5px, 5px, 5px );
+        p{
+            overflow:hidden; 
+            text-overflow:ellipsis;
+            display:-webkit-box; 
+            -webkit-box-orient:vertical;
+            -webkit-line-clamp:2; 
+        }
+    }
+}
+.row{
+    .marginBox();
+    .cellPhoneNname{
+        .row{
+            .marginBox();
+            .phonePricue{
+                img{
+                    width: 80px;
+                    height: 100px;
+                    .paddingBox( 5px, 15px, 5px, 15px );
+                }
+            }
+        }
+    }
+}
+.list-item{
+    .marginBox( 30px, 0, 0, 0 );
+    div{
+        p{
+            .marginBox();
+        }
+    }
+}
