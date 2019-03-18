@@ -2,18 +2,18 @@
     <div class="col-xs-12 col-sm-12 col-md-2 col-md-offset-1">
         <div class="input-group input-margin">
             <label for="txt">Search:</label>
-            <input type="text" id="txt" class="form-control">
+            <input type="text" id="txt" class="form-control" ng-model="search">
         </div>
         <span>Sort by:</span>
-        <select class="selectpicker">
-            <option value="AIphabetical">AIphabetical</option>
-            <option value="Newest">Newest</option>
+        <select class="selectpicker" ng-model="order">
+            <option value="name">AIphabetical</option>
+            <option value="age">Newest</option>
         </select>
     </div>
 
     <ul class="col-xs-12 col-sm-12 col-md-9 list-group">
-        <li class="list-group-item" id="item-margin" ng-repeat="phone in phoneData">
-            <img src="{{ phone.imageUrl }}" alt="phone">
+        <li class="list-group-item" id="item-margin" ng-repeat="phone in phoneData | orderBy:order:rule | filter:search ">
+            <img ng-src="{{ phone.imageUrl }}" alt="phone">
             <div class="pull-right">
                 <a href="#!/detail/{{phone.id}}">{{ phone.name }}</a>
                 <p>{{ phone.snippet }}</p>

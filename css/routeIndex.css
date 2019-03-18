@@ -5,7 +5,7 @@
   margin: 0 0 10px 0;
 }
 #item-margin {
-  margin: 0 0 10px 0;
+  margin: 0 0 15px 0;
   padding: 10px 10px 10px 10px;
   border-radius: 5px;
 }
@@ -24,15 +24,19 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
-.row {
+.row-title {
   margin: 0px 0px 0px 0px;
 }
-.row .cellPhoneNname .row {
+.row-title .cellPhonePictures img {
+  width: 100%;
+  height: 100%;
+}
+.row-title .cellPhoneNname .row {
   margin: 0px 0px 0px 0px;
 }
-.row .cellPhoneNname .row .phonePricue img {
-  width: 80px;
-  height: 100px;
+.row-title .cellPhoneNname .row .phonePricue img {
+  width: 80%;
+  height: 90%;
   padding: 5px 15px 5px 15px;
 }
 .list-item {
@@ -40,4 +44,7 @@
 }
 .list-item div p {
   margin: 0px 0px 0px 0px;
+}
+.home-title {
+  margin: 0 0 0 0;
 }

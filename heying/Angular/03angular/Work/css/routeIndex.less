@@ -12,7 +12,7 @@
     .marginBox( 0, 0, 10px, 0 );
 }
 #item-margin{
-    .marginBox( 0, 0, 10px, 0 );
+    .marginBox( 0, 0, 15px, 0 );
     .paddingBox( 10px, 10px, 10px, 10px );
     border-radius: 5px;
     img{
@@ -31,15 +31,21 @@
         }
     }
 }
-.row{
+.row-title{
     .marginBox();
+    .cellPhonePictures{
+        img{
+            width: 100%;
+            height: 100%;
+        }        
+    }
     .cellPhoneNname{
         .row{
             .marginBox();
             .phonePricue{
                 img{
-                    width: 80px;
-                    height: 100px;
+                    width: 80%;
+                    height: 90%;
                     .paddingBox( 5px, 15px, 5px, 15px );
                 }
             }
@@ -53,4 +59,7 @@
             .marginBox();
         }
     }
+}
+.home-title{
+    .marginBox( 0, 0, 0, 0 );
 }

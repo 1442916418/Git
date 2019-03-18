@@ -1,10 +1,13 @@
 var app = angular.module('app', ['ngRoute', 'detailModule']);
 
 app.controller('ctrl', function($scope, $http){
-    $http.get('phones/phones.json').then(function(g){
-        $scope.phoneData = g.data;
+    $scope.search = 'a';
+    $scope.order = 'name';
+    $scope.rule = false;
 
-        // console.log($scope.phoneData);
+    $http.get('phones/phones.json').then(function(g){
+        console.log(g.data);
+        $scope.phoneData = g.data;
     });
 });
 

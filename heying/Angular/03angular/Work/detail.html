@@ -1,16 +1,23 @@
-<div class="row">
-    <div class="col-xs-4 col-sm-6 col-md-3 cellPhonePictures text-center">
-        <img src="{{ phoneDet.images[0]  }}" alt="phone">
+<div class="row home-title">
+    <div class="col-xs-12 col-sm-12 col-md-2 col-md-offset-3">
+        <ol class="breadcrumb">
+            <li class="active"><a href="#!/phonesIndex">Home</a></li>
+        </ol>
     </div>
-    <div class="col-xs-8 col-sm-6 col-md-9 cellPhoneNname">
+</div>
+<div class="row row-title">
+    <div class="col-xs-12 col-sm-6 col-md-3 cellPhonePictures text-center">
+        <img ng-src="{{ prictureSrc }}" alt="phone">
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-9 cellPhoneNname">
         <h2>{{ phoneDet.name }}</h2>
         <hr>
         <p class="lead">{{ phoneDet.description }}</p>
 
         <div class="row">
-            <div class="col-xs-2 col-sm-2 col-md-1" ng-repeat="phoneImg in phoneDet.images">
-                <a href="#" class="thumbnail phonePricue">
-                    <img src="{{ phoneImg }}" alt="phone">
+            <div class="col-xs-6 col-sm-4 col-md-2" ng-repeat="phoneImg in phoneDet.images">
+                <a href="javascript:void(0);" class="thumbnail phonePricue">
+                    <img ng-src="{{ phoneImg }}" alt="phone" ng-mouseover="tabPricture($event)">
                 </a>
             </div>
         </div>
@@ -45,7 +52,7 @@
         <b>Bluetooth</b>
         <p>{{ phoneDet.connectivity.bluetooth }}</p>
         <b>Infrared</b>
-        <p>{{ phoneDet.connectivity.infrared }} </p>
+        <p>{{ phoneDet.connectivity.infrared }}</p>
         <b>GPS</b>
         <p>{{ phoneDet.connectivity.gps }}</p>
     </div>
