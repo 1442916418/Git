@@ -12,5 +12,6 @@ angular.module('detailModule', []).controller('detailCtrl', function($scope, $ro
     
     $scope.tabPricture = function(t){
         $scope.prictureSrc = t.target.src;
+        // console.log($scope.prictureSrc);
     }
-})
+}) 
