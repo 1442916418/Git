@@ -9,7 +9,7 @@ app.controller('ctrl', function($scope, $http){
         console.log(g.data);
         $scope.phoneData = g.data;
     });
-});
+}); 
 
 app.config(function($routeProvider){
     $routeProvider.when('/phonesIndex', {

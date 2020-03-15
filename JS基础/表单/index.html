@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <form class="register" id="register" onsubmit="false">
+        <h3>注册</h3>
+        <div class="item">
+            <label for="name">用户名</label>
+            <input class="input" type="text" placeholder="请输入用户名" id="name" onblur="verifyName(this)">
+        </div>
+        <div class="item">
+            <span>性别</span>
+            <span class="sex input">
+                <input type="radio" name="sex" id="male" value="男" checked><span>男</span>
+                <input type="radio" name="sex" id="femal" value="女"><span>女</span>
+            </span>
+        </div>
+        <div class="item">
+            <label for="email">邮箱</label>
+            <input class="input" type="text" placeholder="请输入邮箱" id="email" onblur="verifEmail(this)">
+        </div>
+        <div class="item">
+            <label for="phone">电话</label>
+            <input class="input" type="text" placeholder="请输入电话号码" id="phone" onblur="verifPhone(this)">
+        </div>
+        <div class="item">
+            <label for="password">密码</label>
+            <input class="input" type="password" placeholder="请输入密码" id="password" onblur="verifPassword(this)">
+        </div>
+        <div class="item">
+            <label for="confirmPassword">确认密码</label>
+            <input class="input" type="password" placeholder="请输入确认密码" id="confirmPassword"
+                onblur="verifConfirmPassword(this)">
+        </div>
+        <div class="submit">
+            <button type="button" onclick="btnSubmint()">注册</button>
+        </div>
+    </form>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快速分析一个复杂的异步嵌套逻辑，并掌握分析方法</title>
+</head>
+
+<body>
+    <h1>宏任务和微任务分别有哪些</h1>
+    <p>
+        <b>宏任务</b>setTimeout，setInterval，setImmediate (Node独有)，requestAnimationFrame (浏览器独有)，I/O，UI rendering (浏览器独有)
+    </p>
+    <p>
+        <b>微任务</b> process.nextTick (Node独有)，Promise，Object.observe，MutationObserver
+    </p>
+    <p>
+        <b>分析</b>从头至尾执行一次代码,根据上面分类规则分至不同队列, new promise( function ) 也是立即执行。setTimeout 的回调函数属于宏队列（macrotask），resolve 的回调函数属于微队列
+    </p>
+    <script>
+        // 执行顺序，先微队列，后宏队列。
+        console.log(1);
+        setTimeout(() => {
+            console.log(2);
+            setTimeout(() => {
+                console.log(8);
+            })
+            Promise.resolve().then(() => {
+                console.log(3)
+            });
+        });
+        new Promise((resolve, reject) => {
+            console.log(4)
+            setTimeout(() => {
+                console.log(10);
+            })
+            resolve()
+        }).then(() => {
+            console.log(5);
+            Promise.resolve().then(() => {
+                console.log(11)
+            });
+            setTimeout(() => {
+                console.log(13);
+            })
+        })
+        setTimeout(() => {
+            Promise.resolve().then(() => {
+                console.log(9)
+            });
+            console.log(6);
+            setTimeout(() => {
+                console.log(12);
+            })
+        })
+        console.log(7);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则</title>
+</head>
+
+<body>
+    <div class="item">
+        <p>邮箱校验</p>
+        <input type="text" id="emial" onkeydown="verifyMailbox(event)">
+        <p class="v"></p>
+    </div>
+    <div class="item">
+        <p>URL解析</p>
+        <button onclick="verifyUrl()">验证URL</button>
+        <p class="v"></p>
+    </div>
+
+    <script>
+        function isUrl(value) {
+            return /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\*\+,;=.%]+$/.test(value)
+        }
+
+        function verifyUrl() {
+            let url = window.location.href;
+            if (isUrl(url)) {
+                document.getElementsByClassName('v')[1].textContent = url + "验证通过";
+                document.getElementsByClassName('v')[1].style.color = "green";
+            } else {
+                document.getElementsByClassName('v')[1].textContent = url + "验证未通过";
+                document.getElementsByClassName('v')[1].style.color = "red";
+
+            }
+        }
+
+        function isEmail(emailStr) {
+            return /^[a-zA-Z0-9]+([._-]*[a-zA-Z0-9]*)*@[a-zA-Z0-9]+.[a-zA-Z0-9{2,5}$]/.test(emailStr);
+        }
+
+        function verifyMailbox(e) {
+            let evt = window.event || e;
+            if (evt.keyCode === 13) {
+                let value = evt.target.value;
+                if (isEmail(value)) {
+                    document.getElementsByClassName('v')[0].textContent = value + "验证通过";
+                    document.getElementsByClassName('v')[0].style.color = "green";
+                } else {
+                    document.getElementsByClassName('v')[0].textContent = value + "验证未通过";
+                    document.getElementsByClassName('v')[0].style.color = "red";
+                }
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
