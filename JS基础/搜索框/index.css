@@ -1,0 +1,89 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-image: url(https://tvax1.sinaimg.cn/large/bfe05ea9ly1fxguyvn1qsj21hc0u0wlu.jpg);
+    /* filter:blur(1px); */
+    z-index:-1;
+    background-size:cover;
+}
+
+input{
+    outline-style: none ;
+    border: 1px solid #ccc; 
+    border-radius: 3px;
+    padding: 13px 14px;
+    width: 620px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Microsoft soft";
+}
+
+input:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+
+.search-box{
+    padding: 0 100px;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -20%);
+    -ms-transform: translate(-50%, -20%); /* IE9及以上支持 */
+    -webkit-transform: translate(-50%, -20%); /* Safari and Chrome */
+    -o-transform: translate(-50%, -20%); /* Opera */
+    -moz-transform: translate(-50%, -20%); /* Firefox */
+    text-align: center;
+}
+
+.search-box h1{
+    padding: 15px;
+    color: seashell;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.search-box .input-box{
+    position: relative;
+    padding: 5px;
+}
+
+.tip-box{
+    position: absolute;
+    left: 0;
+    right: 0;
+    min-height: 200px;
+    border-radius: 4px;
+    border:none;
+    margin: 5px;
+    padding: 5px;
+    background-color: white;
+}
+
+.null-data{
+    font-size: 14px;
+    color: #ccc;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.list-item{
+    padding-bottom: 4px;
+    color: #aaa;
+    text-align: left;
+    border-bottom: 1px solid #f7f7f7;
+    cursor: pointer;
+}

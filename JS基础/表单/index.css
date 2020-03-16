@@ -1,0 +1,116 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-image: url(https://cdn.wispx.cn/wallpaper/2019/05/27/ea6503c45cfe7010dd038787933e588c.jpg!wallpaper.detail);
+    /* filter:blur(1px); */
+    z-index:-1;
+    background-size:cover;
+}
+
+.register{
+    padding: 20px 60px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+h3{
+    letter-spacing: 10px;
+}
+
+input[type='text'], input[type='password']{
+    border-radius: 4px;
+    border: none;
+    padding: 4px 5px;
+    font-size: 12px;
+    color: #515a6e;
+}
+
+input[type="radio"]{
+    width: 15px;
+    height: 15px;
+    border: none;
+    border-radius: 50%;
+    vertical-align: text-top;
+    background-color: #515a6e;
+}
+
+.sex{
+    font-size: 14px;
+    color: #333;
+}
+
+.item{
+    padding-top: 5px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.item>:first-child{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    padding-right: 5px;
+}
+
+.item>:first-child::before{
+    content: '*';
+    position: absolute;
+    top: 3px;
+    left: -5px;
+    color: red;
+}
+
+.input{
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    width: 160px;
+    line-height: 25px;
+}
+
+.submit{
+    padding: 10px 0;
+}
+
+.submit button{
+    padding: 5px 50px;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    background-color: #19be6b;
+    border-color: #19be6b;
+    letter-spacing: 10px;
+    color: white;
+}
+
+.show-tip{
+    position: absolute;
+    left: 90px;
+    bottom: 0;
+    font-size: 12px;
+    color: red;
+}
